@@ -96,31 +96,38 @@ export function HeroSection() {
           </motion.p>
         </motion.div>
 
-        {/* Client logo strip */}
+        {/* Client logo strip — infinite marquee */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
           className="mt-16 pt-10 border-t border-border/30"
         >
-          <div className="flex flex-wrap items-center gap-8 md:gap-12">
-            {clientLogos.map((logo, index) => (
-              <motion.div
-                key={logo.name}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.4, delay: 0.55 + 0.07 * index }}
-                className="max-w-[80px] md:max-w-[100px] grayscale hover:grayscale-0 transition-all duration-300"
-              >
-                <Image
-                  src={logo.src}
-                  alt={logo.name}
-                  width={100}
-                  height={40}
-                  className="w-full h-auto object-contain opacity-60 hover:opacity-100 transition-opacity"
-                />
-              </motion.div>
-            ))}
+          <p className="text-xs tracking-[0.2em] uppercase text-foreground/40 font-semibold mb-6">
+            Trusted by
+          </p>
+          <div className="overflow-hidden relative">
+            {/* fade edges */}
+            <div className="absolute left-0 top-0 bottom-0 w-16 z-10 bg-gradient-to-r from-background to-transparent pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-16 z-10 bg-gradient-to-l from-background to-transparent pointer-events-none" />
+
+            <div className="flex animate-marquee">
+              {/* render twice for seamless loop */}
+              {[...clientLogos, ...clientLogos].map((logo, index) => (
+                <div
+                  key={index}
+                  className="shrink-0 mx-8 w-[90px] flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300"
+                >
+                  <Image
+                    src={logo.src}
+                    alt={logo.name}
+                    width={90}
+                    height={40}
+                    className="w-full h-auto max-h-[48px] object-contain opacity-50 hover:opacity-100 transition-opacity"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </motion.div>
       </div>

@@ -222,6 +222,20 @@ button {
   }
 }
 
+/* Marquee / logo strip scroll */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
 /* Extra: If you need animate-gradient as a class for Tailwind */
 .animate-gradient {
   animation: gradient 15s ease infinite;

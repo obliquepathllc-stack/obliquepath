@@ -385,6 +385,19 @@ export default function CaseStudiesPage() {
 
                     <h2 className="text-3xl font-bold mb-6">{study.title}</h2>
 
+                    {/* Client logo */}
+                    {study.image && (
+                      <div className="mb-6 w-24 h-24 rounded-xl overflow-hidden border border-border/40 bg-white flex items-center justify-center p-2">
+                        <Image
+                          src={study.image}
+                          alt={study.client}
+                          width={80}
+                          height={80}
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                    )}
+
                     <div className="grid grid-cols-2 gap-4 mb-8">
                       <div>
                         <p className="text-sm text-foreground/60 mb-1">Client</p>
@@ -405,20 +418,20 @@ export default function CaseStudiesPage() {
                     </div>
                   </div>
 
-                  {/* Image or color block placeholder */}
+                  {/* Image panel */}
                   <div
                     className={`relative rounded-xl overflow-hidden ${
                       index % 2 === 1 ? "lg:order-1" : ""
                     }`}
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 blur-xl" />
-                    <div className="relative aspect-video rounded-xl overflow-hidden border border-border/50">
+                    <div className="relative aspect-video rounded-xl overflow-hidden border border-border/50 bg-card/50 flex items-center justify-center">
                       {study.image ? (
                         <Image
                           src={study.image}
                           alt={study.client}
                           fill
-                          className="object-contain w-full grayscale"
+                          className="object-contain w-full p-8"
                         />
                       ) : (
                         <div
