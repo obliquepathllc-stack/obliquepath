@@ -1,9 +1,11 @@
 "use client";
 
 import { PageLayout } from "@/components/page-layout";
-import { ComingSoon } from "@/components/coming-soon";
 import { motion } from "framer-motion";
 import { Code, Workflow, Layers, Rocket } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export default function CustomWebSolutionsPage() {
   const solutions = [
@@ -70,7 +72,49 @@ export default function CustomWebSolutionsPage() {
         </div>
       </section>
 
-      <ComingSoon message="Stay tuned. Case studies and demos launching soon." />
+      <section className="py-12 px-4 md:px-16 border-t border-border/30">
+        <div className="container max-w-7xl mx-auto">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="text-2xl font-bold mb-4"
+            >
+              Ready to Build Something That Works for You?
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="text-foreground/70 mb-8"
+            >
+              Tell us what you need. We will scope it, build it, and deploy it fast.
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+            >
+              <Link href="/book-demo">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 font-semibold w-full sm:w-auto">
+                  Book a Strategy Call
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+              <Link href="/case-studies">
+                <Button size="lg" variant="outline" className="font-semibold w-full sm:w-auto">
+                  See Our Work
+                </Button>
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+      </section>
     </PageLayout>
   );
 }

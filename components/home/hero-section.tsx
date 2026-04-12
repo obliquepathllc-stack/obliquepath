@@ -10,15 +10,13 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
-const clientLogos: { name: string; src: string | null }[] = [
+const clientLogos = [
   { name: "First Point Cleaners", src: "/clients-logo/immaculatus-cleaning.svg" },
   { name: "BuildPath", src: "/clients-logo/buildpath.svg" },
   { name: "Anitrous", src: "/clients-logo/anitrous.svg" },
   { name: "Aerrand", src: "/clients-logo/errand.svg" },
   { name: "Harbor One Capital", src: "/clients-logo/hoc.svg" },
   { name: "Junk Cycle", src: "/clients-logo/junk-cycle 1.jpg" },
-  { name: "Growtt", src: null },
-  { name: "AQUAPROX AI", src: null },
 ];
 
 export function HeroSection() {
@@ -44,9 +42,9 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-5xl sm:text-6xl md:text-7xl lg:text-[72px] font-extrabold leading-[1.05] tracking-tight"
           >
-            We Build AI Systems and Custom Platforms That{" "}
+            Stop Running on Manual.{" "}
             <span className="gradient-text">
-              Replace Manual Operations.
+              Build Systems That Work Without You.
             </span>
           </motion.h1>
 
@@ -56,9 +54,9 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg sm:text-xl md:text-2xl text-foreground/80 max-w-3xl font-medium leading-relaxed"
           >
-            From staffing automation to government-grade integrations. Oblique
-            Path delivers working software that eliminates overhead, accelerates
-            decisions, and scales with your organization.
+            Oblique Path builds AI automation systems and custom platforms for
+            businesses that are done with spreadsheets, manual follow-ups, and
+            admin overhead. Working software, deployed fast.
           </motion.p>
 
           {/* CTAs */}
@@ -110,22 +108,15 @@ export function HeroSection() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.4, delay: 0.55 + 0.07 * index }}
+                className="max-w-[80px] md:max-w-[100px] grayscale hover:grayscale-0 transition-all duration-300"
               >
-                {logo.src ? (
-                  <div className="max-w-[80px] md:max-w-[100px] grayscale hover:grayscale-0 transition-all duration-300">
-                    <Image
-                      src={logo.src}
-                      alt={logo.name}
-                      width={100}
-                      height={40}
-                      className="w-full h-auto object-contain opacity-60 hover:opacity-100 transition-opacity"
-                    />
-                  </div>
-                ) : (
-                  <span className="text-sm font-semibold tracking-wide text-foreground/40 hover:text-foreground/70 transition-colors duration-300 whitespace-nowrap">
-                    {logo.name}
-                  </span>
-                )}
+                <Image
+                  src={logo.src}
+                  alt={logo.name}
+                  width={100}
+                  height={40}
+                  className="w-full h-auto object-contain opacity-60 hover:opacity-100 transition-opacity"
+                />
               </motion.div>
             ))}
           </div>
