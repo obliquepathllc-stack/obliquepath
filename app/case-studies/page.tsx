@@ -150,7 +150,7 @@ const caseStudies = [
     ctaLink: "/book-demo?service=scheduling-automation",
     icon: Sparkles,
     color: "bg-emerald-50 text-emerald-800",
-    image: "/clients-web/immaculatus-cleaning.jpg" as string | null,
+    image: "/clients-logo/first-point-cleaners.jpg" as string | null,
     colorBlock: "",
   },
 
