@@ -383,6 +383,33 @@ export default function CaseStudiesPage() {
             ))}
           </div>
 
+          {/* Industry Solutions */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="mt-24 border-t border-border/30 pt-16"
+          >
+            <p className="text-xs tracking-widest uppercase text-foreground/50 mb-4">
+              Industry Solutions
+            </p>
+            <h2 className="text-2xl font-bold mb-8">Built for Specific Operations</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl">
+              <Link href="/healthcare">
+                <div className="border border-border/50 rounded-xl p-6 bg-card/50 hover:border-primary/40 hover:bg-primary/5 transition-all duration-200 flex flex-col gap-3 group">
+                  <h3 className="text-base font-semibold">Healthcare Staffing Automation</h3>
+                  <p className="text-sm text-foreground/60 leading-relaxed">
+                    Timesheet intake, invoicing, scheduling, and compliance — automated end-to-end for healthcare staffing agencies.
+                  </p>
+                  <span className="text-sm text-primary flex items-center gap-1 mt-auto group-hover:gap-2 transition-all">
+                    See the full solution <ArrowRight className="h-3.5 w-3.5" />
+                  </span>
+                </div>
+              </Link>
+            </div>
+          </motion.div>
+
           {/* Final CTA */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
