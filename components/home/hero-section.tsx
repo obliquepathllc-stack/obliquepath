@@ -10,13 +10,15 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
-const clientLogos = [
-  { name: "Immaculatus Cleaning", src: "/clients-logo/immaculatus-cleaning.svg" },
+const clientLogos: { name: string; src: string | null }[] = [
+  { name: "First Point Cleaners", src: "/clients-logo/immaculatus-cleaning.svg" },
   { name: "BuildPath", src: "/clients-logo/buildpath.svg" },
   { name: "Anitrous", src: "/clients-logo/anitrous.svg" },
-  { name: "Errand", src: "/clients-logo/errand.svg" },
+  { name: "Aerrand", src: "/clients-logo/errand.svg" },
   { name: "Harbor One Capital", src: "/clients-logo/hoc.svg" },
   { name: "Junk Cycle", src: "/clients-logo/junk-cycle 1.jpg" },
+  { name: "Growtt", src: null },
+  { name: "AQUAPROX AI", src: null },
 ];
 
 export function HeroSection() {
@@ -108,15 +110,22 @@ export function HeroSection() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.4, delay: 0.55 + 0.07 * index }}
-                className="max-w-[80px] md:max-w-[100px] grayscale hover:grayscale-0 transition-all duration-300"
               >
-                <Image
-                  src={logo.src}
-                  alt={logo.name}
-                  width={100}
-                  height={40}
-                  className="w-full h-auto object-contain opacity-60 hover:opacity-100 transition-opacity"
-                />
+                {logo.src ? (
+                  <div className="max-w-[80px] md:max-w-[100px] grayscale hover:grayscale-0 transition-all duration-300">
+                    <Image
+                      src={logo.src}
+                      alt={logo.name}
+                      width={100}
+                      height={40}
+                      className="w-full h-auto object-contain opacity-60 hover:opacity-100 transition-opacity"
+                    />
+                  </div>
+                ) : (
+                  <span className="text-sm font-semibold tracking-wide text-foreground/40 hover:text-foreground/70 transition-colors duration-300 whitespace-nowrap">
+                    {logo.name}
+                  </span>
+                )}
               </motion.div>
             ))}
           </div>

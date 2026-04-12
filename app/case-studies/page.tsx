@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { PageLayout } from "@/components/page-layout";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -18,15 +19,38 @@ import {
   Smile,
   Sparkles,
   Timer,
+  Layers,
+  TrendingUp,
+  Droplets,
+  ShoppingBag,
 } from "lucide-react";
+import { cn } from "@/lib/utils";
 import { CTA } from "@/components/shared/cta-links";
 import Link from "next/link";
 import Image from "next/image";
 
-// Define case studies data
+// ─── FILTER CONFIG ────────────────────────────────────────────────────────────
+const FILTERS = [
+  "All",
+  "Fintech",
+  "Healthcare & Staffing",
+  "Agriculture & Aquaculture",
+  "E-Commerce",
+  "Technology & Operations",
+  "Cleaning Services",
+  "Insurance & Finance",
+  "Waste & Removal",
+];
+
+// ─── CASE STUDIES DATA ────────────────────────────────────────────────────────
+// Add new case studies below the existing three. Each entry needs a filterTag
+// matching one of the FILTERS values above.
+
 const caseStudies = [
+  // ── EXISTING: Harbor One Capital ──────────────────────────────────────────
   {
     id: "harbor-one-capital",
+    filterTag: "Insurance & Finance",
     title:
       "Harbor One Capital: Automated Follow-Ups That Doubled Policy Conversions",
     client: "Harbor One Capital",
@@ -42,26 +66,10 @@ const caseStudies = [
       "Allowed agents to focus on selling, not chasing",
     ],
     results: [
-      {
-        stat: "2×",
-        description: "more closed policies",
-        icon: BarChart,
-      },
-      {
-        stat: "75%",
-        description: "increase in lead response speed",
-        icon: Clock,
-      },
-      {
-        stat: "0",
-        description: "leads left hanging",
-        icon: CheckCircle,
-      },
-      {
-        stat: "10+",
-        description: "hours/week reclaimed by agents",
-        icon: Clock,
-      },
+      { stat: "2×", description: "more closed policies", icon: BarChart },
+      { stat: "75%", description: "increase in lead response speed", icon: Clock },
+      { stat: "0", description: "leads left hanging", icon: CheckCircle },
+      { stat: "10+", description: "hours/week reclaimed by agents", icon: Clock },
     ],
     timeframe: "within 6 weeks",
     testimonial:
@@ -72,10 +80,14 @@ const caseStudies = [
     ctaLink: "/book-demo?service=lead-nurture",
     icon: Building,
     color: "bg-primary/10 text-primary",
-    image: "/clients-web/harbour-one.jpg",
+    image: "/clients-web/harbour-one.jpg" as string | null,
+    colorBlock: "",
   },
+
+  // ── EXISTING: Junk Cycle ──────────────────────────────────────────────────
   {
     id: "junk-cycle",
+    filterTag: "Waste & Removal",
     title: "Junk Cycle: Cutting Admin Time by 60% with AI-Powered Scheduling",
     client: "Junk Cycle",
     industry: "Junk Removal & Waste Services",
@@ -89,26 +101,10 @@ const caseStudies = [
       "Synced all jobs with a shared team calendar for dispatch coordination",
     ],
     results: [
-      {
-        stat: "60%",
-        description: "less time spent on scheduling and follow-ups",
-        icon: Clock,
-      },
-      {
-        stat: "↓",
-        description: "fewer no-shows and missed pickups",
-        icon: Calendar,
-      },
-      {
-        stat: "↑",
-        description: "smoother job flow and better team coordination",
-        icon: Truck,
-      },
-      {
-        stat: "★★★★★",
-        description: "more 5-star Google reviews",
-        icon: Star,
-      },
+      { stat: "60%", description: "less time spent on scheduling and follow-ups", icon: Clock },
+      { stat: "↓", description: "fewer no-shows and missed pickups", icon: Calendar },
+      { stat: "↑", description: "smoother job flow and better team coordination", icon: Truck },
+      { stat: "★★★★★", description: "more 5-star Google reviews", icon: Star },
     ],
     timeframe: "after 30 days",
     testimonial:
@@ -119,58 +115,204 @@ const caseStudies = [
     ctaLink: "/book-demo?service=booking-automation",
     icon: Truck,
     color: "bg-accent/10 text-accent-200",
-    image: "/clients-web/junck-cycle.jpg",
+    image: "/clients-web/junck-cycle.jpg" as string | null,
+    colorBlock: "",
   },
+
+  // ── UPDATED: First Point Cleaners (was Immaculatus Cleaning) ──────────────
   {
-    id: "immaculatus-cleaning",
-    title: "Immaculatus Cleaning: 70% Fewer No-Shows with Smart Scheduling",
-    client: "Immaculatus Cleaning",
+    id: "first-point-cleaners",
+    filterTag: "Cleaning Services",
+    title: "First Point Cleaners: 70% Fewer No-Shows with Smart Scheduling",
+    client: "First Point Cleaners",
     industry: "Cleaning Services",
     location: "Toronto, Ontario",
     service: "Obliq Path – Scheduling Automation + Client Communication",
     challenge:
-      "Immaculatus Cleaning faced daily scheduling chaos. Clients often forgot appointments, and admin staff spent hours rescheduling or confirming bookings manually. This led to missed jobs and operational downtime.",
+      "First Point Cleaners faced daily scheduling chaos. Clients often forgot appointments, and admin staff spent hours rescheduling or confirming bookings manually. This led to missed jobs and operational downtime.",
     solution: [
       "Implemented an automated online booking system with live calendar sync",
       "Set up SMS/email confirmations and 24-hour appointment reminders",
       "Integrated client bookings with team schedules for dispatch optimization",
     ],
     results: [
-      {
-        stat: "70%",
-        description: "reduction in client no-shows",
-        icon: CalendarCheck,
-      },
-      {
-        stat: "65%",
-        description: "increase in scheduling efficiency",
-        icon: Clock,
-      },
-      {
-        stat: "24h",
-        description: "saved per week in admin time",
-        icon: Timer,
-      },
-      {
-        stat: "42%",
-        description: "boost in customer satisfaction",
-        icon: Smile,
-      },
+      { stat: "70%", description: "reduction in client no-shows", icon: CalendarCheck },
+      { stat: "65%", description: "increase in scheduling efficiency", icon: Clock },
+      { stat: "24h", description: "saved per week in admin time", icon: Timer },
+      { stat: "42%", description: "boost in customer satisfaction", icon: Smile },
     ],
     timeframe: "in the first month",
     testimonial:
-      "Obliquepath's scheduling automation transformed our business. We've reduced no-shows by 70% and our team can focus on delivering exceptional service instead of administrative tasks.",
+      "The scheduling automation transformed our business. We've reduced no-shows by 70% and our team can focus on delivering exceptional service instead of administrative tasks.",
     clientName: "Maria Rodriguez",
-    clientTitle: "Operations Director, Immaculatus Cleaning",
+    clientTitle: "Operations Director, First Point Cleaners",
     ctaText: "Upgrade Your Scheduling",
     ctaLink: "/book-demo?service=scheduling-automation",
     icon: Sparkles,
     color: "bg-emerald-50 text-emerald-800",
-    image: "/clients-web/immaculatus-cleaning.jpg",
+    image: "/clients-web/immaculatus-cleaning.jpg" as string | null,
+    colorBlock: "",
+  },
+
+  // ── NEW: Aerrand ──────────────────────────────────────────────────────────
+  {
+    id: "aerrand",
+    filterTag: "Technology & Operations",
+    title:
+      "Aerrand: Onboarding Automation That Runs Without Anyone Touching It",
+    client: "Aerrand",
+    industry: "Technology & Operations",
+    location: "North America",
+    service: "Onboarding Automation + Internal Workflow",
+    challenge:
+      "Aerrand's team was managing new user and staff onboarding manually, scattered across emails, spreadsheets, and disconnected tools. Internal workflows had no structure, creating bottlenecks and inconsistent experiences.",
+    solution: [
+      "Automated end-to-end onboarding sequence for new users and staff",
+      "Built structured internal workflow system replacing manual handoffs",
+      "Integrated communication triggers and status tracking across the operation",
+      "Eliminated manual follow-up from the onboarding process",
+    ],
+    results: [
+      { stat: "70%", description: "reduction in onboarding time", icon: Clock },
+      { stat: "0", description: "manual follow-ups required post-automation", icon: CheckCircle },
+      { stat: "100%", description: "consistent experience for every new user and staff", icon: CheckCircle },
+      { stat: "↑", description: "team hours redirected from admin to core operations", icon: TrendingUp },
+    ],
+    timeframe: "after go-live",
+    testimonial:
+      "Oblique Path mapped our entire onboarding process and automated it end to end. What used to take our team days now runs without anyone touching it.",
+    clientName: "",
+    clientTitle: "Operations Lead, Aerrand",
+    ctaText: "Automate Your Workflows",
+    ctaLink: "/book-demo?service=automation",
+    icon: Layers,
+    color: "bg-violet-500/10 text-violet-600",
+    image: null as string | null,
+    colorBlock: "bg-gradient-to-br from-violet-500/20 to-purple-600/20",
+  },
+
+  // ── NEW: Growtt ───────────────────────────────────────────────────────────
+  {
+    id: "growtt",
+    filterTag: "Fintech",
+    title:
+      "Growtt: Newsletter and Financial Reporting Fully Automated End to End",
+    client: "Growtt",
+    industry: "Fintech",
+    location: "North America",
+    service: "Newsletter Automation + Financial Reporting Dashboard",
+    challenge:
+      "Growtt's team was producing newsletters and financial reports manually, compiling data, formatting content, and distributing to their audience by hand. The process was time-consuming, inconsistent, and impossible to scale without adding headcount.",
+    solution: [
+      "Automated newsletter generation pipeline pulling from live content sources and delivering formatted output on schedule",
+      "Built a fully automated financial reporting dashboard aggregating data in real time, no manual compilation",
+      "Eliminated human touchpoints in both workflows end to end",
+      "Reports and newsletters now generate and distribute automatically on a set cadence",
+    ],
+    results: [
+      { stat: "100%", description: "newsletter and report generation fully automated", icon: CheckCircle },
+      { stat: "Hours", description: "saved weekly on manual content and data compilation", icon: Clock },
+      { stat: "On time", description: "consistent on-schedule delivery every cycle", icon: Timer },
+      { stat: "↑", description: "team bandwidth freed for strategy and growth", icon: TrendingUp },
+    ],
+    timeframe: "within 4 weeks",
+    testimonial:
+      "What used to take hours of manual work every week now just happens. The newsletter goes out, the reports are ready. Automatically. Oblique Path built something we didn't think was possible this fast.",
+    clientName: "",
+    clientTitle: "Team Lead, Growtt",
+    ctaText: "Automate Your Reporting",
+    ctaLink: "/book-demo?service=automation",
+    icon: TrendingUp,
+    color: "bg-emerald-500/10 text-emerald-600",
+    image: null as string | null,
+    colorBlock: "bg-gradient-to-br from-emerald-500/20 to-teal-600/20",
+  },
+
+  // ── NEW: AQUAPROX AI ──────────────────────────────────────────────────────
+  {
+    id: "aquaprox-ai",
+    filterTag: "Agriculture & Aquaculture",
+    title:
+      "AQUAPROX AI: Custom AI Dashboard for Predictive Aquaculture Operations",
+    client: "AQUAPROX AI",
+    industry: "Agriculture & Aquaculture",
+    location: "North America",
+    service: "Custom AI Dashboard — Predictive Analytics & Automated Monitoring",
+    challenge:
+      "AQUAPROX AI needed a centralized intelligence layer for aquaculture operations, combining live sensor data, manual inputs, and predictive analytics in one place. Existing tools couldn't handle the data complexity or deliver actionable insights in real time.",
+    solution: [
+      "Designed and built a fully custom AI-powered dashboard for aquaculture operations",
+      "Integrated live sensor data streams with manual input for a complete operational picture",
+      "Built predictive analysis engine surfacing insights based on historical and real-time data",
+      "Automated notification and alert system triggering on anomalies, thresholds, and predictive flags",
+      "Single interface for monitoring, analysis, and decision-making",
+    ],
+    results: [
+      { stat: "Live", description: "real-time visibility across all operational data in one dashboard", icon: BarChart },
+      { stat: "Early", description: "predictive alerts catching issues before they escalate", icon: CheckCircle },
+      { stat: "↓", description: "significant reduction in reactive decision-making", icon: Clock },
+      { stat: "↑", description: "operations team equipped to act on data, not just collect it", icon: TrendingUp },
+    ],
+    timeframe: "after deployment",
+    testimonial:
+      "Oblique Path built exactly what we needed: a system that takes sensor data, understands it, and tells us what's coming before it happens. The dashboard changed how we run our operation.",
+    clientName: "",
+    clientTitle: "Founder, AQUAPROX AI",
+    ctaText: "Build Your Custom Dashboard",
+    ctaLink: "/book-demo?service=custom-platform",
+    icon: Droplets,
+    color: "bg-blue-500/10 text-blue-600",
+    image: null as string | null,
+    colorBlock: "bg-gradient-to-br from-blue-500/20 to-cyan-600/20",
+  },
+
+  // ── NEW: Anitrous ─────────────────────────────────────────────────────────
+  {
+    id: "anitrous",
+    filterTag: "E-Commerce",
+    title:
+      "Anitrous: Lead Follow-Up Automated So No Prospect Falls Through the Cracks",
+    client: "Anitrous",
+    industry: "E-Commerce",
+    location: "Canada",
+    service: "Lead Follow-Up Automation + CRM Integration",
+    challenge:
+      "Anitrous was losing potential customers to slow follow-up. Leads came in through multiple channels but had no structured response system, no CRM, no automation, no visibility into where prospects stood in the pipeline.",
+    solution: [
+      "Built automated lead follow-up sequences triggered immediately on new inquiry",
+      "Integrated a CRM to centralize all leads with status tracking and history",
+      "Set up multi-channel follow-up across email and SMS",
+      "Created pipeline visibility so the team always knew where every prospect stood",
+    ],
+    results: [
+      { stat: "<5 min", description: "automated response time (was hours)", icon: Clock },
+      { stat: "Full", description: "lead pipeline visibility from first touch to close", icon: BarChart },
+      { stat: "0", description: "leads falling through the cracks", icon: CheckCircle },
+      { stat: "↑", description: "sales team focused on closing, not chasing", icon: TrendingUp },
+    ],
+    timeframe: "within 30 days",
+    testimonial:
+      "We were losing leads just because we couldn't follow up fast enough. Now every inquiry gets an immediate response and lands in our CRM automatically. It runs itself.",
+    clientName: "",
+    clientTitle: "Owner, Anitrous",
+    ctaText: "Automate Your Lead Follow-Up",
+    ctaLink: "/book-demo?service=lead-automation",
+    icon: ShoppingBag,
+    color: "bg-orange-500/10 text-orange-600",
+    image: null as string | null,
+    colorBlock: "bg-gradient-to-br from-orange-500/20 to-amber-600/20",
   },
 ];
 
+// ─── PAGE COMPONENT ───────────────────────────────────────────────────────────
 export default function CaseStudiesPage() {
+  const [activeFilter, setActiveFilter] = useState("All");
+
+  const filtered =
+    activeFilter === "All"
+      ? caseStudies
+      : caseStudies.filter((s) => s.filterTag === activeFilter);
+
   return (
     <PageLayout
       title="Case Studies"
@@ -182,7 +324,7 @@ export default function CaseStudiesPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-center max-w-3xl mx-auto mb-16"
+            className="text-center max-w-3xl mx-auto mb-12"
           >
             <p className="text-lg text-foreground/80">
               See how businesses like yours have transformed their operations
@@ -191,19 +333,43 @@ export default function CaseStudiesPage() {
             </p>
           </motion.div>
 
-          {/* Case Studies */}
+          {/* Industry filter tabs — scrollable on mobile */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="flex gap-2 overflow-x-auto pb-3 mb-16 -mx-1 px-1"
+            style={{ scrollbarWidth: "none" }}
+          >
+            {FILTERS.map((filter) => (
+              <button
+                key={filter}
+                onClick={() => setActiveFilter(filter)}
+                className={cn(
+                  "shrink-0 px-4 py-2 rounded-full text-sm font-medium border transition-all duration-200",
+                  activeFilter === filter
+                    ? "bg-primary text-primary-foreground border-primary"
+                    : "bg-card/50 text-foreground/70 border-border/50 hover:border-primary/40 hover:text-foreground"
+                )}
+              >
+                {filter}
+              </button>
+            ))}
+          </motion.div>
+
+          {/* Case Studies list */}
           <div className="space-y-32">
-            {caseStudies.map((study, index) => (
+            {filtered.map((study, index) => (
               <motion.div
                 key={study.id}
                 id={study.id}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7 }}
-                viewport={{ once: true, amount: 0.2 }}
+                viewport={{ once: true, amount: 0.1 }}
                 className="max-w-6xl mx-auto"
               >
-                {/* Case Study Header */}
+                {/* Header: meta + image/color block */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                   <div className={index % 2 === 1 ? "lg:order-2" : ""}>
                     <div
@@ -212,49 +378,57 @@ export default function CaseStudiesPage() {
                       <study.icon className="h-8 w-8" />
                     </div>
 
+                    {/* Industry tag */}
+                    <span className="inline-block text-xs tracking-widest uppercase text-foreground/50 font-medium border border-border/50 rounded-full px-3 py-1 mb-4">
+                      {study.filterTag}
+                    </span>
+
                     <h2 className="text-3xl font-bold mb-6">{study.title}</h2>
 
                     <div className="grid grid-cols-2 gap-4 mb-8">
                       <div>
-                        <p className="text-sm text-foreground/60 mb-1">
-                          Client
-                        </p>
+                        <p className="text-sm text-foreground/60 mb-1">Client</p>
                         <p className="font-medium">{study.client}</p>
                       </div>
                       <div>
-                        <p className="text-sm text-foreground/60 mb-1">
-                          Industry
-                        </p>
+                        <p className="text-sm text-foreground/60 mb-1">Industry</p>
                         <p className="font-medium">{study.industry}</p>
                       </div>
                       <div>
-                        <p className="text-sm text-foreground/60 mb-1">
-                          Location
-                        </p>
+                        <p className="text-sm text-foreground/60 mb-1">Location</p>
                         <p className="font-medium">{study.location}</p>
                       </div>
                       <div>
-                        <p className="text-sm text-foreground/60 mb-1">
-                          Service Used
-                        </p>
+                        <p className="text-sm text-foreground/60 mb-1">Service Used</p>
                         <p className="font-medium">{study.service}</p>
                       </div>
                     </div>
                   </div>
 
+                  {/* Image or color block placeholder */}
                   <div
                     className={`relative rounded-xl overflow-hidden ${
                       index % 2 === 1 ? "lg:order-1" : ""
                     }`}
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 blur-xl" />
-                    <div className="relative aspect-video rounded-xl overflow-hidden border border-border/50 grayscale">
-                      <Image
-                        src={study.image || "/placeholder.svg"}
-                        alt={study.client}
-                        fill
-                        className="object-contain w-full"
-                      />
+                    <div className="relative aspect-video rounded-xl overflow-hidden border border-border/50">
+                      {study.image ? (
+                        <Image
+                          src={study.image}
+                          alt={study.client}
+                          fill
+                          className="object-contain w-full grayscale"
+                        />
+                      ) : (
+                        <div
+                          className={`absolute inset-0 ${study.colorBlock} flex items-center justify-center`}
+                        >
+                          <span className="text-2xl font-bold text-foreground/50 text-center px-4">
+                            {study.client}
+                          </span>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -353,10 +527,10 @@ export default function CaseStudiesPage() {
                         <study.icon className="h-6 w-6 text-primary" />
                       </div>
                       <div>
-                        <p className="font-bold">{study.clientName}</p>
-                        <p className="text-foreground/60">
-                          {study.clientTitle}
-                        </p>
+                        {study.clientName && (
+                          <p className="font-bold">{study.clientName}</p>
+                        )}
+                        <p className="text-foreground/60">{study.clientTitle}</p>
                       </div>
                     </div>
                   </div>
@@ -365,10 +539,7 @@ export default function CaseStudiesPage() {
                 {/* CTA */}
                 <div className="mt-12 text-center">
                   <Link href={study.ctaLink}>
-                    <Button
-                      size="lg"
-                      className="bg-primary hover:bg-primary/90"
-                    >
+                    <Button size="lg" className="bg-primary hover:bg-primary/90">
                       {study.ctaText}
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
@@ -376,8 +547,8 @@ export default function CaseStudiesPage() {
                 </div>
 
                 {/* Divider (except for last item) */}
-                {index < caseStudies.length - 1 && (
-                  <div className="mt-16 border-t border-border/30 w-1/2 mx-auto"></div>
+                {index < filtered.length - 1 && (
+                  <div className="mt-16 border-t border-border/30 w-1/2 mx-auto" />
                 )}
               </motion.div>
             ))}
@@ -394,16 +565,22 @@ export default function CaseStudiesPage() {
             <p className="text-xs tracking-widest uppercase text-foreground/50 mb-4">
               Industry Solutions
             </p>
-            <h2 className="text-2xl font-bold mb-8">Built for Specific Operations</h2>
+            <h2 className="text-2xl font-bold mb-8">
+              Built for Specific Operations
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl">
               <Link href="/healthcare">
                 <div className="border border-border/50 rounded-xl p-6 bg-card/50 hover:border-primary/40 hover:bg-primary/5 transition-all duration-200 flex flex-col gap-3 group">
-                  <h3 className="text-base font-semibold">Healthcare Staffing Automation</h3>
+                  <h3 className="text-base font-semibold">
+                    Healthcare Staffing Automation
+                  </h3>
                   <p className="text-sm text-foreground/60 leading-relaxed">
-                    Timesheet intake, invoicing, scheduling, and compliance, automated end-to-end for healthcare staffing agencies.
+                    Timesheet intake, invoicing, scheduling, and compliance,
+                    automated end-to-end for healthcare staffing agencies.
                   </p>
                   <span className="text-sm text-primary flex items-center gap-1 mt-auto group-hover:gap-2 transition-all">
-                    See the full solution <ArrowRight className="h-3.5 w-3.5" />
+                    See the full solution{" "}
+                    <ArrowRight className="h-3.5 w-3.5" />
                   </span>
                 </div>
               </Link>
