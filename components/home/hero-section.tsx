@@ -111,19 +111,19 @@ export function HeroSection() {
             <div className="absolute left-0 top-0 bottom-0 w-16 z-10 bg-gradient-to-r from-background to-transparent pointer-events-none" />
             <div className="absolute right-0 top-0 bottom-0 w-16 z-10 bg-gradient-to-l from-background to-transparent pointer-events-none" />
 
-            <div className="flex animate-marquee">
+            <div className="flex w-max animate-marquee">
               {/* render twice for seamless loop */}
               {[...clientLogos, ...clientLogos].map((logo, index) => (
                 <div
                   key={index}
-                  className="shrink-0 mx-8 w-[90px] flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300"
+                  className="shrink-0 mx-8 w-[90px] flex items-center justify-center"
                 >
                   <Image
                     src={logo.src}
                     alt={logo.name}
                     width={90}
                     height={40}
-                    className="w-full h-auto max-h-[48px] object-contain opacity-50 hover:opacity-100 transition-opacity"
+                    className="w-full h-auto max-h-[48px] object-contain opacity-80 hover:opacity-100 transition-opacity"
                   />
                 </div>
               ))}
