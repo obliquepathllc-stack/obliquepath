@@ -224,8 +224,8 @@ const caseStudies = [
     ctaLink: "/book-demo?service=automation",
     icon: TrendingUp,
     color: "bg-emerald-500/10 text-emerald-600",
-    image: null as string | null,
-    colorBlock: "bg-gradient-to-br from-emerald-500/20 to-teal-600/20",
+    image: "/clients-logo/growtt.png" as string | null,
+    colorBlock: "",
   },
 
   // ── NEW: AQUAPROX AI ──────────────────────────────────────────────────────
