@@ -1,11 +1,25 @@
 "use client";
-import { FloatingElements } from "@/components/floating-elements";
-import { AboutSection } from "@/components/home/about-section";
-import { ContactSection } from "@/components/home/contact-section";
-import { HeroSection } from "@/components/home/hero-section";
-import { ServicesSection } from "@/components/home/scroll-services-section";
 
-import { TestimonialsSection } from "@/components/home/testimonials-section";
+// HOMEPAGE — obliquepath.dev
+// Sections (in order):
+//   1. HeroSection          — headline, subheadline, CTAs, logo strip
+//   2. WhoWeWorkWith        — three audience segment cards
+//   3. WhatWeBuild          — three core capability blocks
+//   4. MetricsBar           — four result stats
+//   5. CaseStudiesPreview   — three case study cards linking to /case-studies
+//   6. Industries           — five industry pills
+//   7. OurProcess           — four numbered steps
+//   8. FinalCTA             — closing headline + Book / Contact buttons
+
+import { HeroSection } from "@/components/home/hero-section";
+import { WhoWeWorkWith } from "@/components/home/who-we-work-with";
+import { WhatWeBuild } from "@/components/home/what-we-build";
+import { MetricsBar } from "@/components/home/metrics-bar";
+import { CaseStudiesPreview } from "@/components/home/case-studies-preview";
+import { Industries } from "@/components/home/industries";
+import { OurProcess } from "@/components/home/our-process";
+import { FinalCTA } from "@/components/home/final-cta";
+import { FloatingElements } from "@/components/floating-elements";
 import { MouseSpotlight } from "@/components/mouse-spotlight";
 import { ScrollWatcher } from "@/components/scroll-watcher";
 import { TechBackground } from "@/components/tech-background";
@@ -18,11 +32,9 @@ export default function Home() {
   const [scrollY, setScrollY] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
-  // Handle mounting for client-side features
   useEffect(() => {
     setMounted(true);
 
-    // Check if mobile
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
@@ -30,7 +42,6 @@ export default function Home() {
     checkMobile();
     window.addEventListener("resize", checkMobile);
 
-    // Track scroll position
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
@@ -43,7 +54,6 @@ export default function Home() {
     };
   }, []);
 
-  // Determine background variant based on scroll position
   const getBgVariant = () => {
     if (scrollY < 300) return "grid";
     if (scrollY < 1000) return "particles";
@@ -85,16 +95,34 @@ export default function Home() {
 
           <MouseSpotlight disabled={isMobile} />
 
-          {/* Add ScrollWatcher to all pages */}
           <ScrollWatcher progressPosition="top" scrollToTopThreshold={300} />
         </div>
       )}
       <ScrollWatcher progressPosition="top" />
+
+      {/* 1. HERO */}
       <HeroSection />
-      <ServicesSection />
-      <AboutSection />
-      <TestimonialsSection />
-      <ContactSection />
+
+      {/* 2. WHO WE WORK WITH */}
+      <WhoWeWorkWith />
+
+      {/* 3. WHAT WE BUILD */}
+      <WhatWeBuild />
+
+      {/* 4. RESULTS / METRICS BAR */}
+      <MetricsBar />
+
+      {/* 5. SELECTED WORK */}
+      <CaseStudiesPreview />
+
+      {/* 6. INDUSTRIES */}
+      <Industries />
+
+      {/* 7. HOW WE WORK / PROCESS */}
+      <OurProcess />
+
+      {/* 8. FINAL CTA */}
+      <FinalCTA />
     </motion.div>
   );
 }
