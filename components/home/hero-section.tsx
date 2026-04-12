@@ -17,6 +17,7 @@ const clientLogos = [
   { name: "Aerrand", src: "/clients-logo/errand.svg" },
   { name: "Harbor One Capital", src: "/clients-logo/hoc.svg" },
   { name: "Junk Cycle", src: "/clients-logo/junk-cycle 1.jpg" },
+  { name: "AQUAPROX Africa", src: "/clients-logo/aquaprox-africa.jpg" },
 ];
 
 export function HeroSection() {

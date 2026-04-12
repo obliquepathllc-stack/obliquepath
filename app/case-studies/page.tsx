@@ -262,8 +262,8 @@ const caseStudies = [
     ctaLink: "/book-demo?service=custom-platform",
     icon: Droplets,
     color: "bg-blue-500/10 text-blue-600",
-    image: null as string | null,
-    colorBlock: "bg-gradient-to-br from-blue-500/20 to-cyan-600/20",
+    image: "/clients-logo/aquaprox-africa.jpg" as string | null,
+    colorBlock: "",
   },
 
   // ── NEW: Anitrous ─────────────────────────────────────────────────────────
