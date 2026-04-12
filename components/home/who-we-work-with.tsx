@@ -9,7 +9,7 @@ const segments = [
   {
     title: "Local & Regional Businesses",
     description:
-      "Service businesses, agencies, and operators who need automation that actually runs — booking, follow-up, scheduling, and reporting on autopilot.",
+      "Service businesses, agencies, and operators who need automation that actually runs: booking, follow-up, scheduling, and reporting on autopilot.",
   },
   {
     title: "Mid-Market & Growth Companies",
@@ -19,7 +19,7 @@ const segments = [
   {
     title: "Enterprise & Government",
     description:
-      "Organizations with complex requirements — compliance, security, multi-system integration, and stakeholder reporting — who need a delivery partner, not a vendor.",
+      "Organizations with complex requirements: compliance, security, multi-system integration, and stakeholder reporting. They need a delivery partner, not a vendor.",
   },
 ];
 
@@ -33,7 +33,7 @@ export function WhoWeWorkWith() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.4 }}
           viewport={{ once: true }}
-          className="text-xs tracking-widest uppercase text-foreground/50 mb-4"
+          className="text-xs tracking-[0.2em] uppercase text-foreground/70 font-semibold mb-4"
         >
           Who We Work With
         </motion.p>
@@ -58,8 +58,8 @@ export function WhoWeWorkWith() {
               viewport={{ once: true }}
               className="border border-border/50 rounded-xl p-6 bg-card/50 flex flex-col gap-3"
             >
-              <h3 className="text-base font-semibold">{segment.title}</h3>
-              <p className="text-sm text-foreground/70 leading-relaxed">
+              <h3 className="text-lg font-semibold">{segment.title}</h3>
+              <p className="text-base text-foreground/80 leading-relaxed">
                 {segment.description}
               </p>
             </motion.div>

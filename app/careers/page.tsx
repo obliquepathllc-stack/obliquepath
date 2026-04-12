@@ -134,7 +134,7 @@ export default function CareersPage() {
             >
               <h3 className="text-2xl font-bold mb-6">Send Us Your Resume</h3>
               <p className="text-foreground/70 mb-6">
-                No openings right now — but send us your resume and we&apos;ll
+                No openings right now. Send us your resume and we&apos;ll
                 keep you in mind!
               </p>
 

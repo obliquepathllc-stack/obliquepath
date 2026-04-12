@@ -38,10 +38,10 @@ export function MetricsBar() {
               viewport={{ once: true }}
               className="flex flex-col gap-1"
             >
-              <span className="text-4xl md:text-5xl font-bold gradient-text leading-none">
+              <span className="text-5xl md:text-6xl font-extrabold gradient-text leading-none">
                 {metric.value}
               </span>
-              <span className="text-sm text-foreground/60 leading-snug mt-2">
+              <span className="text-base text-foreground/75 leading-snug mt-2 font-medium">
                 {metric.label}
               </span>
             </motion.div>
@@ -53,7 +53,7 @@ export function MetricsBar() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.5 }}
           viewport={{ once: true }}
-          className="mt-10 text-xs text-foreground/40"
+          className="mt-10 text-sm text-foreground/60"
         >
           Based on outcomes across active client engagements
         </motion.p>

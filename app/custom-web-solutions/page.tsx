@@ -45,7 +45,7 @@ export default function CustomWebSolutionsPage() {
               className="text-lg text-foreground/80 mb-8"
             >
               Need a website that works smarter, not harder? We create websites
-              with automation built-in — from online forms that trigger
+              with automation built-in. From online forms that trigger
               workflows to dynamic portals that save your team hours every week.
             </motion.p>
 
@@ -70,7 +70,7 @@ export default function CustomWebSolutionsPage() {
         </div>
       </section>
 
-      <ComingSoon message="Stay tuned — case studies and demos launching soon." />
+      <ComingSoon message="Stay tuned. Case studies and demos launching soon." />
     </PageLayout>
   );
 }

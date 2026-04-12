@@ -64,7 +64,7 @@ export default function AboutPage() {
               Obliquepath is a modern AI automation company helping small and
               mid-sized businesses save time, scale operations, and work
               smarter. We believe automation should be accessible, affordable,
-              and practical — not just for tech giants.
+              and practical, not just for tech giants.
             </motion.p>
 
             <motion.div

@@ -23,7 +23,7 @@ export function Industries() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.4 }}
           viewport={{ once: true }}
-          className="text-xs tracking-widest uppercase text-foreground/50 mb-4"
+          className="text-xs tracking-[0.2em] uppercase text-foreground/70 font-semibold mb-4"
         >
           Industries
         </motion.p>
@@ -53,7 +53,7 @@ export function Industries() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4, delay: 0.05 * index }}
               viewport={{ once: true }}
-              className="border border-border/50 rounded-full px-4 py-2 text-sm text-foreground/80 bg-card/50"
+              className="border border-border/50 rounded-full px-4 py-2 text-base text-foreground/85 bg-card/50 font-medium"
             >
               {industry}
             </motion.span>
@@ -65,7 +65,7 @@ export function Industries() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
           viewport={{ once: true }}
-          className="text-sm text-foreground/50"
+          className="text-base text-foreground/70 font-medium"
         >
           Don&apos;t see your industry? If you have a process problem, we&apos;ve
           likely solved a version of it.

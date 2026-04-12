@@ -14,7 +14,7 @@ const caseStudies = [
     tag: "Insurance Brokerage",
     result: "2× more closed policies",
     description:
-      "Automated lead follow-up, quote reminders, and CRM integration eliminated manual chasing — agents focused on selling.",
+      "Automated lead follow-up, quote reminders, and CRM integration eliminated manual chasing. Agents focused on selling.",
   },
   {
     client: "Immaculatus Cleaning",
@@ -42,7 +42,7 @@ export function CaseStudiesPreview() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.4 }}
           viewport={{ once: true }}
-          className="text-xs tracking-widest uppercase text-foreground/50 mb-4"
+          className="text-xs tracking-[0.2em] uppercase text-foreground/70 font-semibold mb-4"
         >
           Selected Work
         </motion.p>
@@ -68,13 +68,13 @@ export function CaseStudiesPreview() {
               className="border border-border/50 rounded-xl p-6 bg-card/50 flex flex-col gap-3"
             >
               <div className="flex items-start justify-between gap-2 flex-wrap">
-                <h3 className="text-base font-semibold">{cs.client}</h3>
-                <span className="text-xs text-foreground/50 bg-primary/5 border border-border/50 rounded-full px-2.5 py-1 shrink-0">
+                <h3 className="text-lg font-semibold">{cs.client}</h3>
+                <span className="text-xs text-foreground/60 bg-primary/5 border border-border/50 rounded-full px-2.5 py-1 shrink-0 font-medium">
                   {cs.tag}
                 </span>
               </div>
-              <p className="text-primary font-semibold text-base">{cs.result}</p>
-              <p className="text-sm text-foreground/70 leading-relaxed">
+              <p className="text-primary font-bold text-lg">{cs.result}</p>
+              <p className="text-base text-foreground/80 leading-relaxed">
                 {cs.description}
               </p>
             </motion.div>
@@ -91,7 +91,7 @@ export function CaseStudiesPreview() {
         >
           <Link
             href="/case-studies"
-            className="inline-flex items-center gap-1 text-sm text-primary hover:text-primary/80 transition-colors"
+            className="inline-flex items-center gap-1 text-base text-primary hover:text-primary/80 transition-colors font-medium"
           >
             View All Case Studies
             <ArrowRight className="h-4 w-4" />

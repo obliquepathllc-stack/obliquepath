@@ -40,7 +40,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-[64px] font-bold leading-tight tracking-tight"
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-[72px] font-extrabold leading-[1.05] tracking-tight"
           >
             We Build AI Systems and Custom Platforms That{" "}
             <span className="gradient-text">
@@ -52,9 +52,9 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-base sm:text-lg md:text-xl text-foreground/60 max-w-3xl"
+            className="text-lg sm:text-xl md:text-2xl text-foreground/80 max-w-3xl font-medium leading-relaxed"
           >
-            From staffing automation to government-grade integrations — Oblique
+            From staffing automation to government-grade integrations. Oblique
             Path delivers working software that eliminates overhead, accelerates
             decisions, and scales with your organization.
           </motion.p>
@@ -69,14 +69,14 @@ export function HeroSection() {
             <Link href="/case-studies">
               <Button
                 size="lg"
-                className="bg-primary hover:bg-primary/90 w-full sm:w-auto"
+                className="bg-primary hover:bg-primary/90 w-full sm:w-auto font-semibold"
               >
                 See How It Works
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
             <Link href="/book-demo">
-              <Button size="lg" variant="outline" className="w-full sm:w-auto">
+              <Button size="lg" variant="outline" className="w-full sm:w-auto font-semibold">
                 Book a Strategy Call
               </Button>
             </Link>
@@ -87,7 +87,7 @@ export function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-sm text-foreground/50"
+            className="text-base text-foreground/70 font-medium"
           >
             Trusted by businesses and organizations across Canada and North
             America

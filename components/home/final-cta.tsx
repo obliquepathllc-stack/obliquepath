@@ -22,23 +22,23 @@ export function FinalCTA() {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Ready to Replace the Manual Work?
           </h2>
-          <p className="text-foreground/60 text-base md:text-lg mb-8">
+          <p className="text-foreground/75 text-lg md:text-xl mb-8 font-medium leading-relaxed">
             Tell us what&apos;s broken. We&apos;ll tell you what it takes to fix
-            it — and we&apos;ll build it.
+            it and we&apos;ll build it.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
             <Link href="/book-demo">
               <Button
                 size="lg"
-                className="bg-primary hover:bg-primary/90 w-full sm:w-auto"
+                className="bg-primary hover:bg-primary/90 w-full sm:w-auto font-semibold"
               >
                 Book a Strategy Call
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
             <Link href="/contact">
-              <Button size="lg" variant="outline" className="w-full sm:w-auto">
+              <Button size="lg" variant="outline" className="w-full sm:w-auto font-semibold">
                 Contact Us
               </Button>
             </Link>

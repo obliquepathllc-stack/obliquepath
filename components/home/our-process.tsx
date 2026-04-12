@@ -11,7 +11,7 @@ const steps = [
     number: "01",
     title: "Discovery & Scoping",
     description:
-      "We map your current operation, identify the highest-leverage problems, and define exactly what gets built — before anyone writes a line of code.",
+      "We map your current operation, identify the highest-leverage problems, and define exactly what gets built, before anyone writes a line of code.",
   },
   {
     number: "02",
@@ -23,7 +23,7 @@ const steps = [
     number: "03",
     title: "Build & Deploy",
     description:
-      "We build fast, iterate in the open, and deploy to production — typically within 4–6 weeks for automation builds, 4–5 months for custom platforms.",
+      "We build fast, iterate in the open, and deploy to production, typically within 4-6 weeks for automation builds, 4-5 months for custom platforms.",
   },
   {
     number: "04",
@@ -43,7 +43,7 @@ export function OurProcess() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.4 }}
           viewport={{ once: true }}
-          className="text-xs tracking-widest uppercase text-foreground/50 mb-4"
+          className="text-xs tracking-[0.2em] uppercase text-foreground/70 font-semibold mb-4"
         >
           How We Work
         </motion.p>
@@ -55,7 +55,7 @@ export function OurProcess() {
           viewport={{ once: true }}
           className="text-3xl md:text-4xl font-bold mb-14 max-w-2xl"
         >
-          From First Call to Live System — No Surprises.
+          From First Call to Live System. No Surprises.
         </motion.h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
@@ -68,11 +68,11 @@ export function OurProcess() {
               viewport={{ once: true }}
               className="flex flex-col gap-3"
             >
-              <span className="text-4xl font-bold text-foreground/10 font-mono leading-none">
+              <span className="text-5xl font-black text-foreground/15 font-mono leading-none">
                 {step.number}
               </span>
-              <h3 className="text-base font-semibold mt-1">{step.title}</h3>
-              <p className="text-sm text-foreground/70 leading-relaxed">
+              <h3 className="text-lg font-semibold mt-1">{step.title}</h3>
+              <p className="text-base text-foreground/80 leading-relaxed">
                 {step.description}
               </p>
             </motion.div>

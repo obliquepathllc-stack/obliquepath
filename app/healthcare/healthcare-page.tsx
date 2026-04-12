@@ -136,7 +136,7 @@ const painPoints = [
   {
     title: "Invoicing Delays",
     description:
-      "Pulling hours, applying rates, generating PDFs, sending to clients — it's a full-time job. And every delay in invoicing is a delay in getting paid.",
+      "Pulling hours, applying rates, generating PDFs, sending to clients. It's a full-time job. And every delay in invoicing is a delay in getting paid.",
   },
 ];
 
@@ -230,8 +230,8 @@ function TwoPathsSection() {
                 Done-For-You Automation
               </h3>
               <p className="text-sm text-foreground/70 leading-relaxed">
-                We connect your existing tools — intake forms, spreadsheets,
-                email, invoicing software — and automate the flow between them.
+                We connect your existing tools (intake forms, spreadsheets,
+                email, invoicing software) and automate the flow between them.
                 No new software to learn. Live in weeks, not months.
               </p>
             </div>
@@ -296,7 +296,7 @@ function TwoPathsSection() {
               </h3>
               <p className="text-sm text-foreground/70 leading-relaxed">
                 For agencies ready to replace spreadsheets and disconnected
-                tools with a single system — we design and build a custom
+                tools with a single system. We design and build a custom
                 platform tailored to your workflow, your rates, and your
                 clients.
               </p>
@@ -328,7 +328,7 @@ function TwoPathsSection() {
               </p>
               <p className="text-sm text-foreground/60">
                 <span className="font-medium text-foreground">Pricing:</span>{" "}
-                Scoped per engagement — contact for a custom quote
+                Scoped per engagement. Contact us for a custom quote.
               </p>
             </div>
 
@@ -373,7 +373,7 @@ const flowSteps = [
     number: "04",
     title: "Invoice Generation",
     description:
-      "A formatted invoice is generated and delivered to the client — same day, every time.",
+      "A formatted invoice is generated and delivered to the client, same day, every time.",
   },
   {
     icon: ScrollText,
@@ -405,7 +405,7 @@ function HowItWorksSection() {
           viewport={{ once: true }}
           className="text-3xl md:text-4xl font-bold mb-14 max-w-2xl"
         >
-          From Shift Worked to Invoice Sent — Automatically.
+          From Shift Worked to Invoice Sent. Automatically.
         </motion.h2>
 
         {/* Flow — horizontal on desktop with arrows, vertical stack on mobile */}
@@ -580,7 +580,7 @@ function WhoThisIsForSection() {
           viewport={{ once: true }}
           className="mt-8 text-sm text-foreground/50 max-w-2xl"
         >
-          If you&apos;re placing staff and losing hours to admin — we built this
+          If you&apos;re placing staff and losing hours to admin, we built this
           for you.
         </motion.p>
       </div>
@@ -600,7 +600,7 @@ const platformFeatures = [
     icon: LayoutDashboard,
     title: "Manager Dashboard",
     description:
-      "Real-time visibility into active shifts, pending timesheets, and outstanding invoices — in one place.",
+      "Real-time visibility into active shifts, pending timesheets, and outstanding invoices, all in one place.",
   },
   {
     icon: Users,
@@ -694,7 +694,7 @@ function PlatformSection() {
         >
           <p className="text-base text-foreground/60 max-w-md">
             The platform is scoped per engagement. No two agencies are identical
-            — neither is the build.
+            Neither is the build.
           </p>
           <Link href="/book-demo" className="shrink-0">
             <Button
@@ -728,7 +728,7 @@ function FinalCTASection() {
           </h2>
           <p className="text-foreground/60 text-base md:text-lg mb-8">
             Tell us how your agency runs today. We&apos;ll show you exactly what
-            we&apos;d automate — and what it costs.
+            we&apos;d automate and what it costs.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">

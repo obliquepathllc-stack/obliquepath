@@ -28,13 +28,13 @@ const caseStudies = [
   {
     id: "harbor-one-capital",
     title:
-      "Harbor One Capital — Automated Follow-Ups That Doubled Policy Conversions",
+      "Harbor One Capital: Automated Follow-Ups That Doubled Policy Conversions",
     client: "Harbor One Capital",
     industry: "Insurance Brokerage",
     location: "Ontario, Canada",
     service: "Obliq Path – Lead Nurture Automation + CRM Integration",
     challenge:
-      "Harbor One Capital's agents were overwhelmed with managing quotes, callbacks, and follow-ups. Many potential clients weren't hearing back fast enough — leading to missed sales and poor engagement.",
+      "Harbor One Capital's agents were overwhelmed with managing quotes, callbacks, and follow-ups. Many potential clients weren't hearing back fast enough, leading to missed sales and poor engagement.",
     solution: [
       "Instantly followed up with every inbound lead via SMS and email",
       "Scheduled automatic reminders for quotes and renewals",
@@ -65,7 +65,7 @@ const caseStudies = [
     ],
     timeframe: "within 6 weeks",
     testimonial:
-      "It's like we finally have a digital assistant that never forgets. Obliq Path made our entire process smoother — and our conversion rate speaks for itself.",
+      "It's like we finally have a digital assistant that never forgets. Obliq Path made our entire process smoother. Our conversion rate speaks for itself.",
     clientName: "Samuel Leye-Ige",
     clientTitle: "Managing Director, Harbor One Capital",
     ctaText: "Automate Your Follow-Ups",
@@ -76,7 +76,7 @@ const caseStudies = [
   },
   {
     id: "junk-cycle",
-    title: "Junk Cycle — Cutting Admin Time by 60% with AI-Powered Scheduling",
+    title: "Junk Cycle: Cutting Admin Time by 60% with AI-Powered Scheduling",
     client: "Junk Cycle",
     industry: "Junk Removal & Waste Services",
     location: "Winnipeg, Manitoba",
@@ -123,13 +123,13 @@ const caseStudies = [
   },
   {
     id: "immaculatus-cleaning",
-    title: "Immaculatus Cleaning — 70% Fewer No-Shows with Smart Scheduling",
+    title: "Immaculatus Cleaning: 70% Fewer No-Shows with Smart Scheduling",
     client: "Immaculatus Cleaning",
     industry: "Cleaning Services",
     location: "Toronto, Ontario",
     service: "Obliq Path – Scheduling Automation + Client Communication",
     challenge:
-      "Immaculatus Cleaning faced daily scheduling chaos — clients often forgot appointments, and admin staff spent hours rescheduling or confirming bookings manually. This led to missed jobs and operational downtime.",
+      "Immaculatus Cleaning faced daily scheduling chaos. Clients often forgot appointments, and admin staff spent hours rescheduling or confirming bookings manually. This led to missed jobs and operational downtime.",
     solution: [
       "Implemented an automated online booking system with live calendar sync",
       "Set up SMS/email confirmations and 24-hour appointment reminders",
@@ -400,7 +400,7 @@ export default function CaseStudiesPage() {
                 <div className="border border-border/50 rounded-xl p-6 bg-card/50 hover:border-primary/40 hover:bg-primary/5 transition-all duration-200 flex flex-col gap-3 group">
                   <h3 className="text-base font-semibold">Healthcare Staffing Automation</h3>
                   <p className="text-sm text-foreground/60 leading-relaxed">
-                    Timesheet intake, invoicing, scheduling, and compliance — automated end-to-end for healthcare staffing agencies.
+                    Timesheet intake, invoicing, scheduling, and compliance, automated end-to-end for healthcare staffing agencies.
                   </p>
                   <span className="text-sm text-primary flex items-center gap-1 mt-auto group-hover:gap-2 transition-all">
                     See the full solution <ArrowRight className="h-3.5 w-3.5" />

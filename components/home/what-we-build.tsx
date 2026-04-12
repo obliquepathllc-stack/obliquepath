@@ -11,19 +11,19 @@ const capabilities = [
     icon: BrainCircuit,
     title: "AI & Automation Systems",
     description:
-      "Intelligent workflows that handle intake, validation, routing, approvals, and reporting — without a human in the loop. From healthcare staffing to lead nurturing, we automate the work that kills your team's time.",
+      "Intelligent workflows that handle intake, validation, routing, approvals, and reporting, without a human in the loop. From healthcare staffing to lead nurturing, we automate the work that kills your team's time.",
   },
   {
     icon: LayoutDashboard,
     title: "Custom Platforms & Web Applications",
     description:
-      "Secure, scalable platforms built for your specific operation. Portals, dashboards, management systems, and client-facing tools — engineered for performance and built to grow.",
+      "Secure, scalable platforms built for your specific operation. Portals, dashboards, management systems, and client-facing tools, engineered for performance and built to grow.",
   },
   {
     icon: PhoneCall,
     title: "Voice Agents & AI Integration",
     description:
-      "Conversational AI agents that handle inbound calls, qualify leads, book appointments, and escalate intelligently — deployed across phone, web, and messaging channels.",
+      "Conversational AI agents that handle inbound calls, qualify leads, book appointments, and escalate intelligently, deployed across phone, web, and messaging channels.",
   },
 ];
 
@@ -37,7 +37,7 @@ export function WhatWeBuild() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.4 }}
           viewport={{ once: true }}
-          className="text-xs tracking-widest uppercase text-foreground/50 mb-4"
+          className="text-xs tracking-[0.2em] uppercase text-foreground/70 font-semibold mb-4"
         >
           What We Build
         </motion.p>
@@ -53,7 +53,7 @@ export function WhatWeBuild() {
             Three Core Capabilities.{" "}
             <span className="gradient-text">Infinite Configurations.</span>
           </h2>
-          <p className="text-foreground/60 text-base max-w-xl">
+          <p className="text-foreground/75 text-lg max-w-xl font-medium">
             We don&apos;t offer packages. We scope what you actually need and
             build it to last.
           </p>
@@ -72,8 +72,8 @@ export function WhatWeBuild() {
               <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
                 <cap.icon className="h-5 w-5 text-primary" />
               </div>
-              <h3 className="text-base font-semibold">{cap.title}</h3>
-              <p className="text-sm text-foreground/70 leading-relaxed">
+              <h3 className="text-lg font-semibold">{cap.title}</h3>
+              <p className="text-base text-foreground/80 leading-relaxed">
                 {cap.description}
               </p>
             </motion.div>
