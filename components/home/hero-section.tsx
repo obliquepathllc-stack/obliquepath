@@ -11,7 +11,6 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
 const clientLogos = [
-  { name: "First Point Cleaners", src: "/clients-logo/immaculatus-cleaning.svg" },
   { name: "BuildPath", src: "/clients-logo/buildpath.svg" },
   { name: "Anitrous", src: "/clients-logo/anitrous.svg" },
   { name: "Aerrand", src: "/clients-logo/errand.svg" },
