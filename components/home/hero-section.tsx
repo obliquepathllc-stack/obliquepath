@@ -40,9 +40,13 @@ export function HeroSection() {
         {/* Headline + Subheadline + CTAs */}
         <div className="flex flex-col space-y-6">
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[72px] font-extrabold leading-[1.05] tracking-tight">
-            {/* Line 1 — plain words, each slides up individually */}
+            {/* Line 1 — each word slides up individually */}
             {LINE1.map((word, i) => (
-              <span key={i} className="inline-block overflow-hidden mr-[0.22em]">
+              <span
+                key={i}
+                className="inline-block overflow-hidden"
+                style={{ marginRight: "0.25em" }}
+              >
                 <motion.span
                   initial={{ opacity: 0, y: 32 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -53,21 +57,15 @@ export function HeroSection() {
                 </motion.span>
               </span>
             ))}
-            {/* Line 2 — gradient words continue the stagger */}
-            <span className="gradient-text">
-              {LINE2.map((word, i) => (
-                <span key={i} className="inline-block overflow-hidden mr-[0.22em]">
-                  <motion.span
-                    initial={{ opacity: 0, y: 32 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: wordDelay(LINE1.length + i), ease: [0.22, 1, 0.36, 1] }}
-                    className="inline-block"
-                  >
-                    {word}
-                  </motion.span>
-                </span>
-              ))}
-            </span>
+            {/* Line 2 — gradient animates as one block so bg-clip-text works on all browsers */}
+            <motion.span
+              className="gradient-text inline"
+              initial={{ opacity: 0, y: 32 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: wordDelay(LINE1.length), ease: [0.22, 1, 0.36, 1] }}
+            >
+              {LINE2.join(" ")}
+            </motion.span>
           </h1>
 
           <motion.p
