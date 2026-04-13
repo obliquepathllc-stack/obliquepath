@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Footer } from "@/components/shared/footer";
 import { Toaster } from "@/components/ui/sonner";
 import { Navbar } from "@/components/shared/navbar";
+import { Analytics } from "@vercel/analytics/next";
 // import AIChatWidget from "@/components/ai-chatbot";
 
 // const inter = Inter({
@@ -96,6 +97,7 @@ export default function RootLayout({
 
                     <Toaster />
                 </ThemeProvider>
+                <Analytics />
                 {/* <AIChatWidget /> */}
             </body>
         </html>
