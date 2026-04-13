@@ -19,6 +19,7 @@ import { CaseStudiesPreview } from "@/components/home/case-studies-preview";
 import { Industries } from "@/components/home/industries";
 import { OurProcess } from "@/components/home/our-process";
 import { FinalCTA } from "@/components/home/final-cta";
+import { ChatWidget } from "@/components/home/chat-widget";
 import { FloatingElements } from "@/components/floating-elements";
 import { MouseSpotlight } from "@/components/mouse-spotlight";
 import { ScrollWatcher } from "@/components/scroll-watcher";
@@ -123,6 +124,9 @@ export default function Home() {
 
       {/* 8. FINAL CTA */}
       <FinalCTA />
+
+      {/* CHAT WIDGET — homepage only */}
+      <ChatWidget />
     </motion.div>
   );
 }
