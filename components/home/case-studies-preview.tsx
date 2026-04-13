@@ -17,11 +17,11 @@ const caseStudies = [
       "Automated lead follow-up, quote reminders, and CRM integration eliminated manual chasing. Agents focused on selling.",
   },
   {
-    client: "Immaculatus Cleaning",
-    tag: "Cleaning Services",
-    result: "70% fewer no-shows",
+    client: "Aerrand",
+    tag: "Technology & Operations",
+    result: "70% faster onboarding",
     description:
-      "Smart scheduling automation with SMS/email reminders and live calendar sync cut admin time by 24 hours per week.",
+      "End-to-end onboarding automation replaced manual emails and spreadsheets. Zero manual follow-ups required after go-live.",
   },
   {
     client: "Junk Cycle",
