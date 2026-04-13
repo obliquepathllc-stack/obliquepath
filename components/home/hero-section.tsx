@@ -57,10 +57,6 @@ export function HeroSection() {
   const displayedLine2 =
     charCount > LINE1.length ? FULL_TEXT.slice(LINE1.length, charCount) : "";
 
-  // Subheadline + CTAs appear after typing is done
-  const afterDoneDelay = (extra: number) =>
-    `${(START_DELAY + FULL_TEXT.length * TYPING_SPEED + extra) / 1000}s`;
-
   return (
     <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 px-4 lg:px-16 overflow-hidden">
       {/* Subtle background glow */}

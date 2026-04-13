@@ -59,6 +59,8 @@ export function ChatWidget() {
   const [showPulse, setShowPulse] = useState(true);
   const [showIdlePrompt, setShowIdlePrompt] = useState(false);
   const [leadCaptured, setLeadCaptured] = useState(false);
+  const [showTeaser, setShowTeaser] = useState(false);
+  const [teaserDismissed, setTeaserDismissed] = useState(false);
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -69,6 +71,14 @@ export function ChatWidget() {
     const t = setTimeout(() => setShowPulse(false), 6000);
     return () => clearTimeout(t);
   }, []);
+
+  // Show teaser bubble after 4 seconds (if chat not opened)
+  useEffect(() => {
+    const t = setTimeout(() => {
+      if (!isOpen && !teaserDismissed) setShowTeaser(true);
+    }, 4000);
+    return () => clearTimeout(t);
+  }, [isOpen, teaserDismissed]);
 
   // Scroll to bottom on new messages
   useEffect(() => {
@@ -318,6 +328,41 @@ export function ChatWidget() {
         )}
       </AnimatePresence>
 
+      {/* ── Teaser bubble ─────────────────────────────────────────────────── */}
+      <AnimatePresence>
+        {showTeaser && !isOpen && !teaserDismissed && (
+          <motion.div
+            initial={{ opacity: 0, y: 10, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 10, scale: 0.95 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+            className="fixed bottom-24 right-5 z-50 max-w-[220px]"
+          >
+            <div className="relative bg-card border border-border/60 shadow-xl rounded-2xl rounded-br-sm px-4 py-3">
+              <button
+                onClick={() => { setShowTeaser(false); setTeaserDismissed(true); }}
+                className="absolute top-1.5 right-1.5 text-foreground/30 hover:text-foreground/60 transition-colors"
+                aria-label="Dismiss"
+              >
+                <X className="h-3 w-3" />
+              </button>
+              <p className="text-sm font-medium leading-snug pr-3">
+                Thinking about automating something?
+              </p>
+              <p className="text-xs text-foreground/55 mt-1">Ask us — takes 30 seconds.</p>
+              <button
+                onClick={() => { setShowTeaser(false); setTeaserDismissed(true); setIsOpen(true); }}
+                className="mt-2.5 w-full text-xs font-semibold bg-primary text-primary-foreground rounded-lg py-1.5 hover:bg-primary/90 transition-colors"
+              >
+                Let&apos;s chat
+              </button>
+            </div>
+            {/* Arrow pointing down-right toward button */}
+            <div className="w-3 h-3 bg-card border-r border-b border-border/60 rotate-45 ml-auto mr-5 -mt-1.5" />
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* ── Trigger button ────────────────────────────────────────────────── */}
       <div className="fixed bottom-6 right-5 z-50 group">
         {/* Tooltip */}
@@ -338,7 +383,7 @@ export function ChatWidget() {
 
         {/* Button */}
         <button
-          onClick={() => setIsOpen((prev) => !prev)}
+          onClick={() => { setIsOpen((prev) => !prev); setShowTeaser(false); setTeaserDismissed(true); }}
           aria-label={isOpen ? "Close chat" : "Open chat"}
           className="relative w-14 h-14 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-lg hover:bg-primary/90 hover:scale-105 active:scale-95 transition-all duration-200"
         >
