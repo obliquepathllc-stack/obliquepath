@@ -10,25 +10,11 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
-// ─── WORD ANIMATION VARIANTS ──────────────────────────────────────────────────
-const headlineContainer = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.08, delayChildren: 0.55 },
-  },
-};
-
-const wordVariant = {
-  hidden: { opacity: 0, y: 28 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
-  },
-};
-
 const LINE1 = ["Stop", "Running", "on", "Manual."];
 const LINE2 = ["Build", "Systems", "That", "Work", "Without", "You."];
+
+// Start after page fade (0.5s), stagger 0.08s per word
+const wordDelay = (index: number) => 0.55 + index * 0.08;
 
 const clientLogos = [
   { name: "First Point Cleaners", src: "/clients-logo/first-point-cleaners.jpg" },
@@ -53,31 +39,36 @@ export function HeroSection() {
       <div className="container max-w-5xl mx-auto">
         {/* Headline + Subheadline + CTAs */}
         <div className="flex flex-col space-y-6">
-          <motion.h1
-            variants={headlineContainer}
-            initial="hidden"
-            animate="visible"
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-[72px] font-extrabold leading-[1.05] tracking-tight"
-          >
-            {/* Line 1 — plain */}
-            {LINE1.map((word) => (
-              <span key={word} className="inline-block overflow-hidden mr-[0.22em]">
-                <motion.span variants={wordVariant} className="inline-block">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[72px] font-extrabold leading-[1.05] tracking-tight">
+            {/* Line 1 — plain words, each slides up individually */}
+            {LINE1.map((word, i) => (
+              <span key={i} className="inline-block overflow-hidden mr-[0.22em]">
+                <motion.span
+                  initial={{ opacity: 0, y: 32 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: wordDelay(i), ease: [0.22, 1, 0.36, 1] }}
+                  className="inline-block"
+                >
                   {word}
                 </motion.span>
               </span>
             ))}
-            {/* Line 2 — gradient, words animate inside the gradient span */}
+            {/* Line 2 — gradient words continue the stagger */}
             <span className="gradient-text">
-              {LINE2.map((word) => (
-                <span key={word} className="inline-block overflow-hidden mr-[0.22em]">
-                  <motion.span variants={wordVariant} className="inline-block">
+              {LINE2.map((word, i) => (
+                <span key={i} className="inline-block overflow-hidden mr-[0.22em]">
+                  <motion.span
+                    initial={{ opacity: 0, y: 32 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: wordDelay(LINE1.length + i), ease: [0.22, 1, 0.36, 1] }}
+                    className="inline-block"
+                  >
                     {word}
                   </motion.span>
                 </span>
               ))}
             </span>
-          </motion.h1>
+          </h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
