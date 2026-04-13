@@ -1,21 +1,15 @@
-import axios from "axios";
-const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-
-const axiosInstance = axios.create({
-  baseURL: apiUrl,
-});
-
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export async function contactUs(data: any): Promise<any | null> {
   try {
-    const response = await axiosInstance.post("/contact", data);
-    return response.data;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  } catch (error: any) {
-    console.error(
-      "Error sending contact form:",
-      error.response?.data || error.message
-    );
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+    if (!response.ok) throw new Error("Request failed");
+    return await response.json();
+  } catch (error) {
+    console.error("Error sending contact form:", error);
     return null;
   }
 }
@@ -23,28 +17,31 @@ export async function contactUs(data: any): Promise<any | null> {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export async function bookDemo(data: any): Promise<any | null> {
   try {
-    const response = await axiosInstance.post("/book-demo", data);
-    return response.data;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  } catch (error: any) {
-    console.error(
-      "Error sending contact form:",
-      error.response?.data || error.message
-    );
+    const response = await fetch("/api/book-demo", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+    if (!response.ok) throw new Error("Request failed");
+    return await response.json();
+  } catch (error) {
+    console.error("Error sending demo request:", error);
     return null;
   }
 }
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export async function submitApplication(data: any): Promise<any | null> {
   try {
-    const response = await axiosInstance.post("/application", data);
-    return response.data;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  } catch (error: any) {
-    console.error(
-      "Error sending application:",
-      error.response?.data || error.message
-    );
+    const response = await fetch("/api/application", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+    if (!response.ok) throw new Error("Request failed");
+    return await response.json();
+  } catch (error) {
+    console.error("Error sending application:", error);
     return null;
   }
 }
