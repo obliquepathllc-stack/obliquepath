@@ -232,6 +232,12 @@ button {
   animation: marquee 30s linear infinite;
 }
 
+/* Typewriter cursor blink */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
 
 /* Extra: If you need animate-gradient as a class for Tailwind */
 .animate-gradient {
