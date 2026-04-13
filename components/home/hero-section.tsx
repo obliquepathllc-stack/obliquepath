@@ -52,12 +52,7 @@ export function HeroSection() {
 
       <div className="container max-w-5xl mx-auto">
         {/* Headline + Subheadline + CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="flex flex-col space-y-6"
-        >
+        <div className="flex flex-col space-y-6">
           <motion.h1
             variants={headlineContainer}
             initial="hidden"
@@ -128,7 +123,7 @@ export function HeroSection() {
             Trusted by businesses and organizations across Canada and North
             America
           </motion.p>
-        </motion.div>
+        </div>
 
         {/* Client logo strip — infinite marquee */}
         <motion.div
