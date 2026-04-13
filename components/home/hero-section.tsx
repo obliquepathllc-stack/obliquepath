@@ -14,7 +14,7 @@ import { ArrowRight } from "lucide-react";
 const headlineContainer = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.07, delayChildren: 0.05 },
+    transition: { staggerChildren: 0.08, delayChildren: 0.55 },
   },
 };
 
@@ -82,7 +82,7 @@ export function HeroSection() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 1.6 }}
             className="text-lg sm:text-xl md:text-2xl text-foreground/80 max-w-3xl font-medium leading-relaxed"
           >
             Oblique Path builds AI automation systems and custom platforms for
@@ -94,7 +94,7 @@ export function HeroSection() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.6, delay: 1.8 }}
             className="flex flex-col sm:flex-row gap-4 pt-2"
           >
             <Link href="/case-studies">
@@ -117,7 +117,7 @@ export function HeroSection() {
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.6, delay: 2.0 }}
             className="text-base text-foreground/70 font-medium"
           >
             Trusted by businesses and organizations across Canada and North
