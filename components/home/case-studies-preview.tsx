@@ -59,13 +59,13 @@ export function CaseStudiesPreview() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {caseStudies.map((cs, index) => (
+            <Link key={cs.client} href="/case-studies">
             <motion.div
-              key={cs.client}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 * index }}
               viewport={{ once: true }}
-              className="border border-border/50 rounded-xl p-6 bg-card/50 flex flex-col gap-3"
+              className="border border-border/50 rounded-xl p-6 bg-card/50 flex flex-col gap-3 hover:border-primary/40 hover:bg-primary/5 transition-all duration-200 cursor-pointer h-full"
             >
               <div className="flex items-start justify-between gap-2 flex-wrap">
                 <h3 className="text-lg font-semibold">{cs.client}</h3>
@@ -78,24 +78,20 @@ export function CaseStudiesPreview() {
                 {cs.description}
               </p>
             </motion.div>
+            </Link>
           ))}
         </div>
 
         {/* View all link */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="mt-8"
-        >
+        <div className="mt-8 relative z-10">
           <Link
             href="/case-studies"
-            className="inline-flex items-center gap-1 text-base text-primary hover:text-primary/80 transition-colors font-medium"
+            className="inline-flex items-center gap-2 text-base text-primary hover:text-primary/80 transition-colors font-semibold"
           >
             View All Case Studies
             <ArrowRight className="h-4 w-4" />
           </Link>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
