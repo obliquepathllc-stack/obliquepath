@@ -5,7 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Footer } from "@/components/shared/footer";
 import { Toaster } from "@/components/ui/sonner";
 import { Navbar } from "@/components/shared/navbar";
-import { Analytics } from "@vercel/analytics/next";
+import { Analytics } from "@vercel/analytics/react";
 // import AIChatWidget from "@/components/ai-chatbot";
 
 // const inter = Inter({
