@@ -10,6 +10,26 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
+// ─── WORD ANIMATION VARIANTS ──────────────────────────────────────────────────
+const headlineContainer = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.07, delayChildren: 0.05 },
+  },
+};
+
+const wordVariant = {
+  hidden: { opacity: 0, y: 28 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+
+const LINE1 = ["Stop", "Running", "on", "Manual."];
+const LINE2 = ["Build", "Systems", "That", "Work", "Without", "You."];
+
 const clientLogos = [
   { name: "First Point Cleaners", src: "/clients-logo/first-point-cleaners.jpg" },
   { name: "BuildPath", src: "/clients-logo/buildpath.svg" },
@@ -39,14 +59,28 @@ export function HeroSection() {
           className="flex flex-col space-y-6"
         >
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            variants={headlineContainer}
+            initial="hidden"
+            animate="visible"
             className="text-5xl sm:text-6xl md:text-7xl lg:text-[72px] font-extrabold leading-[1.05] tracking-tight"
           >
-            Stop Running on Manual.{" "}
+            {/* Line 1 — plain */}
+            {LINE1.map((word) => (
+              <span key={word} className="inline-block overflow-hidden mr-[0.22em]">
+                <motion.span variants={wordVariant} className="inline-block">
+                  {word}
+                </motion.span>
+              </span>
+            ))}
+            {/* Line 2 — gradient, words animate inside the gradient span */}
             <span className="gradient-text">
-              Build Systems That Work Without You.
+              {LINE2.map((word) => (
+                <span key={word} className="inline-block overflow-hidden mr-[0.22em]">
+                  <motion.span variants={wordVariant} className="inline-block">
+                    {word}
+                  </motion.span>
+                </span>
+              ))}
             </span>
           </motion.h1>
 
