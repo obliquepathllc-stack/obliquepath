@@ -10,7 +10,7 @@ export async function POST(request: Request) {
 
     await resend.emails.send({
       from: "Oblique Path Website <onboarding@resend.dev>",
-      to: "info@obliquepath.dev",
+      to: "obliquepathllc@gmail.com",
       replyTo: email,
       subject: `New Strategy Call Request — ${firstName} ${lastName} (${company})`,
       html: `
