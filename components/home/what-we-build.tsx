@@ -29,6 +29,20 @@ const capabilities = [
       "Conversational AI that handles inbound calls, qualifies leads, books appointments, and escalates intelligently. Deployed across phone, web, and messaging channels simultaneously.",
     detail: "Inbound call automation · Lead qualification · Appointment booking · Multi-channel AI",
   },
+  {
+    number: "04",
+    title: "Mobile App Development",
+    description:
+      "Native and cross-platform mobile apps built for your specific operation. iOS and Android, with automation and backend integrations built in from day one. Not a template repackaged.",
+    detail: "iOS & Android · React Native · App-backend integration · Offline-first · Push automation",
+  },
+  {
+    number: "05",
+    title: "AI B2B Lead Generation",
+    description:
+      "Automated systems that identify, qualify, and nurture B2B prospects at scale. AI-powered outreach personalization that books meetings without a sales team managing every touchpoint.",
+    detail: "Prospect enrichment · AI-personalized outreach · Multi-channel sequences · Lead scoring · CRM sync",
+  },
 ];
 
 const reveal = (delay = 0) => ({
@@ -50,7 +64,7 @@ export function WhatWeBuild() {
               What We Build
             </p>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-[-0.02em] leading-[0.95]">
-              Three core<br />capabilities.
+              Five core<br />capabilities.
             </h2>
           </motion.div>
           <motion.div {...reveal(0.1)} className="flex items-end">
