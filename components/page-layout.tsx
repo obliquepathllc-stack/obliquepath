@@ -1,12 +1,11 @@
 "use client";
 
-import { type ReactNode, useState, useEffect } from "react";
-import { PageHeader } from "@/components/page-header";
-import { motion, AnimatePresence } from "framer-motion";
-import { variants, staggerContainer, fadeInUp } from "@/lib/motion-variants";
-import { TechBackground } from "@/components/tech-background";
-import { MouseSpotlight } from "@/components/mouse-spotlight";
-import { FloatingElements } from "@/components/floating-elements";
+// PageLayout — clean luxury wrapper for interior pages
+// Replaces: TechBackground, FloatingElements, MouseSpotlight (all removed — generic)
+// Used by: Services, Pricing, About, Contact, Blog, Careers, Book Demo
+
+import { type ReactNode } from "react";
+import { motion } from "framer-motion";
 import { ScrollWatcher } from "@/components/scroll-watcher";
 
 interface PageLayoutProps {
@@ -16,101 +15,41 @@ interface PageLayoutProps {
 }
 
 export function PageLayout({ children, title, subtitle }: PageLayoutProps) {
-  const [mounted, setMounted] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
-
-  // Handle mounting for client-side features
-  useEffect(() => {
-    setMounted(true);
-
-    // Check if mobile
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-
-    // Track scroll position
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("resize", checkMobile);
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  // Determine background variant based on scroll position
-  const getBgVariant = () => {
-    if (scrollY < 300) return "grid";
-    if (scrollY < 1000) return "particles";
-    return "circuits";
-  };
-
   return (
     <>
-      {/* Tech-inspired animated backgrounds */}
-      {mounted && (
-        <>
-          <div className="fixed inset-0 -z-10 overflow-hidden">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={getBgVariant()}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 1 }}
-              >
-                <TechBackground
-                  variant={getBgVariant()}
-                  density={isMobile ? "low" : "medium"}
-                  interactive={!isMobile}
-                />
-              </motion.div>
-            </AnimatePresence>
+      <ScrollWatcher />
 
-            <FloatingElements
-              count={isMobile ? 3 : 5}
-              variant="mixed"
-              opacity={0.3}
-            />
+      {/* Page hero header */}
+      <section className="relative pt-32 pb-14 md:pt-44 md:pb-20 px-4 lg:px-16 overflow-hidden border-b border-border">
+        {/* Subtle ambient glow */}
+        <div className="absolute top-0 left-1/4 w-[500px] h-[300px] bg-primary/[0.04] rounded-full blur-[100px] pointer-events-none" />
 
-            <MouseSpotlight disabled={isMobile} />
+        <div className="container max-w-6xl mx-auto relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            transition={{ duration: 0.75, ease: [0.32, 0.72, 0, 1] }}
+          >
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black tracking-[-0.025em] leading-[0.93]">
+              {title}
+            </h1>
+            {subtitle && (
+              <p className="mt-6 text-lg text-muted-foreground max-w-2xl leading-relaxed">
+                {subtitle}
+              </p>
+            )}
+          </motion.div>
+        </div>
+      </section>
 
-            {/* Add ScrollWatcher to all pages */}
-          </div>
-          <ScrollWatcher progressPosition="top" scrollToTopThreshold={300} />
-        </>
-      )}
-      <div className="relative">
-        {/* Main content with animations */}
-        <motion.div
-          variants={variants}
-          initial="hidden"
-          animate="enter"
-          exit="exit"
-          transition={{ type: "tween", duration: 0.5 }}
-          className="relative z-10"
-        >
-          <main className="min-h-screen">
-            <PageHeader title={title} subtitle={subtitle} />
-
-            <motion.div
-              variants={staggerContainer}
-              initial="hidden"
-              animate="enter"
-              className="page-content"
-            >
-              <motion.div variants={fadeInUp}>{children}</motion.div>
-            </motion.div>
-          </main>
-        </motion.div>
-      </div>
+      {/* Page content */}
+      <motion.main
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.4, delay: 0.15 }}
+      >
+        {children}
+      </motion.main>
     </>
   );
 }

@@ -1,36 +1,38 @@
 import type { Metadata } from "next";
-// import { Inter, Poppins, Fira_Code } from "next/font/google";
-import "./globals.css";
+import { Plus_Jakarta_Sans, DM_Sans, Fira_Code } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Footer } from "@/components/shared/footer";
 import { Toaster } from "@/components/ui/sonner";
 import { Navbar } from "@/components/shared/navbar";
+import { ScrollAmbient } from "@/components/scroll-ambient";
 import { Analytics } from "@vercel/analytics/react";
-// import AIChatWidget from "@/components/ai-chatbot";
+import "./globals.css";
 
-// const inter = Inter({
-//   subsets: ["latin"],
-//   variable: "--font-sans",
-//   display: "swap",
-// });
+const jakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-jakarta",
+  weight: ["300", "400", "500", "600", "700", "800"],
+  display: "swap",
+});
 
-// const poppins = Poppins({
-//   subsets: ["latin"],
-//   weight: ["400", "500", "600", "700"],
-//   variable: "--font-heading",
-//   display: "swap",
-// });
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-dm-sans",
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+});
 
-// const firaCode = Fira_Code({
-//   subsets: ["latin"],
-//   variable: "--font-mono",
-//   display: "swap",
-// });
+const firaCode = Fira_Code({
+  subsets: ["latin"],
+  variable: "--font-fira",
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
     title: "Oblique Path | AI Automation for Growing Businesses",
     description:
-        "Obliquepath helps small to mid-sized businesses automate workflows with custom AI-powered tools—from chatbots to smart inventory systems—to boost efficiency and cut costs.",
+        "Oblique Path builds automation systems and custom software for businesses ready to stop doing things manually. From AI workflows to full-stack platforms, deployed in weeks.",
     keywords: [
         "AI automation",
         "business automation",
@@ -57,7 +59,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Oblique Path | AI Automation for Growing Businesses",
         description:
-            "Unlock your business potential with AI-driven automation—from chatbots to workflow tools. Trusted by SMBs across industries.",
+            "Unlock your business potential with AI-driven automation: booking systems, lead workflows, voice agents, and custom platforms. Trusted by businesses across industries.",
         url: "https://obliquepath.dev",
         siteName: "ObliquePath",
         type: "website",
@@ -67,7 +69,6 @@ export const metadata: Metadata = {
         title: "Oblique Path | AI Automation for Growing Businesses",
         description:
             "Custom AI tools and chatbots to automate business workflows. Boost productivity, cut costs, and scale faster.",
-        // creator: "@yourTwitterHandle", // Optional
     },
     metadataBase: new URL("https://obliquepath.dev"),
     alternates: {
@@ -81,24 +82,24 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" suppressHydrationWarning>
-            <body
-                className="overflow-x-hidden"
-                // className={`${inter.variable} ${poppins.variable} ${firaCode.variable} font-sans`}
-            >
+        <html
+            lang="en"
+            suppressHydrationWarning
+            className={`${jakartaSans.variable} ${dmSans.variable} ${firaCode.variable}`}
+        >
+            <body className="overflow-x-hidden">
                 <ThemeProvider
                     attribute="class"
-                    defaultTheme="system"
-                    enableSystem
+                    defaultTheme="dark"
+                    enableSystem={false}
                 >
+                    <ScrollAmbient />
                     <Navbar />
                     {children}
                     <Footer />
-
                     <Toaster />
                 </ThemeProvider>
                 <Analytics />
-                {/* <AIChatWidget /> */}
             </body>
         </html>
     );

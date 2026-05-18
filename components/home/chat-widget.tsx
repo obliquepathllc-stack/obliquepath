@@ -20,7 +20,7 @@ interface Message {
 const OPENING_MESSAGE: Message = {
   role: "assistant",
   content:
-    "Hey — what brings you to Oblique Path today? Are you looking to automate something specific, or still exploring what's possible?",
+    "Hey, what brings you to Oblique Path today? Are you looking to automate something specific, or still exploring what's possible?",
 };
 
 // ─── HELPERS ───────────────────────────────────────────────────────────────────
@@ -349,7 +349,7 @@ export function ChatWidget() {
               <p className="text-sm font-medium leading-snug pr-3">
                 Thinking about automating something?
               </p>
-              <p className="text-xs text-foreground/55 mt-1">Ask us — takes 30 seconds.</p>
+              <p className="text-xs text-foreground/55 mt-1">Ask us. Takes 30 seconds.</p>
               <button
                 onClick={() => { setShowTeaser(false); setTeaserDismissed(true); setIsOpen(true); }}
                 className="mt-2.5 w-full text-xs font-semibold bg-primary text-primary-foreground rounded-lg py-1.5 hover:bg-primary/90 transition-colors"

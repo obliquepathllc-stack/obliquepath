@@ -1,18 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
-
-// ─── TYPEWRITER CONFIG ────────────────────────────────────────────────────────
-const LINE1 = "Stop Running on Manual. ";
-const LINE2 = "Build Systems That Work Without You.";
-const FULL_TEXT = LINE1 + LINE2;
-const TYPING_SPEED = 38; // ms per character
-const START_DELAY = 600; // ms — wait for page fade-in
+import { ArrowUpRight } from "@phosphor-icons/react";
 
 const clientLogos = [
   { name: "First Point Cleaners", src: "/clients-logo/first-point-cleaners.jpg" },
@@ -25,148 +16,116 @@ const clientLogos = [
   { name: "AQUAPROX Africa", src: "/clients-logo/aquaprox-africa.jpg" },
 ];
 
+const lineEntry = (delay: number) => ({
+  initial: { opacity: 0, y: 48, filter: "blur(14px)" },
+  animate: { opacity: 1, y: 0, filter: "blur(0px)" },
+  transition: { duration: 0.85, delay, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
+});
+
 export function HeroSection() {
-  const [charCount, setCharCount] = useState(0);
-  const [started, setStarted] = useState(false);
-  const [cursorVisible, setCursorVisible] = useState(true);
-
-  const isDone = charCount >= FULL_TEXT.length;
-
-  // Start typing after page fade
-  useEffect(() => {
-    const t = setTimeout(() => setStarted(true), START_DELAY);
-    return () => clearTimeout(t);
-  }, []);
-
-  // Type one character at a time
-  useEffect(() => {
-    if (!started || isDone) return;
-    const t = setTimeout(() => setCharCount((c) => c + 1), TYPING_SPEED);
-    return () => clearTimeout(t);
-  }, [started, charCount, isDone]);
-
-  // Blink cursor — stop blinking and hide after typing finishes
-  useEffect(() => {
-    if (!isDone) return;
-    const t = setTimeout(() => setCursorVisible(false), 1200);
-    return () => clearTimeout(t);
-  }, [isDone]);
-
-  // Split displayed text: plain part vs gradient part
-  const displayedLine1 = FULL_TEXT.slice(0, Math.min(charCount, LINE1.length));
-  const displayedLine2 =
-    charCount > LINE1.length ? FULL_TEXT.slice(LINE1.length, charCount) : "";
-
   return (
-    <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 px-4 lg:px-16 overflow-hidden">
-      {/* Subtle background glow */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
-      </div>
+    <section className="relative min-h-[100dvh] flex flex-col overflow-hidden">
 
-      <div className="container max-w-5xl mx-auto">
-        <div className="flex flex-col space-y-6">
+      {/* Main hero content — flex-1 fills remaining space above scroll indicator + logos */}
+      <div className="flex-1 flex flex-col justify-center px-4 lg:px-16 pt-32 pb-8 md:pt-44 md:pb-10 relative z-10">
+        <div className="container max-w-6xl mx-auto">
 
-          {/* ── Typewriter headline ── */}
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[72px] font-extrabold leading-[1.05] tracking-tight min-h-[1.1em]">
-            {/* Plain text portion */}
-            <span>{displayedLine1}</span>
-            {/* Gradient portion */}
-            {displayedLine2 && (
-              <span className="gradient-text">{displayedLine2}</span>
-            )}
-            {/* Blinking cursor */}
-            {!isDone || cursorVisible ? (
-              <span
-                className="inline-block w-[3px] ml-1 rounded-sm bg-primary align-middle"
-                style={{
-                  height: "0.85em",
-                  animation: "blink 0.7s step-end infinite",
-                  opacity: isDone ? (cursorVisible ? 1 : 0) : 1,
-                }}
-              />
-            ) : null}
-          </h1>
-
-          {/* Subheadline — fades in after typing completes */}
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={isDone ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-lg sm:text-xl md:text-2xl text-foreground/80 max-w-3xl font-medium leading-relaxed"
-          >
-            Oblique Path builds AI automation systems and custom platforms for
-            businesses that are done with spreadsheets, manual follow-ups, and
-            admin overhead. Working software, deployed fast.
-          </motion.p>
-
-          {/* CTAs */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={isDone ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.25 }}
-            className="flex flex-col sm:flex-row gap-4 pt-2"
-          >
-            <Link href="/case-studies">
-              <Button
-                size="lg"
-                className="bg-primary hover:bg-primary/90 w-full sm:w-auto font-semibold"
-              >
-                See How It Works
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
-            <Link href="/book-demo">
-              <Button size="lg" variant="outline" className="w-full sm:w-auto font-semibold">
-                Book a Strategy Call
-              </Button>
-            </Link>
-          </motion.div>
-
-          {/* Social proof */}
+          {/* Eyebrow */}
           <motion.p
             initial={{ opacity: 0 }}
-            animate={isDone ? { opacity: 1 } : {}}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-base text-foreground/70 font-medium"
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="text-[11px] tracking-[0.3em] uppercase text-muted-foreground font-medium mb-10"
           >
-            Trusted by businesses and organizations across Canada and North America
+            AI Automation & Custom Software
           </motion.p>
-        </div>
 
-        {/* Client logo strip — infinite marquee */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="mt-16 pt-10 border-t border-border/30"
-        >
-          <p className="text-xs tracking-[0.2em] uppercase text-foreground/40 font-semibold mb-6">
-            Trusted by
-          </p>
-          <div className="overflow-hidden relative">
-            <div className="absolute left-0 top-0 bottom-0 w-16 z-10 bg-gradient-to-r from-background to-transparent pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-16 z-10 bg-gradient-to-l from-background to-transparent pointer-events-none" />
-            <div className="flex w-max animate-marquee">
-              {[...clientLogos, ...clientLogos].map((logo, index) => (
-                <div
-                  key={index}
-                  className="shrink-0 mx-8 w-[90px] flex items-center justify-center"
-                >
+          {/* Headline — line-by-line reveal */}
+          <h1 className="text-[clamp(38px,7.5vw,104px)] font-black tracking-[-0.03em] leading-[0.92] mb-14">
+            <motion.span className="block" {...lineEntry(0.2)}>
+              Stop Running Manually.
+            </motion.span>
+            <motion.span className="gradient-text block" {...lineEntry(0.42)}>
+              Build Systems That Work Without You.
+            </motion.span>
+          </h1>
+
+          {/* Subtitle + CTAs */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.82, ease: [0.22, 1, 0.36, 1] }}
+            className="flex flex-col sm:flex-row sm:items-start gap-8"
+          >
+            <p className="text-muted-foreground text-lg leading-relaxed max-w-md">
+              We build automation systems and custom platforms for businesses done with spreadsheets, manual follow-ups, and admin overhead. Working software, deployed fast.
+            </p>
+
+            <div className="flex flex-col gap-3 sm:shrink-0">
+              <Link href="/book-demo">
+                <button className="rounded-full bg-foreground text-background font-bold px-8 py-4 flex items-center gap-2 hover:opacity-80 active:scale-[0.97] transition-all duration-200 group text-[15px] w-full justify-center sm:w-auto">
+                  Book a Strategy Call
+                  <ArrowUpRight size={16} weight="bold" className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
+                </button>
+              </Link>
+              <Link href="/case-studies">
+                <button className="rounded-full border border-border text-foreground/60 font-medium px-8 py-4 hover:border-foreground/30 hover:text-foreground transition-all duration-200 text-[15px] w-full sm:w-auto">
+                  See Our Work
+                </button>
+              </Link>
+            </div>
+          </motion.div>
+
+        </div>
+      </div>
+
+      {/* Scroll indicator — flex item, always below content, never overlaps buttons */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 1.5 }}
+        className="hidden md:flex flex-col items-center gap-2.5 py-4 relative z-10"
+      >
+        <span className="text-[9px] tracking-[0.28em] uppercase text-muted-foreground/30 font-medium">Scroll</span>
+        <div className="relative w-px h-9 rounded-full overflow-hidden bg-muted-foreground/[0.12]">
+          <motion.div
+            className="absolute top-0 left-0 w-full rounded-full"
+            style={{ height: "55%", background: "linear-gradient(to bottom, oklch(0.62 0.18 280 / 0.65), transparent)" }}
+            animate={{ top: ["-55%", "155%"] }}
+            transition={{ duration: 1.4, repeat: Infinity, ease: [0.45, 0, 0.55, 1], repeatDelay: 0.4 }}
+          />
+        </div>
+      </motion.div>
+
+      {/* Client logos — bottom strip */}
+      <motion.div
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.5 }}
+        className="relative z-10 border-t border-border px-4 lg:px-16 py-8"
+      >
+        <div className="container max-w-6xl mx-auto">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-10">
+            <p className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground/40 shrink-0 font-medium">
+              Trusted by
+            </p>
+            <div className="flex items-center gap-8 overflow-x-auto" style={{ scrollbarWidth: "none" }}>
+              {clientLogos.map((logo) => (
+                <div key={logo.name} className="shrink-0 h-6 opacity-25 hover:opacity-50 transition-opacity duration-300 grayscale">
                   <Image
                     src={logo.src}
                     alt={logo.name}
-                    width={90}
-                    height={40}
-                    className="w-full h-auto max-h-[48px] object-contain opacity-80 hover:opacity-100 transition-opacity"
+                    width={80}
+                    height={24}
+                    className="h-full w-auto object-contain"
                   />
                 </div>
               ))}
             </div>
           </div>
-        </motion.div>
-      </div>
+        </div>
+      </motion.div>
+
     </section>
   );
 }

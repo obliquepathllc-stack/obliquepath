@@ -78,7 +78,7 @@ function HeroSection() {
             className="text-base sm:text-lg md:text-xl text-foreground/60 max-w-3xl"
           >
             We build automation systems and custom platforms that handle
-            timesheet intake, scheduling, invoicing, and compliance reporting —
+            timesheet intake, scheduling, invoicing, and compliance reporting,
             so your team stops chasing paper and starts placing people.
           </motion.p>
 
@@ -656,8 +656,8 @@ function PlatformSection() {
             When You&apos;re Ready to Go Beyond Automation
           </h2>
           <p className="text-foreground/60 text-base max-w-2xl">
-            The custom platform is a full operating system for your agency —
-            built on the same automation foundation, extended with the tools
+            The custom platform is a full operating system for your agency.
+            Built on the same automation foundation, extended with the tools
             your coordinators, managers, and clients actually need.
           </p>
         </motion.div>

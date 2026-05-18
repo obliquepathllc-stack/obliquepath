@@ -1,96 +1,131 @@
 "use client";
 
-// SELECTED WORK — homepage case studies preview
-// Three cards: client name, industry tag, headline result, short description
-// Each links to /case-studies
+// Case Studies Preview — spotlight hover cards linking to individual slug pages
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight, ArrowRight } from "@phosphor-icons/react";
+import { useState, useRef, useCallback } from "react";
 
-const caseStudies = [
+const previews = [
   {
     client: "Harbor One Capital",
-    tag: "Insurance Brokerage",
-    result: "2× more closed policies",
-    description:
-      "Automated lead follow-up, quote reminders, and CRM integration eliminated manual chasing. Agents focused on selling.",
+    tag: "Insurance & Finance",
+    stat: "2×",
+    statLabel: "more closed policies",
+    description: "Automated lead follow-up, quote reminders, and CRM integration eliminated manual chasing. Agents focused on selling.",
+    slug: "harbor-one-capital",
+    wide: true,
   },
   {
     client: "Aerrand",
     tag: "Technology & Operations",
-    result: "70% faster onboarding",
-    description:
-      "End-to-end onboarding automation replaced manual emails and spreadsheets. Zero manual follow-ups required after go-live.",
+    stat: "70%",
+    statLabel: "faster onboarding",
+    description: "End-to-end onboarding automation replaced manual emails and spreadsheets. Zero manual follow-ups required after go-live.",
+    slug: "aerrand",
+    wide: false,
   },
   {
     client: "Junk Cycle",
-    tag: "Waste & Removal Services",
-    result: "60% less time on scheduling",
-    description:
-      "Online booking, automated confirmations, and dispatch coordination replaced five-platform chaos with one clean system.",
+    tag: "Waste & Removal",
+    stat: "60%",
+    statLabel: "less time on scheduling",
+    description: "Online booking, automated confirmations, and dispatch coordination replaced five-platform chaos with one clean system.",
+    slug: "junk-cycle",
+    wide: false,
   },
 ];
 
+function PreviewCard({ preview, index }: { preview: typeof previews[0]; index: number }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [spot, setSpot] = useState({ x: 0, y: 0 });
+  const [hovered, setHovered] = useState(false);
+
+  const onMouseMove = useCallback((e: React.MouseEvent) => {
+    if (!ref.current) return;
+    const r = ref.current.getBoundingClientRect();
+    setSpot({ x: e.clientX - r.left, y: e.clientY - r.top });
+  }, []);
+
+  return (
+    <Link href={`/case-studies/${preview.slug}`} className={preview.wide ? "md:col-span-2" : "md:col-span-1"}>
+      <motion.div
+        ref={ref}
+        onMouseMove={onMouseMove}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
+        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        viewport={{ once: true, amount: 0.15 }}
+        transition={{ duration: 0.65, delay: index * 0.07, ease: [0.32, 0.72, 0, 1] }}
+        className="relative group h-full overflow-hidden rounded-2xl border border-border bg-card p-8 cursor-pointer shadow-[0_2px_16px_-6px_rgba(0,0,0,0.06)] hover:shadow-[0_6px_28px_-6px_rgba(0,0,0,0.12)] transition-all duration-300"
+      >
+        {/* Spotlight */}
+        <div
+          className="absolute inset-0 rounded-2xl pointer-events-none transition-opacity duration-500"
+          style={{
+            opacity: hovered ? 1 : 0,
+            background: `radial-gradient(300px circle at ${spot.x}px ${spot.y}px, rgba(99,102,241,0.08), transparent 70%)`,
+          }}
+        />
+
+        <div className="relative z-10 flex flex-col h-full gap-5">
+          {/* Tag */}
+          <span className="text-[11px] tracking-wide font-medium text-muted-foreground border border-border rounded-full px-3 py-1 self-start">
+            {preview.tag}
+          </span>
+
+          {/* Client + stat */}
+          <div>
+            <p className="text-xs text-muted-foreground/60 mb-1">{preview.client}</p>
+            <div className={`font-bold text-foreground leading-none tracking-tighter mb-1 ${preview.wide ? "text-5xl md:text-6xl" : "text-4xl md:text-5xl"}`}>
+              {preview.stat}
+            </div>
+            <p className="text-sm text-muted-foreground">{preview.statLabel}</p>
+          </div>
+
+          {/* Description */}
+          <p className="text-sm text-muted-foreground leading-relaxed flex-1">{preview.description}</p>
+
+          {/* CTA */}
+          <div className="flex items-center gap-1.5 text-sm font-medium text-primary group-hover:gap-2.5 transition-all duration-300">
+            <span>Read case study</span>
+            <ArrowUpRight size={14} weight="bold" />
+          </div>
+        </div>
+      </motion.div>
+    </Link>
+  );
+}
+
 export function CaseStudiesPreview() {
   return (
-    <section className="py-20 px-4 lg:px-16 bg-background">
-      <div className="container max-w-7xl mx-auto">
-        {/* Section label */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.4 }}
-          viewport={{ once: true }}
-          className="text-xs tracking-[0.2em] uppercase text-foreground/70 font-semibold mb-4"
-        >
-          Selected Work
-        </motion.p>
-
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
+    <section className="px-4 lg:px-16 py-24 md:py-32 ">
+      <div className="container max-w-6xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-bold mb-12"
+          transition={{ duration: 0.6, ease: [0.32, 0.72, 0, 1] }}
+          className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12"
         >
-          Real Builds. Real Outcomes.
-        </motion.h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {caseStudies.map((cs, index) => (
-            <Link key={cs.client} href="/case-studies">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 * index }}
-              viewport={{ once: true }}
-              className="border border-border/50 rounded-xl p-6 bg-card/50 flex flex-col gap-3 hover:border-primary/40 hover:bg-primary/5 transition-all duration-200 cursor-pointer h-full"
-            >
-              <div className="flex items-start justify-between gap-2 flex-wrap">
-                <h3 className="text-lg font-semibold">{cs.client}</h3>
-                <span className="text-xs text-foreground/60 bg-primary/5 border border-border/50 rounded-full px-2.5 py-1 shrink-0 font-medium">
-                  {cs.tag}
-                </span>
-              </div>
-              <p className="text-primary font-bold text-lg">{cs.result}</p>
-              <p className="text-base text-foreground/80 leading-relaxed">
-                {cs.description}
-              </p>
-            </motion.div>
-            </Link>
-          ))}
-        </div>
-
-        {/* View all link */}
-        <div className="mt-8 relative z-10">
-          <Link
-            href="/case-studies"
-            className="inline-flex items-center gap-2 text-base text-primary hover:text-primary/80 transition-colors font-semibold"
-          >
-            View All Case Studies
-            <ArrowRight className="h-4 w-4" />
+          <div>
+            <p className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground font-medium mb-4">Selected Work</p>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-[-0.02em]">Real builds. Real outcomes.</h2>
+          </div>
+          <Link href="/case-studies" className="shrink-0">
+            <button className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:gap-3 transition-all duration-200 group">
+              View all case studies
+              <ArrowRight className="h-4 w-4" />
+            </button>
           </Link>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+          {previews.map((preview, i) => (
+            <PreviewCard key={preview.slug} preview={preview} index={i} />
+          ))}
         </div>
       </div>
     </section>

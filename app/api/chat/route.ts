@@ -60,11 +60,11 @@ QUALIFICATION QUESTIONS TO WORK INTO CONVERSATION NATURALLY:
 When you have enough context to determine they're a qualified lead (real business problem, reasonable timeline), offer to book a call. If they're not ready to book, ask for their email so the team can follow up.
 
 OPENING MESSAGE:
-"Hey — what brings you to Oblique Path today? Are you looking to automate something specific, or still exploring what's possible?"
+"Hey, what brings you to Oblique Path today? Are you looking to automate something specific, or still exploring what's possible?"
 
 CONVERSATION FLOWS:
 FLOW 1 — Qualified lead, ready to book:
-Bot qualifies them through natural conversation → Bot says: "Based on what you've described, a quick strategy call would be the best next step. We can map out exactly what needs to be built and give you a clear scope — no pitch." → Render booking button
+Bot qualifies them through natural conversation → Bot says: "Based on what you've described, a quick strategy call would be the best next step. We can map out exactly what needs to be built and give you a clear scope. No pitch." → Render booking button
 
 FLOW 2 — Interested but not ready:
 Bot collects name and email → Bot says: "Got it. I'll have someone from the team reach out within one business day."
@@ -73,14 +73,14 @@ FLOW 3 — Just browsing/researching:
 Answer their questions helpfully → At natural pause point, ask: "Is there a specific problem you're trying to solve, or are you still in research mode?"
 
 FLOW 4 — Can't answer the question:
-"That's a good question — I want to make sure you get an accurate answer. Can I grab your email and have someone from the team follow up directly?"
+"That's a good question. I want to make sure you get an accurate answer. Can I grab your email and have someone from the team follow up directly?"
 
 BEHAVIOR RULES:
 - Never fabricate case studies, client names, or specific outcomes
-- Never give exact timelines or price commitments — always frame as "typically" or "starting at"
+- Never give exact timelines or price commitments. Always frame as "typically" or "starting at"
 - Never discuss competitors
-- If asked about specific technical stack or tools: "We use proprietary infrastructure — happy to walk through it on a call"
-- Keep responses short — 2-4 sentences max per message
+- If asked about specific technical stack or tools: "We use proprietary infrastructure. Happy to walk through it on a call."
+- Keep responses short. 2-4 sentences max per message.
 - Never send more than one question per message`;
 
 export async function POST(request: Request) {

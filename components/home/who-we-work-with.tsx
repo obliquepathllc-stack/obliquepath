@@ -1,67 +1,93 @@
 "use client";
 
-// WHO WE WORK WITH — homepage section
-// Three audience segments: Local/Regional, Mid-Market, Enterprise & Government
-
 import { motion } from "framer-motion";
 
 const segments = [
   {
-    title: "Local & Regional Businesses",
+    number: "01",
+    pain: "Buried in phone calls, missed follow-ups, and manual scheduling.",
+    title: "Local & Regional Service Businesses",
     description:
-      "Service businesses, agencies, and operators who need automation that actually runs: booking, follow-up, scheduling, and reporting on autopilot.",
+      "Cleaning companies, junk removal, staffing agencies, insurance brokers. If your team is spending hours a week on bookings, reminders, and chasing leads by hand, that's the problem we exist to solve. We build the systems that handle it automatically.",
+    outcome: "15–20 hrs of admin removed per week",
+    tags: ["Booking Automation", "Lead Follow-Up", "Scheduling", "Client Reminders"],
   },
   {
-    title: "Mid-Market & Growth Companies",
+    number: "02",
+    pain: "Your tools don't fit. Spreadsheets aren't scaling. Generic software is a workaround.",
+    title: "Mid-Market Teams Ready to Scale",
     description:
-      "Scaling teams that have outgrown manual processes and need custom platforms, AI workflows, and system integrations built to handle real volume.",
+      "Growing companies that have outgrown their current setup. You need a platform built around how your operation actually works, not adapted from a template. Custom dashboards, custom logic, your data — not someone else's SaaS.",
+    outcome: "Custom platform live in 4–5 months",
+    tags: ["Custom Platforms", "Workflow Automation", "CRM Integration", "Reporting Dashboards"],
   },
   {
+    number: "03",
+    pain: "Complex environments, compliance requirements, vendors who disappear after launch.",
     title: "Enterprise & Government",
     description:
-      "Organizations with complex requirements: compliance, security, multi-system integration, and stakeholder reporting. They need a delivery partner, not a vendor.",
+      "Multi-location operations and compliance-heavy industries need a delivery partner, not another vendor. We own the build, the deployment, and the outcome. You have a single accountable team from scoping through to live.",
+    outcome: "End-to-end delivery, fully accountable",
+    tags: ["Compliance Systems", "Multi-System Integration", "Audit Trails", "Custom Development"],
   },
 ];
 
+const reveal = (delay = 0) => ({
+  initial: { opacity: 0, y: 20, filter: "blur(4px)" },
+  whileInView: { opacity: 1, y: 0, filter: "blur(0px)" },
+  viewport: { once: true, amount: 0.1 as number },
+  transition: { duration: 0.65, delay, ease: [0.32, 0.72, 0, 1] as [number, number, number, number] },
+});
+
 export function WhoWeWorkWith() {
   return (
-    <section className="py-20 px-4 lg:px-16 bg-background">
-      <div className="container max-w-7xl mx-auto">
-        {/* Section label */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.4 }}
-          viewport={{ once: true }}
-          className="text-xs tracking-[0.2em] uppercase text-foreground/70 font-semibold mb-4"
-        >
-          Who We Work With
-        </motion.p>
+    <section className="px-4 lg:px-16 py-24 md:py-32">
+      <div className="container max-w-6xl mx-auto">
+        <motion.div {...reveal()} className="mb-16">
+          <p className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground font-medium mb-4">
+            Who We Work With
+          </p>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-[-0.02em] leading-tight max-w-2xl">
+            If any of this sounds familiar, we should talk.
+          </h2>
+        </motion.div>
 
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-bold mb-12 max-w-2xl"
-        >
-          Built for Organizations That Can&apos;t Afford to Stand Still
-        </motion.h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {segments.map((segment, index) => (
+        <div className="flex flex-col">
+          {segments.map((segment, i) => (
             <motion.div
-              key={segment.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 * index }}
-              viewport={{ once: true }}
-              className="border border-border/50 rounded-xl p-6 bg-card/50 flex flex-col gap-3"
+              key={segment.number}
+              {...reveal(0.08 + i * 0.07)}
+              className="grid grid-cols-1 md:grid-cols-[72px_1fr] gap-4 md:gap-10 py-10 border-t border-border last:border-b"
             >
-              <h3 className="text-lg font-semibold">{segment.title}</h3>
-              <p className="text-base text-foreground/80 leading-relaxed">
-                {segment.description}
-              </p>
+              <div className="pt-1">
+                <span className="text-xs font-mono text-muted-foreground/35">{segment.number}</span>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-[1fr_220px] gap-6 lg:gap-12 items-start">
+                <div>
+                  {/* Pain point — the thing they immediately recognize */}
+                  <p className="text-sm text-muted-foreground/60 italic mb-3 leading-snug">
+                    &ldquo;{segment.pain}&rdquo;
+                  </p>
+
+                  <h3 className="text-xl font-bold text-foreground mb-3 tracking-tight">{segment.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed mb-4">{segment.description}</p>
+
+                  {/* Outcome chip */}
+                  <span className="inline-flex items-center gap-2 text-[11px] font-semibold text-primary border border-primary/25 bg-primary/[0.07] rounded-full px-3 py-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
+                    {segment.outcome}
+                  </span>
+                </div>
+
+                <div className="flex flex-wrap lg:flex-col gap-2 lg:items-end">
+                  {segment.tags.map((tag) => (
+                    <span key={tag} className="text-[11px] font-medium text-muted-foreground border border-border rounded-full px-3 py-1 bg-card">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>
