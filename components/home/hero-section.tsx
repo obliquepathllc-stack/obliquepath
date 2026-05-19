@@ -109,18 +109,20 @@ export function HeroSection() {
             <p className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground/40 shrink-0 font-medium">
               Trusted by
             </p>
-            <div className="flex items-center gap-8 overflow-x-auto" style={{ scrollbarWidth: "none" }}>
-              {clientLogos.map((logo) => (
-                <div key={logo.name} className="shrink-0 h-6 opacity-25 hover:opacity-50 transition-opacity duration-300 grayscale">
-                  <Image
-                    src={logo.src}
-                    alt={logo.name}
-                    width={80}
-                    height={24}
-                    className="h-full w-auto object-contain"
-                  />
-                </div>
-              ))}
+            <div className="overflow-hidden w-full [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
+              <div className="flex items-center gap-12 animate-marquee w-max hover:[animation-play-state:paused]">
+                {[...clientLogos, ...clientLogos].map((logo, i) => (
+                  <div key={`${logo.name}-${i}`} className="shrink-0 h-6 opacity-25 grayscale">
+                    <Image
+                      src={logo.src}
+                      alt={logo.name}
+                      width={80}
+                      height={24}
+                      className="h-full w-auto object-contain"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
