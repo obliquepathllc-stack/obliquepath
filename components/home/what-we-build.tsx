@@ -36,13 +36,6 @@ const capabilities = [
       "Native and cross-platform mobile apps built for your specific operation. iOS and Android, with automation and backend integrations built in from day one. Not a template repackaged.",
     detail: "iOS & Android · React Native · App-backend integration · Offline-first · Push automation",
   },
-  {
-    number: "05",
-    title: "AI B2B Lead Generation",
-    description:
-      "Automated systems that identify, qualify, and nurture B2B prospects at scale. AI-powered outreach personalization that books meetings without a sales team managing every touchpoint.",
-    detail: "Prospect enrichment · AI-personalized outreach · Multi-channel sequences · Lead scoring · CRM sync",
-  },
 ];
 
 const reveal = (delay = 0) => ({
@@ -64,7 +57,7 @@ export function WhatWeBuild() {
               What We Build
             </p>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-[-0.02em] leading-[0.95]">
-              Five core<br />capabilities.
+              Four core<br />capabilities.
             </h2>
           </motion.div>
           <motion.div {...reveal(0.1)} className="flex items-end">

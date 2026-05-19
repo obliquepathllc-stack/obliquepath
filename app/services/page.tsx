@@ -50,16 +50,10 @@ const serviceCategories = [
     description: "Native and cross-platform mobile apps built for your specific operation. iOS and Android, with automation and backend integrations built in from day one.",
     services: ["iOS & Android Development", "Cross-Platform (React Native)", "App-Backend Integration", "Push Notifications & Automation"],
   },
-  {
-    number: "06",
-    id: "ai-b2b-lead-generation",
-    title: "AI B2B Lead Generation",
-    description: "Automated systems that identify, qualify, and nurture B2B prospects at scale. AI-powered personalization that books meetings without manual sales effort.",
-    services: ["Prospect Identification & Enrichment", "AI-Personalized Outreach", "Multi-Channel Sequences", "Lead Scoring & CRM Sync"],
-  },
 ];
 
 const specialized = [
+  { title: "AI B2B Lead Generation", description: "Automated systems that identify, qualify, and nurture B2B prospects at scale. AI-personalized outreach that books meetings without a sales team managing every touchpoint." },
   { title: "Scheduling Systems", description: "Automated appointment booking and management. Confirmations, reminders, and dispatch coordination built in." },
   { title: "Inventory Management", description: "Smart inventory systems that predict needs and automate ordering before you run low." },
   { title: "Document Processing", description: "AI-powered document analysis, data extraction, and automated routing to the right people." },

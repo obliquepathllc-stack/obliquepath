@@ -6,7 +6,7 @@ const services = [
   { name: "AI Automation", href: "/ai-automation" },
   { name: "Custom Web Solutions", href: "/custom-web-solutions" },
   { name: "Mobile App Development", href: "/services" },
-  { name: "AI B2B Lead Generation", href: "/services" },
+  { name: "AI B2B Lead Generation", href: "/ai-automation" },
   { name: "Process Optimization", href: "/process-optimization" },
   { name: "Tech Support", href: "/tech-support" },
   { name: "Healthcare Staffing", href: "/healthcare" },
