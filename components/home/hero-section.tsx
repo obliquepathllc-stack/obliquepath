@@ -109,8 +109,12 @@ export function HeroSection() {
             <p className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground/40 shrink-0 font-medium">
               Trusted by
             </p>
-            <div className="overflow-hidden w-full [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
-              <div className="flex items-center gap-12 animate-marquee w-max hover:[animation-play-state:paused]">
+            <div className="overflow-hidden w-full" style={{ WebkitMaskImage: "linear-gradient(to right, transparent, black 8%, black 92%, transparent)", maskImage: "linear-gradient(to right, transparent, black 8%, black 92%, transparent)" }}>
+              <motion.div
+                className="flex items-center gap-12 w-max"
+                animate={{ x: ["0%", "-50%"] }}
+                transition={{ duration: 28, ease: "linear", repeat: Infinity }}
+              >
                 {[...clientLogos, ...clientLogos].map((logo, i) => (
                   <div key={`${logo.name}-${i}`} className="shrink-0 h-6 opacity-25 grayscale">
                     <Image
@@ -122,7 +126,7 @@ export function HeroSection() {
                     />
                   </div>
                 ))}
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
