@@ -84,7 +84,7 @@ export default function ServicesPage() {
                   <div className="flex flex-col gap-1.5">
                     {cat.services.map((s) => (
                       <span key={s} className="text-sm text-foreground/60 flex items-center gap-2">
-                        <span className="w-1 h-1 rounded-full bg-foreground/25 shrink-0" />
+                        <span className="text-foreground/25 shrink-0">–</span>
                         {s}
                       </span>
                     ))}

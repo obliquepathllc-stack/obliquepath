@@ -74,8 +74,7 @@ export function WhoWeWorkWith() {
                   <p className="text-muted-foreground leading-relaxed mb-4">{segment.description}</p>
 
                   {/* Outcome chip */}
-                  <span className="inline-flex items-center gap-2 text-[11px] font-semibold text-primary border border-primary/25 bg-primary/[0.07] rounded-full px-3 py-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
+                  <span className="inline-flex items-center text-[11px] font-semibold text-primary border border-primary/25 bg-primary/[0.07] rounded-full px-3 py-1.5">
                     {segment.outcome}
                   </span>
                 </div>
