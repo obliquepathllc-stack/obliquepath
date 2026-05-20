@@ -568,10 +568,10 @@ export const caseStudies: CaseStudy[] = [
     id: "crestview-realty",
     filterTag: "Real Estate",
     title: "Every lead responded to in 2 minutes. Every follow-up on schedule.",
-    client: "Crestview Realty Group",
+    client: "Maher Aouli Realty",
     industry: "Real Estate & Property",
     location: "Windsor, ON",
-    service: "AI Lead Nurture & Showing Automation",
+    service: "AI Lead Nurture, Showing Automation & Listings Newsletter",
     beforeHeadline: "Leads were coming in. Most were going cold within 48 hours.",
     beforeNarrative:
       "Agents at Crestview were getting leads from their website, Realtor.ca, and referrals, but they were out showing properties when those inquiries came in. By the time anyone called back, the lead had already heard from a competing agent. No follow-up sequence existed beyond a first call attempt. CRM updates happened when someone remembered. The admin alone — scheduling, confirming, chasing — was consuming 3 to 4 hours per agent per day. A brokerage of five agents was operating like five solo operators with no shared system.",
@@ -591,7 +591,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     afterHeadline: "A 5-agent brokerage now runs like a fully staffed operation.",
     afterNarrative:
-      "Every lead, regardless of source, now gets a response within 2 minutes via SMS and email. A qualification sequence runs automatically, asking the right questions and scoring each lead before any agent touches it. Hot leads get flagged and routed with full context. A 60-day nurture sequence keeps warm leads engaged without any manual effort. Showings are booked through a self-serve scheduler linked directly to agent calendars. The team reviews a weekly pipeline digest every Monday morning. No CRM updates. No manual follow-ups. No chasing.",
+      "Every lead, regardless of source, now gets a response within 2 minutes via SMS and email. A qualification sequence runs automatically, asking the right questions and scoring each lead before any agent touches it. Hot leads get flagged and routed with full context. A 60-day nurture sequence keeps warm leads engaged without any manual effort. Showings are booked through a self-serve scheduler linked directly to agent calendars. Past clients receive an automated newsletter whenever a new listing matches their saved area preferences — keeping Maher Aouli Realty top of mind without a single manual send. No CRM updates. No manual follow-ups. No chasing.",
     solution: [
       "Instant SMS and email response within 2 minutes of any inquiry, across all lead sources",
       "AI qualification chatbot on website — collects buyer timeline, budget, and property preferences",
@@ -599,6 +599,7 @@ export const caseStudies: CaseStudy[] = [
       "60-day automated nurture sequence segmented by buyer vs. seller intent",
       "Self-serve showing scheduler linked to agent availability calendars",
       "Weekly pipeline digest delivered every Monday — no manual reporting",
+      "Automated new listings newsletter sent to past clients filtered by their saved area preferences",
     ],
     processSteps: [
       { number: "01", title: "Lead Captured", description: "Inquiry comes in via website, Realtor.ca, or referral form — all routed into one system automatically." },
@@ -606,6 +607,7 @@ export const caseStudies: CaseStudy[] = [
       { number: "03", title: "AI Qualification", description: "Chatbot asks timeline, budget, and property type. Lead is scored and tagged before an agent sees it." },
       { number: "04", title: "Nurture Sequence", description: "60-day automated follow-up begins, segmented by buyer or seller intent. No manual effort required." },
       { number: "05", title: "Agent Routed", description: "Hot leads are flagged with full context. Agent calls with a warm prospect, not a cold one." },
+      { number: "06", title: "Listings Newsletter", description: "Past clients automatically receive new listings matching their saved area preferences. No manual sending — the system monitors inventory and triggers the email." },
     ],
     results: [
       { stat: "3×", description: "lead-to-showing conversion rate", icon: TrendingUp },
@@ -616,8 +618,8 @@ export const caseStudies: CaseStudy[] = [
     timeframe: "5 weeks to go live",
     testimonial:
       "We were losing deals we didn't even know we had. A lead would come in at 2pm, I'd be at a showing, get back at 5pm and they'd already signed with someone else. Now every lead hears from us immediately, and the follow-up just keeps running on its own. Same 5 agents, completely different operation.",
-    clientName: "James Okafor",
-    clientTitle: "Broker of Record, Crestview Realty Group",
+    clientName: "Maher Aouli",
+    clientTitle: "Broker, Maher Aouli Realty",
     ctaText: "Automate Your Lead Pipeline",
     ctaLink: "/book-demo?service=real-estate-automation",
     icon: Building,
