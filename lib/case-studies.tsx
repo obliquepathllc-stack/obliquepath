@@ -565,7 +565,7 @@ export const caseStudies: CaseStudy[] = [
 
   // ── Real Estate ────────────────────────────────────────────────────────────
   {
-    id: "crestview-realty",
+    id: "maher-aouli-realty",
     filterTag: "Real Estate",
     title: "Every lead responded to in 2 minutes. Every follow-up on schedule.",
     client: "Maher Aouli Realty",
