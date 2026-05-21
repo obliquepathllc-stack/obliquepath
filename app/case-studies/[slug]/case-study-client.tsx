@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { caseStudies } from "@/lib/case-studies";
-import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, PhoneCall } from "lucide-react";
 import { ScrollWatcher } from "@/components/scroll-watcher";
 
 // Scroll entry with blur (taste-skill §5C)
@@ -330,15 +330,36 @@ export function CaseStudyClient({
                   </p>
                 </div>
 
-                <div className="rounded-2xl overflow-hidden border border-white/[0.06] bg-white/[0.02]">
-                  <iframe
-                    src="https://lishi627185.app.n8n.cloud/form/cb1df2de-556d-4e78-a31b-952b59cd75b2"
-                    width="100%"
-                    height="480"
-                    style={{ border: "none", display: "block" }}
-                    title="AI Voice Agent Live Demo"
-                  />
-                </div>
+                <a
+                  href="https://lishi627185.app.n8n.cloud/form/cb1df2de-556d-4e78-a31b-952b59cd75b2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
+                >
+                  <motion.div
+                    whileHover={{ scale: 1.01 }}
+                    transition={{ duration: 0.2 }}
+                    className="rounded-2xl border border-indigo-500/25 bg-white/[0.03] p-10 flex flex-col items-center gap-6 cursor-pointer hover:bg-indigo-500/[0.06] transition-colors duration-300"
+                  >
+                    <motion.div
+                      animate={{ scale: [1, 1.08, 1] }}
+                      transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                      className="w-16 h-16 rounded-full bg-indigo-500/15 border border-indigo-500/30 flex items-center justify-center"
+                    >
+                      <PhoneCall className="h-7 w-7 text-indigo-400" />
+                    </motion.div>
+
+                    <div className="text-center">
+                      <p className="text-white/75 font-semibold mb-1">Get My Demo Call Now</p>
+                      <p className="text-white/30 text-sm">Opens in 30 seconds — enter your name and number, AI calls you immediately</p>
+                    </div>
+
+                    <div className="inline-flex items-center gap-2.5 rounded-full bg-indigo-500 text-white font-semibold px-7 py-3.5 text-sm hover:bg-indigo-400 transition-colors duration-200">
+                      Try the AI Voice Agent
+                      <ArrowUpRight className="h-4 w-4" />
+                    </div>
+                  </motion.div>
+                </a>
 
                 <p className="text-[11px] text-white/20 mt-4 text-center">
                   Your number is used only for this demo call and not stored or shared.

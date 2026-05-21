@@ -35,6 +35,15 @@ const previews = [
     slug: "junk-cycle",
     wide: false,
   },
+  {
+    client: "Oblique Path",
+    tag: "AI Voice Agent",
+    stat: "60s",
+    statLabel: "form fill to AI call",
+    description: "AI voice agent calls leads automatically, qualifies them in conversation, logs to CRM, and sends a full transcript. Try it live.",
+    slug: "summit-mortgage",
+    wide: true,
+  },
 ];
 
 function PreviewCard({ preview, index }: { preview: typeof previews[0]; index: number }) {
