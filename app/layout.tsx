@@ -87,6 +87,50 @@ export default function RootLayout({
             suppressHydrationWarning
             className={`${jakartaSans.variable} ${dmSans.variable} ${firaCode.variable}`}
         >
+            <head>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify([
+                            {
+                                "@context": "https://schema.org",
+                                "@type": "Organization",
+                                "name": "Oblique Path",
+                                "legalName": "Oblique Path LLC",
+                                "url": "https://obliquepath.dev",
+                                "logo": "https://obliquepath.dev/icon.png",
+                                "description": "AI automation systems and custom software for businesses done running manually.",
+                                "foundingLocation": "Windsor, Ontario, Canada",
+                                "address": {
+                                    "@type": "PostalAddress",
+                                    "addressLocality": "Windsor",
+                                    "addressRegion": "ON",
+                                    "addressCountry": "CA"
+                                },
+                                "contactPoint": {
+                                    "@type": "ContactPoint",
+                                    "email": "info@obliquepath.dev",
+                                    "contactType": "customer service",
+                                    "availableLanguage": "English"
+                                },
+                                "areaServed": ["Windsor", "Toronto", "Detroit", "Chicago", "San Francisco"],
+                                "knowsAbout": ["AI Automation", "Business Process Automation", "Custom Software Development", "Mobile App Development", "AI Voice Agents"]
+                            },
+                            {
+                                "@context": "https://schema.org",
+                                "@type": "WebSite",
+                                "name": "Oblique Path",
+                                "url": "https://obliquepath.dev",
+                                "potentialAction": {
+                                    "@type": "SearchAction",
+                                    "target": "https://obliquepath.dev/case-studies",
+                                    "query-input": "required name=search_term_string"
+                                }
+                            }
+                        ])
+                    }}
+                />
+            </head>
             <body className="overflow-x-hidden">
                 <ThemeProvider
                     attribute="class"
