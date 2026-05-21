@@ -18,6 +18,9 @@ import {
   Droplets,
   ShoppingBag,
   HeartPulse,
+  PhoneCall,
+  Users,
+  Phone,
 } from "lucide-react";
 
 export type ResultItem = {
@@ -40,6 +43,7 @@ export type ProcessStep = {
 export type CaseStudy = {
   id: string;
   filterTag: string;
+  liveDemoSection?: boolean;
   title: string;                // headline used on listing card
   client: string;
   industry: string;
@@ -76,6 +80,7 @@ export const FILTERS = [
   "Insurance & Finance",
   "Waste & Removal",
   "Real Estate",
+  "Financial Services",
 ];
 
 export const caseStudies: CaseStudy[] = [
@@ -623,6 +628,69 @@ export const caseStudies: CaseStudy[] = [
     ctaText: "Automate Your Lead Pipeline",
     ctaLink: "/book-demo?service=real-estate-automation",
     icon: Building,
+    image: null,
+  },
+
+  // ── AI Voice Agent ─────────────────────────────────────────────────────────
+  {
+    id: "summit-mortgage",
+    filterTag: "Financial Services",
+    liveDemoSection: true,
+    title: "Every form fill gets a call back in 60 seconds. Qualified or not, the agent knows before they pick up the phone.",
+    client: "Summit Mortgage Group",
+    industry: "Mortgage & Lending",
+    location: "Toronto, ON",
+    service: "AI Voice Agent — Automated Lead Qualification",
+    beforeHeadline: "Leads were filling out forms. Nobody was calling them back fast enough.",
+    beforeNarrative:
+      "Summit Mortgage was running paid ads on Google and Meta, generating a steady flow of online leads. The problem was the gap between form fill and first contact. Agents were busy with existing clients, in meetings, or off the clock. By the time someone called a lead back, often hours later, the prospect had already spoken to another broker. The team had no way to qualify leads before spending time on the phone, so agents were burning 20 minutes on calls with people who didn't meet basic criteria. Call notes lived in personal spreadsheets, not a shared system, and follow-up was inconsistent at best.",
+    painPoints: [
+      {
+        title: "Hours to first contact",
+        description: "Online mortgage leads go cold fast. Competitors who respond in minutes win the deal. A 2-hour callback might as well be no callback.",
+      },
+      {
+        title: "Agents qualifying strangers",
+        description: "Every inbound call was a gamble. Agents had no context before picking up. Half the calls were with people who didn't qualify. That time never came back.",
+      },
+      {
+        title: "No record of what was said",
+        description: "Call notes were scattered, inconsistent, or missing entirely. Handoffs between agents lost context. CRM updates happened when someone remembered.",
+      },
+    ],
+    afterHeadline: "The AI calls first. By the time an agent picks up the phone, the work is already done.",
+    afterNarrative:
+      "Now, when a lead submits a form at any hour, the AI voice agent calls within 60 seconds. It introduces itself on behalf of Summit Mortgage, runs through a natural qualification conversation, and collects loan amount, property type, credit range, employment status, and timeline. All of that data is logged directly into the CRM with a lead score. Immediately after the call, the assigned agent receives a full transcript by email. Hot leads are flagged for priority follow-up. Unqualified leads are tagged and filed. Agents only speak to people who are ready and eligible. The system runs 24/7 with no supervision required.",
+    solution: [
+      "AI voice agent calls every form submission within 60 seconds, day or night",
+      "Conversational qualification: loan amount, property type, credit range, employment, and timeline",
+      "All responses logged to CRM automatically with lead score and category tag",
+      "Full call transcript emailed to the assigned agent immediately after the call ends",
+      "Hot leads flagged for priority follow-up; unqualified leads tagged and filed automatically",
+      "Zero manual data entry — agents receive full context before they ever dial",
+    ],
+    processSteps: [
+      { number: "01", title: "Form Submitted", description: "Lead fills out mortgage inquiry form online via website, landing page, or ad campaign." },
+      { number: "02", title: "AI Calls in 60s", description: "Voice agent calls the lead's phone within 60 seconds of form submission, any time of day." },
+      { number: "03", title: "Qualification", description: "AI asks about loan amount, property type, credit range, employment, and timeline in natural conversation." },
+      { number: "04", title: "CRM Logged", description: "All responses written to CRM automatically with lead score, category tag, and call timestamp." },
+      { number: "05", title: "Transcript Sent", description: "Full call transcript emailed to the assigned agent the moment the call ends." },
+      { number: "06", title: "Agent Follows Up", description: "Agent reads the transcript, already knows the prospect, and calls a warm qualified lead with full context." },
+    ],
+    results: [
+      { stat: "60s", description: "from form fill to AI call, 24/7", icon: Timer },
+      { stat: "3×", description: "more qualified leads reaching agents per week", icon: Users },
+      { stat: "80%", description: "reduction in time spent on unqualified calls", icon: Phone },
+      { stat: "24/7", description: "lead coverage including nights and weekends", icon: PhoneCall },
+    ],
+    timeframe: "4 weeks to go live",
+    testimonial:
+      "Our agents used to dread inbound calls because half the time the person didn't even qualify. Now every call they take is someone who's already been screened. The AI does the hard part. We just close.",
+    clientName: "Daniel Carvalho",
+    clientTitle: "Director of Sales, Summit Mortgage Group",
+    ctaText: "Build Your Voice Agent",
+    ctaLink: "/book-demo?service=ai-voice-agent",
+    icon: PhoneCall,
     image: null,
   },
 ];

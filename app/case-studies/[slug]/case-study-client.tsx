@@ -308,6 +308,47 @@ export function CaseStudyClient({
         </div>
       </section>
 
+      {/* ── LIVE DEMO ─────────────────────────────────────────────────────────── */}
+      {study.liveDemoSection && (
+        <section className="px-4 lg:px-16 pb-24 md:pb-32">
+          <div className="container max-w-6xl mx-auto">
+            <motion.div
+              {...reveal(0)}
+              className="relative overflow-hidden rounded-[2rem] border border-indigo-500/20 bg-indigo-500/[0.04]"
+            >
+              <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-indigo-600/[0.1] blur-[100px] rounded-full pointer-events-none" />
+              <div className="absolute inset-[1px] rounded-[calc(2rem-1px)] bg-gradient-to-b from-white/[0.04] to-transparent h-28 pointer-events-none" />
+
+              <div className="relative z-10 p-8 md:p-12">
+                <div className="max-w-xl mb-8">
+                  <p className="text-[10px] tracking-[0.22em] uppercase text-indigo-400/60 mb-4">Live Demo</p>
+                  <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-3">
+                    Try the AI Voice Agent — right now.
+                  </h2>
+                  <p className="text-white/40 leading-relaxed text-sm">
+                    Enter your name and phone number. Our AI will call you within 60 seconds. This is the exact experience your leads receive — live, on your phone.
+                  </p>
+                </div>
+
+                <div className="rounded-2xl overflow-hidden border border-white/[0.06] bg-white/[0.02]">
+                  <iframe
+                    src="https://lishi627185.app.n8n.cloud/form/cb1df2de-556d-4e78-a31b-952b59cd75b2"
+                    width="100%"
+                    height="480"
+                    style={{ border: "none", display: "block" }}
+                    title="AI Voice Agent Live Demo"
+                  />
+                </div>
+
+                <p className="text-[11px] text-white/20 mt-4 text-center">
+                  Your number is used only for this demo call and not stored or shared.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      )}
+
       {/* ── PREV / NEXT ────────────────────────────────────────────────────────── */}
       {(prevStudy || nextStudy) && (
         <section className="px-4 lg:px-16 pb-24">
