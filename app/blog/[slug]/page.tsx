@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import Image from "next/image";
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { notFound } from "next/navigation";
 import { getPostBySlug, blogPosts, type ContentBlock } from "@/lib/blog-posts";
 
@@ -19,6 +20,11 @@ export async function generateMetadata({
   return {
     title: `${post.title} | Oblique Path`,
     description: post.excerpt,
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      images: [{ url: post.image }],
+    },
   };
 }
 
@@ -26,7 +32,7 @@ function renderBlock(block: ContentBlock, i: number) {
   switch (block.type) {
     case "h2":
       return (
-        <h2 key={i} className="text-2xl font-bold mt-10 mb-4 leading-snug">
+        <h2 key={i} className="text-2xl font-bold mt-12 mb-4 leading-snug tracking-tight">
           {block.text}
         </h2>
       );
@@ -38,15 +44,16 @@ function renderBlock(block: ContentBlock, i: number) {
       );
     case "p":
       return (
-        <p key={i} className="text-foreground/80 leading-relaxed mb-5">
+        <p key={i} className="text-foreground/80 leading-relaxed mb-5 text-[17px]">
           {block.text}
         </p>
       );
     case "ul":
       return (
-        <ul key={i} className="list-disc list-outside ml-5 space-y-2 mb-5">
+        <ul key={i} className="space-y-3 mb-6 ml-1">
           {block.items.map((item, j) => (
-            <li key={j} className="text-foreground/80 leading-relaxed">
+            <li key={j} className="text-foreground/80 leading-relaxed text-[17px] flex items-start gap-3">
+              <span className="mt-2 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
               {item}
             </li>
           ))}
@@ -54,10 +61,7 @@ function renderBlock(block: ContentBlock, i: number) {
       );
     case "callout":
       return (
-        <div
-          key={i}
-          className="my-8 border-l-4 border-primary bg-primary/5 rounded-r-xl px-6 py-5"
-        >
+        <div key={i} className="my-10 border-l-4 border-primary bg-primary/5 rounded-r-xl px-6 py-5">
           <p className="text-foreground/90 font-medium leading-relaxed mb-4">
             {block.text}
           </p>
@@ -68,6 +72,28 @@ function renderBlock(block: ContentBlock, i: number) {
             Book a Strategy Call
           </Link>
         </div>
+      );
+    case "casestudy":
+      return (
+        <Link key={i} href={`/case-studies/${block.slug}`} className="group block my-8">
+          <div className="rounded-2xl border border-border bg-card p-6 hover:border-primary/40 hover:bg-primary/[0.03] transition-all duration-200">
+            <p className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground font-medium mb-3">Case Study</p>
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <p className="font-bold text-foreground mb-1">{block.client}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed">{block.teaser}</p>
+              </div>
+              <div className="shrink-0 text-right">
+                <div className="text-3xl font-black gradient-text leading-none tracking-tighter">{block.stat}</div>
+                <div className="text-xs text-muted-foreground mt-0.5 max-w-[100px] text-right">{block.statLabel}</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-1.5 mt-4 text-sm font-medium text-primary group-hover:gap-2.5 transition-all duration-200">
+              Read the full case study
+              <ArrowUpRight className="h-3.5 w-3.5" />
+            </div>
+          </div>
+        </Link>
       );
   }
 }
@@ -90,6 +116,7 @@ export default async function BlogPostPage({
   return (
     <main className="pt-32 pb-24 px-4 lg:px-16">
       <div className="container max-w-2xl mx-auto">
+
         {/* Back */}
         <Link
           href="/blog"
@@ -100,18 +127,32 @@ export default async function BlogPostPage({
         </Link>
 
         {/* Header */}
-        <div className="mb-10">
-          <div className="flex flex-wrap items-center gap-3 mb-4">
+        <div className="mb-8">
+          <div className="flex flex-wrap items-center gap-3 mb-5">
             <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">
               {post.category}
             </span>
             <span className="text-xs text-foreground/40">{formatted}</span>
             <span className="text-xs text-foreground/40">{post.readTime}</span>
           </div>
-          <h1 className="text-3xl md:text-4xl font-extrabold leading-tight mb-4">
+          <h1 className="text-3xl md:text-4xl font-extrabold leading-tight mb-5 tracking-tight">
             {post.title}
           </h1>
           <p className="text-lg text-foreground/65 leading-relaxed">{post.excerpt}</p>
+        </div>
+
+        {/* Hero image */}
+        <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden mb-10 border border-border/40">
+          <Image
+            src={post.image}
+            alt={post.title}
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute bottom-2 right-3 text-[10px] text-white/50">
+            Photo: {post.imageCredit}
+          </div>
         </div>
 
         <hr className="border-border/40 mb-10" />

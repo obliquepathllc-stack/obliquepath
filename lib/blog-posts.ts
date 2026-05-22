@@ -3,7 +3,8 @@ export type ContentBlock =
   | { type: "h2"; text: string }
   | { type: "h3"; text: string }
   | { type: "ul"; items: string[] }
-  | { type: "callout"; text: string };
+  | { type: "callout"; text: string }
+  | { type: "casestudy"; client: string; slug: string; stat: string; statLabel: string; teaser: string };
 
 export interface BlogPost {
   slug: string;
@@ -12,218 +13,262 @@ export interface BlogPost {
   category: string;
   readTime: string;
   excerpt: string;
+  image: string;
+  imageCredit: string;
   content: ContentBlock[];
 }
 
 export const blogPosts: BlogPost[] = [
   {
     slug: "ai-automation-windsor-toronto",
-    title: "How Windsor and Toronto Service Businesses Are Eliminating Manual Work",
-    date: "2025-04-02",
+    title: "Your Business Is Leaking Money Every Night at 5:01 PM",
+    date: "2025-05-10",
     category: "AI Automation",
     readTime: "6 min read",
-    excerpt:
-      "Most service businesses in Windsor and Toronto are still running on email threads, spreadsheets, and manual follow-ups. Here's what changes when you automate the right things.",
+    excerpt: "There is a precise moment when your lead generation falls apart. It's approximately five minutes after someone fills out your contact form — and it happens every single day.",
+    image: "https://images.pexels.com/photos/8278873/pexels-photo-8278873.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    imageCredit: "AI25.Studio via Pexels",
     content: [
       {
         type: "p",
-        text: "Running a service business in Windsor or Toronto means your calendar is full—but so is your inbox. Quote requests waiting for responses. Jobs confirmed over text but never logged anywhere. Follow-ups that fell through because someone forgot. This is the operational overhead that eats into margin without showing up on any report.",
+        text: "It's 11:47pm. Somebody just filled out your quote form. They want exactly what you offer, they have their wallet open, and they're ready to move. Right now — while you are (hopefully) asleep — they are also looking at your competitor's website, your other competitor's website, and whoever shows up third on Google. The first business to respond wins the deal. Unless, of course, one of those businesses has a system that called at 11:48pm.",
       },
-      { type: "h2", text: "The Admin Tax Nobody Talks About" },
+      { type: "h2", text: "A Tale of Two Businesses (And One Very Awake Robot)" },
       {
         type: "p",
-        text: "Most service businesses spend 10–15 hours a week on tasks that aren't billable: confirming appointments, chasing unpaid invoices, copying data between platforms, and manually sending updates to clients. In competitive markets like Toronto, where clients expect fast responses and smooth experiences, that lag is felt immediately.",
+        text: "Business A and Business B are both running ads in Windsor. Both get 40 form submissions a month. Business A's team comes in at 9am, works through the inbox, and starts calling leads around 11. Business B has an automated response that fires within 90 seconds of every submission — a personalized text, a confirmation email, and a booking link. By the time Business A's team lifts the phone, Business B has already booked 60% of those same leads. Business A thinks their ads aren't working. Business A is wrong.",
       },
+      { type: "h2", text: "The 5-Minute Rule (That's Actually a 30-Second Rule)" },
       {
         type: "p",
-        text: "The problem compounds as you grow. More customers means more manual work, not just more revenue. At some point, the overhead stops you from scaling—not a lack of demand.",
-      },
-      { type: "h2", text: "Three Things Windsor and Toronto Businesses Automate First" },
-      {
-        type: "ul",
-        items: [
-          "Booking and scheduling — Replace phone and email booking with an online system that handles confirmations, reminders, and rescheduling automatically.",
-          "Lead follow-up — When someone fills out a form or sends an inquiry, an automated sequence ensures they get a response in minutes, not hours.",
-          "Invoice and payment reminders — Triggered automatically based on job completion or due date, with no manual chasing required.",
-        ],
-      },
-      { type: "h2", text: "What This Looks Like in Practice" },
-      {
-        type: "p",
-        text: "One of our clients—a service company in the Windsor area—was managing bookings across five different tools. Their team was copy-pasting between a scheduling app, a spreadsheet, WhatsApp, email, and a payment platform. Every job required five manual steps.",
+        text: "A study from Harvard Business Review found that your odds of reaching a lead drop by 10x after just five minutes. After an hour, lead conversion drops by 391%. After the weekend, you're essentially cold-calling a stranger. The research is not subtle about this. The window is brutally short, and most businesses are not even in the game.",
       },
       {
         type: "p",
-        text: "After consolidating onto a single automated system, they recovered roughly 60% of the time their team spent on scheduling coordination. The work didn't get simpler, but the overhead disappeared.",
+        text: "The irony is that the fix isn't complicated. It's just a system that does the boring part — the immediate response, the follow-up, the reminder — so your team can focus on the part that actually requires a human being.",
       },
-      { type: "h2", text: "Getting Started Doesn't Require a Tech Team" },
+      {
+        type: "casestudy",
+        client: "Harbor One Capital",
+        slug: "harbor-one-capital",
+        stat: "2×",
+        statLabel: "more closed policies",
+        teaser: "An insurance brokerage automated their entire lead follow-up sequence. Agents stopped chasing and started closing.",
+      },
+      { type: "h2", text: "What Happens When the Robot Picks Up First" },
       {
         type: "p",
-        text: "The barrier to automation is lower than most business owners expect. You don't need in-house developers. A good automation partner identifies your bottlenecks, builds the system, and trains your team—typically in a matter of weeks, not months.",
+        text: "We built a system for a mortgage brokerage that was hemorrhaging leads every weekend. An AI voice agent now calls every form submission within 60 seconds — including Friday night, Saturday morning, and Sunday at noon. It introduces itself, asks qualifying questions, logs everything to the CRM, and sends the agent a full transcript before they wake up. Monday morning, the agent has 40 pre-qualified leads with notes. Not a pile of cold contacts and vague anxiety.",
+      },
+      {
+        type: "casestudy",
+        client: "Summit Mortgage Group",
+        slug: "summit-mortgage",
+        stat: "60s",
+        statLabel: "from form fill to AI call",
+        teaser: "AI voice agent qualifies leads instantly, 24/7 — agents only talk to people who are already screened.",
+      },
+      { type: "h2", text: "You Don't Need to Hire a Night Shift" },
+      {
+        type: "p",
+        text: "You just need a system that acts like a very attentive, never-tired, never-distracted version of your best salesperson. The leads don't know it's automated. They know they got a response immediately. That responsiveness alone sets you apart from most of your competition, because most of your competition is still relying on a human to check their inbox at 9am.",
       },
       {
         type: "callout",
-        text: "If you're running a service business in Windsor, Toronto, or anywhere in Ontario and want to understand what's worth automating first, we're happy to walk through it with you.",
+        text: "Want to see what this looks like for your specific business? We'll map out exactly what to automate and how — 30 minutes, no pitch.",
       },
     ],
   },
+
   {
     slug: "manual-followup-cost-michigan-chicago",
-    title: "The Hidden Cost of Manual Follow-Ups: What We See Across Michigan and Chicago",
-    date: "2025-03-20",
+    title: "We Audited a Week of 'Normal Work' at a 6-Person Business. It Was Painful.",
+    date: "2025-04-28",
     category: "Automation Strategy",
-    readTime: "5 min read",
-    excerpt:
-      "The most common thing we hear from business owners in Michigan and Chicago isn't 'we need AI.' It's 'we're losing deals we should be winning.'",
+    readTime: "7 min read",
+    excerpt: "We asked a small service business to track every task their team did for one week. The result: a 47-item list, 14 daily tasks, and 9 things that should have been automated years ago.",
+    image: "https://images.pexels.com/photos/8468818/pexels-photo-8468818.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    imageCredit: "cottonbro studio via Pexels",
     content: [
       {
         type: "p",
-        text: "The most common thing we hear from business owners in Michigan and Chicago isn't 'we need AI.' It's 'we're losing deals we should be winning.' Leads that went cold after an initial inquiry. Quotes that never got followed up on. Clients who chose a competitor not because of price, but because they got a callback first.",
-      },
-      { type: "h2", text: "Response Time Is the Entire Game" },
-      {
-        type: "p",
-        text: "Studies consistently show that the odds of qualifying a lead drop dramatically after the first five minutes. Most small businesses in Detroit, Grand Rapids, and Chicago respond within hours—or not at all on weekends. Automated follow-up sequences change this entirely. A lead fills out your form at 11pm on a Saturday and gets a response before midnight. Your competitor responds Monday morning.",
-      },
-      { type: "h2", text: "What Manual Follow-Up Actually Costs" },
-      {
-        type: "p",
-        text: "Beyond the obvious—lost deals—there's the invisible cost: the mental overhead of tracking every conversation, the anxiety of not knowing who's been followed up with, and the staff time spent on work that a simple automation could handle.",
+        text: "We asked a small service business — six employees, doing well, growing steadily — to track every task their team touched for one week. Not just the big stuff. Everything. Every email, every phone call, every 'let me just update the spreadsheet real quick.' The result was a 47-item list. Fourteen of those tasks happened every single day. Nine of them were being performed by humans for reasons that, when examined closely, turned out to be 'because that's how we've always done it.'",
       },
       {
         type: "p",
-        text: "For a business closing 5–10 deals a month, even recovering one lost deal per month from better follow-up typically justifies the entire cost of implementation within the first quarter.",
+        text: "We're not here to make anyone feel bad. Admin work doesn't sneak up on you all at once — it accumulates slowly, like a pile of mail that somehow becomes furniture. You add one tool to solve one problem, then another tool for the next, and before you know it you have five platforms that technically work and actually don't.",
       },
-      { type: "h2", text: "What Automated Follow-Up Looks Like" },
+      { type: "h2", text: "The Daily Grind Breakdown" },
       {
         type: "ul",
         items: [
-          "Lead comes in from a form, ad, or referral",
-          "Immediate automated acknowledgment sent within seconds",
-          "Follow-up sequence triggers if there is no response in 24 hours",
-          "Lead routed to the right team member with full context",
-          "CRM updated automatically—no manual data entry",
+          "Copy-pasting new leads from email into a spreadsheet (every morning, 20 minutes)",
+          "Manually texting appointment reminders to clients (every afternoon, 15 minutes)",
+          "Updating the CRM after every phone call (throughout the day, no one's quite sure how long)",
+          "Typing up invoices from handwritten job notes (end of day, 25-40 minutes)",
+          "Downloading a report from one platform and uploading it to another (weekly, 45 minutes)",
+          "Sending 'just checking in' follow-up emails to leads who hadn't replied (twice a week, judgement call on which ones get them)",
+          "Reconciling the booking calendar against the actual schedule spreadsheet (daily, because they somehow drift apart)",
         ],
       },
+      { type: "h2", text: "The Price of Normal" },
       {
         type: "p",
-        text: "Nothing falls through the cracks. Your team only spends time on conversations that are actually moving forward.",
+        text: "Each task takes 3 to 45 minutes. Spread across six people, five days a week, it added up to roughly 14 hours of work that didn't require a brain — just fingers and patience. That's approximately one full-time employee's worth of hours, every week, on tasks that a properly configured automation could handle without breaking a sweat. Or, more accurately, without having a sweat gland.",
       },
-      { type: "h2", text: "Who This Works Best For in Michigan and Illinois" },
+      {
+        type: "casestudy",
+        client: "First Point Cleaners",
+        slug: "first-point-cleaners",
+        stat: "70%",
+        statLabel: "reduction in no-shows",
+        teaser: "Automated reminders replaced manual texting. No-shows dropped. Admin time dropped. Nobody missed the manual texting.",
+      },
+      { type: "h2", text: "The One Question That Changes the Conversation" },
       {
         type: "p",
-        text: "The businesses that execute this best tend to be in insurance, home services, professional services, and B2B sales—industries where the sales cycle has multiple touchpoints and the cost of a lost deal is high. If you're in any of these sectors across Michigan or Illinois, automated follow-up is almost certainly worth implementing.",
+        text: "When we work with a new client, we ask one question before writing a line of anything: 'Is a human making a decision here, or is a human just pressing a button?' If the answer is 'pressing a button,' that task is an automation candidate. You'd be surprised — or maybe you wouldn't — how many buttons your team presses in a given week.",
+      },
+      {
+        type: "p",
+        text: "The businesses that get the most out of automation aren't the ones with the most complex operations. They're the ones that got honest about what 'normal work' actually looks like — and then stopped accepting it.",
       },
       {
         type: "callout",
-        text: "We've helped insurance brokers, home service companies, and B2B businesses across the Midwest automate their lead follow-up. If you want to see what that looks like for your business, book a 30-minute strategy call.",
+        text: "Want your own workflow audit? We do these for free. 30 minutes, and you'll leave knowing exactly what to automate first.",
       },
     ],
   },
+
   {
     slug: "scheduling-automation-waste-removal",
-    title: "From Chaos to System: How a Waste Removal Company Cut Scheduling Time by 60%",
-    date: "2025-03-05",
+    title: "The Five-App Circus: A Love Story Between Your Business and Tools That Hate Each Other",
+    date: "2025-04-12",
     category: "Case Study",
-    readTime: "4 min read",
-    excerpt:
-      "Before working with us, Junk Cycle was running bookings across five different tools. After go-live: 60% less scheduling time, zero double-bookings, and twice the volume with the same team.",
+    readTime: "5 min read",
+    excerpt: "Act I: The business owner installs a scheduling app. It's great. Then they realize it doesn't talk to their invoicing software. Enter App #2. You can probably guess where this is going.",
+    image: "https://images.pexels.com/photos/6913349/pexels-photo-6913349.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    imageCredit: "Tima Miroshnichenko via Pexels",
     content: [
       {
         type: "p",
-        text: "Before working with us, Junk Cycle was running their bookings across five different tools. Their dispatcher was copy-pasting between a scheduling app, a spreadsheet, WhatsApp, email, and a payment platform. Every job required five manual steps. Mistakes happened. Jobs got double-booked. Customers had to chase for confirmations.",
-      },
-      { type: "h2", text: "The Problem With Patching Tools Together" },
-      {
-        type: "p",
-        text: "Most small businesses don't set out to have a complicated tech stack. It grows organically—you add a tool to solve one problem, then another for the next one, and suddenly you have five platforms that don't talk to each other. Your team spends half its time managing the tools instead of doing the work.",
+        text: "Act I: The business installs a scheduling app. It's genuinely great — customers can book online, no more phone tag. Everyone is happy. Then someone realizes the scheduling app doesn't talk to the invoicing software. The owner finds a fix: they'll just check both every morning and copy the relevant info over. It only takes ten minutes.",
       },
       {
         type: "p",
-        text: "This is the pattern we see most often across service businesses. The inefficiency isn't obvious until you map the actual steps a job takes from booking to completion.",
+        text: "Act II: The invoicing software is also good. It doesn't sync with the CRM, but that's fine — there's a workaround. There's always a workaround. Enter App #3. The workaround involves a CSV export and one employee who has the muscle memory for the import process. Nobody else has tried. Nobody else has needed to. Yet.",
       },
-      { type: "h2", text: "What We Built" },
       {
         type: "p",
-        text: "We consolidated everything into a single flow: online booking → automatic confirmation → dispatch notification → post-job follow-up → review request. No manual steps required after the initial booking.",
+        text: "Act III: That employee leaves. The muscle memory leaves with them. Nothing breaks, technically, but nobody's completely sure the data is accurate anymore. The owner starts cross-referencing the apps manually on Friday afternoons. That is now their life.",
       },
-      {
-        type: "ul",
-        items: [
-          "Customer books online, selects date and service",
-          "Confirmation sent automatically via email and SMS",
-          "Dispatcher notified with full job details",
-          "Day-before reminder sent to customer",
-          "Post-job follow-up and review request sent automatically",
-        ],
-      },
-      { type: "h2", text: "The Result" },
+      { type: "h2", text: "This Is Not a Story About Bad Software" },
       {
         type: "p",
-        text: "60% reduction in time spent on scheduling coordination. Zero double-bookings since go-live. Response time dropped from hours to minutes. The dispatcher now handles roughly twice the volume with the same team.",
+        text: "Calendly is fine. QuickBooks is fine. Jobber is fine. Every app in this stack was probably a reasonable decision at the time. The problem isn't the tools — it's that tools designed independently don't behave like a system. They behave like individual tools, because that's what they are. You end up stitching them together with habit, manual steps, and the collective memory of your team. The moment any part of that chain breaks, everything becomes a guess.",
       },
-      { type: "h2", text: "The Lesson" },
+      {
+        type: "casestudy",
+        client: "Junk Cycle",
+        slug: "junk-cycle",
+        stat: "60%",
+        statLabel: "less time on scheduling",
+        teaser: "Five platforms, 22 manual steps per job, constant errors. One automated flow replaced all of it — dispatchers now handle twice the volume.",
+      },
+      { type: "h2", text: "The Moment It Clicked" },
       {
         type: "p",
-        text: "The goal of automation isn't to replace your team—it's to give them back their time. When the administrative overhead disappears, the same people can serve more customers, handle more volume, and focus on the parts of the job that actually require human judgment.",
+        text: "The owner of Junk Cycle said something during our first call that I still think about: 'Every job requires five things to happen, and I have to remember all five every time.' That's not a scheduling problem. That's a systems problem. When we mapped the full flow — booking, dispatch, confirmation, reminder, post-job follow-up — it was 22 steps. Fourteen of them were manual. Some of them depended on one specific person being around and not distracted.",
+      },
+      {
+        type: "p",
+        text: "After consolidating: booking triggers confirmation, confirmation triggers dispatch note, dispatch note triggers day-before reminder, job completion triggers follow-up. The whole chain runs on its own. The dispatcher now handles roughly double the volume with the same team.",
+      },
+      { type: "h2", text: "What One Connected System Feels Like" },
+      {
+        type: "p",
+        text: "When everything is integrated, something strange happens to the people running the business: they stop thinking about operations. Not because the operations don't exist — they do — but because the right things happen automatically and the team's attention shifts to the exceptions, the growth, the decisions that actually need a person. That's what a system is supposed to do.",
+      },
+      {
+        type: "casestudy",
+        client: "Aerrand",
+        slug: "aerrand",
+        stat: "70%",
+        statLabel: "faster onboarding",
+        teaser: "End-to-end onboarding automation replaced a chain of manual handoffs. Zero dropped steps since go-live.",
       },
       {
         type: "callout",
-        text: "If your business is managing jobs, bookings, or dispatching across multiple tools, there's a good chance we can help you consolidate and automate. Book a call to walk through your current setup.",
+        text: "If your business runs on three or more tools that require manual steps between them, there's a very good chance we can consolidate it. Book a call and show us your current setup.",
       },
     ],
   },
+
   {
     slug: "ai-automation-small-business-guide",
-    title: "What AI Automation Actually Looks Like for a 10-Person Business",
-    date: "2025-02-18",
+    title: "No, Your AI Won't Become Skynet. But It Will Answer Your Leads at 2am.",
+    date: "2025-05-01",
     category: "Guide",
-    readTime: "7 min read",
-    excerpt:
-      "AI automation isn't just for enterprise. Here's an honest look at what it means for a growing business—what to automate first, what it costs, and what it doesn't look like.",
+    readTime: "8 min read",
+    excerpt: "When people hear 'AI automation,' they picture robots, chatbots that answer nothing correctly, or the opening scene of a sci-fi movie. Let's talk about what it actually is.",
+    image: "https://images.pexels.com/photos/3760604/pexels-photo-3760604.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    imageCredit: "Andrea Piacquadio via Pexels",
     content: [
       {
         type: "p",
-        text: "When people hear 'AI automation,' they often imagine something built for enterprise—expensive, complex, and out of reach for a business with 5 to 15 people. That's not what we build. The businesses we work with are small and mid-sized, operating in real industries across Canada and the US, and looking for systems that work without needing a dedicated IT department to maintain them.",
-      },
-      { type: "h2", text: "Start With the Bottleneck, Not the Technology" },
-      {
-        type: "p",
-        text: "The mistake most businesses make when thinking about automation is starting with the tool. 'Should we use Zapier? Something custom?' The right starting point is the bottleneck: what's costing you the most time, the most errors, or the most missed opportunities? The tool comes second.",
+        text: "When someone says 'AI automation for your business,' a few things might come to mind. A robot. A chatbot that responds to 'What are your hours?' with 'I'm sorry, I didn't understand that.' A TED Talk you half-watched on a flight. Or, if you've seen too many movies, the opening act before Skynet takes over.",
       },
       {
         type: "p",
-        text: "For most businesses we talk to—whether in Windsor, Toronto, Chicago, or San Francisco—the bottleneck is almost always the same: too many manual handoffs, no automated follow-up, and a scheduling or onboarding process that depends entirely on one person's memory.",
+        text: "None of that is what we're talking about. We're talking about something far more boring and considerably more useful. Forms that reply to themselves. Calendars that fill without phone calls. Invoices that generate without being typed. Leads that get followed up with before your team wakes up. The whole premise is almost embarrassingly mundane: repetitive things should not require a human to repeat them.",
       },
-      { type: "h2", text: "What's Typically Worth Automating First" },
+      { type: "h2", text: "The Three Objections We Hear Every Week" },
       {
         type: "ul",
         items: [
-          "Lead intake and follow-up — respond to every inquiry instantly, no matter the time of day",
-          "Appointment booking and reminders — eliminate phone-tag and no-shows",
-          "Client onboarding sequences — deliver a consistent experience without manual effort",
-          "Invoice and payment collection — trigger reminders based on job status, not someone's calendar",
-          "Internal reporting — pull data from multiple sources automatically, on a schedule",
+          "'My business is too small for this.' We work with 3-person companies. Size is not the barrier — chaos is.",
+          "'It'll break and I won't know how to fix it.' You will know when it breaks, because we monitor it and you'll get an alert. Also, it breaks way less than the human equivalent.",
+          "'My team will resist it.' Your team will enthusiastically support anything that removes the tasks they hate. Nobody misses manual data entry.",
         ],
       },
-      { type: "h2", text: "What It Takes to Get Started" },
+      { type: "h2", text: "What 'AI' Actually Means in This Context" },
       {
         type: "p",
-        text: "A reasonable automation project for a small business takes 2–4 weeks from kickoff to go-live. You'll need to spend a few hours with whoever is building it, explaining your current workflows. The rest is on them. Ongoing maintenance is minimal once it's running—most automations run without intervention for months.",
+        text: "In most small business automation, 'AI' means systems that can respond intelligently, adapt based on context, and make simple decisions without human input. An AI voice agent that calls your leads can determine from the conversation whether someone's qualified, log the outcome, score the lead, and notify your team accordingly. It's not making strategic decisions. It's not getting creative. It's doing the repetitive part — extremely reliably, at any hour, without needing a coffee break.",
       },
-      { type: "h2", text: "What It Doesn't Look Like" },
       {
-        type: "p",
-        text: "It's not a chatbot that answers FAQs on your website (though that's a thing too). It's not a dashboard full of graphs that nobody checks. At its core, good business automation is operational: something runs that used to require a person, and your team doesn't think about it anymore.",
+        type: "casestudy",
+        client: "Summit Mortgage Group",
+        slug: "summit-mortgage",
+        stat: "60s",
+        statLabel: "from form fill to AI call",
+        teaser: "An AI voice agent calls leads the moment they submit a form — qualifies them, logs it all, sends a transcript. Try it yourself on the case study page.",
       },
-      { type: "h2", text: "The Right Time to Start" },
+      { type: "h2", text: "Where to Start (And Where Not To)" },
       {
         type: "p",
-        text: "The best time to automate is before you feel the pain acutely. By the time manual work is causing you to lose deals or miss follow-ups, you've already left money on the table. The businesses that benefit most start automating when things are going well—so they can handle more volume without adding headcount.",
+        text: "The worst starting point is 'we want to automate everything.' The best starting point is one specific thing that makes someone on your team sigh every time they do it. The task that happens daily, takes 15 minutes, and requires nothing more than copying information from one place to another. Start there. Prove it works. Then expand.",
+      },
+      {
+        type: "p",
+        text: "The businesses that get the most out of automation aren't the ones with the largest budgets or the most complex operations. They're the ones that got specific about what was costing them time and made one decision to stop tolerating it.",
+      },
+      {
+        type: "casestudy",
+        client: "Harbor One Capital",
+        slug: "harbor-one-capital",
+        stat: "2×",
+        statLabel: "more closed policies",
+        teaser: "Automated lead follow-up meant agents spent zero time chasing and 100% of their time closing. Policies doubled without adding headcount.",
+      },
+      { type: "h2", text: "What You Actually Get" },
+      {
+        type: "p",
+        text: "Not a dashboard full of graphs nobody checks. Not a chatbot that says 'I'm sorry, I didn't understand that' to half your customers. What you get is operational: something runs that used to require a person, and your team genuinely stops thinking about it. That's the measure. Not the technology. The quiet.",
       },
       {
         type: "callout",
-        text: "If you're a business in Windsor, Toronto, Michigan, Chicago, or San Francisco and you're curious whether automation makes sense for your operation, the fastest way to find out is a 30-minute call. We've done this enough times to tell you quickly whether it's worth pursuing.",
+        text: "Book a free 30-minute call. We'll tell you what's actually worth automating for your business — and what isn't.",
       },
     ],
   },
