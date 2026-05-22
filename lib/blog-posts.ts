@@ -62,11 +62,11 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "casestudy",
-        client: "Summit Mortgage Group",
+        client: "Oblique Path — AI Voice Agent",
         slug: "summit-mortgage",
         stat: "60s",
         statLabel: "from form fill to AI call",
-        teaser: "AI voice agent qualifies leads instantly, 24/7 — agents only talk to people who are already screened.",
+        teaser: "Our AI voice agent qualifies leads instantly, 24/7. Try the live demo — enter your number and get called in 60 seconds.",
       },
       { type: "h2", text: "You Don't Need to Hire a Night Shift" },
       {
