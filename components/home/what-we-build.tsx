@@ -45,6 +45,13 @@ const reveal = (delay = 0) => ({
   transition: { duration: 0.7, delay, ease: [0.32, 0.72, 0, 1] as [number, number, number, number] },
 });
 
+const slideIn = (delay = 0) => ({
+  initial: { opacity: 0, x: -48 },
+  whileInView: { opacity: 1, x: 0 },
+  viewport: { once: true, amount: 0.1 as number },
+  transition: { duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
+});
+
 export function WhatWeBuild() {
   return (
     <section className="px-4 lg:px-16 py-24 md:py-36 border-t border-border">
@@ -72,7 +79,7 @@ export function WhatWeBuild() {
           {capabilities.map((cap, i) => (
             <motion.div
               key={cap.number}
-              {...reveal(0.08 + i * 0.06)}
+              {...slideIn(i * 0.1)}
               className="grid grid-cols-1 lg:grid-cols-[100px_1fr_1fr] gap-6 lg:gap-12 py-10 border-t border-border last:border-b"
             >
               {/* Large number */}

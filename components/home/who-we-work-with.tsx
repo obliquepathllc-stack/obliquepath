@@ -33,10 +33,17 @@ const segments = [
 ];
 
 const reveal = (delay = 0) => ({
-  initial: { opacity: 0, y: 20 },
+  initial: { opacity: 0, y: 16 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, amount: 0.1 as number },
-  transition: { duration: 0.65, delay, ease: [0.32, 0.72, 0, 1] as [number, number, number, number] },
+  transition: { duration: 0.55, delay, ease: [0.32, 0.72, 0, 1] as [number, number, number, number] },
+});
+
+const slideIn = (delay = 0) => ({
+  initial: { opacity: 0, x: -48 },
+  whileInView: { opacity: 1, x: 0 },
+  viewport: { once: true, amount: 0.1 as number },
+  transition: { duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
 });
 
 export function WhoWeWorkWith() {
@@ -56,7 +63,7 @@ export function WhoWeWorkWith() {
           {segments.map((segment, i) => (
             <motion.div
               key={segment.number}
-              {...reveal(0.08 + i * 0.07)}
+              {...slideIn(i * 0.1)}
               className="grid grid-cols-1 md:grid-cols-[72px_1fr] gap-4 md:gap-10 py-10 border-t border-border last:border-b"
             >
               <div className="pt-1">

@@ -9,12 +9,12 @@ import { useState, useRef, useCallback } from "react";
 
 const previews = [
   {
-    client: "Harbor One Capital",
-    tag: "Insurance & Finance",
-    stat: "2×",
-    statLabel: "more closed policies",
-    description: "Automated lead follow-up, quote reminders, and CRM integration eliminated manual chasing. Agents focused on selling.",
-    slug: "harbor-one-capital",
+    client: "Oblique Path",
+    tag: "AI Voice Agent",
+    stat: "60s",
+    statLabel: "form fill to AI call",
+    description: "AI voice agent calls leads automatically, qualifies them in conversation, logs to CRM, and sends a full transcript. Try it live.",
+    slug: "ai-voice-agent",
     wide: true,
   },
   {
@@ -34,15 +34,6 @@ const previews = [
     description: "Online booking, automated confirmations, and dispatch coordination replaced five-platform chaos with one clean system.",
     slug: "junk-cycle",
     wide: false,
-  },
-  {
-    client: "Oblique Path",
-    tag: "AI Voice Agent",
-    stat: "60s",
-    statLabel: "form fill to AI call",
-    description: "AI voice agent calls leads automatically, qualifies them in conversation, logs to CRM, and sends a full transcript. Try it live.",
-    slug: "ai-voice-agent",
-    wide: true,
   },
 ];
 
@@ -64,10 +55,10 @@ function PreviewCard({ preview, index }: { preview: typeof previews[0]; index: n
         onMouseMove={onMouseMove}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.15 }}
-        transition={{ duration: 0.65, delay: index * 0.07, ease: [0.32, 0.72, 0, 1] }}
+        initial={{ opacity: 0, x: index % 2 === 0 ? -40 : 40 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.6, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
         className="relative group h-full overflow-hidden rounded-2xl border border-border bg-card p-8 cursor-pointer shadow-[0_2px_16px_-6px_rgba(0,0,0,0.06)] hover:shadow-[0_6px_28px_-6px_rgba(0,0,0,0.12)] transition-all duration-300"
       >
         {/* Spotlight */}
