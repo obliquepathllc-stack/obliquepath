@@ -41,7 +41,7 @@ const previews = [
     stat: "60s",
     statLabel: "form fill to AI call",
     description: "AI voice agent calls leads automatically, qualifies them in conversation, logs to CRM, and sends a full transcript. Try it live.",
-    slug: "summit-mortgage",
+    slug: "ai-voice-agent",
     wide: true,
   },
 ];

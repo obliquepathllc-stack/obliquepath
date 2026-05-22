@@ -633,7 +633,7 @@ export const caseStudies: CaseStudy[] = [
 
   // ── AI Voice Agent ─────────────────────────────────────────────────────────
   {
-    id: "summit-mortgage",
+    id: "ai-voice-agent",
     filterTag: "Financial Services",
     liveDemoSection: true,
     title: "Every form fill gets a call back in 60 seconds. Qualified or not, the agent knows before they pick up the phone.",

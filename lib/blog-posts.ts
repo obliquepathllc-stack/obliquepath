@@ -63,7 +63,7 @@ export const blogPosts: BlogPost[] = [
       {
         type: "casestudy",
         client: "Oblique Path — AI Voice Agent",
-        slug: "summit-mortgage",
+        slug: "ai-voice-agent",
         stat: "60s",
         statLabel: "from form fill to AI call",
         teaser: "Our AI voice agent qualifies leads instantly, 24/7. Try the live demo — enter your number and get called in 60 seconds.",
@@ -238,11 +238,11 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "casestudy",
-        client: "Summit Mortgage Group",
-        slug: "summit-mortgage",
+        client: "Oblique Path — AI Voice Agent",
+        slug: "ai-voice-agent",
         stat: "60s",
         statLabel: "from form fill to AI call",
-        teaser: "An AI voice agent calls leads the moment they submit a form — qualifies them, logs it all, sends a transcript. Try it yourself on the case study page.",
+        teaser: "Our AI voice agent calls leads the moment they submit a form — qualifies them, logs it all, sends a transcript. Try the live demo yourself.",
       },
       { type: "h2", text: "Where to Start (And Where Not To)" },
       {
