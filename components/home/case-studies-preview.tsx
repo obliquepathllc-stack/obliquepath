@@ -64,8 +64,8 @@ function PreviewCard({ preview, index }: { preview: typeof previews[0]; index: n
         onMouseMove={onMouseMove}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
-        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.15 }}
         transition={{ duration: 0.65, delay: index * 0.07, ease: [0.32, 0.72, 0, 1] }}
         className="relative group h-full overflow-hidden rounded-2xl border border-border bg-card p-8 cursor-pointer shadow-[0_2px_16px_-6px_rgba(0,0,0,0.06)] hover:shadow-[0_6px_28px_-6px_rgba(0,0,0,0.12)] transition-all duration-300"

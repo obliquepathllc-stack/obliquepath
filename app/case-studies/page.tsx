@@ -51,8 +51,8 @@ function StudyCard({ study, index, total }: { study: CaseStudy; index: number; t
         onMouseMove={onMouseMove}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        initial={{ opacity: 0, y: 32, filter: "blur(6px)" }}
-        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        initial={{ opacity: 0, y: 32 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.12 }}
         transition={{ duration: 0.75, delay: index * 0.06, ease: [0.32, 0.72, 0, 1] }}
         whileHover={{ scale: 1.015, boxShadow: "0 8px 32px -8px rgba(0,0,0,0.14)" }}
@@ -164,8 +164,8 @@ export default function CaseStudiesPage() {
 
         <div className="container max-w-6xl mx-auto relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}
           >
             <div className="inline-flex items-center gap-2.5 rounded-full border border-border bg-secondary px-4 py-2 mb-10">
@@ -260,8 +260,8 @@ export default function CaseStudiesPage() {
       <section className="px-4 lg:px-16 pb-32 md:pb-40">
         <div className="container max-w-6xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
-            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.75, ease: [0.32, 0.72, 0, 1] }}
             className="relative overflow-hidden rounded-[2rem] border border-border bg-card p-12 md:p-16 text-center shadow-[0_8px_48px_-12px_rgba(0,0,0,0.1)]"

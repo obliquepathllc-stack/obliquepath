@@ -12,7 +12,7 @@ export function ScrollAmbient() {
   const opacity2 = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0.5, 0.8, 1, 0.7]);
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div className="hidden md:block fixed inset-0 pointer-events-none z-0 overflow-hidden">
       {/* Primary orb — top right, drifts up on scroll */}
       <motion.div
         style={{ y: y1, opacity: opacity1 }}

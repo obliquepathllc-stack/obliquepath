@@ -11,8 +11,8 @@ export function FinalCTA() {
     <section className="px-4 lg:px-16 py-24 md:py-40">
       <div className="container max-w-6xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
-          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.75, ease: [0.32, 0.72, 0, 1] }}
           className="relative overflow-hidden rounded-[2rem] border border-border bg-card p-12 md:p-16 shadow-[0_8px_48px_-12px_rgba(0,0,0,0.1)]"

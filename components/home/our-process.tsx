@@ -32,8 +32,8 @@ export function OurProcess() {
     <section className="px-4 lg:px-16 py-24 md:py-32 ">
       <div className="container max-w-6xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 16, filter: "blur(4px)" }}
-          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.65, ease: [0.32, 0.72, 0, 1] }}
           className="mb-16"
@@ -48,8 +48,8 @@ export function OurProcess() {
           {steps.map((step, i) => (
             <motion.div
               key={step.number}
-              initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
-              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.65, delay: i * 0.08, ease: [0.32, 0.72, 0, 1] }}
               className="relative flex flex-col gap-4 pr-0 lg:pr-8 pb-10 lg:pb-0 border-l-2 lg:border-l-0 lg:border-t-2 border-border/50 pl-6 lg:pl-0 lg:pt-6"

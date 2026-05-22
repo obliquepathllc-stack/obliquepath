@@ -33,8 +33,8 @@ const segments = [
 ];
 
 const reveal = (delay = 0) => ({
-  initial: { opacity: 0, y: 20, filter: "blur(4px)" },
-  whileInView: { opacity: 1, y: 0, filter: "blur(0px)" },
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, amount: 0.1 as number },
   transition: { duration: 0.65, delay, ease: [0.32, 0.72, 0, 1] as [number, number, number, number] },
 });

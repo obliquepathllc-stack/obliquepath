@@ -19,8 +19,8 @@ export function MetricsBar() {
           {metrics.map((metric, i) => (
             <motion.div
               key={metric.label}
-              initial={{ opacity: 0, y: 16, filter: "blur(4px)" }}
-              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: i * 0.09, ease: [0.32, 0.72, 0, 1] }}
               className="flex flex-col gap-2 px-0 md:px-8 py-8 md:py-0 first:pl-0 last:pr-0"

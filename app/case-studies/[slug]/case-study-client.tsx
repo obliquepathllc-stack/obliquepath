@@ -12,8 +12,8 @@ import { ScrollWatcher } from "@/components/scroll-watcher";
 
 // Scroll entry with blur (taste-skill §5C)
 const reveal = (delay = 0) => ({
-  initial: { opacity: 0, y: 28, filter: "blur(6px)" },
-  whileInView: { opacity: 1, y: 0, filter: "blur(0px)" },
+  initial: { opacity: 0, y: 28 },
+  whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, amount: 0.15 as number },
   transition: { duration: 0.75, delay, ease: [0.32, 0.72, 0, 1] as [number, number, number, number] },
 });
@@ -26,7 +26,7 @@ function MetricCard({ stat, description, delay }: { stat: string; description: s
         <div className="text-3xl md:text-4xl font-bold text-white tracking-tight leading-none">
           {stat}
         </div>
-        <div className="text-xs text-white/35 leading-snug max-w-[120px] text-center">
+        <div className="text-xs text-white/60 leading-snug max-w-[120px] text-center">
           {description}
         </div>
       </div>
@@ -48,7 +48,7 @@ export function CaseStudyClient({
   const nextStudy = nextStudyId ? (caseStudies.find((s) => s.id === nextStudyId) ?? null) : null;
 
   return (
-    <div className="bg-[#07070f] text-white min-h-screen">
+    <main className="bg-[#07070f] text-white min-h-screen">
       <ScrollWatcher />
 
       {/* ── HERO ──────────────────────────────────────────────────────────────── */}
@@ -66,7 +66,7 @@ export function CaseStudyClient({
           >
             <Link
               href="/case-studies"
-              className="inline-flex items-center gap-2 text-sm text-white/30 hover:text-white/55 transition-colors duration-200 group"
+              className="inline-flex items-center gap-2 text-sm text-white/55 hover:text-white/55 transition-colors duration-200 group"
             >
               <span className="w-7 h-7 rounded-full border border-white/[0.08] flex items-center justify-center group-hover:border-white/18 group-hover:-translate-x-0.5 transition-all duration-200">
                 <ArrowLeft className="h-3 w-3" />
@@ -82,18 +82,18 @@ export function CaseStudyClient({
             transition={{ duration: 0.6, delay: 0.05 }}
             className="flex flex-wrap gap-2 mb-8"
           >
-            <span className="text-[10px] tracking-[0.2em] uppercase font-medium text-white/28 border border-white/[0.07] rounded-full px-3 py-1.5">
+            <span className="text-[10px] tracking-[0.2em] uppercase font-medium text-white/55 border border-white/[0.07] rounded-full px-3 py-1.5">
               {study.filterTag}
             </span>
-            <span className="text-[10px] tracking-[0.2em] uppercase text-white/18 border border-white/[0.04] rounded-full px-3 py-1.5">
+            <span className="text-[10px] tracking-[0.2em] uppercase text-white/45 border border-white/[0.04] rounded-full px-3 py-1.5">
               {study.location}
             </span>
           </motion.div>
 
           {/* Title */}
           <motion.h1
-            initial={{ opacity: 0, y: 28, filter: "blur(8px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            initial={{ opacity: 0, y: 28 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.85, delay: 0.1, ease: [0.32, 0.72, 0, 1] }}
             className="text-4xl sm:text-5xl md:text-[60px] font-bold tracking-tight leading-[1.04] max-w-4xl mb-12"
           >
@@ -111,7 +111,7 @@ export function CaseStudyClient({
               <div className="text-[80px] md:text-[108px] font-bold text-white leading-none tracking-tighter">
                 {study.results[0].stat}
               </div>
-              <div className="text-white/30 text-sm mt-1">{study.results[0].description}</div>
+              <div className="text-white/55 text-sm mt-1">{study.results[0].description}</div>
             </div>
 
             <div className="hidden sm:block w-px h-20 bg-white/[0.07]" />
@@ -123,8 +123,8 @@ export function CaseStudyClient({
                 </div>
               )}
               <span className="text-white/55 font-semibold">{study.client}</span>
-              <span className="text-white/28 text-sm">{study.industry}</span>
-              <span className="text-white/22 text-xs">{study.service}</span>
+              <span className="text-white/55 text-sm">{study.industry}</span>
+              <span className="text-white/50 text-xs">{study.service}</span>
             </div>
           </motion.div>
         </div>
@@ -139,7 +139,7 @@ export function CaseStudyClient({
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             {/* Left: before headline + narrative */}
             <div>
-              <motion.p {...reveal(0)} className="text-[10px] tracking-[0.22em] uppercase text-white/22 mb-5">
+              <motion.p {...reveal(0)} className="text-[10px] tracking-[0.22em] uppercase text-white/50 mb-5">
                 Before
               </motion.p>
               <motion.h2
@@ -183,7 +183,7 @@ export function CaseStudyClient({
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             {/* Left: solution bullets */}
             <div className="order-2 lg:order-1">
-              <p className="text-[10px] tracking-[0.22em] uppercase text-white/22 mb-5">What We Built</p>
+              <p className="text-[10px] tracking-[0.22em] uppercase text-white/50 mb-5">What We Built</p>
               <div className="flex flex-col gap-3">
                 {study.solution.map((item, i) => (
                   <motion.div
@@ -227,7 +227,7 @@ export function CaseStudyClient({
 
               <div className="relative z-10">
                 <motion.div {...reveal(0)} className="mb-10">
-                  <p className="text-[10px] tracking-[0.22em] uppercase text-white/22 mb-3">How It Works</p>
+                  <p className="text-[10px] tracking-[0.22em] uppercase text-white/50 mb-3">How It Works</p>
                   <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight">
                     Step by step
                   </h2>
@@ -247,7 +247,7 @@ export function CaseStudyClient({
                         )}
                       </div>
                       <h3 className="text-sm font-semibold text-white/65">{step.title}</h3>
-                      <p className="text-xs text-white/35 leading-relaxed">{step.description}</p>
+                      <p className="text-xs text-white/60 leading-relaxed">{step.description}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -261,10 +261,10 @@ export function CaseStudyClient({
       <section className="px-4 lg:px-16 pb-24 md:pb-32">
         <div className="container max-w-6xl mx-auto">
           <motion.div {...reveal(0)} className="mb-10">
-            <p className="text-[10px] tracking-[0.25em] uppercase text-white/22 mb-3">Measured outcomes</p>
+            <p className="text-[10px] tracking-[0.25em] uppercase text-white/50 mb-3">Measured outcomes</p>
             <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight">
               The Results{" "}
-              <span className="text-white/22 font-normal text-lg">{study.timeframe}</span>
+              <span className="text-white/50 font-normal text-lg">{study.timeframe}</span>
             </h2>
           </motion.div>
 
@@ -300,7 +300,7 @@ export function CaseStudyClient({
                 </div>
                 <div>
                   {study.clientName && <p className="font-semibold text-white/60 text-sm">{study.clientName}</p>}
-                  <p className="text-xs text-white/30">{study.clientTitle}</p>
+                  <p className="text-xs text-white/55">{study.clientTitle}</p>
                 </div>
               </div>
             </div>
@@ -351,7 +351,7 @@ export function CaseStudyClient({
 
                     <div className="text-center">
                       <p className="text-white/75 font-semibold mb-1">Get My Demo Call Now</p>
-                      <p className="text-white/30 text-sm">Opens in 30 seconds — enter your name and number, AI calls you immediately</p>
+                      <p className="text-white/55 text-sm">Opens in 30 seconds — enter your name and number, AI calls you immediately</p>
                     </div>
 
                     <div className="inline-flex items-center gap-2.5 rounded-full bg-indigo-500 text-white font-semibold px-7 py-3.5 text-sm hover:bg-indigo-400 transition-colors duration-200">
@@ -374,16 +374,16 @@ export function CaseStudyClient({
       {(prevStudy || nextStudy) && (
         <section className="px-4 lg:px-16 pb-24">
           <div className="container max-w-6xl mx-auto border-t border-white/[0.04] pt-12">
-            <p className="text-[10px] tracking-[0.2em] uppercase text-white/22 mb-6">More Case Studies</p>
+            <p className="text-[10px] tracking-[0.2em] uppercase text-white/50 mb-6">More Case Studies</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {prevStudy && (
                 <Link href={prevStudy.pageUrl ?? `/case-studies/${prevStudy.id}`} className="group">
                   <div className="flex items-center gap-4 p-6 rounded-2xl border border-white/[0.06] bg-white/[0.02] hover:border-indigo-500/22 hover:bg-indigo-500/[0.04] transition-all duration-300">
                     <div className="w-9 h-9 rounded-full border border-white/[0.07] flex items-center justify-center shrink-0 group-hover:-translate-x-0.5 transition-transform duration-300">
-                      <ArrowLeft className="h-4 w-4 text-white/35" />
+                      <ArrowLeft className="h-4 w-4 text-white/60" />
                     </div>
                     <div>
-                      <p className="text-[10px] text-white/22 mb-1">Previous</p>
+                      <p className="text-[10px] text-white/50 mb-1">Previous</p>
                       <p className="text-sm font-medium text-white/50 group-hover:text-white/75 transition-colors line-clamp-1">
                         {prevStudy.client}
                       </p>
@@ -395,13 +395,13 @@ export function CaseStudyClient({
                 <Link href={nextStudy.pageUrl ?? `/case-studies/${nextStudy.id}`} className="group">
                   <div className="flex items-center justify-between gap-4 p-6 rounded-2xl border border-white/[0.06] bg-white/[0.02] hover:border-indigo-500/22 hover:bg-indigo-500/[0.04] transition-all duration-300">
                     <div>
-                      <p className="text-[10px] text-white/22 mb-1">Next</p>
+                      <p className="text-[10px] text-white/50 mb-1">Next</p>
                       <p className="text-sm font-medium text-white/50 group-hover:text-white/75 transition-colors line-clamp-1">
                         {nextStudy.client}
                       </p>
                     </div>
                     <div className="w-9 h-9 rounded-full border border-white/[0.07] flex items-center justify-center shrink-0 group-hover:translate-x-0.5 transition-transform duration-300">
-                      <ArrowRight className="h-4 w-4 text-white/35" />
+                      <ArrowRight className="h-4 w-4 text-white/60" />
                     </div>
                   </div>
                 </Link>
@@ -422,11 +422,11 @@ export function CaseStudyClient({
             <div className="absolute inset-[1px] rounded-[calc(2rem-1px)] bg-gradient-to-b from-white/[0.04] to-transparent h-28 pointer-events-none" />
 
             <div className="relative z-10">
-              <p className="text-[10px] tracking-[0.2em] uppercase text-white/22 mb-5">Get started</p>
+              <p className="text-[10px] tracking-[0.2em] uppercase text-white/50 mb-5">Get started</p>
               <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-4">
                 Want results like these?
               </h2>
-              <p className="text-white/32 max-w-md mx-auto mb-10 leading-relaxed">
+              <p className="text-white/55 max-w-md mx-auto mb-10 leading-relaxed">
                 Book a free consultation. We map your workflow, find the gaps, and build the system.
               </p>
 
@@ -442,6 +442,6 @@ export function CaseStudyClient({
           </motion.div>
         </div>
       </section>
-    </div>
+    </main>
   );
 }

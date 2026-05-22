@@ -17,9 +17,9 @@ const clientLogos = [
 ];
 
 const lineEntry = (delay: number) => ({
-  initial: { opacity: 0, y: 48, filter: "blur(14px)" },
-  animate: { opacity: 1, y: 0, filter: "blur(0px)" },
-  transition: { duration: 0.85, delay, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
+  initial: { opacity: 0, y: 40 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.75, delay, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
 });
 
 export function HeroSection() {

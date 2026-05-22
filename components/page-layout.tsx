@@ -26,9 +26,9 @@ export function PageLayout({ children, title, subtitle }: PageLayoutProps) {
 
         <div className="container max-w-6xl mx-auto relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            transition={{ duration: 0.75, ease: [0.32, 0.72, 0, 1] }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.65, ease: [0.32, 0.72, 0, 1] }}
           >
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-black tracking-[-0.025em] leading-[0.93]">
               {title}
