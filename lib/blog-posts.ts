@@ -25,18 +25,18 @@ export const blogPosts: BlogPost[] = [
     date: "2025-05-10",
     category: "AI Automation",
     readTime: "6 min read",
-    excerpt: "There is a precise moment when your lead generation falls apart. It's approximately five minutes after someone fills out your contact form — and it happens every single day.",
+    excerpt: "There is a precise moment when your lead generation falls apart. It's approximately five minutes after someone fills out your contact form, and it happens every single day.",
     image: "https://images.pexels.com/photos/8278873/pexels-photo-8278873.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
     imageCredit: "AI25.Studio via Pexels",
     content: [
       {
         type: "p",
-        text: "It's 11:47pm. Somebody just filled out your quote form. They want exactly what you offer, they have their wallet open, and they're ready to move. Right now — while you are (hopefully) asleep — they are also looking at your competitor's website, your other competitor's website, and whoever shows up third on Google. The first business to respond wins the deal. Unless, of course, one of those businesses has a system that called at 11:48pm.",
+        text: "It's 11:47pm. Somebody just filled out your quote form. They want exactly what you offer, they have their wallet open, and they're ready to move. Right now, while you are (hopefully) asleep, they are also looking at your competitor's website, your other competitor's website, and whoever shows up third on Google. The first business to respond wins the deal. Unless, of course, one of those businesses has a system that called at 11:48pm.",
       },
       { type: "h2", text: "A Tale of Two Businesses (And One Very Awake Robot)" },
       {
         type: "p",
-        text: "Business A and Business B are both running ads in Windsor. Both get 40 form submissions a month. Business A's team comes in at 9am, works through the inbox, and starts calling leads around 11. Business B has an automated response that fires within 90 seconds of every submission — a personalized text, a confirmation email, and a booking link. By the time Business A's team lifts the phone, Business B has already booked 60% of those same leads. Business A thinks their ads aren't working. Business A is wrong.",
+        text: "Business A and Business B are both running ads in Windsor. Both get 40 form submissions a month. Business A's team comes in at 9am, works through the inbox, and starts calling leads around 11. Business B has an automated response that fires within 90 seconds of every submission, a personalized text, a confirmation email, and a booking link. By the time Business A's team lifts the phone, Business B has already booked 60% of those same leads. Business A thinks their ads aren't working. Business A is wrong.",
       },
       { type: "h2", text: "The 5-Minute Rule (That's Actually a 30-Second Rule)" },
       {
@@ -45,7 +45,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "The irony is that the fix isn't complicated. It's just a system that does the boring part — the immediate response, the follow-up, the reminder — so your team can focus on the part that actually requires a human being.",
+        text: "The irony is that the fix isn't complicated. It's just a system that does the boring part, the immediate response, the follow-up, the reminder, so your team can focus on the part that actually requires a human being.",
       },
       {
         type: "casestudy",
@@ -58,15 +58,15 @@ export const blogPosts: BlogPost[] = [
       { type: "h2", text: "What Happens When the Robot Picks Up First" },
       {
         type: "p",
-        text: "We built a system for a mortgage brokerage that was hemorrhaging leads every weekend. An AI voice agent now calls every form submission within 60 seconds — including Friday night, Saturday morning, and Sunday at noon. It introduces itself, asks qualifying questions, logs everything to the CRM, and sends the agent a full transcript before they wake up. Monday morning, the agent has 40 pre-qualified leads with notes. Not a pile of cold contacts and vague anxiety.",
+        text: "We built a system for a mortgage brokerage that was hemorrhaging leads every weekend. An AI voice agent now calls every form submission within 60 seconds, including Friday night, Saturday morning, and Sunday at noon. It introduces itself, asks qualifying questions, logs everything to the CRM, and sends the agent a full transcript before they wake up. Monday morning, the agent has 40 pre-qualified leads with notes. Not a pile of cold contacts and vague anxiety.",
       },
       {
         type: "casestudy",
-        client: "Oblique Path — AI Voice Agent",
+        client: "Oblique Path: AI Voice Agent",
         slug: "ai-voice-agent",
         stat: "60s",
         statLabel: "from form fill to AI call",
-        teaser: "Our AI voice agent qualifies leads instantly, 24/7. Try the live demo — enter your number and get called in 60 seconds.",
+        teaser: "Our AI voice agent qualifies leads instantly, 24/7. Try the live demo, enter your number and get called in 60 seconds.",
       },
       { type: "h2", text: "You Don't Need to Hire a Night Shift" },
       {
@@ -75,7 +75,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "callout",
-        text: "Want to see what this looks like for your specific business? We'll map out exactly what to automate and how — 30 minutes, no pitch.",
+        text: "Want to see what this looks like for your specific business? We'll map out exactly what to automate and how, 30 minutes, no pitch.",
       },
     ],
   },
@@ -92,11 +92,11 @@ export const blogPosts: BlogPost[] = [
     content: [
       {
         type: "p",
-        text: "We asked a small service business — six employees, doing well, growing steadily — to track every task their team touched for one week. Not just the big stuff. Everything. Every email, every phone call, every 'let me just update the spreadsheet real quick.' The result was a 47-item list. Fourteen of those tasks happened every single day. Nine of them were being performed by humans for reasons that, when examined closely, turned out to be 'because that's how we've always done it.'",
+        text: "We asked a small service business, six employees, doing well, growing steadily, to track every task their team touched for one week. Not just the big stuff. Everything. Every email, every phone call, every 'let me just update the spreadsheet real quick.' The result was a 47-item list. Fourteen of those tasks happened every single day. Nine of them were being performed by humans for reasons that, when examined closely, turned out to be 'because that's how we've always done it.'",
       },
       {
         type: "p",
-        text: "We're not here to make anyone feel bad. Admin work doesn't sneak up on you all at once — it accumulates slowly, like a pile of mail that somehow becomes furniture. You add one tool to solve one problem, then another tool for the next, and before you know it you have five platforms that technically work and actually don't.",
+        text: "We're not here to make anyone feel bad. Admin work doesn't sneak up on you all at once, it accumulates slowly, like a pile of mail that somehow becomes furniture. You add one tool to solve one problem, then another tool for the next, and before you know it you have five platforms that technically work and actually don't.",
       },
       { type: "h2", text: "The Daily Grind Breakdown" },
       {
@@ -114,7 +114,7 @@ export const blogPosts: BlogPost[] = [
       { type: "h2", text: "The Price of Normal" },
       {
         type: "p",
-        text: "Each task takes 3 to 45 minutes. Spread across six people, five days a week, it added up to roughly 14 hours of work that didn't require a brain — just fingers and patience. That's approximately one full-time employee's worth of hours, every week, on tasks that a properly configured automation could handle without breaking a sweat. Or, more accurately, without having a sweat gland.",
+        text: "Each task takes 3 to 45 minutes. Spread across six people, five days a week, it added up to roughly 14 hours of work that didn't require a brain, just fingers and patience. That's approximately one full-time employee's worth of hours, every week, on tasks that a properly configured automation could handle without breaking a sweat. Or, more accurately, without having a sweat gland.",
       },
       {
         type: "casestudy",
@@ -127,11 +127,11 @@ export const blogPosts: BlogPost[] = [
       { type: "h2", text: "The One Question That Changes the Conversation" },
       {
         type: "p",
-        text: "When we work with a new client, we ask one question before writing a line of anything: 'Is a human making a decision here, or is a human just pressing a button?' If the answer is 'pressing a button,' that task is an automation candidate. You'd be surprised — or maybe you wouldn't — how many buttons your team presses in a given week.",
+        text: "When we work with a new client, we ask one question before writing a line of anything: 'Is a human making a decision here, or is a human just pressing a button?' If the answer is 'pressing a button,' that task is an automation candidate. You'd be surprised, or maybe you wouldn't, how many buttons your team presses in a given week.",
       },
       {
         type: "p",
-        text: "The businesses that get the most out of automation aren't the ones with the most complex operations. They're the ones that got honest about what 'normal work' actually looks like — and then stopped accepting it.",
+        text: "The businesses that get the most out of automation aren't the ones with the most complex operations. They're the ones that got honest about what 'normal work' actually looks like, and then stopped accepting it.",
       },
       {
         type: "callout",
@@ -152,11 +152,11 @@ export const blogPosts: BlogPost[] = [
     content: [
       {
         type: "p",
-        text: "Act I: The business installs a scheduling app. It's genuinely great — customers can book online, no more phone tag. Everyone is happy. Then someone realizes the scheduling app doesn't talk to the invoicing software. The owner finds a fix: they'll just check both every morning and copy the relevant info over. It only takes ten minutes.",
+        text: "Act I: The business installs a scheduling app. It's genuinely great, customers can book online, no more phone tag. Everyone is happy. Then someone realizes the scheduling app doesn't talk to the invoicing software. The owner finds a fix: they'll just check both every morning and copy the relevant info over. It only takes ten minutes.",
       },
       {
         type: "p",
-        text: "Act II: The invoicing software is also good. It doesn't sync with the CRM, but that's fine — there's a workaround. There's always a workaround. Enter App #3. The workaround involves a CSV export and one employee who has the muscle memory for the import process. Nobody else has tried. Nobody else has needed to. Yet.",
+        text: "Act II: The invoicing software is also good. It doesn't sync with the CRM, but that's fine, there's a workaround. There's always a workaround. Enter App #3. The workaround involves a CSV export and one employee who has the muscle memory for the import process. Nobody else has tried. Nobody else has needed to. Yet.",
       },
       {
         type: "p",
@@ -165,7 +165,7 @@ export const blogPosts: BlogPost[] = [
       { type: "h2", text: "This Is Not a Story About Bad Software" },
       {
         type: "p",
-        text: "Calendly is fine. QuickBooks is fine. Jobber is fine. Every app in this stack was probably a reasonable decision at the time. The problem isn't the tools — it's that tools designed independently don't behave like a system. They behave like individual tools, because that's what they are. You end up stitching them together with habit, manual steps, and the collective memory of your team. The moment any part of that chain breaks, everything becomes a guess.",
+        text: "Calendly is fine. QuickBooks is fine. Jobber is fine. Every app in this stack was probably a reasonable decision at the time. The problem isn't the tools, it's that tools designed independently don't behave like a system. They behave like individual tools, because that's what they are. You end up stitching them together with habit, manual steps, and the collective memory of your team. The moment any part of that chain breaks, everything becomes a guess.",
       },
       {
         type: "casestudy",
@@ -173,12 +173,12 @@ export const blogPosts: BlogPost[] = [
         slug: "junk-cycle",
         stat: "60%",
         statLabel: "less time on scheduling",
-        teaser: "Five platforms, 22 manual steps per job, constant errors. One automated flow replaced all of it — dispatchers now handle twice the volume.",
+        teaser: "Five platforms, 22 manual steps per job, constant errors. One automated flow replaced all of it, dispatchers now handle twice the volume.",
       },
       { type: "h2", text: "The Moment It Clicked" },
       {
         type: "p",
-        text: "The owner of Junk Cycle said something during our first call that I still think about: 'Every job requires five things to happen, and I have to remember all five every time.' That's not a scheduling problem. That's a systems problem. When we mapped the full flow — booking, dispatch, confirmation, reminder, post-job follow-up — it was 22 steps. Fourteen of them were manual. Some of them depended on one specific person being around and not distracted.",
+        text: "The owner of Junk Cycle said something during our first call that I still think about: 'Every job requires five things to happen, and I have to remember all five every time.' That's not a scheduling problem. That's a systems problem. When we mapped the full flow, booking, dispatch, confirmation, reminder, post-job follow-up, it was 22 steps. Fourteen of them were manual. Some of them depended on one specific person being around and not distracted.",
       },
       {
         type: "p",
@@ -187,7 +187,7 @@ export const blogPosts: BlogPost[] = [
       { type: "h2", text: "What One Connected System Feels Like" },
       {
         type: "p",
-        text: "When everything is integrated, something strange happens to the people running the business: they stop thinking about operations. Not because the operations don't exist — they do — but because the right things happen automatically and the team's attention shifts to the exceptions, the growth, the decisions that actually need a person. That's what a system is supposed to do.",
+        text: "When everything is integrated, something strange happens to the people running the business: they stop thinking about operations. Not because the operations don't exist, they do, but because the right things happen automatically and the team's attention shifts to the exceptions, the growth, the decisions that actually need a person. That's what a system is supposed to do.",
       },
       {
         type: "casestudy",
@@ -226,7 +226,7 @@ export const blogPosts: BlogPost[] = [
       {
         type: "ul",
         items: [
-          "'My business is too small for this.' We work with 3-person companies. Size is not the barrier — chaos is.",
+          "'My business is too small for this.' We work with 3-person companies. Size is not the barrier, chaos is.",
           "'It'll break and I won't know how to fix it.' You will know when it breaks, because we monitor it and you'll get an alert. Also, it breaks way less than the human equivalent.",
           "'My team will resist it.' Your team will enthusiastically support anything that removes the tasks they hate. Nobody misses manual data entry.",
         ],
@@ -234,15 +234,15 @@ export const blogPosts: BlogPost[] = [
       { type: "h2", text: "What 'AI' Actually Means in This Context" },
       {
         type: "p",
-        text: "In most small business automation, 'AI' means systems that can respond intelligently, adapt based on context, and make simple decisions without human input. An AI voice agent that calls your leads can determine from the conversation whether someone's qualified, log the outcome, score the lead, and notify your team accordingly. It's not making strategic decisions. It's not getting creative. It's doing the repetitive part — extremely reliably, at any hour, without needing a coffee break.",
+        text: "In most small business automation, 'AI' means systems that can respond intelligently, adapt based on context, and make simple decisions without human input. An AI voice agent that calls your leads can determine from the conversation whether someone's qualified, log the outcome, score the lead, and notify your team accordingly. It's not making strategic decisions. It's not getting creative. It's doing the repetitive part, extremely reliably, at any hour, without needing a coffee break.",
       },
       {
         type: "casestudy",
-        client: "Oblique Path — AI Voice Agent",
+        client: "Oblique Path: AI Voice Agent",
         slug: "ai-voice-agent",
         stat: "60s",
         statLabel: "from form fill to AI call",
-        teaser: "Our AI voice agent calls leads the moment they submit a form — qualifies them, logs it all, sends a transcript. Try the live demo yourself.",
+        teaser: "Our AI voice agent calls leads the moment they submit a form, qualifies them, logs it all, sends a transcript. Try the live demo yourself.",
       },
       { type: "h2", text: "Where to Start (And Where Not To)" },
       {
@@ -268,7 +268,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "callout",
-        text: "Book a free 30-minute call. We'll tell you what's actually worth automating for your business — and what isn't.",
+        text: "Book a free 30-minute call. We'll tell you what's actually worth automating for your business, and what isn't.",
       },
     ],
   },
