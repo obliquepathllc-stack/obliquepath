@@ -36,6 +36,12 @@
     "typewriter-effect": "^2.21.0",
     "zod": "^3.24.3"
   },
+  "browserslist": [
+    "chrome >= 94",
+    "firefox >= 93",
+    "safari >= 15",
+    "edge >= 94"
+  ],
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",

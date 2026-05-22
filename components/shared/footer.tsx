@@ -46,7 +46,7 @@ export function Footer() {
               </p>
             </div>
             <Link href="/book-demo">
-              <button className="rounded-full bg-primary text-primary-foreground font-semibold px-6 py-3 text-sm hover:opacity-90 active:scale-[0.97] transition-all duration-200 whitespace-nowrap">
+              <button className="rounded-full bg-foreground text-background font-semibold px-6 py-3 text-sm hover:opacity-80 active:scale-[0.97] transition-all duration-200 whitespace-nowrap">
                 Book a Free Consultation
               </button>
             </Link>
@@ -118,14 +118,14 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="container max-w-6xl mx-auto py-6 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-muted-foreground/50">
+          <p className="text-xs text-muted-foreground">
             © {new Date().getFullYear()} Oblique Path LLC. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <Link href="/privacy" className="text-xs text-muted-foreground/50 hover:text-muted-foreground transition-colors">
+            <Link href="/privacy" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="text-xs text-muted-foreground/50 hover:text-muted-foreground transition-colors">
+            <Link href="/terms" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
               Terms of Service
             </Link>
           </div>

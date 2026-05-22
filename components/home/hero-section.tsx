@@ -86,7 +86,7 @@ export function HeroSection() {
         transition={{ duration: 0.8, delay: 1.5 }}
         className="hidden md:flex flex-col items-center gap-2.5 py-4 relative z-10"
       >
-        <span className="text-[9px] tracking-[0.28em] uppercase text-muted-foreground/30 font-medium">Scroll</span>
+        <span className="text-[9px] tracking-[0.28em] uppercase text-muted-foreground/60 font-medium">Scroll</span>
         <div className="relative w-px h-9 rounded-full overflow-hidden bg-muted-foreground/[0.12]">
           <motion.div
             className="absolute top-0 left-0 w-full rounded-full"
@@ -106,7 +106,7 @@ export function HeroSection() {
       >
         <div className="container max-w-6xl mx-auto">
           <div className="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-10">
-            <p className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground/40 shrink-0 font-medium">
+            <p className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground shrink-0 font-medium">
               Trusted by
             </p>
             <div className="overflow-hidden w-full" style={{ WebkitMaskImage: "linear-gradient(to right, transparent, black 8%, black 92%, transparent)", maskImage: "linear-gradient(to right, transparent, black 8%, black 92%, transparent)" }}>
