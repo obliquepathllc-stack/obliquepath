@@ -63,12 +63,21 @@ export const metadata: Metadata = {
         url: "https://obliquepath.dev",
         siteName: "ObliquePath",
         type: "website",
+        images: [
+            {
+                url: "https://obliquepath.dev/opengraph-image",
+                width: 1200,
+                height: 630,
+                alt: "Oblique Path — AI Automation for Growing Businesses",
+            },
+        ],
     },
     twitter: {
         card: "summary_large_image",
         title: "Oblique Path | AI Automation for Growing Businesses",
         description:
             "Custom AI tools and chatbots to automate business workflows. Boost productivity, cut costs, and scale faster.",
+        images: ["https://obliquepath.dev/opengraph-image"],
     },
     metadataBase: new URL("https://obliquepath.dev"),
     alternates: {
