@@ -50,6 +50,23 @@ export function HeroSection() {
             </motion.span>
           </h1>
 
+          {/* Capability chips */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.62, ease: [0.22, 1, 0.36, 1] }}
+            className="flex flex-wrap gap-2 mb-10"
+          >
+            {["AI Automation", "Custom Software", "Mobile Apps", "Voice Agents"].map((cap) => (
+              <span
+                key={cap}
+                className="text-[11px] font-medium tracking-wide text-muted-foreground border border-border rounded-full px-3.5 py-1.5 bg-card/60"
+              >
+                {cap}
+              </span>
+            ))}
+          </motion.div>
+
           {/* Subtitle + CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -58,7 +75,7 @@ export function HeroSection() {
             className="flex flex-col sm:flex-row sm:items-start gap-8"
           >
             <p className="text-muted-foreground text-lg leading-relaxed max-w-md">
-              We build automation systems and custom platforms for businesses done with spreadsheets, manual follow-ups, and admin overhead. Working software, deployed fast.
+              We build automation systems, custom web platforms, and mobile apps for businesses done running manually. Working software, deployed fast.
             </p>
 
             <div className="flex flex-col gap-3 sm:shrink-0">
