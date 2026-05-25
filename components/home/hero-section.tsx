@@ -57,7 +57,7 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.62, ease: [0.22, 1, 0.36, 1] }}
             className="flex flex-wrap gap-2 mb-10"
           >
-            {["Agentic Workflows", "Custom Software", "Mobile Apps", "Voice Agents"].map((cap) => (
+            {["AI Automation", "Custom Software", "Mobile Apps", "Voice Agents"].map((cap) => (
               <span
                 key={cap}
                 className="text-[11px] font-medium tracking-wide text-muted-foreground border border-border rounded-full px-3.5 py-1.5 bg-card/60"
