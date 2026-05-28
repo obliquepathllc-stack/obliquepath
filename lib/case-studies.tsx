@@ -21,6 +21,11 @@ import {
   PhoneCall,
   Users,
   Phone,
+  MessageSquare,
+  Scale,
+  FileText,
+  Zap,
+  Bot,
 } from "lucide-react";
 
 export type ResultItem = {
@@ -80,7 +85,8 @@ export const FILTERS = [
   "Insurance & Finance",
   "Waste & Removal",
   "Real Estate",
-  "Financial Services",
+  "AI Automation",
+  "Legal Services",
 ];
 
 export const caseStudies: CaseStudy[] = [
@@ -634,7 +640,7 @@ export const caseStudies: CaseStudy[] = [
   // ── AI Voice Agent ─────────────────────────────────────────────────────────
   {
     id: "ai-voice-agent",
-    filterTag: "Financial Services",
+    filterTag: "AI Automation",
     liveDemoSection: true,
     title: "Every form fill gets a call back in 60 seconds. Qualified or not, the agent knows before they pick up the phone.",
     client: "Oblique Path",
@@ -643,36 +649,36 @@ export const caseStudies: CaseStudy[] = [
     service: "Automated Lead Qualification — Live Demo Available",
     beforeHeadline: "Leads were filling out forms. Nobody was calling them back fast enough.",
     beforeNarrative:
-      "Summit Mortgage was running paid ads on Google and Meta, generating a steady flow of online leads. The problem was the gap between form fill and first contact. Agents were busy with existing clients, in meetings, or off the clock. By the time someone called a lead back, often hours later, the prospect had already spoken to another broker. The team had no way to qualify leads before spending time on the phone, so agents were burning 20 minutes on calls with people who didn't meet basic criteria. Call notes lived in personal spreadsheets, not a shared system, and follow-up was inconsistent at best.",
+      "Oblique Path built its AI voice agent to solve a problem every service business faces: leads go cold fast, and no team can respond to every form submission within minutes — especially after hours. The gap between form fill and first contact was costing deals. Businesses running paid ads were generating inquiries at all hours, but callbacks were happening the next morning at best. By then, the lead had already spoken to a competitor. And when agents did call, they had no context, so half the calls were wasted on people who didn't qualify.",
     painPoints: [
       {
         title: "Hours to first contact",
-        description: "Online mortgage leads go cold fast. Competitors who respond in minutes win the deal. A 2-hour callback might as well be no callback.",
+        description: "Leads go cold fast. Competitors who respond in minutes win the deal. A 2-hour callback might as well be no callback at all.",
       },
       {
-        title: "Agents qualifying strangers",
-        description: "Every inbound call was a gamble. Agents had no context before picking up. Half the calls were with people who didn't qualify. That time never came back.",
+        title: "Agents going in blind",
+        description: "Every inbound call was a cold start. Agents had no context before picking up. Half the calls were with people who didn't qualify. That time never came back.",
       },
       {
         title: "No record of what was said",
-        description: "Call notes were scattered, inconsistent, or missing entirely. Handoffs between agents lost context. CRM updates happened when someone remembered.",
+        description: "Call notes were scattered, inconsistent, or missing. Handoffs between team members lost context. CRM updates happened when someone remembered — which wasn't often.",
       },
     ],
     afterHeadline: "The AI calls first. By the time an agent picks up the phone, the work is already done.",
     afterNarrative:
-      "Now, when a lead submits a form at any hour, the AI voice agent calls within 60 seconds. It introduces itself on behalf of Summit Mortgage, runs through a natural qualification conversation, and collects loan amount, property type, credit range, employment status, and timeline. All of that data is logged directly into the CRM with a lead score. Immediately after the call, the assigned agent receives a full transcript by email. Hot leads are flagged for priority follow-up. Unqualified leads are tagged and filed. Agents only speak to people who are ready and eligible. The system runs 24/7 with no supervision required.",
+      "Now, when a lead submits a form at any hour, the Oblique Path AI voice agent calls within 60 seconds. It introduces itself, runs through a natural qualification conversation, collects the details that matter for your business, and scores the lead. All of that is logged directly to your CRM. Immediately after the call, the assigned agent receives a full transcript by email. Hot leads flagged for priority follow-up. Unqualified leads tagged and filed. Agents only speak to people who are ready. The system runs 24/7 with no human in the loop.",
     solution: [
       "AI voice agent calls every form submission within 60 seconds, day or night",
-      "Conversational qualification: loan amount, property type, credit range, employment, and timeline",
+      "Conversational qualification tailored to your business — budget, timeline, fit criteria",
       "All responses logged to CRM automatically with lead score and category tag",
       "Full call transcript emailed to the assigned agent immediately after the call ends",
       "Hot leads flagged for priority follow-up; unqualified leads tagged and filed automatically",
       "Zero manual data entry — agents receive full context before they ever dial",
     ],
     processSteps: [
-      { number: "01", title: "Form Submitted", description: "Lead fills out mortgage inquiry form online via website, landing page, or ad campaign." },
-      { number: "02", title: "AI Calls in 60s", description: "Voice agent calls the lead's phone within 60 seconds of form submission, any time of day." },
-      { number: "03", title: "Qualification", description: "AI asks about loan amount, property type, credit range, employment, and timeline in natural conversation." },
+      { number: "01", title: "Form Submitted", description: "Lead fills out your inquiry form online via website, landing page, or ad campaign." },
+      { number: "02", title: "AI Calls in 60s", description: "Voice agent calls the lead's phone within 60 seconds of submission, any time of day or night." },
+      { number: "03", title: "Qualification Conversation", description: "AI runs through your qualification criteria in natural conversation — budget, timeline, fit, and any custom questions." },
       { number: "04", title: "CRM Logged", description: "All responses written to CRM automatically with lead score, category tag, and call timestamp." },
       { number: "05", title: "Transcript Sent", description: "Full call transcript emailed to the assigned agent the moment the call ends." },
       { number: "06", title: "Agent Follows Up", description: "Agent reads the transcript, already knows the prospect, and calls a warm qualified lead with full context." },
@@ -685,12 +691,136 @@ export const caseStudies: CaseStudy[] = [
     ],
     timeframe: "4 weeks to go live",
     testimonial:
-      "Our agents used to dread inbound calls because half the time the person didn't even qualify. Now every call they take is someone who's already been screened. The AI does the hard part. We just close.",
+      "Our team used to dread inbound calls because half the time the person didn't even qualify. Now every call they take is someone who has already been screened. The AI does the hard part. We just close.",
     clientName: "",
     clientTitle: "Oblique Path AI Systems",
     ctaText: "Build Your Voice Agent",
     ctaLink: "/book-demo?service=ai-voice-agent",
     icon: PhoneCall,
+    image: null,
+  },
+
+  // ── AI Chatbot ─────────────────────────────────────────────────────────────
+  {
+    id: "ai-chatbot",
+    filterTag: "AI Automation",
+    title: "A chatbot that qualifies visitors, captures leads, and books calls — 24/7, no human in the loop.",
+    client: "Oblique Path",
+    industry: "AI Lead Capture",
+    location: "Windsor, ON",
+    service: "AI Chat Widget — Live on obliquepath.dev",
+    beforeHeadline: "Visitors were landing on the site. Most of them were leaving without a trace.",
+    beforeNarrative:
+      "Every business with a website has the same problem: people land, look around, and leave. If they have a question at 10pm, there is nobody to answer it. If they are not quite ready to book a call, there is no middle step — just a contact form they may or may not fill out. Oblique Path built its own AI chatbot to solve this exactly. The widget lives on the site, engages visitors within seconds, and moves them toward either booking a strategy call or leaving their contact details — whichever they are ready for.",
+    painPoints: [
+      {
+        title: "Visitors leaving without converting",
+        description: "Most website visitors are not ready to book a call on the first visit. Without a way to engage them in the moment, they leave and do not come back.",
+      },
+      {
+        title: "No coverage after hours",
+        description: "The best leads often come at night or on weekends when nobody is available. A static contact form does not qualify or engage — it just waits.",
+      },
+      {
+        title: "No qualification before the call",
+        description: "When someone does book, the team had no context going in. Every call started from zero. Time was spent on discovery that could have happened automatically.",
+      },
+    ],
+    afterHeadline: "Every visitor gets engaged. Qualified leads arrive with context. The team only talks to people who are ready.",
+    afterNarrative:
+      "The Oblique Path AI chatbot opens within seconds of a visitor landing on the site. It asks what brought them in, works through a natural qualification conversation, and either guides them to book a strategy call or collects their name and email for follow-up. The team receives a notification with a summary of the conversation. By the time anyone picks up the phone, the visitor has already been qualified. The chatbot runs 24/7 with no supervision and is live on obliquepath.dev right now.",
+    solution: [
+      "AI chat widget embedded on the website — opens automatically and engages visitors",
+      "Natural conversation flow: qualification, objection handling, and routing",
+      "Captures name and email when the visitor is ready — no forced forms",
+      "Detects buying signals and prompts the visitor to book a strategy call",
+      "Team notification with conversation summary sent immediately on lead capture",
+      "Runs 24/7 with no human in the loop — every visitor gets a response",
+    ],
+    processSteps: [
+      { number: "01", title: "Visitor Lands", description: "Someone arrives on the website from an ad, search, or referral. The chat widget opens within a few seconds." },
+      { number: "02", title: "AI Engages", description: "The bot asks what brought them in and starts a natural conversation about their business and what they are trying to solve." },
+      { number: "03", title: "Qualification", description: "Through conversation, the AI determines whether the visitor is a fit — industry, problem, timeline, and intent." },
+      { number: "04", title: "Lead Captured", description: "When the visitor shares their email, the AI logs the lead and sends the team a notification with a conversation summary." },
+      { number: "05", title: "Booking Prompted", description: "Qualified visitors are guided toward booking a strategy call via a direct link embedded in the chat." },
+      { number: "06", title: "Team Follows Up", description: "The team receives context before the call — who the visitor is, what they need, and what was discussed." },
+    ],
+    results: [
+      { stat: "24/7", description: "lead capture with no human required", icon: Zap },
+      { stat: "4 wks", description: "from brief to live on the website", icon: Timer },
+      { stat: "0", description: "missed conversations after hours", icon: MessageSquare },
+      { stat: "100%", description: "of leads arrive pre-qualified with context", icon: CheckCircle },
+    ],
+    timeframe: "4 weeks to go live",
+    testimonial:
+      "We built this on our own site first. Every lead that comes through the chatbot arrives with a conversation summary. We know exactly who they are before we pick up the phone.",
+    clientName: "",
+    clientTitle: "Oblique Path",
+    ctaText: "Add a Chatbot to Your Site",
+    ctaLink: "/book-demo?service=ai-chatbot",
+    icon: Bot,
+    image: null,
+  },
+
+  // ── Law Firm Intake ────────────────────────────────────────────────────────
+  {
+    id: "law-firm-intake",
+    filterTag: "Legal Services",
+    title: "Client intake routed automatically by practice area. Emergencies flagged instantly. Retainer signed before the first call.",
+    client: "Law Firm",
+    industry: "Legal Services",
+    location: "North America",
+    service: "Legal Intake Automation + Billing & Matter Management",
+    beforeHeadline: "Every new client started with the same manual chaos.",
+    beforeNarrative:
+      "The intake process at most law firms runs on email, phone tag, and spreadsheets. A potential client submits a form or calls in. Someone on staff manually reviews it, figures out which practice area it belongs to, finds the right partner, and forwards it. If it is urgent, they hope someone notices in time. Retainer agreements are drafted by hand from intake notes — a process that takes hours and delays the first billable conversation. Billable hours are logged after the fact, often inaccurately, and reconciling them against invoices is a weekly headache. The result: slow intake, missed urgencies, and revenue that is harder to collect than it should be.",
+    painPoints: [
+      {
+        title: "Manual routing and missed urgencies",
+        description: "Staff were manually reading intake forms and deciding where to route them. Emergency matters — arrests, custody disputes, restraining orders — could sit in a queue for hours.",
+      },
+      {
+        title: "Retainer process losing days",
+        description: "Drafting retainer agreements by hand, chasing signatures by email, and waiting for documents to come back was delaying the start of every engagement.",
+      },
+      {
+        title: "Billable hours not captured accurately",
+        description: "Time was logged manually, often at the end of the day or week. Entries were vague, incomplete, or never linked to the right matter. Revenue was being left on the table.",
+      },
+    ],
+    afterHeadline: "Intake is instant. Emergencies never wait. Retainers sign themselves. Hours track automatically.",
+    afterNarrative:
+      "Now, when a potential client submits an intake form online, the system reads the responses and routes it to the correct partner based on practice area — family law, corporate, criminal, personal injury, immigration. If the intake contains emergency signals, it fires an immediate alert to the on-call partner. The retainer agreement is generated automatically from the intake data, pre-filled with fee structure and matter details, and sent for e-signature within minutes. Staff log hours directly to matters through a simple interface, and every entry is automatically linked and tracked. A real-time dashboard shows every partner their billable hours, matter status, and outstanding invoices — updated live.",
+    solution: [
+      "Online intake form with practice area detection and intelligent routing to the correct partner",
+      "Emergency flagging: custody, criminal, restraining order triggers fire instant partner alerts",
+      "Retainer agreement auto-generated from intake data — fee structure, matter details, scope",
+      "E-signature workflow sends retainer and tracks completion without manual follow-up",
+      "Billable hours interface — staff log time directly to matter numbers, no manual reconciliation",
+      "Real-time dashboard: active matters, billable hours by attorney, invoice status, collection rate",
+    ],
+    processSteps: [
+      { number: "01", title: "Intake Form Submitted", description: "Potential client fills out the online intake form — practice area, matter description, urgency, and contact details." },
+      { number: "02", title: "Auto-Routed to Partner", description: "System reads the intake and routes it to the correct partner by practice area. No staff involvement required." },
+      { number: "03", title: "Emergency Escalation", description: "If the intake contains emergency signals — arrest, custody dispute, restraining order — an immediate alert fires to the on-call partner." },
+      { number: "04", title: "Retainer Generated", description: "Retainer agreement is auto-generated from intake data, pre-filled with fee structure and matter scope." },
+      { number: "05", title: "E-Signature Sent", description: "Agreement sent to client for e-signature automatically. System tracks completion and follows up if unsigned." },
+      { number: "06", title: "Matter Opened, Hours Tracked", description: "Matter is created in the system. Staff log hours directly to the matter. Everything links automatically to billing." },
+    ],
+    results: [
+      { stat: "90%", description: "reduction in manual intake processing time", icon: Timer },
+      { stat: "0", description: "emergency matters missed or delayed", icon: Zap },
+      { stat: "Same day", description: "retainer generation and e-signature dispatch", icon: FileText },
+      { stat: "15+ hrs", description: "saved per attorney per week on admin", icon: Scale },
+    ],
+    timeframe: "6 weeks to go live",
+    testimonial:
+      "Intake used to take two days before we could even open a matter. Now the retainer is generated and sent before we have had our first call with the client. The emergency flagging alone has been worth it.",
+    clientName: "",
+    clientTitle: "Managing Partner, Law Firm",
+    ctaText: "Automate Your Firm's Intake",
+    ctaLink: "/book-demo?service=legal-intake",
+    icon: Scale,
     image: null,
   },
 ];

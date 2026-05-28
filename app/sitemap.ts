@@ -13,6 +13,8 @@ const caseStudySlugs = [
   "anitrous",
   "maher-aouli-realty",
   "ai-voice-agent",
+  "ai-chatbot",
+  "law-firm-intake",
 ];
 
 const blogSlugs = [
