@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle } from "@phosphor-icons/react";
 
 export function EmailCapture() {
@@ -31,7 +32,13 @@ export function EmailCapture() {
   }
 
   return (
-    <div className="my-14 rounded-2xl border border-border bg-card px-8 py-10">
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      className="my-14 rounded-2xl border border-border bg-card px-8 py-10"
+    >
       {done ? (
         <div className="flex flex-col items-center text-center gap-3 py-4">
           <CheckCircle size={36} className="text-primary" weight="fill" />
@@ -74,6 +81,6 @@ export function EmailCapture() {
           {error && <p className="mt-3 text-sm text-red-500">{error}</p>}
         </>
       )}
-    </div>
+    </motion.div>
   );
 }

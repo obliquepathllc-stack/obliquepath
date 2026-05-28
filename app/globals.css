@@ -193,6 +193,15 @@ pre,
 kbd {
   font-family: "Fira Code", monospace;
 }
+/* Respect reduced motion — collapse all Framer Motion and CSS transitions */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 /* Gradient Text */
 .gradient-text {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-accent-500 bg-[length:200%_auto];
@@ -212,6 +221,45 @@ kbd {
 /* Subtle ambient glow utility */
 .glow-primary {
   box-shadow: 0 0 60px -10px rgba(99, 102, 241, 0.25);
+}
+
+/* ── View Transitions ────────────────────────────────────────────────────── */
+/* Progressive enhancement: only active on supporting browsers (Chrome, Safari) */
+@media (prefers-reduced-motion: no-preference) {
+  /* Page-level fade — root covers everything not in a named group */
+  ::view-transition-old(root) {
+    animation: 220ms ease-out both vt-out;
+  }
+  ::view-transition-new(root) {
+    animation: 300ms ease-out both vt-in;
+  }
+
+  /* Named stat groups — browser auto-morphs position/size/cross-fade */
+  ::view-transition-group(stat-ai-voice-agent),
+  ::view-transition-group(stat-aerrand),
+  ::view-transition-group(stat-junk-cycle) {
+    animation-duration: 420ms;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* Suppress cross-fade on the stat images so the morph reads as a single element */
+  ::view-transition-old(stat-ai-voice-agent),
+  ::view-transition-old(stat-aerrand),
+  ::view-transition-old(stat-junk-cycle) {
+    animation: none;
+  }
+  ::view-transition-new(stat-ai-voice-agent),
+  ::view-transition-new(stat-aerrand),
+  ::view-transition-new(stat-junk-cycle) {
+    animation: none;
+  }
+}
+
+@keyframes vt-out {
+  to { opacity: 0; }
+}
+@keyframes vt-in {
+  from { opacity: 0; }
 }
 
 .glow-accent {

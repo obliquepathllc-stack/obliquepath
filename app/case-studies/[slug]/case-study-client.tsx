@@ -108,7 +108,10 @@ export function CaseStudyClient({
             className="flex flex-col sm:flex-row sm:items-end gap-8 sm:gap-14"
           >
             <div>
-              <div className="text-[80px] md:text-[108px] font-bold text-white leading-none tracking-tighter">
+              <div
+                className="text-[80px] md:text-[108px] font-bold text-white leading-none tracking-tighter"
+                style={{ viewTransitionName: `stat-${study.id}` }}
+              >
                 {study.results[0].stat}
               </div>
               <div className="text-white/55 text-sm mt-1">{study.results[0].description}</div>

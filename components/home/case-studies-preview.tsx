@@ -1,11 +1,10 @@
 "use client";
 
-// Case Studies Preview — spotlight hover cards linking to individual slug pages
-
-import { motion } from "framer-motion";
-import Link from "next/link";
+import { motion, useInView, useMotionValue, animate } from "framer-motion";
 import { ArrowUpRight, ArrowRight } from "@phosphor-icons/react";
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
+import Link from "next/link";
+import { ViewTransitionLink } from "@/components/view-transition-link";
 
 const previews = [
   {
@@ -37,6 +36,49 @@ const previews = [
   },
 ];
 
+function parseStat(stat: string): { num: number; suffix: string } {
+  const match = stat.match(/^(\d+(?:\.\d+)?)(.*)$/);
+  if (!match) return { num: 0, suffix: stat };
+  return { num: parseFloat(match[1]), suffix: match[2] };
+}
+
+function CountUpStat({
+  stat,
+  className,
+  style,
+}: {
+  stat: string;
+  className?: string;
+  style?: React.CSSProperties;
+}) {
+  const { num, suffix } = parseStat(stat);
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.5 });
+  const count = useMotionValue(0);
+  const [display, setDisplay] = useState("0");
+
+  useEffect(() => {
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReduced) {
+      setDisplay(String(num));
+      return;
+    }
+    if (!isInView) return;
+    const controls = animate(count, num, {
+      duration: 1.1,
+      ease: [0.16, 1, 0.3, 1],
+      onUpdate: (v) => setDisplay(String(Math.round(v))),
+    });
+    return () => controls.stop();
+  }, [isInView, num, count]);
+
+  return (
+    <div ref={ref} className={className} style={style}>
+      {display}{suffix}
+    </div>
+  );
+}
+
 function PreviewCard({ preview, index }: { preview: typeof previews[0]; index: number }) {
   const ref = useRef<HTMLDivElement>(null);
   const [spot, setSpot] = useState({ x: 0, y: 0 });
@@ -49,7 +91,10 @@ function PreviewCard({ preview, index }: { preview: typeof previews[0]; index: n
   }, []);
 
   return (
-    <Link href={`/case-studies/${preview.slug}`} className={preview.wide ? "md:col-span-2" : "md:col-span-1"}>
+    <ViewTransitionLink
+      href={`/case-studies/${preview.slug}`}
+      className={preview.wide ? "md:col-span-2" : "md:col-span-1"}
+    >
       <motion.div
         ref={ref}
         onMouseMove={onMouseMove}
@@ -79,9 +124,11 @@ function PreviewCard({ preview, index }: { preview: typeof previews[0]; index: n
           {/* Client + stat */}
           <div>
             <p className="text-xs text-muted-foreground/60 mb-1">{preview.client}</p>
-            <div className={`font-bold text-foreground leading-none tracking-tighter mb-1 ${preview.wide ? "text-5xl md:text-6xl" : "text-4xl md:text-5xl"}`}>
-              {preview.stat}
-            </div>
+            <CountUpStat
+              stat={preview.stat}
+              className={`font-bold text-foreground leading-none tracking-tighter mb-1 ${preview.wide ? "text-5xl md:text-6xl" : "text-4xl md:text-5xl"}`}
+              style={{ viewTransitionName: `stat-${preview.slug}` }}
+            />
             <p className="text-sm text-muted-foreground">{preview.statLabel}</p>
           </div>
 
@@ -95,7 +142,7 @@ function PreviewCard({ preview, index }: { preview: typeof previews[0]; index: n
           </div>
         </div>
       </motion.div>
-    </Link>
+    </ViewTransitionLink>
   );
 }
 

@@ -5,6 +5,7 @@ import { Footer } from "@/components/shared/footer";
 import { Toaster } from "@/components/ui/sonner";
 import { Navbar } from "@/components/shared/navbar";
 import { StickyCtaBar } from "@/components/shared/sticky-cta";
+import { ConsoleEgg } from "@/components/console-egg";
 import { ScrollAmbient } from "@/components/scroll-ambient";
 import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
@@ -149,6 +150,7 @@ export default function RootLayout({
                     enableSystem={false}
                 >
                     <ScrollAmbient />
+                    <ConsoleEgg />
                     <Navbar />
                     <StickyCtaBar />
                     {children}
