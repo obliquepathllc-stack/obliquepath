@@ -84,14 +84,14 @@ function TranscriptCard() {
       </div>
       <div className="space-y-2.5 text-xs font-mono mb-5">
         {[
-          ["AI", "What&apos;s your current setup for scheduling?"],
-          ["Sarah", "Honestly, spreadsheets. It&apos;s a disaster."],
+          ["AI", "What's your current setup for scheduling?"],
+          ["Sarah", "Honestly, spreadsheets. It's a disaster."],
           ["AI", "And budget-wise, are you thinking—"],
-          ["Sarah", "Whatever it takes. We&apos;re losing jobs."],
+          ["Sarah", "Whatever it takes. We're losing jobs."],
         ].map(([speaker, line]) => (
           <p key={line}>
             <span className="text-white/30">{speaker}: </span>
-            <span className="text-white/65" dangerouslySetInnerHTML={{ __html: `&ldquo;${line}&rdquo;` }} />
+            <span className="text-white/65">&ldquo;{line}&rdquo;</span>
           </p>
         ))}
       </div>
@@ -198,30 +198,36 @@ function AnimatedStep({
 
 // ── PROGRESS DOTS ─────────────────────────────────────────────────────────────
 
+function ProgressDot({ index, progress }: { index: number; progress: MotionValue<number> }) {
+  const isLast = index === TOTAL - 1;
+  const segStart = index / TOTAL;
+  const segEnd = (index + 1) / TOTAL;
+
+  const dotOpacity = useTransform(
+    progress,
+    [segStart, segStart + FADE, segEnd - FADE, segEnd],
+    isLast ? [0.25, 1, 1, 1] : [0.25, 1, 1, 0.25]
+  );
+  const dotScale = useTransform(
+    progress,
+    [segStart, segStart + FADE, segEnd - FADE, segEnd],
+    isLast ? [1, 1.5, 1.5, 1.5] : [1, 1.5, 1.5, 1]
+  );
+
+  return (
+    <motion.div
+      style={{ opacity: dotOpacity, scale: dotScale }}
+      className="w-1.5 h-1.5 rounded-full bg-white origin-center"
+    />
+  );
+}
+
 function ProgressDots({ progress }: { progress: MotionValue<number> }) {
   return (
     <div className="flex items-center gap-3">
-      {STEPS.map((_, i) => {
-        const segStart = i / TOTAL;
-        const segEnd = (i + 1) / TOTAL;
-        const dotOpacity = useTransform(
-          progress,
-          [segStart, segStart + FADE, segEnd - FADE, segEnd],
-          i === TOTAL - 1 ? [0.25, 1, 1, 1] : [0.25, 1, 1, 0.25]
-        );
-        const dotScale = useTransform(
-          progress,
-          [segStart, segStart + FADE, segEnd - FADE, segEnd],
-          i === TOTAL - 1 ? [1, 1.5, 1.5, 1.5] : [1, 1.5, 1.5, 1]
-        );
-        return (
-          <motion.div
-            key={i}
-            style={{ opacity: dotOpacity, scale: dotScale }}
-            className="w-1.5 h-1.5 rounded-full bg-white origin-center"
-          />
-        );
-      })}
+      {STEPS.map((_, i) => (
+        <ProgressDot key={i} index={i} progress={progress} />
+      ))}
     </div>
   );
 }
