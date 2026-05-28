@@ -94,7 +94,7 @@ export async function POST(request: Request) {
       },
       body: JSON.stringify({
         model: "glm-5.1",
-        max_tokens: 400,
+        max_tokens: 2000,
         messages: [
           { role: "system", content: SYSTEM_PROMPT },
           ...messages,
@@ -104,12 +104,13 @@ export async function POST(request: Request) {
 
     if (!res.ok) {
       const err = await res.text();
-      console.error("Z.ai error:", err);
+      console.error("Z.ai error:", res.status, err);
       return NextResponse.json({ error: "Failed to get response" }, { status: 500 });
     }
 
     const data = await res.json();
-    const text = data.choices?.[0]?.message?.content ?? "";
+    // GLM-5.1 is a reasoning model — actual reply is in content, thinking in reasoning_content
+    const text = data.choices?.[0]?.message?.content || data.choices?.[0]?.message?.reasoning_content || "";
 
     return NextResponse.json({ text });
   } catch (error) {
