@@ -3,6 +3,7 @@
 
 import { HeroSection } from "@/components/home/hero-section";
 import { WhoWeWorkWith } from "@/components/home/who-we-work-with";
+import { ScrollStory } from "@/components/home/scroll-story";
 import { WhatWeBuild } from "@/components/home/what-we-build";
 import { MetricsBar } from "@/components/home/metrics-bar";
 import { CaseStudiesPreview } from "@/components/home/case-studies-preview";
@@ -18,6 +19,7 @@ export default function Home() {
       <ScrollWatcher />
       <HeroSection />
       <WhoWeWorkWith />
+      <ScrollStory />
       <WhatWeBuild />
       <MetricsBar />
       <CaseStudiesPreview />
