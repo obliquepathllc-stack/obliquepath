@@ -1,7 +1,6 @@
-import Anthropic from "@anthropic-ai/sdk";
 import { NextResponse } from "next/server";
 
-const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+const Z_AI_BASE = "https://api.z.ai/api/paas/v4";
 
 // ─── SYSTEM PROMPT — edit this to change bot behavior ─────────────────────────
 const SYSTEM_PROMPT = `You are a helpful assistant for Oblique Path, a custom software and AI automation company based in Windsor, Ontario. You help website visitors understand what Oblique Path does, qualify them as potential clients, and guide them toward booking a strategy call or leaving their contact details.
@@ -87,15 +86,30 @@ export async function POST(request: Request) {
   try {
     const { messages } = await request.json();
 
-    const response = await client.messages.create({
-      model: "claude-haiku-4-5-20251001",
-      max_tokens: 400,
-      system: SYSTEM_PROMPT,
-      messages,
+    const res = await fetch(`${Z_AI_BASE}/chat/completions`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${process.env.Z_AI_API_KEY}`,
+      },
+      body: JSON.stringify({
+        model: "glm-5.1",
+        max_tokens: 400,
+        messages: [
+          { role: "system", content: SYSTEM_PROMPT },
+          ...messages,
+        ],
+      }),
     });
 
-    const text =
-      response.content[0].type === "text" ? response.content[0].text : "";
+    if (!res.ok) {
+      const err = await res.text();
+      console.error("Z.ai error:", err);
+      return NextResponse.json({ error: "Failed to get response" }, { status: 500 });
+    }
+
+    const data = await res.json();
+    const text = data.choices?.[0]?.message?.content ?? "";
 
     return NextResponse.json({ text });
   } catch (error) {
