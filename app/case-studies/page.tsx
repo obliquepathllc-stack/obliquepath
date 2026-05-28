@@ -185,8 +185,8 @@ export default function CaseStudiesPage() {
 
             <div className="flex flex-wrap gap-x-10 gap-y-5">
               {[
-                { value: "8+", label: "Clients automated" },
-                { value: "8", label: "Industries served" },
+                { value: "10+", label: "Clients automated" },
+                { value: "11+", label: "Industries served" },
                 { value: "60%", label: "Avg. admin time saved" },
               ].map((s) => (
                 <div key={s.label} className="flex flex-col gap-1">
