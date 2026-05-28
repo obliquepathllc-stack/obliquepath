@@ -4,8 +4,10 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Footer } from "@/components/shared/footer";
 import { Toaster } from "@/components/ui/sonner";
 import { Navbar } from "@/components/shared/navbar";
+import { StickyCtaBar } from "@/components/shared/sticky-cta";
 import { ScrollAmbient } from "@/components/scroll-ambient";
 import { Analytics } from "@vercel/analytics/react";
+import Script from "next/script";
 import "./globals.css";
 
 const jakartaSans = Plus_Jakarta_Sans({
@@ -148,11 +150,28 @@ export default function RootLayout({
                 >
                     <ScrollAmbient />
                     <Navbar />
+                    <StickyCtaBar />
                     {children}
                     <Footer />
                     <Toaster />
                 </ThemeProvider>
                 <Analytics />
+                {/* GA4 — SETUP: replace G-XXXXXXXXXX with your Measurement ID
+                    Found at: analytics.google.com > Admin > Data Streams > your stream */}
+                <Script src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX" strategy="afterInteractive" />
+                <Script id="ga4-init" strategy="afterInteractive">{`
+                    window.dataLayer=window.dataLayer||[];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js',new Date());
+                    gtag('config','G-XXXXXXXXXX');
+                `}</Script>
+                {/* Meta Pixel — SETUP: replace XXXXXXXXXXXXXXXXXX with your Pixel ID
+                    Found at: business.facebook.com > Events Manager > your pixel */}
+                <Script id="meta-pixel" strategy="afterInteractive">{`
+                    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+                    fbq('init','XXXXXXXXXXXXXXXXXX');
+                    fbq('track','PageView');
+                `}</Script>
             </body>
         </html>
     );

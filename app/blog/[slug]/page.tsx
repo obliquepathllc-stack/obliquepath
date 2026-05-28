@@ -4,6 +4,7 @@ import Image from "next/image";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { notFound } from "next/navigation";
 import { getPostBySlug, blogPosts, type ContentBlock } from "@/lib/blog-posts";
+import { EmailCapture } from "@/components/blog/email-capture";
 
 export function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
@@ -159,6 +160,8 @@ export default async function BlogPostPage({
 
         {/* Body */}
         <div>{post.content.map((block, i) => renderBlock(block, i))}</div>
+
+        <EmailCapture />
 
         {/* Footer nav */}
         <div className="mt-16 pt-8 border-t border-border/40">

@@ -116,7 +116,7 @@ export function Navbar() {
             {/* Book demo CTA (desktop only) */}
             <Link href="/book-demo" className="hidden md:block">
               <button className="rounded-full bg-foreground text-background text-sm font-medium px-5 py-2 flex items-center gap-1.5 hover:opacity-80 active:scale-[0.97] transition-all duration-200 group">
-                Get Started
+                Book a Call
                 <ArrowUpRight size={13} weight="bold" className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
               </button>
             </Link>
@@ -201,7 +201,7 @@ export function Navbar() {
               <motion.div variants={linkVariants} className="mt-8">
                 <Link href="/book-demo" onClick={() => setMenuOpen(false)}>
                   <button className="rounded-full bg-foreground text-background font-semibold px-8 py-3.5 text-base hover:opacity-85 active:scale-[0.97] transition-all duration-200">
-                    Book a Demo
+                    Book a Call
                   </button>
                 </Link>
               </motion.div>

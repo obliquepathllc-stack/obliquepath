@@ -6,22 +6,19 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { firstName, lastName, email, company, service, companySize, message } = body;
+    const { name, email, automating } = body;
 
     await resend.emails.send({
       from: "Oblique Path Website <onboarding@resend.dev>",
       to: "obliquepathllc@gmail.com",
       replyTo: email,
-      subject: `New Strategy Call Request — ${firstName} ${lastName} (${company})`,
+      subject: `New Discovery Call Request — ${name}`,
       html: `
-        <h2>New Strategy Call / Demo Request</h2>
+        <h2>New Discovery Call Request</h2>
         <table cellpadding="8" style="border-collapse:collapse;width:100%;max-width:600px">
-          <tr><td><strong>Name</strong></td><td>${firstName} ${lastName}</td></tr>
+          <tr><td><strong>Name</strong></td><td>${name}</td></tr>
           <tr><td><strong>Email</strong></td><td>${email}</td></tr>
-          <tr><td><strong>Company</strong></td><td>${company}</td></tr>
-          <tr><td><strong>Service Interest</strong></td><td>${service}</td></tr>
-          <tr><td><strong>Company Size</strong></td><td>${companySize}</td></tr>
-          ${message ? `<tr><td><strong>Message</strong></td><td>${message}</td></tr>` : ""}
+          <tr><td><strong>Automating</strong></td><td>${automating}</td></tr>
         </table>
       `,
     });
