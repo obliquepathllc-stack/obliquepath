@@ -22,9 +22,26 @@ const lineEntry = (delay: number) => ({
   transition: { duration: 0.75, delay, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
 });
 
+const HERO_VIDEO = process.env.NEXT_PUBLIC_HERO_VIDEO_URL;
+
 export function HeroSection() {
   return (
     <section className="relative min-h-[100dvh] flex flex-col overflow-hidden">
+
+      {/* Background video — only renders when URL is set */}
+      {HERO_VIDEO && (
+        <>
+          <video
+            src={HERO_VIDEO}
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="hero-video absolute inset-0 w-full h-full object-cover opacity-35 pointer-events-none"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/55 via-background/30 to-background pointer-events-none" />
+        </>
+      )}
 
       {/* Main hero content — flex-1 fills remaining space above scroll indicator + logos */}
       <div className="flex-1 flex flex-col justify-center px-4 lg:px-16 pt-32 pb-8 md:pt-44 md:pb-10 relative z-10">

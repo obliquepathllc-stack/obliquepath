@@ -4,8 +4,8 @@
 // Cards link to /case-studies/[slug] (SEO). Individual pages are always dark.
 // Layout: zigzag asymmetric bento, client marquee, spotlight hover
 
-import { useState, useRef, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useRef, useCallback, useEffect } from "react";
+import { motion, AnimatePresence, useInView, useMotionValue, animate } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
@@ -146,6 +146,35 @@ function MarqueeStrip() {
   );
 }
 
+function AnimatedStat({ value, label }: { value: string; label: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true });
+  const match = value.match(/^(\d+)(.*)$/);
+  const num = match ? parseInt(match[1]) : 0;
+  const suffix = match ? match[2] : value;
+  const count = useMotionValue(0);
+  const [display, setDisplay] = useState("0");
+
+  useEffect(() => {
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReduced) { setDisplay(String(num)); return; }
+    if (!isInView) return;
+    const controls = animate(count, num, {
+      duration: 1.2,
+      ease: [0.16, 1, 0.3, 1],
+      onUpdate: (v) => setDisplay(String(Math.round(v))),
+    });
+    return () => controls.stop();
+  }, [isInView, num, count]);
+
+  return (
+    <div ref={ref} className="flex flex-col gap-1">
+      <span className="text-3xl font-bold text-foreground tracking-tight">{display}{suffix}</span>
+      <span className="text-xs text-muted-foreground">{label}</span>
+    </div>
+  );
+}
+
 export default function CaseStudiesPage() {
   const [activeFilter, setActiveFilter] = useState("All");
 
@@ -184,16 +213,9 @@ export default function CaseStudiesPage() {
             </p>
 
             <div className="flex flex-wrap gap-x-10 gap-y-5">
-              {[
-                { value: "10+", label: "Clients automated" },
-                { value: "11+", label: "Industries served" },
-                { value: "60%", label: "Avg. admin time saved" },
-              ].map((s) => (
-                <div key={s.label} className="flex flex-col gap-1">
-                  <span className="text-3xl font-bold text-foreground tracking-tight">{s.value}</span>
-                  <span className="text-xs text-muted-foreground">{s.label}</span>
-                </div>
-              ))}
+              <AnimatedStat value="10+" label="Clients automated" />
+              <AnimatedStat value="11+" label="Industries served" />
+              <AnimatedStat value="60%" label="Avg. admin time saved" />
             </div>
           </motion.div>
         </div>
@@ -217,13 +239,20 @@ export default function CaseStudiesPage() {
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
                 className={cn(
-                  "shrink-0 px-5 py-2 rounded-full text-xs font-medium border transition-all duration-200",
+                  "relative shrink-0 px-5 py-2 rounded-full text-xs font-medium border transition-colors duration-200",
                   activeFilter === filter
-                    ? "bg-primary text-primary-foreground border-primary shadow-[0_0_16px_rgba(99,102,241,0.2)]"
+                    ? "text-primary-foreground border-primary"
                     : "bg-secondary text-muted-foreground border-border hover:border-primary/40 hover:text-foreground"
                 )}
               >
-                {filter}
+                {activeFilter === filter && (
+                  <motion.div
+                    layoutId="filter-active"
+                    className="absolute inset-0 rounded-full bg-primary shadow-[0_0_16px_rgba(99,102,241,0.2)]"
+                    transition={{ type: "spring", stiffness: 350, damping: 30 }}
+                  />
+                )}
+                <span className="relative z-10">{filter}</span>
               </button>
             ))}
           </motion.div>

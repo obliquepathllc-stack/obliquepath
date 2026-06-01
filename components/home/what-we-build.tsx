@@ -3,9 +3,12 @@
 // What We Build — NO icon boxes. Type-driven design with large numbers.
 // taste-skill: Remove generic AI icon patterns entirely.
 
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import Link from "next/link";
 import { ArrowUpRight } from "@phosphor-icons/react";
+
+const WORKFLOW_VIDEO = process.env.NEXT_PUBLIC_WORKFLOW_VIDEO_URL;
 
 const capabilities = [
   {
@@ -53,8 +56,22 @@ const slideIn = (delay = 0) => ({
 });
 
 export function WhatWeBuild() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start center", "end center"],
+  });
+
+  useMotionValueEvent(scrollYProgress, "change", (progress) => {
+    const video = videoRef.current;
+    if (!video?.duration) return;
+    video.currentTime = Math.max(0, Math.min(progress * video.duration, video.duration));
+  });
+
   return (
-    <section className="px-4 lg:px-16 py-24 md:py-36 border-t border-border">
+    <section ref={sectionRef} className="px-4 lg:px-16 py-24 md:py-36 border-t border-border">
       <div className="container max-w-6xl mx-auto">
 
         {/* Header */}
@@ -74,33 +91,57 @@ export function WhatWeBuild() {
           </motion.div>
         </div>
 
-        {/* Capabilities — full width rows, no cards */}
-        <div className="flex flex-col">
-          {capabilities.map((cap, i) => (
-            <motion.div
-              key={cap.number}
-              {...slideIn(i * 0.1)}
-              className="grid grid-cols-1 lg:grid-cols-[100px_1fr_1fr] gap-6 lg:gap-12 py-10 border-t border-border last:border-b"
-            >
-              {/* Large number */}
-              <div className="flex items-start">
-                <span className="text-[80px] md:text-[96px] font-black tracking-tighter leading-none text-foreground/[0.06] select-none">
-                  {cap.number}
-                </span>
-              </div>
+        {/* Capabilities + optional sticky video panel */}
+        <div className="flex gap-16 items-start">
 
-              {/* Title + description */}
-              <div className="flex flex-col gap-3">
-                <h3 className="text-2xl font-bold tracking-tight text-foreground">{cap.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{cap.description}</p>
-              </div>
+          {/* Capabilities — full width rows, no cards */}
+          <div className="flex-1 flex flex-col">
+            {capabilities.map((cap, i) => (
+              <motion.div
+                key={cap.number}
+                {...slideIn(i * 0.1)}
+                className="grid grid-cols-1 lg:grid-cols-[100px_1fr_1fr] gap-6 lg:gap-12 py-10 border-t border-border last:border-b"
+              >
+                {/* Large number */}
+                <div className="flex items-start">
+                  <span className="text-[80px] md:text-[96px] font-black tracking-tighter leading-none text-foreground/[0.06] select-none">
+                    {cap.number}
+                  </span>
+                </div>
 
-              {/* Detail tags */}
-              <div className="flex items-start lg:justify-end">
-                <p className="text-sm text-muted-foreground/60 leading-loose">{cap.detail}</p>
+                {/* Title + description */}
+                <div className="flex flex-col gap-3">
+                  <h3 className="text-2xl font-bold tracking-tight text-foreground">{cap.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{cap.description}</p>
+                </div>
+
+                {/* Detail tags */}
+                <div className="flex items-start lg:justify-end">
+                  <p className="text-sm text-muted-foreground/60 leading-loose">{cap.detail}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Sticky video panel — desktop only, only renders when URL is set */}
+          {WORKFLOW_VIDEO && (
+            <div className="hidden xl:block w-64 shrink-0">
+              <div className="sticky top-32">
+                <video
+                  ref={videoRef}
+                  src={WORKFLOW_VIDEO}
+                  muted
+                  playsInline
+                  preload="auto"
+                  className="w-full aspect-[9/16] rounded-2xl border border-border object-cover"
+                />
+                <p className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground/35 text-center mt-3">
+                  Automation in action
+                </p>
               </div>
-            </motion.div>
-          ))}
+            </div>
+          )}
+
         </div>
 
         {/* Inline CTA */}
