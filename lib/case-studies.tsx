@@ -823,4 +823,190 @@ export const caseStudies: CaseStudy[] = [
     icon: Scale,
     image: null,
   },
+
+  // ── Allied HVAC ────────────────────────────────────────────────────────────
+  {
+    id: "allied-hvac",
+    filterTag: "Technology & Operations",
+    title: "An HVAC company automated dispatch, quotes, and seasonal scheduling. Same crew. Double the daily jobs.",
+    client: "HVAC & Trades Service Company",
+    industry: "Trades and Home Services",
+    location: "Ontario, Canada",
+    service: "Dispatch Automation + Quote-to-Invoice + Seasonal Scheduling",
+    beforeHeadline: "Dispatch was a full-time job. In busy season, it was an impossible one.",
+    beforeNarrative:
+      "This HVAC company had eight technicians and one dispatcher managing a growing call volume. Every service call triggered a chain of manual steps: availability check, tech assignment, client confirmation, parts lookup, quote preparation, job completion logging, and invoice generation. In summer, with AC breakdowns coming in faster than they could be scheduled, the dispatcher was on the phone from 7am to 6pm just keeping up. Quotes sat unsent for days. Invoices went out late. The owner was doing three jobs at once and still dropping things.",
+    painPoints: [
+      {
+        title: "Manual dispatch eating the dispatcher's day",
+        description: "Every job required the dispatcher to manually check tech availability, make the assignment, call the client, confirm the slot, and log it all. At peak volume, this was physically unmanageable.",
+      },
+      {
+        title: "Quotes delayed by hours or days",
+        description: "After a service call, technicians called in job details verbally. The dispatcher typed them up, the owner reviewed and adjusted, and someone assembled the quote PDF. Clients were waiting.",
+      },
+      {
+        title: "Seasonal capacity completely manual",
+        description: "Maintenance contract reminders, seasonal tune-up scheduling, and filter replacement follow-ups all happened by hand, from a spreadsheet, when someone had time to look at it.",
+      },
+    ],
+    afterHeadline: "Jobs dispatch themselves. Quotes leave the same day. Seasonal reminders run on autopilot.",
+    afterNarrative:
+      "When a service call comes in, the system checks technician availability and proximity, assigns the job, sends the client a confirmation with a two-hour arrival window, and notifies the tech on their phone. After the visit, the tech enters job details through a mobile form. A quote is generated from a standard rate library, reviewed with a single click, and sent to the client — all within 30 minutes of job completion. Seasonal maintenance reminders go out to every contract client on a preset schedule, with a one-tap booking link. The dispatcher now focuses entirely on escalations and complex jobs. Daily job volume doubled without adding headcount.",
+    solution: [
+      "Smart dispatch: availability check, proximity routing, and automatic job assignment",
+      "Automated client confirmations with arrival window sent via SMS",
+      "Technician mobile form: job details trigger quote generation from rate library",
+      "One-click quote approval and automatic client delivery",
+      "Seasonal maintenance scheduler: contract client reminders with self-booking link",
+      "Job-to-invoice pipeline: approved quotes convert to invoices automatically",
+    ],
+    processSteps: [
+      { number: "01", title: "Job Request In", description: "Customer calls or submits a service request online. System captures details and triggers dispatch." },
+      { number: "02", title: "Auto-Dispatch", description: "Tech availability and proximity checked. Job assigned and confirmed. Client gets SMS confirmation with arrival window." },
+      { number: "03", title: "Tech On Site", description: "Tech completes work and fills mobile form: time spent, parts used, job notes." },
+      { number: "04", title: "Quote Generated", description: "System builds the quote from the job form and rate library. Owner reviews and approves in one click." },
+      { number: "05", title: "Invoice and Collection", description: "Approved quote converts to invoice, sent to client automatically. Payment follow-up fires if unpaid after 7 days." },
+      { number: "06", title: "Seasonal Reminders", description: "Contract clients receive maintenance reminders on preset schedule with self-booking link. No manual outreach needed." },
+    ],
+    results: [
+      { stat: "2x", description: "daily job volume with same crew", icon: TrendingUp },
+      { stat: "Same day", description: "quote delivery after job completion", icon: Timer },
+      { stat: "85%", description: "reduction in dispatcher phone time", icon: Phone },
+      { stat: "40%", description: "increase in maintenance contract renewals", icon: CheckCircle },
+    ],
+    timeframe: "8 weeks to full deployment",
+    testimonial:
+      "Last summer we would have needed to hire two more people to handle the volume we ran this year. We didn't hire anyone. The system just handled it.",
+    clientName: "",
+    clientTitle: "Owner, HVAC Service Company",
+    ctaText: "Automate Your Service Operation",
+    ctaLink: "/book-demo",
+    icon: Zap,
+    image: null,
+  },
+
+  // ── Northview Recruiting ───────────────────────────────────────────────────
+  {
+    id: "northview-recruiting",
+    filterTag: "Technology & Operations",
+    title: "A recruiting agency automated candidate outreach, client reporting, and follow-up. Placements up 35% in 90 days.",
+    client: "Specialized Recruiting Agency",
+    industry: "Recruiting and Talent Acquisition",
+    location: "Toronto, ON",
+    service: "Candidate Outreach Automation + CRM + Client Reporting",
+    beforeHeadline: "The recruiters were spending more time on admin than on candidates.",
+    beforeNarrative:
+      "A specialized recruiting firm in Toronto was growing faster than its systems could support. Recruiters were manually reaching out to candidates via LinkedIn and email, logging responses by hand, chasing clients for job briefings, and spending Friday afternoons putting together weekly reports in Excel. Three of five working days were eaten by tasks that had nothing to do with actually finding or placing people. The pipeline was full but the conversion rate was declining because follow-up was slipping on both the candidate and client side.",
+    painPoints: [
+      {
+        title: "Manual outreach and logging",
+        description: "Recruiters were writing individual outreach messages, logging every response by hand, and tracking conversation status in a shared spreadsheet that was always out of date.",
+      },
+      {
+        title: "Client reporting consuming Fridays",
+        description: "Weekly status reports for clients required pulling data from four places, formatting it, and writing a summary. Three hours per client, every Friday, without fail.",
+      },
+      {
+        title: "Follow-up falling through the cracks",
+        description: "Candidates who did not respond to first outreach were supposed to get a second message at day 5. This happened manually, when someone remembered, which was not consistently.",
+      },
+    ],
+    afterHeadline: "Outreach sequences run automatically. Reports generate themselves. Recruiters focus on conversations that matter.",
+    afterNarrative:
+      "Each recruiter now launches outreach campaigns from a template library. Messages go out on a defined schedule, with automatic follow-up at day 3 and day 7 if there is no response. Every response is logged to the CRM automatically. When a candidate moves to a new stage, a notification fires to the relevant client with a one-paragraph update. Weekly client reports are generated automatically from CRM data every Friday morning and delivered before anyone has opened their laptop. Recruiters spend their days talking to people, not managing spreadsheets.",
+    solution: [
+      "Multi-step outreach sequences with automatic follow-up at day 3 and day 7",
+      "Response detection: replies update candidate status in CRM automatically",
+      "Candidate pipeline with stage-based notifications to clients",
+      "Automated weekly client reports generated from live CRM data",
+      "Job briefing templates sent to clients when new roles are opened",
+      "Placement pipeline dashboard with conversion rates by recruiter and role type",
+    ],
+    processSteps: [
+      { number: "01", title: "Campaign Launch", description: "Recruiter selects role, candidate list, and outreach template. Campaign launches with one click." },
+      { number: "02", title: "Outreach + Follow-Up", description: "Initial message goes out. Day 3 follow-up fires automatically for non-responders. Day 7 final touch if still no reply." },
+      { number: "03", title: "Response Logged", description: "Any reply updates the candidate's CRM status automatically. Recruiter is notified and can take over the conversation." },
+      { number: "04", title: "Client Updates", description: "When a candidate advances in the pipeline, an automated update goes to the client. No manual status emails." },
+      { number: "05", title: "Weekly Report", description: "Every Friday at 7am, client reports are generated from CRM data and delivered by email. Zero manual effort." },
+      { number: "06", title: "Placement Logged", description: "Confirmed placement triggers invoice generation and a 90-day check-in reminder for the guarantee window." },
+    ],
+    results: [
+      { stat: "35%", description: "more placements in the first 90 days", icon: TrendingUp },
+      { stat: "12hrs", description: "saved per recruiter per week on admin", icon: Clock },
+      { stat: "3x", description: "more candidates reached per recruiter per month", icon: Users },
+      { stat: "100%", description: "on-time client report delivery", icon: CheckCircle },
+    ],
+    timeframe: "5 weeks to go live",
+    testimonial:
+      "I was spending half my week on status updates and reports. Now I spend it on phone calls and placements. In three months we exceeded our annual target. I didn't realize how much the admin was costing us.",
+    clientName: "",
+    clientTitle: "Senior Recruiter, Specialized Recruiting Agency",
+    ctaText: "Automate Your Recruiting Operation",
+    ctaLink: "/book-demo",
+    icon: Users,
+    image: null,
+  },
+
+  // ── Harbourview Property Management ───────────────────────────────────────
+  {
+    id: "harbourview-property",
+    filterTag: "Real Estate",
+    title: "A property management firm automated tenant onboarding, maintenance requests, and rent collection. Admin time cut in half.",
+    client: "Property Management Company",
+    industry: "Residential Property Management",
+    location: "Windsor and Toronto, ON",
+    service: "Tenant Onboarding Automation + Maintenance Workflow + Rent Collection",
+    beforeHeadline: "Each new tenant meant two weeks of manual paperwork and follow-up.",
+    beforeNarrative:
+      "A property management company handling 200 units across Windsor and Toronto ran on email, phone calls, and PDF documents. When a new tenant was approved, the onboarding process involved sending a lease manually, tracking the signature, collecting a damage deposit via e-transfer and logging it by hand, adding utilities to the account, and scheduling a move-in inspection. Maintenance requests came in via text and were tracked in a shared notes app. Rent reminders were sent manually at the start of each month. The property manager was spending 30 hours a week on coordination that should not require a human.",
+    painPoints: [
+      {
+        title: "Tenant onboarding taking weeks",
+        description: "Lease sending, signature tracking, deposit collection, utility setup, and inspection scheduling were all separate manual steps, each prone to being forgotten or delayed.",
+      },
+      {
+        title: "Maintenance requests lost in text threads",
+        description: "Tenants texted maintenance requests. The property manager forwarded them to contractors manually. Follow-up happened when someone remembered to ask. Units sat unrepaired.",
+      },
+      {
+        title: "Rent reminders consuming Monday mornings",
+        description: "Monthly rent reminders were sent individually. Late notices were drafted and sent manually. Payment tracking was in a spreadsheet updated by hand.",
+      },
+    ],
+    afterHeadline: "New tenants onboard in 48 hours. Maintenance routes itself. Rent collection runs automatically.",
+    afterNarrative:
+      "When a tenant is approved, the system fires the lease for e-signature automatically. Once signed, it requests the deposit payment, sends move-in instructions, and schedules the inspection. The whole sequence runs without the property manager touching it. Maintenance requests now go through a simple form on the tenant portal. Submissions are automatically categorized, assigned to the correct contractor, and tracked through to resolution. Tenants get a status update at every stage. Monthly rent reminders go out on the 28th of every month. Late notices fire automatically at day 5. Payment tracking updates from the bank integration in real time.",
+    solution: [
+      "Automated lease dispatch on approval — e-signature tracking with automated reminders",
+      "Deposit payment request and confirmation — logged automatically to the ledger",
+      "Move-in sequence: utility setup instructions, inspection scheduling, key handoff checklist",
+      "Maintenance request portal with automatic contractor assignment by category",
+      "Status updates to tenant at each stage of maintenance resolution",
+      "Automated rent reminders at day -3, day 1, and day 5 overdue",
+    ],
+    processSteps: [
+      { number: "01", title: "Tenant Approved", description: "Approval triggers the onboarding sequence automatically. Lease sent for e-signature within minutes." },
+      { number: "02", title: "Deposit and Move-In", description: "Once lease is signed, deposit request fires. Move-in instructions and inspection booking follow automatically." },
+      { number: "03", title: "Maintenance Request", description: "Tenant submits request through portal. System categorizes and assigns to correct contractor. Tenant gets confirmation." },
+      { number: "04", title: "Contractor Coordination", description: "Contractor receives job details. Completion triggers automatic tenant notification and work order closure." },
+      { number: "05", title: "Rent Cycle", description: "Monthly reminders go out automatically. Late payments trigger a notice sequence. Payment tracking updates from bank feed." },
+      { number: "06", title: "Owner Reporting", description: "Monthly statement generated automatically per property and delivered to owners. No manual report preparation." },
+    ],
+    results: [
+      { stat: "50%", description: "reduction in property manager admin hours", icon: Clock },
+      { stat: "48hrs", description: "average tenant onboarding time (was 2 weeks)", icon: Timer },
+      { stat: "90%", description: "of maintenance requests resolved without PM involvement", icon: CheckCircle },
+      { stat: "30%", description: "reduction in late rent payments", icon: TrendingUp },
+    ],
+    timeframe: "7 weeks to full deployment",
+    testimonial:
+      "I used to dread the first of the month. Now it just happens. Reminders go out, payments come in, late notices fire when they need to. I'm finally spending time on growing the portfolio instead of managing it.",
+    clientName: "",
+    clientTitle: "Property Manager, Residential Portfolio",
+    ctaText: "Automate Your Property Operations",
+    ctaLink: "/book-demo",
+    icon: Building,
+    image: null,
+  },
 ];
