@@ -113,7 +113,7 @@ export function BookDemoContent() {
 
         <div className="flex items-center gap-4 max-w-sm mx-auto mb-10 text-sm text-muted-foreground">
           <div className="flex-1 h-px bg-border" />
-          <span>or fill the form and we'll reach out</span>
+          <span>or fill the form and we&apos;ll reach out</span>
           <div className="flex-1 h-px bg-border" />
         </div>
 
