@@ -14,9 +14,9 @@ const caseStudySlugs = [
   "ai-voice-agent",
   "ai-chatbot",
   "law-firm-intake",
-  "allied-hvac",
-  "northview-recruiting",
-  "harbourview-property",
+  "hvac-dispatch-automation",
+  "recruiting-automation",
+  "property-management-automation",
 ];
 
 const blogSlugs = [

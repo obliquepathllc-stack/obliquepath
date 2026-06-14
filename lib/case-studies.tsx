@@ -824,9 +824,9 @@ export const caseStudies: CaseStudy[] = [
     image: null,
   },
 
-  // ── Allied HVAC ────────────────────────────────────────────────────────────
+  // ── HVAC Dispatch Automation ───────────────────────────────────────────────
   {
-    id: "allied-hvac",
+    id: "hvac-dispatch-automation",
     filterTag: "Technology & Operations",
     title: "An HVAC company automated dispatch, quotes, and seasonal scheduling. Same crew. Double the daily jobs.",
     client: "HVAC & Trades Service Company",
@@ -886,9 +886,9 @@ export const caseStudies: CaseStudy[] = [
     image: null,
   },
 
-  // ── Northview Recruiting ───────────────────────────────────────────────────
+  // ── Recruiting Automation ─────────────────────────────────────────────────
   {
-    id: "northview-recruiting",
+    id: "recruiting-automation",
     filterTag: "Technology & Operations",
     title: "A recruiting agency automated candidate outreach, client reporting, and follow-up. Placements up 35% in 90 days.",
     client: "Specialized Recruiting Agency",
@@ -948,60 +948,66 @@ export const caseStudies: CaseStudy[] = [
     image: null,
   },
 
-  // ── Harbourview Property Management ───────────────────────────────────────
+  // ── Property Management Automation ────────────────────────────────────────
   {
-    id: "harbourview-property",
+    id: "property-management-automation",
     filterTag: "Real Estate",
-    title: "A property management firm automated tenant onboarding, maintenance requests, and rent collection. Admin time cut in half.",
-    client: "Property Management Company",
+    title: "A property management company replaced manual leases, paper notices, and tenant calls with a fully automated operation. Admin hours down 65%.",
+    client: "Residential Property Management Company",
     industry: "Residential Property Management",
-    location: "Windsor and Toronto, ON",
-    service: "Tenant Onboarding Automation + Maintenance Workflow + Rent Collection",
-    beforeHeadline: "Each new tenant meant two weeks of manual paperwork and follow-up.",
+    location: "Ontario, Canada",
+    service: "Full Property Operations Automation — Leases, Payments, Eviction Notices, 24/7 Tenant AI",
+    beforeHeadline: "Every tenant was a full-time job. Every month was a paper crisis.",
     beforeNarrative:
-      "A property management company handling 200 units across Windsor and Toronto ran on email, phone calls, and PDF documents. When a new tenant was approved, the onboarding process involved sending a lease manually, tracking the signature, collecting a damage deposit via e-transfer and logging it by hand, adding utilities to the account, and scheduling a move-in inspection. Maintenance requests came in via text and were tracked in a shared notes app. Rent reminders were sent manually at the start of each month. The property manager was spending 30 hours a week on coordination that should not require a human.",
+      "A property management company managing over 200 residential units was held together by three things: a shared email inbox, a spreadsheet that everyone edited, and a property manager answering her phone at 11pm. Leases were drafted manually in Word from templates that were two versions behind. Rent reminders went out when someone remembered to send them. Late notices were written individually, reviewed for accuracy, and served by hand. When a tenant crossed the 14-day line, drafting the formal notice required pulling the original lease, calculating the exact arrears, formatting the notice correctly, and serving it properly — or risk starting the process over at the tribunal. The tenant AI agent was a phone number that rang a person who was trying to sleep.",
     painPoints: [
       {
-        title: "Tenant onboarding taking weeks",
-        description: "Lease sending, signature tracking, deposit collection, utility setup, and inspection scheduling were all separate manual steps, each prone to being forgotten or delayed.",
+        title: "Lease generation was a manual drafting exercise",
+        description: "Every new lease was assembled by hand from a Word template. Tenant name, unit number, rent amount, start date, special terms — all entered manually. Wrong entries meant wrong leases. Wrong leases meant liability.",
       },
       {
-        title: "Maintenance requests lost in text threads",
-        description: "Tenants texted maintenance requests. The property manager forwarded them to contractors manually. Follow-up happened when someone remembered to ask. Units sat unrepaired.",
+        title: "The rent collection process depended entirely on memory",
+        description: "Reminders were sent manually the day before rent was due. Late notices were drafted when someone had time to draft them, which was not always the same day the tenant crossed the line. The gap between late rent and legal action was measured in weeks, not days.",
       },
       {
-        title: "Rent reminders consuming Monday mornings",
-        description: "Monthly rent reminders were sent individually. Late notices were drafted and sent manually. Payment tracking was in a spreadsheet updated by hand.",
+        title: "Eviction notices required legal precision nobody had time for",
+        description: "N4 notices under the Residential Tenancies Act have specific content and timing requirements. A notice with the wrong arrears amount, served on the wrong date, restarts the process. The company was drafting these manually while managing 200 units. Errors happened.",
+      },
+      {
+        title: "Tenants calling at all hours for things that did not need a human",
+        description: "A significant portion of inbound tenant calls were about rent balances, maintenance status, lease terms, noise complaints, and building policies — questions a well-built system could answer instantly. They were all going to a person's mobile phone.",
       },
     ],
-    afterHeadline: "New tenants onboard in 48 hours. Maintenance routes itself. Rent collection runs automatically.",
+    afterHeadline: "Leases generate themselves. The rent cycle runs without anyone touching it. Tenants get answered at 3am. Notices go out on time, legally.",
     afterNarrative:
-      "When a tenant is approved, the system fires the lease for e-signature automatically. Once signed, it requests the deposit payment, sends move-in instructions, and schedules the inspection. The whole sequence runs without the property manager touching it. Maintenance requests now go through a simple form on the tenant portal. Submissions are automatically categorized, assigned to the correct contractor, and tracked through to resolution. Tenants get a status update at every stage. Monthly rent reminders go out on the 28th of every month. Late notices fire automatically at day 5. Payment tracking updates from the bank integration in real time.",
+      "When a tenant is approved, the system pulls their details and auto-generates a compliant lease agreement from a locked, up-to-date template — rent amount, unit, dates, special clauses, and all relevant schedules included. The lease goes for e-signature automatically. Once signed, the deposit request fires and move-in instructions go out. The rent cycle runs from there: reminder at day minus 5, due date notification on day 1, formal arrears notice at day 5, and if payment still does not arrive, an N4 Notice to End Tenancy for Non-Payment of Rent is generated automatically with the correct arrears amount, served digitally, and logged with a timestamp for the Landlord and Tenant Board. A 24/7 AI agent answers tenant calls and messages at any hour — handling rent balance questions, maintenance status, noise complaints, building policies, and lease terms in a natural conversation. Actual emergencies get escalated to the on-call line immediately. The property manager now handles the 10% of situations that actually need a human.",
     solution: [
-      "Automated lease dispatch on approval — e-signature tracking with automated reminders",
-      "Deposit payment request and confirmation — logged automatically to the ledger",
-      "Move-in sequence: utility setup instructions, inspection scheduling, key handoff checklist",
-      "Maintenance request portal with automatic contractor assignment by category",
-      "Status updates to tenant at each stage of maintenance resolution",
-      "Automated rent reminders at day -3, day 1, and day 5 overdue",
+      "Automated lease generation: tenant and property data pulled at approval, lease drafted from locked template, sent for e-signature",
+      "E-signature tracking with automated reminders at day 3 and day 7 — completion triggers deposit request and move-in sequence",
+      "Rent cycle automation: reminder at day -5, due date notice, day-5 arrears notice, escalating tone through day 14",
+      "N4 Notice to End Tenancy auto-generated at day 14 with legally correct arrears calculation, digital service, and LTB-ready timestamp log",
+      "Eviction documentation package: all notice history, payment records, and lease documents compiled automatically for LTB filing",
+      "24/7 AI tenant agent: answers rent balance, maintenance status, noise complaints, lease terms, and building policy questions at any hour — escalates emergencies immediately",
+      "Maintenance request portal with AI urgency triage: emergencies escalated to on-call contractor within minutes, routine requests queued and assigned",
+      "Owner reporting: monthly statement auto-generated per property with rent collected, arrears, maintenance costs, and vacancy status",
     ],
     processSteps: [
-      { number: "01", title: "Tenant Approved", description: "Approval triggers the onboarding sequence automatically. Lease sent for e-signature within minutes." },
-      { number: "02", title: "Deposit and Move-In", description: "Once lease is signed, deposit request fires. Move-in instructions and inspection booking follow automatically." },
-      { number: "03", title: "Maintenance Request", description: "Tenant submits request through portal. System categorizes and assigns to correct contractor. Tenant gets confirmation." },
-      { number: "04", title: "Contractor Coordination", description: "Contractor receives job details. Completion triggers automatic tenant notification and work order closure." },
-      { number: "05", title: "Rent Cycle", description: "Monthly reminders go out automatically. Late payments trigger a notice sequence. Payment tracking updates from bank feed." },
-      { number: "06", title: "Owner Reporting", description: "Monthly statement generated automatically per property and delivered to owners. No manual report preparation." },
+      { number: "01", title: "Tenant Approved — Lease Generated", description: "Approval triggers lease generation from the locked template. Tenant details, unit, rent, and terms populated automatically. Sent for e-signature immediately." },
+      { number: "02", title: "Move-In Sequence", description: "Signed lease triggers deposit request. Payment confirmed, move-in instructions sent, inspection scheduled. All without manual action." },
+      { number: "03", title: "Rent Cycle", description: "Day -5: courtesy reminder. Day 1: due date notice with payment link. Day 5: formal arrears notice. Tone escalates. Payment clears the sequence." },
+      { number: "04", title: "N4 Notice Generated", description: "Day 14 without payment: N4 Notice to End Tenancy auto-generated with exact arrears, served digitally, timestamped and logged. LTB-compliant." },
+      { number: "05", title: "Eviction Package Assembled", description: "If escalation proceeds, all documentation — notices, payment history, lease, correspondence — compiled automatically into the LTB filing package." },
+      { number: "06", title: "24/7 Tenant AI", description: "Tenant calls or messages at any hour. AI agent handles rent balance, maintenance status, lease questions, complaints. Emergencies escalated to on-call within 60 seconds." },
     ],
     results: [
-      { stat: "50%", description: "reduction in property manager admin hours", icon: Clock },
-      { stat: "48hrs", description: "average tenant onboarding time (was 2 weeks)", icon: Timer },
-      { stat: "90%", description: "of maintenance requests resolved without PM involvement", icon: CheckCircle },
-      { stat: "30%", description: "reduction in late rent payments", icon: TrendingUp },
+      { stat: "65%", description: "reduction in property manager admin hours per week", icon: Clock },
+      { stat: "48hrs", description: "tenant onboarding time (was 2+ weeks)", icon: Timer },
+      { stat: "100%", description: "on-time N4 notice service — zero LTB filing errors", icon: FileText },
+      { stat: "80%", description: "of tenant inquiries handled by AI, no human involvement", icon: Bot },
     ],
-    timeframe: "7 weeks to full deployment",
+    timeframe: "8 weeks to full deployment",
     testimonial:
-      "I used to dread the first of the month. Now it just happens. Reminders go out, payments come in, late notices fire when they need to. I'm finally spending time on growing the portfolio instead of managing it.",
+      "I used to lose sleep over whether a notice went out on time or had the right arrears number. Now the system handles it and I just see the log. The AI agent alone saved me two hours a day. I didn't realize how much of my time was going to calls that didn't need me.",
     clientName: "",
     clientTitle: "Property Manager, Residential Portfolio",
     ctaText: "Automate Your Property Operations",
