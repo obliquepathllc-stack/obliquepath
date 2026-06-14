@@ -5,9 +5,7 @@ import Link from "next/link";
 import {
   ArrowRight,
   ArrowUpRight,
-  Bot,
   CheckCircle2,
-  Clock,
   FileText,
   MessageSquare,
   Phone,
@@ -145,7 +143,7 @@ export function AIAutomationContent() {
                 href="/case-studies"
                 className="inline-flex items-center gap-2 border border-border text-foreground font-semibold px-6 py-3.5 rounded-full hover:bg-accent transition-colors"
               >
-                See What We've Built
+                See What We&apos;ve Built
                 <ArrowUpRight className="h-4 w-4" />
               </Link>
             </div>

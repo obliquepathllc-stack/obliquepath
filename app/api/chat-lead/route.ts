@@ -5,9 +5,8 @@ import { NextResponse } from "next/server";
 // Called when the chatbot detects the visitor has shared their email.
 // Sends a notification to the team with name, email, and conversation context.
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(request: Request) {
+  const resend = new Resend(process.env.RESEND_API_KEY);
   try {
     const { name, email, summary, timestamp } = await request.json();
 

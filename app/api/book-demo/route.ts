@@ -1,7 +1,6 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
 const BOOKING_LINK = "https://calendar.app.google/vTDgiUnbzwZ647Cp7";
 
 const AUTOMATING_CONTEXT: Record<string, string> = {
@@ -42,6 +41,7 @@ function buildReplyHtml(firstName: string, automating: string): string {
 }
 
 export async function POST(request: Request) {
+  const resend = new Resend(process.env.RESEND_API_KEY);
   try {
     const body = await request.json();
     const { name, email, automating, phone, company } = body;

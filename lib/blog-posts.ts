@@ -935,7 +935,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "ai-automation-windsor-toronto",
     title: "Your Business Is Leaking Money Every Night at 5:01 PM",
-    date: "2025-05-10",
+    date: "2026-04-29",
     category: "AI Automation",
     readTime: "6 min read",
     excerpt: "There is a precise moment every day when your lead generation quietly falls apart. It happens while you sleep, and the competitor down the road built a system for it.",
@@ -995,7 +995,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "manual-followup-cost-michigan-chicago",
     title: "We Audited a Week of Normal Work at a 6-Person Business. It Was Painful.",
-    date: "2025-04-28",
+    date: "2026-04-22",
     category: "Automation Strategy",
     readTime: "7 min read",
     excerpt: "We asked a small service business to track every task their team touched for one week. Not project work. Everything. The result was 47 tasks, 14 happening daily, and 9 that existed for no reason other than nobody had questioned them.",
@@ -1055,7 +1055,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "scheduling-automation-waste-removal",
     title: "The Five-App Circus: A Love Story Between Your Business and Tools That Hate Each Other",
-    date: "2025-04-12",
+    date: "2026-04-15",
     category: "Case Study",
     readTime: "5 min read",
     excerpt: "Act I: The business installs a scheduling app. It is great. Then they realize it does not talk to the invoicing software. Enter App Two. You can see where this goes.",
@@ -1127,7 +1127,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "ai-automation-small-business-guide",
     title: "No, Your AI Won't Become Skynet. But It Will Answer Your Leads at 2am.",
-    date: "2025-05-01",
+    date: "2026-04-08",
     category: "Guide",
     readTime: "8 min read",
     excerpt: "When people hear AI automation they picture a robot, a useless chatbot, or the opening scene of a science fiction movie. Here is what it actually is and why it is almost disappointingly practical.",
