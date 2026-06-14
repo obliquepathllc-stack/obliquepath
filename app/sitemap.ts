@@ -4,7 +4,6 @@ const BASE_URL = "https://obliquepath.dev";
 
 const caseStudySlugs = [
   "healthcare-staffing",
-  "harbor-one-capital",
   "junk-cycle",
   "first-point-cleaners",
   "aerrand",

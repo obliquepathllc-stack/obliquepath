@@ -21,10 +21,12 @@ export async function generateMetadata({
   return {
     title: `${post.title} | Oblique Path`,
     description: post.excerpt,
+    alternates: { canonical: `https://obliquepath.dev/blog/${slug}` },
     openGraph: {
       title: post.title,
       description: post.excerpt,
-      images: [{ url: post.image }],
+      type: "article",
+      images: [{ url: post.image, width: 1200, height: 630 }],
     },
   };
 }
@@ -114,8 +116,23 @@ export default async function BlogPostPage({
     day: "numeric",
   });
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.excerpt,
+    image: post.image,
+    datePublished: post.date,
+    dateModified: post.date,
+    author: { "@type": "Organization", name: "Oblique Path", url: "https://obliquepath.dev" },
+    publisher: { "@type": "Organization", name: "Oblique Path", logo: { "@type": "ImageObject", url: "https://obliquepath.dev/icon.png" } },
+    url: `https://obliquepath.dev/blog/${slug}`,
+    mainEntityOfPage: { "@type": "WebPage", "@id": `https://obliquepath.dev/blog/${slug}` },
+  };
+
   return (
     <main className="pt-32 pb-24 px-4 lg:px-16">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <div className="container max-w-2xl mx-auto">
 
         {/* Back */}

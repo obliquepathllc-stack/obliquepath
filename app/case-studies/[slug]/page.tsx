@@ -19,6 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${study.client} | Case Study · Oblique Path`,
     description: `${study.client} achieved ${study.results[0].stat} ${study.results[0].description} using Oblique Path's automation systems. ${study.beforeNarrative.slice(0, 100)}...`,
+    alternates: { canonical: `https://obliquepath.dev/case-studies/${slug}` },
     openGraph: {
       title: `${study.client} Case Study | Oblique Path`,
       description: study.testimonial.slice(0, 160),

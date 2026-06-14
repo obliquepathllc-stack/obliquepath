@@ -83,9 +83,6 @@ export const metadata: Metadata = {
         images: ["https://obliquepath.dev/opengraph-image"],
     },
     metadataBase: new URL("https://obliquepath.dev"),
-    alternates: {
-        canonical: "/",
-    },
 };
 
 export default function RootLayout({

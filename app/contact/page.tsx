@@ -1,15 +1,12 @@
-"use client";
+import { buildMetadata } from "@/lib/metadata";
+import { ContactContent } from "./contact-content";
 
-import { PageLayout } from "@/components/page-layout";
-import { ContactSection } from "@/components/home/contact-section";
+export const metadata = buildMetadata({
+  title: "Contact Oblique Path | AI Automation & Custom Software",
+  description: "Get in touch with Oblique Path. We build AI automation systems and custom software for businesses in Windsor, Toronto, Michigan, Chicago, and beyond.",
+  path: "/contact",
+});
 
 export default function ContactPage() {
-  return (
-    <PageLayout
-      title="Contact Us"
-      subtitle="Get in touch with our team to discuss how we can help your business."
-    >
-      <ContactSection />
-    </PageLayout>
-  );
+  return <ContactContent />;
 }

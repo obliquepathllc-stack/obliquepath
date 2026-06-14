@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { blogPosts } from "@/lib/blog-posts";
 
-export const metadata: Metadata = {
-  title: "Notes from the Workshop | Oblique Path",
+export const metadata = buildMetadata({
+  title: "Notes from the Workshop | Oblique Path Blog",
   description:
     "Automation insights, real case studies, and honest takes on building systems that actually work. For growing businesses in Windsor, Toronto, Michigan, Chicago, and San Francisco.",
-};
+  path: "/blog",
+});
 
 const categoryColors: Record<string, string> = {
   "AI Automation": "bg-primary/10 text-primary border border-primary/20",
