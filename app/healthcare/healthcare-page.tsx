@@ -112,8 +112,7 @@ function HeroSection() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-sm text-foreground/50"
           >
-            Built for independent agencies and multi-location staffing
-            operations across North America.
+            Built for healthcare staffing agencies in Windsor, Toronto, London, Ontario, and across Canada and the United States.
           </motion.p>
         </motion.div>
       </div>
@@ -526,7 +525,7 @@ function ResultsSection() {
 
 // ─── 6. WHO THIS IS FOR ───────────────────────────────────────────────────────
 const checklistItems = [
-  "You run a healthcare or home care staffing agency",
+  "You run a healthcare or home care staffing agency in Ontario, Michigan, or anywhere in North America",
   "Your team processes timesheets manually every week",
   "Invoicing takes more than one business day",
   "You're managing rates and shifts across spreadsheets",

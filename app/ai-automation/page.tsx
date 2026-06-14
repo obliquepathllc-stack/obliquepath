@@ -2,8 +2,8 @@ import { buildMetadata } from "@/lib/metadata";
 import { AIAutomationContent } from "./ai-automation-content";
 
 export const metadata = buildMetadata({
-  title: "AI Automation Services | Oblique Path",
-  description: "AI automation systems that handle intake, scheduling, invoicing, CRM, and customer service — no human in the loop. Built for growing businesses in Windsor, Toronto, and beyond.",
+  title: "AI Automation for Small Business | Windsor, Ontario | Oblique Path",
+  description: "AI automation systems for small and mid-sized businesses — intake, scheduling, invoicing, voice agents, and CRM automation. Serving Windsor, Toronto, London, Ontario, and Michigan.",
   path: "/ai-automation",
 });
 
