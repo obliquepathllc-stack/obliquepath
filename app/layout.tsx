@@ -7,6 +7,7 @@ import { Navbar } from "@/components/shared/navbar";
 import { StickyCtaBar } from "@/components/shared/sticky-cta";
 import { ConsoleEgg } from "@/components/console-egg";
 import { ScrollAmbient } from "@/components/scroll-ambient";
+import { MouseSpotlight } from "@/components/mouse-spotlight";
 import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
 import "./globals.css";
@@ -140,13 +141,14 @@ export default function RootLayout({
                     }}
                 />
             </head>
-            <body className="overflow-x-hidden">
+            <body className="overflow-x-hidden noise-overlay">
                 <ThemeProvider
                     attribute="class"
                     defaultTheme="dark"
                     enableSystem={false}
                 >
                     <ScrollAmbient />
+                    <MouseSpotlight size={600} opacity={0.07} blur={130} />
                     <ConsoleEgg />
                     <Navbar />
                     <StickyCtaBar />

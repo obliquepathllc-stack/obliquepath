@@ -104,7 +104,7 @@ export function WhatWeBuild() {
               >
                 {/* Large number */}
                 <div className="flex items-start">
-                  <span className="text-[80px] md:text-[96px] font-black tracking-tighter leading-none text-foreground/[0.06] select-none">
+                  <span className="text-[80px] md:text-[96px] font-black tracking-tighter leading-none text-foreground/[0.13] select-none">
                     {cap.number}
                   </span>
                 </div>

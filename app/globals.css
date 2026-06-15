@@ -137,7 +137,7 @@
   --secondary: oklch(0.155 0.018 265);
   --secondary-foreground: oklch(0.965 0.006 265);
   --muted: oklch(0.155 0.018 265);
-  --muted-foreground: oklch(0.65 0.025 265);
+  --muted-foreground: oklch(0.72 0.022 265);
   --accent: oklch(0.155 0.018 265);
   --accent-foreground: oklch(0.965 0.006 265);
   --destructive: oklch(0.704 0.191 22.216);
@@ -205,9 +205,10 @@ kbd {
   }
 }
 
-/* Gradient Text */
+/* Gradient Text — animated */
 .gradient-text {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-accent-500 bg-[length:200%_auto];
+  animation: gradient 8s ease infinite;
 }
 
 /* Noise/grain overlay — attach to fixed pseudo-element, never to scroll containers */
@@ -278,11 +279,11 @@ kbd {
 .gradient-border::before {
   content: "";
   position: absolute;
-  inset: -2px;
-  border-radius: calc(var(--radius) + 2px);
-  background: linear-gradient(45deg, hsl(var(--primary)), hsl(var(--accent)));
+  inset: -1px;
+  border-radius: calc(var(--radius) + 1px);
+  background: linear-gradient(135deg, oklch(0.62 0.18 280), oklch(0.6 0.25 170), oklch(0.62 0.18 280));
   background-size: 200% 200%;
-  animation: gradient 15s ease infinite;
+  animation: gradient 6s ease infinite;
   z-index: -1;
 }
 

@@ -1,7 +1,5 @@
 "use client";
 
-// Our Process — horizontal numbered steps with connecting line (editorial, not boxed cards)
-
 import { motion } from "framer-motion";
 
 const steps = [
@@ -29,13 +27,13 @@ const steps = [
 
 export function OurProcess() {
   return (
-    <section className="px-4 lg:px-16 py-24 md:py-32 ">
+    <section className="px-4 lg:px-16 py-24 md:py-32">
       <div className="container max-w-6xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.65, ease: [0.32, 0.72, 0, 1] }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="mb-16"
         >
           <p className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground font-medium mb-4">How We Work</p>
@@ -48,16 +46,42 @@ export function OurProcess() {
           {steps.map((step, i) => (
             <motion.div
               key={step.number}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 48 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.65, delay: i * 0.08, ease: [0.32, 0.72, 0, 1] }}
-              className="relative flex flex-col gap-4 pr-0 lg:pr-8 pb-10 lg:pb-0 border-l-2 lg:border-l-0 lg:border-t-2 border-border/50 pl-6 lg:pl-0 lg:pt-6"
+              transition={{ duration: 0.65, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
+              className="relative flex flex-col gap-4 pr-0 lg:pr-8 pb-10 lg:pb-0 pl-6 lg:pl-0 lg:pt-6"
             >
-              {/* Step indicator dot */}
-              <div className="absolute -left-[5px] top-0 lg:left-0 lg:-top-[5px] w-2 h-2 rounded-full bg-primary shrink-0" />
+              {/* Desktop: animated top connecting line */}
+              <motion.div
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.9, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
+                style={{ transformOrigin: "left" }}
+                className="hidden lg:block absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-primary/50 via-primary/25 to-transparent"
+              />
 
-              <span className="text-xs font-mono text-muted-foreground/40">{step.number}</span>
+              {/* Mobile: animated left connecting line */}
+              <motion.div
+                initial={{ scaleY: 0 }}
+                whileInView={{ scaleY: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.9, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
+                style={{ transformOrigin: "top" }}
+                className="lg:hidden absolute left-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-primary/50 via-primary/25 to-transparent"
+              />
+
+              {/* Step dot — pops in after line draws */}
+              <motion.div
+                initial={{ scale: 0, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.35, delay: i * 0.12 + 0.35, type: "spring", stiffness: 400, damping: 20 }}
+                className="absolute -left-[5px] top-0 lg:left-0 lg:-top-[5px] w-2.5 h-2.5 rounded-full bg-primary shadow-[0_0_10px_2px_oklch(0.62_0.18_280_/_0.4)]"
+              />
+
+              <span className="text-xs font-mono text-muted-foreground/40 mt-1">{step.number}</span>
               <h3 className="text-base font-bold tracking-tight text-foreground">{step.title}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
             </motion.div>

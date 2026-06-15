@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "@phosphor-icons/react";
+import { FloatingPaths } from "@/components/ui/background-paths";
 
 const clientLogos = [
   { name: "First Point Cleaners", src: "/clients-logo/first-point-cleaners.jpg" },
@@ -27,6 +28,16 @@ const HERO_VIDEO = process.env.NEXT_PUBLIC_HERO_VIDEO_URL;
 export function HeroSection() {
   return (
     <section className="relative min-h-[100dvh] flex flex-col overflow-hidden">
+
+      {/* Animated path lines — blue brand texture behind everything */}
+      <div className="absolute inset-0 z-[1] opacity-55 pointer-events-none">
+        <FloatingPaths position={1} />
+        <FloatingPaths position={-1} />
+      </div>
+
+      {/* Headline anchor glow */}
+      <div className="absolute top-[10%] -left-[8%] w-[700px] h-[700px] rounded-full bg-primary/[0.10] blur-[160px] pointer-events-none z-[2]" />
+      <div className="absolute top-[0%] right-[-5%] w-[450px] h-[450px] rounded-full bg-primary/[0.07] blur-[140px] pointer-events-none z-[2]" />
 
       {/* Background video — only renders when URL is set */}
       {HERO_VIDEO && (
@@ -97,7 +108,7 @@ export function HeroSection() {
 
             <div className="flex flex-col gap-3 sm:shrink-0">
               <Link href="/book-demo">
-                <button className="rounded-full bg-foreground text-background font-bold px-8 py-4 flex items-center gap-2 hover:opacity-80 active:scale-[0.97] transition-all duration-200 group text-[15px] w-full justify-center sm:w-auto">
+                <button className="rounded-full bg-foreground text-background font-bold px-8 py-4 flex items-center gap-2 hover:opacity-90 hover:shadow-[0_8px_40px_-6px_oklch(0.62_0.18_280_/_0.45)] active:scale-[0.97] transition-all duration-300 group text-[15px] w-full justify-center sm:w-auto">
                   Book a Strategy Call
                   <ArrowUpRight size={16} weight="bold" className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
                 </button>
@@ -150,7 +161,7 @@ export function HeroSection() {
                 transition={{ duration: 28, ease: "linear", repeat: Infinity }}
               >
                 {[...clientLogos, ...clientLogos].map((logo, i) => (
-                  <div key={`${logo.name}-${i}`} className="shrink-0 h-6 opacity-25 grayscale">
+                  <div key={`${logo.name}-${i}`} className="shrink-0 h-6 opacity-40 grayscale">
                     <Image
                       src={logo.src}
                       alt={logo.name}

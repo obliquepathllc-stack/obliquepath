@@ -33,17 +33,17 @@ const segments = [
 ];
 
 const reveal = (delay = 0) => ({
-  initial: { opacity: 0, y: 16 },
+  initial: { opacity: 0, y: 40 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, amount: 0.1 as number },
-  transition: { duration: 0.55, delay, ease: [0.32, 0.72, 0, 1] as [number, number, number, number] },
+  viewport: { once: true, amount: 0.15 as number },
+  transition: { duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
 });
 
 const slideIn = (delay = 0) => ({
-  initial: { opacity: 0, x: -48 },
-  whileInView: { opacity: 1, x: 0 },
+  initial: { opacity: 0, x: -56, scale: 0.98 as number },
+  whileInView: { opacity: 1, x: 0, scale: 1 as number },
   viewport: { once: true, amount: 0.1 as number },
-  transition: { duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
+  transition: { duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
 });
 
 export function WhoWeWorkWith() {
@@ -54,7 +54,7 @@ export function WhoWeWorkWith() {
           <p className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground font-medium mb-4">
             Who We Work With
           </p>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-[-0.02em] leading-tight max-w-2xl">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-[-0.02em] leading-tight max-w-2xl">
             If any of this sounds familiar, we should talk.
           </h2>
         </motion.div>
@@ -73,12 +73,12 @@ export function WhoWeWorkWith() {
               <div className="grid grid-cols-1 lg:grid-cols-[1fr_220px] gap-6 lg:gap-12 items-start">
                 <div>
                   {/* Pain point — the thing they immediately recognize */}
-                  <p className="text-sm text-muted-foreground/60 italic mb-3 leading-snug">
+                  <p className="text-sm text-muted-foreground/75 italic mb-3 leading-snug">
                     &ldquo;{segment.pain}&rdquo;
                   </p>
 
                   <h3 className="text-xl font-bold text-foreground mb-3 tracking-tight">{segment.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed mb-4">{segment.description}</p>
+                  <p className="text-foreground/75 leading-relaxed mb-4">{segment.description}</p>
 
                   {/* Outcome chip */}
                   <span className="inline-flex items-center text-[11px] font-semibold text-primary border border-primary/25 bg-primary/[0.07] rounded-full px-3 py-1.5">

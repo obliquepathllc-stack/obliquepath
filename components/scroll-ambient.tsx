@@ -16,17 +16,22 @@ export function ScrollAmbient() {
       {/* Primary orb — top right, drifts up on scroll */}
       <motion.div
         style={{ y: y1, opacity: opacity1 }}
-        className="absolute -top-32 right-[5%] w-[700px] h-[700px] rounded-full bg-primary/[0.055] blur-[160px]"
+        className="absolute -top-32 right-[5%] w-[700px] h-[700px] rounded-full bg-primary/[0.11] blur-[160px]"
       />
       {/* Secondary orb — lower left, drifts down on scroll */}
       <motion.div
         style={{ y: y2, opacity: opacity2 }}
-        className="absolute top-[50%] -left-32 w-[550px] h-[550px] rounded-full bg-primary/[0.04] blur-[140px]"
+        className="absolute top-[50%] -left-32 w-[550px] h-[550px] rounded-full bg-primary/[0.08] blur-[140px]"
       />
       {/* Tertiary orb — center, subtle drift */}
       <motion.div
         style={{ y: y3 }}
-        className="absolute top-[25%] left-[45%] w-[350px] h-[350px] rounded-full bg-primary/[0.025] blur-[120px]"
+        className="absolute top-[25%] left-[45%] w-[350px] h-[350px] rounded-full bg-primary/[0.05] blur-[120px]"
+      />
+      {/* Accent orb — lower right, teal */}
+      <motion.div
+        style={{ y: y2 }}
+        className="absolute top-[70%] right-[-5%] w-[450px] h-[450px] rounded-full bg-accent-500/[0.06] blur-[150px]"
       />
     </div>
   );

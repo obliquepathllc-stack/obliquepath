@@ -1,6 +1,6 @@
 "use client";
 
-import { PageLayout } from "@/components/page-layout";
+import { BackgroundPaths } from "@/components/ui/background-paths";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Send, Loader2 } from "lucide-react";
@@ -67,8 +67,13 @@ export function CareersContent() {
   }
 
   return (
-    <PageLayout title="Careers at Oblique Path">
-      <section className="py-12 md:py-16 px-4 md:px-16">
+    <>
+      <BackgroundPaths
+        title="Join Our Team"
+        ctaLabel="Send Your Application"
+        ctaHref="#apply"
+      />
+      <section className="py-12 md:py-16 px-4 md:px-16" id="apply">
         <div className="container max-w-7xl mx-auto">
           <div className="max-w-4xl mx-auto">
             <motion.p
@@ -191,6 +196,6 @@ export function CareersContent() {
           </div>
         </div>
       </section>
-    </PageLayout>
+    </>
   );
 }

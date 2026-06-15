@@ -17,9 +17,9 @@ export function FinalCTA() {
           transition={{ duration: 0.75, ease: [0.32, 0.72, 0, 1] }}
           className="relative overflow-hidden rounded-[2rem] border border-border bg-card p-12 md:p-16 shadow-[0_8px_48px_-12px_rgba(0,0,0,0.1)]"
         >
-          {/* Subtle orb */}
-          <div className="absolute -top-20 -left-20 w-80 h-80 bg-primary/[0.06] rounded-full blur-[80px] pointer-events-none" />
-          <div className="absolute -bottom-20 -right-20 w-60 h-60 bg-primary/[0.04] rounded-full blur-[60px] pointer-events-none" />
+          {/* Ambient orbs */}
+          <div className="absolute -top-20 -left-20 w-96 h-96 bg-primary/[0.12] rounded-full blur-[90px] pointer-events-none" />
+          <div className="absolute -bottom-20 -right-20 w-72 h-72 bg-accent-500/[0.09] rounded-full blur-[70px] pointer-events-none" />
 
           <div className="relative z-10 max-w-2xl">
             <p className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground font-medium mb-6">
@@ -34,7 +34,7 @@ export function FinalCTA() {
 
             <div className="flex flex-col sm:flex-row gap-3">
               <Link href="/book-demo">
-                <button className="rounded-full bg-foreground text-background font-semibold px-8 py-4 flex items-center gap-2.5 hover:opacity-80 active:scale-[0.98] transition-all duration-200 group w-full sm:w-auto justify-center">
+                <button className="rounded-full bg-foreground text-background font-semibold px-8 py-4 flex items-center gap-2.5 hover:opacity-90 hover:shadow-[0_8px_40px_-6px_oklch(0.62_0.18_280_/_0.45)] active:scale-[0.98] transition-all duration-300 group w-full sm:w-auto justify-center">
                   Book a Strategy Call
                   <ArrowUpRight size={15} weight="bold" className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
                 </button>
