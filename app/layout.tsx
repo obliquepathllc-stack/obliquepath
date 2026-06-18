@@ -123,7 +123,7 @@ export default function RootLayout({
                                     "contactType": "customer service",
                                     "availableLanguage": "English"
                                 },
-                                "areaServed": ["Windsor", "Toronto", "Detroit", "Chicago", "San Francisco"],
+                                "areaServed": ["Windsor", "London", "Toronto", "Ontario", "Canada", "Detroit", "Chicago", "San Francisco", "United States"],
                                 "knowsAbout": ["AI Automation", "Business Process Automation", "Custom Software Development", "Mobile App Development", "AI Voice Agents"]
                             },
                             {

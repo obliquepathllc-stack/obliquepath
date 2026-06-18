@@ -3,7 +3,7 @@ import { ServicesContent } from "./services-content";
 
 export const metadata = buildMetadata({
   title: "AI Automation & Custom Software Services | Oblique Path",
-  description: "AI automation, custom web platforms, mobile apps, and voice agents for businesses ready to stop running manually. Built in Windsor, serving Toronto, Michigan, and Chicago.",
+  description: "AI automation, custom web platforms, mobile apps, and voice agents for businesses ready to stop running manually. Based in Windsor, Ontario — serving clients remotely across Canada and the US, including London, Toronto, Michigan, and Chicago.",
   path: "/services",
 });
 

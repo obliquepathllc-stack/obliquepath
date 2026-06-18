@@ -1090,6 +1090,14 @@ export const blogPosts: BlogPost[] = [
         text: "The honest answer for most businesses is that some things are ready to automate now and some things are not. The work is figuring out which is which, starting with what is ready, and building from there.",
       },
       {
+        type: "casestudy",
+        client: "Junk Removal Company",
+        slug: "junk-cycle",
+        stat: "60%",
+        statLabel: "less time spent scheduling",
+        teaser: "A business that was growing in volume but flat in margin automated scheduling and dispatch first — the single highest-impact fix, not a full system overhaul.",
+      },
+      {
         type: "callout",
         text: "Not sure which category you fall into? Walk us through your operation for 30 minutes. We will tell you honestly what we see and whether the timing is right, including if the answer is to wait.",
       },
@@ -1200,6 +1208,14 @@ export const blogPosts: BlogPost[] = [
       {
         type: "p",
         text: "You know you are with the right agency when the first conversations are mostly about your business, not their technology. When the proposal you receive is specific to your situation and explains the logic behind each choice. When the team pushes back on your assumptions rather than just agreeing with everything. And when the post-launch experience is not a handoff to a support ticket system but an ongoing conversation about what is working and what to optimize next.",
+      },
+      {
+        type: "casestudy",
+        client: "Specialized Recruiting Agency",
+        slug: "recruiting-automation",
+        stat: "35%",
+        statLabel: "more placements in 90 days",
+        teaser: "This is what a properly scoped engagement looks like end to end — mapped process, specific build, measurable result. Read the full breakdown.",
       },
       {
         type: "callout",

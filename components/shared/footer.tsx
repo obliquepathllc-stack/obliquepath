@@ -22,6 +22,7 @@ const company = [
 
 const locations = [
   "Windsor, ON (HQ)",
+  "London, ON",
   "Toronto, ON",
   "San Francisco, CA",
   "Detroit, MI",
