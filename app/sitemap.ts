@@ -58,6 +58,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/tech-support`, priority: 0.7, changeFrequency: "monthly" as const },
     { url: `${BASE_URL}/careers`, priority: 0.6, changeFrequency: "monthly" as const },
     { url: `${BASE_URL}/privacy`, priority: 0.3, changeFrequency: "yearly" as const },
+    { url: `${BASE_URL}/terms`, priority: 0.3, changeFrequency: "yearly" as const },
   ];
 
   const caseStudyPages = caseStudySlugs.map((slug) => ({
