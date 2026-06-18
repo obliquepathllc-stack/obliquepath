@@ -646,7 +646,7 @@ export const caseStudies: CaseStudy[] = [
     client: "Oblique Path",
     industry: "AI Voice Agent",
     location: "Windsor, ON",
-    service: "Automated Lead Qualification — Live Demo Available",
+    service: "AI Answering Service & Automated Lead Qualification — Live Demo Available",
     beforeHeadline: "Leads were filling out forms. Nobody was calling them back fast enough.",
     beforeNarrative:
       "Oblique Path built its AI voice agent to solve a problem every service business faces: leads go cold fast, and no team can respond to every form submission within minutes — especially after hours. The gap between form fill and first contact was costing deals. Businesses running paid ads were generating inquiries at all hours, but callbacks were happening the next morning at best. By then, the lead had already spoken to a competitor. And when agents did call, they had no context, so half the calls were wasted on people who didn't qualify.",
@@ -708,7 +708,7 @@ export const caseStudies: CaseStudy[] = [
     client: "Oblique Path",
     industry: "AI Lead Capture",
     location: "Windsor, ON",
-    service: "AI Chat Widget — Live on obliquepath.dev",
+    service: "AI Customer Service Agent & Chat Widget — Live on obliquepath.dev",
     beforeHeadline: "Visitors were landing on the site. Most of them were leaving without a trace.",
     beforeNarrative:
       "Every business with a website has the same problem: people land, look around, and leave. If they have a question at 10pm, there is nobody to answer it. If they are not quite ready to book a call, there is no middle step — just a contact form they may or may not fill out. Oblique Path built its own AI chatbot to solve this exactly. The widget lives on the site, engages visitors within seconds, and moves them toward either booking a strategy call or leaving their contact details — whichever they are ready for.",

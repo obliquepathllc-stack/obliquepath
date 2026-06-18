@@ -326,7 +326,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-06-13",
     category: "AI Automation",
     readTime: "6 min read",
-    excerpt: "Most website visitors leave without a trace, and the best leads often arrive after hours when nobody is watching. Here is what an AI chatbot that actually qualifies and converts visitors looks like.",
+    excerpt: "Most website visitors leave without a trace, and the best leads often arrive after hours when nobody is watching. Here is what an AI chatbot for your website — or what some call an AI customer service agent — actually does when it is built to qualify and convert, not just answer FAQs.",
     image: "https://v3b.fal.media/files/b/0a9eb9a9/jDrm_Y1dXnRRCjSeMpkwp.jpg",
     imageCredit: "Generated via Fal.ai",
     content: [
@@ -336,7 +336,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "A static contact form does not engage anyone. It waits. An AI chatbot, built correctly, does the opposite — it meets the visitor in the moment they are actually paying attention, and moves them toward either booking a call or leaving contact details, whichever they are ready for.",
+        text: "A static contact form does not engage anyone. It waits. An AI chatbot for your website, built correctly, does the opposite — it meets the visitor in the moment they are actually paying attention, and moves them toward either booking a call or leaving contact details, whichever they are ready for. Some businesses call this an AI customer service agent instead of a chatbot. The label does not matter. What matters is whether it actually qualifies people or just repeats your FAQ page back to them.",
       },
       { type: "h2", text: "What a Chatbot Actually Needs to Do" },
       {
@@ -682,13 +682,17 @@ export const blogPosts: BlogPost[] = [
     date: "2026-06-03",
     category: "AI Automation",
     readTime: "7 min read",
-    excerpt: "AI voice agents are answering phones, qualifying leads, and booking appointments at small businesses right now. Here is what they actually do, what they cannot do, and what they cost with no sales spin.",
+    excerpt: "AI voice agents, AI answering services, and virtual receptionists are different names for the same shift happening at small businesses right now. Here is what they actually do, what they cannot do, and what they cost with no sales spin.",
     image: "https://v3b.fal.media/files/b/0a9e363a/5k5UDNqdB_PYK_mVIPsq6.jpg",
     imageCredit: "Generated via Fal.ai",
     content: [
       {
         type: "p",
         text: "An AI voice agent is not an interactive phone menu with more vocabulary. It is a system that calls or receives calls, conducts a natural conversation, extracts information, makes decisions based on what it hears, and takes actions: logging notes, booking appointments, routing to a human, or ending the call with a clear next step. It operates at any hour, handles multiple calls at once, and does not have a bad day. Whether this is useful for your business depends entirely on what you actually need it to do.",
+      },
+      {
+        type: "p",
+        text: "Different people search for this same thing under different names. Some call it an AI voice agent. Others are looking for an AI answering service, a virtual receptionist for their small business, or simply a way to get missed-call text-back working so a lead does not go cold while they are on another job. Underneath the naming, it is the same problem: nobody is picking up, and every unanswered call is a competitor's opportunity.",
       },
       { type: "h2", text: "What an AI Voice Agent Actually Does" },
       {

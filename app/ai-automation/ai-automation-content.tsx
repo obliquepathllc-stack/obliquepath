@@ -30,10 +30,10 @@ const problems = [
 const solutions = [
   {
     icon: Phone,
-    title: "AI Voice & Chat Agents",
+    title: "AI Answering Service & Customer Service Agents",
     description:
-      "Agents that answer calls, qualify leads, handle FAQs, book appointments, and escalate the right things — 24/7. No hold times. No missed calls after hours.",
-    examples: ["Inbound call handling", "Lead qualification", "Appointment booking", "After-hours coverage"],
+      "An AI answering service, virtual receptionist, or AI customer service agent — answers calls, qualifies leads, handles FAQs, books appointments, and texts back missed calls so a lead never goes cold. No hold times. No missed calls after hours.",
+    examples: ["Inbound call handling", "Missed-call text-back", "Lead qualification", "After-hours coverage"],
   },
   {
     icon: Zap,
@@ -129,7 +129,7 @@ export function AIAutomationContent() {
               <span className="gradient-text"> on Manual Work</span>
             </h1>
             <p className="text-lg md:text-xl text-foreground/65 max-w-3xl mb-8 leading-relaxed">
-              We build AI automation systems that handle your repetitive operations — intake, scheduling, invoicing, follow-up, customer service — so your team can do the work that actually needs them.
+              We build business process automation systems that handle your repetitive operations — intake, scheduling, invoicing, follow-up, AI answering services — so your team can do the work that actually needs them.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
