@@ -16,6 +16,11 @@ const categoryColors: Record<string, string> = {
   "Automation Strategy": "bg-accent/10 text-accent-300 border border-accent/20",
   "Case Study": "bg-emerald-500/10 text-emerald-600 border border-emerald-500/20",
   Guide: "bg-purple-500/10 text-purple-600 border border-purple-500/20",
+  "Real Estate": "bg-amber-500/10 text-amber-600 border border-amber-500/20",
+  "HR & Recruiting": "bg-sky-500/10 text-sky-600 border border-sky-500/20",
+  "Trades & Field Service": "bg-orange-500/10 text-orange-600 border border-orange-500/20",
+  "Legal Services": "bg-slate-500/10 text-slate-600 border border-slate-500/20",
+  "Insurance & Finance": "bg-teal-500/10 text-teal-600 border border-teal-500/20",
 };
 
 function formatDate(dateStr: string) {

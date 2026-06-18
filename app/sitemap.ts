@@ -4,6 +4,7 @@ const BASE_URL = "https://obliquepath.dev";
 
 const caseStudySlugs = [
   "healthcare-staffing",
+  "harbor-one-capital",
   "junk-cycle",
   "first-point-cleaners",
   "aerrand",
@@ -20,6 +21,13 @@ const caseStudySlugs = [
 ];
 
 const blogSlugs = [
+  "property-management-automation-guide",
+  "recruiting-agency-automation",
+  "hvac-dispatch-software",
+  "law-firm-intake-automation",
+  "real-estate-lead-automation",
+  "ai-chatbot-small-business",
+  "insurance-broker-automation",
   "healthcare-staffing-automation-guide",
   "healthcare-timesheet-invoice-automation",
   "ai-for-healthcare-staffing-workflows",

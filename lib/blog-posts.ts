@@ -20,6 +20,413 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "property-management-automation-guide",
+    title: "Property Management Automation: Leases, Rent Collection, and Eviction Notices on Autopilot",
+    date: "2026-06-18",
+    category: "Real Estate",
+    readTime: "9 min read",
+    excerpt: "Lease generation, rent reminders, N4 eviction notices, and tenant calls at 3am — property management automation turns the most paperwork-heavy job in real estate into a system that runs itself.",
+    image: "https://v3b.fal.media/files/b/0a9eb9ab/A9PwMmnLH5yUXaJDifTDZ.jpg",
+    imageCredit: "Generated via Fal.ai",
+    content: [
+      {
+        type: "p",
+        text: "Property management is one of the only jobs where being unreachable for two hours can cost you a legal deadline. Rent is due on the 1st. The Residential Tenancies Act gives you a specific window to act once a tenant falls into arrears. A maintenance emergency does not wait for business hours. And somewhere in the middle of all of it, a new tenant is waiting on a lease that has not been drafted yet.",
+      },
+      {
+        type: "p",
+        text: "Most property managers handle every one of these moments manually — which means every one of these moments depends on someone remembering, being available, and not making a mistake under time pressure. Property management automation is not about replacing the property manager. It is about making sure the calendar-driven, rules-based parts of the job never depend on memory again.",
+      },
+      { type: "h2", text: "The Four Places Property Management Falls Apart Without Automation" },
+      {
+        type: "ul",
+        items: [
+          "Lease generation: drafted by hand from a Word template, with tenant name, unit, rent, and terms entered manually — one typo away from a liability issue.",
+          "Rent collection: reminders sent when someone remembers, late notices drafted reactively, with the gap between late rent and formal action measured in weeks instead of days.",
+          "Eviction notices: the Ontario N4 Notice to End Tenancy for Non-Payment of Rent has exact content and timing requirements — get the arrears calculation or the date wrong and the process restarts at the Landlord and Tenant Board.",
+          "Tenant communication: a meaningful share of inbound calls are about rent balance, maintenance status, or lease terms — questions that do not need a human, but still ring a person's phone at 11pm.",
+        ],
+      },
+      { type: "h2", text: "What Automated Lease Generation Actually Looks Like" },
+      {
+        type: "p",
+        text: "When a tenant is approved, the system pulls their details — name, unit, rent amount, start date, special terms — and drafts a compliant lease from a locked, version-controlled template. It goes out for e-signature automatically, with reminders at day 3 and day 7 if it sits unsigned. Once signed, the deposit request fires and move-in instructions go out without anyone touching a keyboard. What used to take two weeks of back-and-forth now takes 48 hours, end to end.",
+      },
+      { type: "h2", text: "The Rent Cycle, Running Without You" },
+      {
+        type: "p",
+        text: "A well-built rent automation sequence runs on a fixed clock: a courtesy reminder five days before rent is due, a due-date notice with a payment link on day 1, a formal arrears notice on day 5 if payment has not cleared, and — if it still has not arrived by day 14 — an N4 Notice to End Tenancy for Non-Payment of Rent, generated automatically with the correct arrears amount, served digitally, and timestamped for the Landlord and Tenant Board. No step depends on someone remembering to act. The tone escalates exactly the way it is supposed to, on exactly the schedule the law expects.",
+      },
+      {
+        type: "p",
+        text: "If a matter does proceed to the Board, the documentation package — notice history, payment records, lease, correspondence — assembles itself automatically instead of being reconstructed under deadline pressure.",
+      },
+      { type: "h2", text: "A 24/7 Tenant Agent That Actually Answers Things" },
+      {
+        type: "p",
+        text: "The single biggest quality-of-life change for most property managers is not the paperwork — it is the phone. An AI tenant agent that handles rent balance questions, maintenance status, noise complaints, lease terms, and building policy at any hour means the property manager's personal phone stops being the emergency line for things that are not emergencies. Real emergencies still get escalated to the on-call line within seconds. Everything else gets handled without waking anyone up.",
+      },
+      {
+        type: "casestudy",
+        client: "Residential Property Management Company",
+        slug: "property-management-automation",
+        stat: "65%",
+        statLabel: "reduction in admin hours per week",
+        teaser: "Leases, rent reminders, N4 notices, and a 24/7 AI tenant agent replaced a property manager's phone, inbox, and Word templates. Tenant onboarding dropped from two weeks to 48 hours.",
+      },
+      { type: "h2", text: "What This Is Worth in Practice" },
+      {
+        type: "p",
+        text: "A property management company running 200 units cut admin hours by 65% and brought tenant onboarding down from two weeks to 48 hours, with zero late or incorrectly calculated N4 notices since launch. Eighty percent of tenant inquiries never reach a human at all. None of that required hiring anyone — it required the rules-based parts of the job to stop depending on a person doing them manually under pressure.",
+      },
+      {
+        type: "callout",
+        text: "Still drafting N4 notices by hand or answering tenant calls after dinner? Tell us how many units you manage and we will tell you, on a 30-minute call, exactly which parts of your week could run without you.",
+      },
+    ],
+  },
+
+  {
+    slug: "recruiting-agency-automation",
+    title: "Recruiting Agency Automation: How to Stop Losing Your Week to Admin",
+    date: "2026-06-17",
+    category: "HR & Recruiting",
+    readTime: "7 min read",
+    excerpt: "Manual outreach, status logging, and Friday-afternoon client reports eat three of five working days at most recruiting agencies. Here is what automated candidate outreach and reporting actually looks like.",
+    image: "https://v3b.fal.media/files/b/0a9eb9a5/TfUNVmanhfoMMcHWwbof8.jpg",
+    imageCredit: "Generated via Fal.ai",
+    content: [
+      {
+        type: "p",
+        text: "Ask a recruiter what they spent their week doing, and the honest answer is rarely 'finding great candidates.' It is logging LinkedIn responses into a spreadsheet, drafting the same outreach message for the fortieth time, chasing a client for a job briefing, and losing Friday afternoon to a status report that pulls data from four different places.",
+      },
+      {
+        type: "p",
+        text: "None of that is recruiting. It is the infrastructure recruiting sits on top of — and at most agencies, that infrastructure is entirely manual, which means it is also entirely fragile. A recruiter on vacation means follow-up stops. A busy week means the day-5 second touch to a candidate quietly never happens.",
+      },
+      { type: "h2", text: "Where Recruiting Agencies Actually Lose Time" },
+      {
+        type: "ul",
+        items: [
+          "Manual outreach: writing individual messages and logging every response by hand in a shared spreadsheet that is out of date by Tuesday.",
+          "Inconsistent follow-up: a candidate who does not respond is supposed to get a second touch at day 5 — this happens when someone remembers, not on a schedule.",
+          "Client status reporting: pulling data from the CRM, formatting it, writing a summary, every week, per client, by hand.",
+          "Job briefing distribution: every new role opened means another round of manual emails to relevant clients.",
+        ],
+      },
+      { type: "h2", text: "What Automated Outreach Actually Changes" },
+      {
+        type: "p",
+        text: "A recruiter launches an outreach campaign from a template library with one click — role, candidate list, message sequence. The initial message goes out immediately. If there is no response, a day-3 follow-up fires automatically. A day-7 final touch goes out if there is still nothing. Every reply, whenever it comes, updates the candidate's status in the CRM without anyone typing it in. The recruiter's job becomes having the conversation, not remembering to start it.",
+      },
+      { type: "h2", text: "Reports That Generate Themselves Before Anyone Opens a Laptop" },
+      {
+        type: "p",
+        text: "When a candidate advances to a new stage in the pipeline, the relevant client gets a one-paragraph automated update — no status email required. And every Friday at 7am, a full client report generates itself directly from live CRM data and lands in the client's inbox before the recruiter has had coffee. The three hours per client that used to disappear into Friday afternoon simply stop being spent.",
+      },
+      {
+        type: "casestudy",
+        client: "Specialized Recruiting Agency",
+        slug: "recruiting-automation",
+        stat: "35%",
+        statLabel: "more placements in 90 days",
+        teaser: "Outreach sequences, response logging, and weekly client reports automated end to end. Recruiters got three days a week back and exceeded their annual placement target in one quarter.",
+      },
+      { type: "h2", text: "The Number That Makes the Case" },
+      {
+        type: "p",
+        text: "A recruiting agency that automated outreach, CRM logging, and client reporting saw a 35% increase in placements within 90 days and recovered roughly 12 hours per recruiter per week. That is not a marginal gain — it is close to two extra working days per person, every week, redirected from admin back into the part of the job that actually generates revenue.",
+      },
+      {
+        type: "callout",
+        text: "Count how many hours your team spent on status reports last Friday. If it is more than one, that is the conversation worth having — book a 30-minute call and we will show you what automating it actually frees up.",
+      },
+    ],
+  },
+
+  {
+    slug: "hvac-dispatch-software",
+    title: "HVAC Dispatch Software: How to Double Daily Jobs Without Hiring",
+    date: "2026-06-16",
+    category: "Trades & Field Service",
+    readTime: "7 min read",
+    excerpt: "Manual dispatch, slow quotes, and forgotten seasonal maintenance reminders cap how many jobs an HVAC team can run per day. Here is what automated dispatch, quoting, and seasonal scheduling looks like in practice.",
+    image: "https://v3b.fal.media/files/b/0a9eb9a7/1RQQLz-JhxDdC0nYG9AC8.jpg",
+    imageCredit: "Generated via Fal.ai",
+    content: [
+      {
+        type: "p",
+        text: "Every HVAC service call sets off the same chain: check technician availability, make the assignment, call the client to confirm, look up parts, prepare a quote, log the completed job, generate an invoice. In a slow week, a dispatcher can keep up with that chain by hand. In a heat wave, with AC breakdowns coming in faster than they can be scheduled, that same chain becomes physically impossible to manage manually — no matter how good the dispatcher is.",
+      },
+      {
+        type: "p",
+        text: "The ceiling on how many jobs an HVAC team can run per day is rarely the number of technicians. It is how fast the dispatcher can move information between the phone, the schedule, and the client. That is a software problem, not a staffing problem.",
+      },
+      { type: "h2", text: "Where Manual Dispatch Breaks First" },
+      {
+        type: "ul",
+        items: [
+          "Dispatch itself: checking availability, assigning techs, calling clients to confirm — a process that does not scale past a fixed number of calls per hour, no matter how experienced the dispatcher is.",
+          "Quote delivery: technicians call in job details verbally, someone types them up, the owner reviews, and a PDF gets assembled — often a full day or more after the job finished.",
+          "Seasonal maintenance: tune-up reminders and filter replacement follow-ups live in a spreadsheet that only gets checked when someone has spare time, which is rarely during the season that matters.",
+        ],
+      },
+      { type: "h2", text: "Dispatch That Assigns Itself" },
+      {
+        type: "p",
+        text: "When a service call comes in, an automated dispatch system checks technician availability and proximity, assigns the job, and sends the client a confirmation with a two-hour arrival window — all within seconds, without a dispatcher touching the phone. The assigned technician gets the job details pushed straight to their phone. The dispatcher's day stops being a constant stream of routine assignments and becomes focused entirely on the calls that actually need judgment: escalations, complex jobs, and unhappy clients.",
+      },
+      { type: "h2", text: "From Completed Job to Sent Quote in Under 30 Minutes" },
+      {
+        type: "p",
+        text: "After the visit, the technician fills out a short mobile form — time spent, parts used, job notes. The system builds a quote automatically from a standard rate library. The owner reviews and approves it with one click, and it goes to the client the same day, often within 30 minutes of the technician leaving the site. Approved quotes convert directly into invoices, with automatic payment follow-up if nothing clears within seven days.",
+      },
+      {
+        type: "casestudy",
+        client: "HVAC & Trades Service Company",
+        slug: "hvac-dispatch-automation",
+        stat: "2x",
+        statLabel: "daily job volume, same crew",
+        teaser: "Smart dispatch, mobile job forms, and same-day quoting let an eight-tech HVAC company double daily job volume without adding headcount, even through peak season.",
+      },
+      { type: "h2", text: "What Seasonal Automation Adds" },
+      {
+        type: "p",
+        text: "Maintenance contract clients receive tune-up and filter reminders on a fixed schedule, with a one-tap self-booking link — no manual outreach required. One HVAC company saw a 40% increase in maintenance contract renewals after automating this single workflow, simply because the reminders started arriving consistently instead of whenever someone remembered to send them.",
+      },
+      {
+        type: "callout",
+        text: "If you have ever had to turn down a job because dispatch could not keep up, that is a capacity ceiling worth removing. Tell us your crew size and call volume on a 30-minute call and we will tell you what is actually possible.",
+      },
+    ],
+  },
+
+  {
+    slug: "law-firm-intake-automation",
+    title: "Law Firm Intake Automation: Routing, Retainers, and Billing Without the Two-Day Delay",
+    date: "2026-06-15",
+    category: "Legal Services",
+    readTime: "8 min read",
+    excerpt: "Manual intake routing, hand-drafted retainers, and after-the-fact time tracking slow down every new client relationship a law firm starts. Here is what automated legal intake actually looks like.",
+    image: "https://v3b.fal.media/files/b/0a9eb9ae/s4oNgm5iDCTmxfVIfg4Gj.jpg",
+    imageCredit: "Generated via Fal.ai",
+    content: [
+      {
+        type: "p",
+        text: "Most law firm intake runs on email, phone tag, and spreadsheets. A potential client submits a form or calls in. Someone manually reads it, figures out which practice area it belongs to, finds the right partner, and forwards it along — and hopes that if it is urgent, somebody notices in time. By the time a retainer agreement is drafted, signed, and returned, two days have often passed before the firm has had its first substantive conversation with the client.",
+      },
+      {
+        type: "p",
+        text: "That delay is not a service quality issue most firms notice, because it has always been there. But it is also entirely avoidable, and it directly affects two things firms care about a great deal: how fast urgent matters get attention, and how fast billable work actually starts.",
+      },
+      { type: "h2", text: "The Three Places Intake Loses Time" },
+      {
+        type: "ul",
+        items: [
+          "Manual routing: staff reading every intake form and deciding where it goes — with emergency matters like arrests, custody disputes, or restraining orders sometimes sitting in a queue for hours before anyone notices.",
+          "Retainer drafting: agreements assembled by hand from intake notes, then chased by email for a signature, delaying the first billable conversation by days.",
+          "Time tracking: hours logged after the fact, often vaguely worded or disconnected from the right matter — meaning real revenue quietly goes uncaptured.",
+        ],
+      },
+      { type: "h2", text: "Intake That Routes and Escalates Itself" },
+      {
+        type: "p",
+        text: "When a potential client submits an online intake form, an automated system reads the responses and routes the matter to the correct partner by practice area — family law, corporate, criminal, personal injury, immigration — without any staff involvement. If the intake contains emergency signals, an immediate alert fires to the on-call partner instead of waiting in a general queue. The matters that genuinely cannot wait, do not wait.",
+      },
+      { type: "h2", text: "Retainers Generated Before the First Call" },
+      {
+        type: "p",
+        text: "The retainer agreement is auto-generated directly from the intake data — fee structure, matter scope, and client details pre-filled — and sent out for e-signature within minutes of intake, with automatic follow-up if it sits unsigned. In practice, this means the retainer is often signed before the firm has had its first phone conversation with the client, instead of days afterward.",
+      },
+      { type: "h2", text: "Time Tracking That Reconciles Itself" },
+      {
+        type: "p",
+        text: "Staff log hours directly to matter numbers through a simple interface, and every entry links automatically to billing — no end-of-week reconstruction, no vague entries disconnected from a matter. A live dashboard shows every partner their active matters, billable hours, and outstanding invoices in real time.",
+      },
+      {
+        type: "casestudy",
+        client: "Law Firm",
+        slug: "law-firm-intake",
+        stat: "90%",
+        statLabel: "reduction in manual intake processing time",
+        teaser: "Intake routing, emergency escalation, and retainer generation automated end to end — with zero emergency matters missed or delayed since launch, and retainers signed same day.",
+      },
+      { type: "h2", text: "What This Means in Practice" },
+      {
+        type: "p",
+        text: "One firm reduced manual intake processing time by 90%, generated and dispatched retainers the same day as intake, and reported fifteen-plus hours saved per attorney per week on admin — with zero emergency matters missed since launch. The managing partner's own description: intake used to take two days before a matter could even open. Now the retainer is sent before the first call happens.",
+      },
+      {
+        type: "callout",
+        text: "If you can't say with confidence that every emergency intake gets seen within minutes, that is worth fixing before it costs you a client. Book a 30-minute call and we will walk through what automated routing would look like for your practice areas.",
+      },
+    ],
+  },
+
+  {
+    slug: "real-estate-lead-automation",
+    title: "Real Estate Lead Automation: Why Agents Lose Deals They Never Knew They Had",
+    date: "2026-06-14",
+    category: "Real Estate",
+    readTime: "7 min read",
+    excerpt: "In real estate, the agent who responds first usually wins the client. Here is how automated lead response, qualification, and nurture sequences keep a brokerage from losing deals to slow follow-up.",
+    image: "https://v3b.fal.media/files/b/0a9eb9a8/oANAzFQRpJ2ld7Rdm7Oab.jpg",
+    imageCredit: "Generated via Fal.ai",
+    content: [
+      {
+        type: "p",
+        text: "A lead comes in at 2pm. The agent is at a showing. By the time they get back to their phone at 5pm, the lead has already heard from a competing agent and signed with someone else. This happens constantly in real estate, and most agents never even find out it happened — the lead simply goes quiet, and nobody connects the silence to a three-hour response gap.",
+      },
+      {
+        type: "p",
+        text: "Response speed is one of the few variables in real estate that is entirely within an agent's control, and it is also one of the easiest to lose control of, because agents are supposed to be out showing property, not sitting by a phone waiting for inquiries.",
+      },
+      { type: "h2", text: "The Three Failure Points in Most Brokerages" },
+      {
+        type: "ul",
+        items: [
+          "Lost to the first responder: leads go cold within hours because agents are at showings when inquiries actually arrive.",
+          "No follow-up discipline: some leads get three calls, some get one, and warm prospects from months ago are simply forgotten — there is no system, only memory.",
+          "Admin eating selling time: scheduling, confirming, and updating the CRM by hand consumes hours every day that should go toward actually closing deals.",
+        ],
+      },
+      { type: "h2", text: "A Response Within Two Minutes, Every Time" },
+      {
+        type: "p",
+        text: "Automated lead response sends an SMS and email within two minutes of any inquiry, regardless of source — website, Realtor.ca, or referral form. A qualification sequence runs automatically, asking about timeline, budget, and property preferences, and scores the lead before any agent ever touches it. By the time an agent calls, they are calling a warm, pre-qualified prospect instead of starting cold.",
+      },
+      { type: "h2", text: "Nurture That Does Not Depend on Anyone Remembering" },
+      {
+        type: "p",
+        text: "A 60-day automated nurture sequence, segmented by buyer or seller intent, keeps every lead warm without a single manual touch. Showings get booked through a self-serve scheduler tied directly to agent calendars — no back-and-forth required. And past clients automatically receive a listings newsletter whenever new inventory matches their saved area preferences, keeping the brokerage top of mind without anyone manually compiling a list.",
+      },
+      {
+        type: "casestudy",
+        client: "Maher Aouli Realty",
+        slug: "maher-aouli-realty",
+        stat: "3×",
+        statLabel: "lead-to-showing conversion rate",
+        teaser: "Instant lead response, AI qualification, and an automated nurture sequence let a 5-agent brokerage run like a fully staffed operation — closed deals up 40% in 90 days.",
+      },
+      { type: "h2", text: "What Changed, In the Broker's Words" },
+      {
+        type: "p",
+        text: "After automating lead response and nurture, a five-agent brokerage saw lead-to-showing conversion triple, average first response time drop from over four hours to two minutes, and closed deals increase 40% within 90 days — while recovering 22 hours of weekly admin time across the team. The broker's own words: 'We were losing deals we didn't even know we had.'",
+      },
+      {
+        type: "callout",
+        text: "Pull up your last ten leads and check how long the first response actually took. If any of them waited more than ten minutes, that is a fixable leak. Book a 30-minute call and we will show you what instant response would look like for your brokerage.",
+      },
+    ],
+  },
+
+  {
+    slug: "ai-chatbot-small-business",
+    title: "AI Chatbot for Small Business: Turning Website Visitors Into Qualified Leads, 24/7",
+    date: "2026-06-13",
+    category: "AI Automation",
+    readTime: "6 min read",
+    excerpt: "Most website visitors leave without a trace, and the best leads often arrive after hours when nobody is watching. Here is what an AI chatbot that actually qualifies and converts visitors looks like.",
+    image: "https://v3b.fal.media/files/b/0a9eb9a9/jDrm_Y1dXnRRCjSeMpkwp.jpg",
+    imageCredit: "Generated via Fal.ai",
+    content: [
+      {
+        type: "p",
+        text: "Every business with a website has the same quiet problem: people land on the page, look around, and leave. If they have a question at 10pm, there is nobody to answer it. If they are not quite ready to book a call, there is no middle step between browsing and a contact form they may never fill out. That gap is where most of your website traffic simply disappears.",
+      },
+      {
+        type: "p",
+        text: "A static contact form does not engage anyone. It waits. An AI chatbot, built correctly, does the opposite — it meets the visitor in the moment they are actually paying attention, and moves them toward either booking a call or leaving contact details, whichever they are ready for.",
+      },
+      { type: "h2", text: "What a Chatbot Actually Needs to Do" },
+      {
+        type: "ul",
+        items: [
+          "Engage within seconds — most visitors decide whether to stay or leave almost immediately, so the window to capture attention is short.",
+          "Run a real qualification conversation, not a scripted decision tree — asking what brought the visitor in and working through their actual situation.",
+          "Capture contact details without forcing a form — letting the visitor share their name and email naturally, when they are ready, not before.",
+          "Detect buying signals and prompt a booking — recognizing when someone is ready to talk and offering the next step directly in the conversation.",
+          "Notify the team immediately with context — so nobody has to ask 'what is this about' before the first call.",
+        ],
+      },
+      { type: "h2", text: "Why After-Hours Coverage Matters More Than Most Businesses Realize" },
+      {
+        type: "p",
+        text: "A meaningful share of the best leads arrive at night or on weekends — exactly when most businesses have zero coverage. A chatbot that runs 24/7 does not need a shift schedule. It engages a visitor at 11pm exactly the way it would at 11am, and by the time the team is back online, qualified conversations are already waiting with full context attached.",
+      },
+      {
+        type: "casestudy",
+        client: "Oblique Path",
+        slug: "ai-chatbot",
+        stat: "24/7",
+        statLabel: "lead capture with no human required",
+        teaser: "An AI chat widget that engages visitors, qualifies them through natural conversation, and routes them to booking — live on obliquepath.dev right now, with zero missed conversations after hours.",
+      },
+      { type: "h2", text: "Why This Changes the First Call" },
+      {
+        type: "p",
+        text: "The real value of a chatbot is not the conversation it has — it is the conversation your team does not have to start from zero. When someone books a call after chatting with a qualified AI widget, the team already knows who they are, what they need, and what was discussed. Every call starts at the point a normal discovery call would end. We built this on our own site first, and run it live today.",
+      },
+      {
+        type: "callout",
+        text: "Check your analytics for traffic between 6pm and 8am. If a meaningful chunk of your visitors show up outside business hours, that is the gap a chatbot closes. Book a 30-minute call and we will scope one for your site.",
+      },
+    ],
+  },
+
+  {
+    slug: "insurance-broker-automation",
+    title: "Insurance Broker Automation: Stop Losing Policies to Slow Follow-Up",
+    date: "2026-06-12",
+    category: "Insurance & Finance",
+    readTime: "6 min read",
+    excerpt: "Quotes, renewals, and callbacks all competing for an agent's attention at once is how insurance brokerages lose conversions they should have won. Here is what automated lead nurture changes.",
+    image: "https://v3b.fal.media/files/b/0a9eb9a9/QIs0sfOHQHbhO3Li3c7Nf.jpg",
+    imageCredit: "Generated via Fal.ai",
+    content: [
+      {
+        type: "p",
+        text: "Insurance agents juggle quotes, callbacks, renewals, and new inquiries simultaneously, almost always manually. A promising lead does not hear back fast enough. A callback gets tracked in someone's head instead of a system, and falls off the list. A renewal slips through because nobody flagged it sixty days out. None of this happens because the team is careless — it happens because there is no system underneath the busyness.",
+      },
+      {
+        type: "p",
+        text: "The result is a pipeline that looks healthy on paper — lots of leads, lots of activity — while the conversion rate quietly tells a different story: too many people coming in, not enough policies closing.",
+      },
+      { type: "h2", text: "Where Brokerages Actually Lose Conversions" },
+      {
+        type: "ul",
+        items: [
+          "Slow follow-up: new leads wait hours or days for a first response, and in insurance, that delay alone costs deals.",
+          "Missed callbacks: tracked in an agent's head or scattered notes instead of a system, meaning some simply never happen.",
+          "Renewals slipping by: without an automatic reminder cycle, renewal windows are easy to miss until a client has already shopped elsewhere.",
+        ],
+      },
+      { type: "h2", text: "What Automated Follow-Up Changes" },
+      {
+        type: "p",
+        text: "An automated lead nurture system responds to new inquiries immediately, runs a structured follow-up sequence so no lead depends on an agent remembering to call back, and flags renewals on a fixed schedule well before the window closes. CRM updates happen automatically as leads move through the pipeline, instead of depending on someone logging it after the fact.",
+      },
+      {
+        type: "casestudy",
+        client: "Harbor One Capital",
+        slug: "harbor-one-capital",
+        stat: "2x",
+        statLabel: "policy conversions in 6 weeks",
+        teaser: "Automated follow-up sequences and CRM integration doubled policy conversions for an insurance brokerage in six weeks, with renewals and callbacks no longer depending on memory.",
+      },
+      { type: "h2", text: "Why This Matters More in Insurance Than Almost Anywhere Else" },
+      {
+        type: "p",
+        text: "Insurance is a business built on timing — a quote delivered an hour late, a renewal call made a week too late, a callback that never happens. Automating the follow-up layer does not change what your agents are good at. It removes the timing failures that have nothing to do with skill and everything to do with how many things one person can track manually at once.",
+      },
+      {
+        type: "callout",
+        text: "Look at your last quarter's renewal list and ask how many got a reminder before the client started shopping around. If the honest answer is 'not all of them,' that gap is costing you policies. Book a 30-minute call and we will show you what closing it looks like.",
+      },
+    ],
+  },
+
+  {
     slug: "healthcare-staffing-automation-guide",
     title: "Healthcare Staffing Automation: How to Eliminate 80% of Your Admin Work",
     date: "2026-06-11",

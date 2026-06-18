@@ -36,79 +36,39 @@ if (!FAL_KEY) {
 
 const posts = [
   {
-    slug: "healthcare-staffing-automation-guide",
+    slug: "property-management-automation-guide",
     prompt:
-      "Cinematic overhead flat-lay of a healthcare coordinator's desk at night: a clipboard with shift schedules, a laptop with a dashboard, a cold coffee, warm amber desk lamp. Dark matte surface, premium editorial aesthetic, muted tones, no people, no text visible",
+      "Cinematic overhead flat-lay of a property manager's dark wood desk at night: a printed lease agreement, a set of keys, a small house keychain, warm amber desk lamp glow, premium editorial real-estate aesthetic, muted tones, no people, no text visible",
   },
   {
-    slug: "healthcare-timesheet-invoice-automation",
+    slug: "recruiting-agency-automation",
     prompt:
-      "Cinematic close-up of a printed timesheet on a dark desk with a pen resting across it, soft warm ambient light, clean minimal composition, shallow depth of field, premium editorial still-life aesthetic, muted earth tones, no people",
+      "Cinematic close-up of a clean desk with a stack of resumes neatly fanned out and a laptop showing a soft glowing pipeline interface, warm ambient light, premium editorial business aesthetic, muted earth tones, no people, no readable text",
   },
   {
-    slug: "ai-for-healthcare-staffing-workflows",
+    slug: "hvac-dispatch-software",
     prompt:
-      "Cinematic perspective shot down a clean modern hospital corridor, empty, soft natural light from windows on one side, warm neutral tones, premium architectural photography aesthetic, calm and trustworthy, no people",
+      "Cinematic close-up of a service van dashboard at dusk with a phone mounted showing a soft glowing map pin, warm amber light through the windshield, premium editorial trades aesthetic, muted tones, no people visible",
   },
   {
-    slug: "automate-invoice-follow-up",
+    slug: "law-firm-intake-automation",
     prompt:
-      "Cinematic flat-lay of scattered invoices and a single open laptop showing a clean dashboard on a dark wood desk, warm desk lamp glow, one envelope sealed and ready, premium business editorial aesthetic, muted warm palette, no people",
+      "Cinematic flat-lay of a leather-bound legal document and a fountain pen on a dark mahogany desk, soft warm lamp light, a small brass scale of justice figurine softly out of focus in the background, premium editorial legal aesthetic, muted tones, no people",
   },
   {
-    slug: "ai-voice-agent-small-business",
+    slug: "real-estate-lead-automation",
     prompt:
-      "Cinematic close-up of a modern smartphone face-up on a dark surface, screen showing an incoming call notification with a subtle waveform, soft warm screen glow against a dark ambient background, premium product photography aesthetic, no people",
+      "Cinematic shot of a modern house key resting on a printed property listing sheet on a dark desk, warm golden hour light through a window, premium real estate editorial aesthetic, muted warm tones, no people, no readable text",
   },
   {
-    slug: "cost-of-manual-scheduling",
+    slug: "ai-chatbot-small-business",
     prompt:
-      "Cinematic close-up of an open paper calendar on a dark desk with circled dates and handwritten notes, a coffee cup to the side going cold, warm desk lamp, premium editorial still-life aesthetic, muted neutral tones, no people",
+      "Cinematic close-up of a laptop screen glowing softly in a dark room with a subtle chat bubble interface light, warm ambient ember tones reflecting off the desk, premium minimal tech editorial aesthetic, no people, no readable text",
   },
   {
-    slug: "business-automation-windsor-ontario",
+    slug: "insurance-broker-automation",
     prompt:
-      "Cinematic wide shot of a Canadian city at dusk, warm amber office building lights reflected on wet pavement below, muted blue-gray sky, premium editorial photography, atmospheric depth, no people visible",
-  },
-  {
-    slug: "custom-software-vs-saas",
-    prompt:
-      "Cinematic flat-lay of two printed roadmap documents on a dark desk, one neatly organized and one with handwritten annotations, a pen between them, warm focused light, premium business editorial aesthetic, muted tones, no people",
-  },
-  {
-    slug: "what-is-business-automation",
-    prompt:
-      "Cinematic close-up of clean mechanical gears in soft focus on the left and a modern laptop keyboard in sharp focus on the right, the contrast of old and new, warm ambient light, dark background, premium editorial photography, no people",
-  },
-  {
-    slug: "business-automation-cost-breakdown",
-    prompt:
-      "Cinematic flat-lay of a calculator, a neat notepad with handwritten numbers, and a pen on a dark matte desk, warm pool of light from above, premium editorial still-life, minimal composition, muted warm tones, no people",
-  },
-  {
-    slug: "signs-business-ready-for-automation",
-    prompt:
-      "Cinematic close-up of a printed checklist on a dark desk surface, seven boxes checked and three empty, a pen resting diagonally, warm focused desk lamp, clean minimal composition, premium editorial aesthetic, muted tones, no people",
-  },
-  {
-    slug: "crm-automation-small-business",
-    prompt:
-      "Cinematic overhead shot of a tidy desk with a CRM pipeline open on a laptop screen, sticky notes with names arranged in columns beside it, warm ambient light, premium editorial aesthetic, muted earth palette, no people",
-  },
-  {
-    slug: "how-to-choose-automation-agency",
-    prompt:
-      "Cinematic overhead flat-lay of two printed proposals side by side on a dark desk, one with a signature at the bottom and one without, a pen positioned between them, warm desk lamp, premium editorial aesthetic, muted tones, no people",
-  },
-  {
-    slug: "healthcare-staffing-automation-roi",
-    prompt:
-      "Cinematic close-up of a printed financial chart on paper showing an upward trend, on a dark desk surface with a pen pointing to a number, warm ambient light, clean premium editorial aesthetic, muted warm tones, no people",
-  },
-  {
-    slug: "best-business-automation-tools-2026",
-    prompt:
-      "Cinematic flat-lay of four modern devices — laptop, tablet, phone, small speaker — arranged neatly on a dark matte desk, all screens off, clean product photography aesthetic, soft overhead warm light, premium minimal composition, no people",
+      "Cinematic flat-lay of an insurance policy folder and a calculator on a dark desk, a small umbrella figurine softly out of focus nearby, warm desk lamp glow, premium editorial finance aesthetic, muted tones, no people, no readable text",
   },
 ];
 

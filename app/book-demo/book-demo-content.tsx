@@ -88,12 +88,12 @@ export function BookDemoContent() {
         </div>
 
         {/* Social proof bar */}
-        <div className="grid grid-cols-3 gap-4 max-w-2xl mx-auto mb-14">
+        <div className="grid grid-cols-3 gap-2 sm:gap-4 max-w-2xl mx-auto mb-14">
           {results.map((r, i) => (
-            <div key={i} className="text-center p-4 rounded-xl bg-card border border-border/50">
-              <div className="text-2xl font-black gradient-text leading-none tracking-tighter mb-1">{r.stat}</div>
-              <div className="text-xs text-muted-foreground leading-tight">{r.label}</div>
-              <div className="text-[10px] text-muted-foreground/60 mt-1">{r.client}</div>
+            <div key={i} className="text-center p-2.5 sm:p-4 rounded-xl bg-card border border-border/50">
+              <div className="text-xl sm:text-2xl font-black gradient-text leading-none tracking-tighter mb-1">{r.stat}</div>
+              <div className="text-[11px] sm:text-xs text-muted-foreground leading-tight">{r.label}</div>
+              <div className="hidden sm:block text-[10px] text-muted-foreground/60 mt-1">{r.client}</div>
             </div>
           ))}
         </div>
