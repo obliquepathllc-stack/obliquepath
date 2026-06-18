@@ -1,15 +1,16 @@
 #!/usr/bin/env node
 /**
- * Generate Fal.ai blog images using flux-pro/v1.1-ultra.
- * Switched from flux/dev after garbled-text-on-paper artifacts were found
- * in production (open books/documents render fake illegible text).
- * All prompts below avoid open books, documents, or any readable surface.
+ * Generate Fal.ai blog images using fal-ai/gpt-image-1/text-to-image.
+ * Switched from flux-pro/v1.1-ultra after finding it still garbles any
+ * UI/text content. gpt-image-1 renders legible, correct text and lets
+ * prompts depict an actual on-topic product/dashboard mockup instead of
+ * generic objects (books, hallways) that don't relate to the post.
  *
  * Usage:
  *   node tools/generate-blog-images.mjs
  *   node tools/generate-blog-images.mjs --slug property-management-automation-guide
  *
- * Output: .tmp/blog-images.json with { slug: url } map
+ * Output: .tmp/blog-images-v3.json with { slug: url } map
  * After running: update image fields in lib/blog-posts.ts
  */
 
@@ -36,96 +37,96 @@ if (!FAL_KEY) {
   process.exit(1);
 }
 
-const NO_TEXT = "no text, no books, no papers, no documents, no readable writing of any kind";
+const STYLE = "photorealistic, premium SaaS product photography, shallow depth of field, soft natural daylight, clean modern desk, legible correct on-screen text and UI labels, no spelling errors";
 
 const posts = [
   {
     slug: "property-management-automation-guide",
-    prompt: `Cinematic editorial photograph of a modern house key resting on a dark wood desk next to a small architectural model of a townhouse, soft golden hour light from a window, shallow depth of field, premium real estate brand photography, ${NO_TEXT}, clean minimal composition`,
+    prompt: `A tablet on a wooden desk displaying a property management app screen titled "Rental Lease" with a green "Signed" checkmark badge, a row of small house-unit icons, and a rent due summary, a labeled "KEYS" keychain tag and house keys resting beside it, a residential apartment building visible softly out of focus through a window behind, ${STYLE}`,
   },
   {
     slug: "recruiting-agency-automation",
-    prompt: `Cinematic editorial photograph of two empty modern office chairs facing each other across a small round table, warm ambient light, soft shadows, premium business photography, no people, ${NO_TEXT}`,
+    prompt: `A laptop screen on a desk showing a recruiting pipeline dashboard titled "Candidate Pipeline" with columns labeled "Sourced", "Interview", "Offer", and "Placed", each with small candidate profile cards, a stack of resume papers (cover page blank, no body text) beside the laptop, warm office light, ${STYLE}`,
   },
   {
     slug: "hvac-dispatch-software",
-    prompt: `Cinematic close-up photograph of a service van dashboard at dusk, a phone mounted on the windshield showing a soft glowing abstract map interface with no legible labels, warm amber light, premium editorial trades photography, no people, ${NO_TEXT}`,
+    prompt: `A tablet mounted in an HVAC service van showing a dispatch map app titled "Today's Jobs" with technician location pins and a job card reading "Job #214 — Assigned", an HVAC tool bag visible on the van seat, dashboard and windshield in soft focus, daylight, ${STYLE}`,
   },
   {
     slug: "law-firm-intake-automation",
-    prompt: `Cinematic editorial photograph of a closed leather portfolio and a fountain pen resting on a dark mahogany desk, a small brass scale of justice figurine softly out of focus in the background, warm lamp light, premium legal brand photography, ${NO_TEXT}`,
+    prompt: `A tablet on a mahogany desk showing a legal intake dashboard titled "New Matter Intake" with a practice-area routing label "Family Law" and a green "Retainer Signed" status badge, a closed leather portfolio and fountain pen beside it, a small brass scale-of-justice figurine softly out of focus, warm lamp light, ${STYLE}`,
   },
   {
     slug: "real-estate-lead-automation",
-    prompt: `Cinematic editorial photograph of a modern house key resting on a dark wood desk next to a small architectural model of a townhouse, soft golden hour light from a window, shallow depth of field, premium real estate brand photography, ${NO_TEXT}, clean minimal composition`,
+    prompt: `A tablet on a desk showing a real estate CRM dashboard titled "Lead Pipeline" with a new lead card marked "Responded — 2 min" and a small house listing thumbnail, a house key resting beside the tablet, a model townhouse softly out of focus in the background, golden hour light, ${STYLE}`,
   },
   {
     slug: "ai-chatbot-small-business",
-    prompt: `Cinematic close-up photograph of a laptop screen glowing softly in a dark room, the screen showing an abstract soft-focus chat bubble interface with no legible text, warm ember-toned reflections on the desk, premium minimal tech photography, no people, ${NO_TEXT}`,
+    prompt: `A laptop screen on a desk showing a website chat widget open in the corner with a short clean exchange — visitor message "Do you serve small businesses?" and a reply bubble "Yes! Let's find the right fit." — with a "Book a Call" button below, warm ambient room light, ${STYLE}`,
   },
   {
     slug: "insurance-broker-automation",
-    prompt: `Cinematic editorial photograph of a closed leather folder and a calculator on a dark desk, a small umbrella figurine softly out of focus nearby, warm desk lamp glow, premium finance brand photography, ${NO_TEXT}`,
+    prompt: `A tablet on a desk showing an insurance broker dashboard titled "Policy Renewals" with a policy card marked "Renewal Due — Reminder Sent" and a small umbrella icon, a closed leather folder and calculator beside it, warm desk lamp light, ${STYLE}`,
   },
   {
     slug: "healthcare-staffing-automation-guide",
-    prompt: `Cinematic editorial photograph of a stethoscope coiled neatly beside a closed badge holder on a dark desk at night, warm amber desk lamp glow, premium healthcare brand photography, shallow depth of field, no people, ${NO_TEXT}`,
+    prompt: `A tablet on a coordinator's desk showing a healthcare staffing dashboard titled "Today's Shifts" with a shift card marked "Confirmed" and a small nurse badge icon, a stethoscope resting beside the tablet, soft clinical daylight, ${STYLE}`,
   },
   {
     slug: "healthcare-timesheet-invoice-automation",
-    prompt: `Cinematic close-up photograph of a sealed envelope and a pen resting on a dark desk, soft warm ambient light, clean minimal composition, shallow depth of field, premium editorial still-life photography, ${NO_TEXT}`,
+    prompt: `A tablet on a desk showing a timesheet approval app titled "Timesheets" with an entry marked "Approved — Invoice Generated" and a small dollar-amount summary, a sealed envelope and pen resting beside it, warm desk lamp light, ${STYLE}`,
   },
   {
     slug: "ai-for-healthcare-staffing-workflows",
-    prompt: `Cinematic wide photograph down a clean modern hospital corridor, empty, soft natural light from windows on one side, warm neutral tones, premium architectural photography, calm and trustworthy, no people, ${NO_TEXT}`,
+    prompt: `A tablet on a desk showing a workflow automation diagram titled "Staffing Workflow" with five connected nodes labeled "Request", "Match", "Confirm", "Shift", "Invoice" linked by arrows, clean hospital corridor softly out of focus in the background, ${STYLE}`,
   },
   {
     slug: "automate-invoice-follow-up",
-    prompt: `Cinematic editorial photograph of a sealed envelope standing upright against a closed laptop on a dark wood desk, warm desk lamp glow, premium business still-life photography, shallow depth of field, ${NO_TEXT}`,
+    prompt: `A tablet on a desk showing an invoicing dashboard titled "Invoices" with one row marked "Paid" in green and one marked "Reminder Sent" in amber, a sealed envelope resting beside the tablet, warm desk lamp light, ${STYLE}`,
   },
   {
     slug: "ai-voice-agent-small-business",
-    prompt: `Cinematic close-up photograph of a modern smartphone face-up on a dark surface, screen showing a soft glowing abstract waveform with no legible text, warm screen glow against a dark ambient background, premium product photography, ${NO_TEXT}`,
+    prompt: `A smartphone on a desk showing an active call screen titled "AI Agent — Calling Lead" with a live transcript line "Hi, I'm calling about your inquiry..." and a waveform animation, soft screen glow in a dim room, ${STYLE}`,
   },
   {
     slug: "cost-of-manual-scheduling",
-    prompt: `Cinematic close-up photograph of a vintage analog desk clock next to a coffee cup going cold, warm desk lamp light, premium editorial still-life photography, muted neutral tones, shallow depth of field, ${NO_TEXT}`,
+    prompt: `A split-composition desk scene: a messy paper wall calendar with crossed-out dates and a coffee cup on the left, a clean tablet showing a scheduling app titled "This Week — Auto-Filled" on the right, warm desk lamp light, ${STYLE}`,
   },
   {
     slug: "business-automation-windsor-ontario",
-    prompt: `Cinematic wide photograph of a Canadian city skyline at dusk, warm amber office building lights reflected on wet pavement below, muted blue-gray sky, premium editorial photography, atmospheric depth, no people visible, ${NO_TEXT}`,
+    prompt: `A tablet on a small business owner's desk showing a dashboard titled "Automated Tasks — 14 This Week" with a simple bar chart, a window behind showing a soft-focus view of a mid-size Canadian downtown at dusk with warm building lights, ${STYLE}`,
   },
   {
     slug: "custom-software-vs-saas",
-    prompt: `Cinematic editorial photograph of two diverging paths in a minimalist architectural walkway, one path leading toward soft warm light and one toward cool blue light, premium conceptual photography, clean composition, no people, ${NO_TEXT}`,
+    prompt: `Two tablets side by side on a desk, the left screen titled "Off-the-Shelf SaaS" showing a generic locked feature list, the right screen titled "Custom Built" showing a tailored dashboard matching a business logo mark, warm office light, ${STYLE}`,
   },
   {
     slug: "what-is-business-automation",
-    prompt: `Cinematic close-up photograph of clean brass mechanical gears in soft focus on the left transitioning into a modern laptop keyboard in sharp focus on the right, the contrast of old and new, warm ambient light, dark background, premium editorial photography, ${NO_TEXT}`,
+    prompt: `A tablet on a desk showing a simple automation flow diagram titled "If This, Then That" with three connected boxes — "New Lead", "Send Welcome Email", "Notify Team" — linked by arrows, clean minimal UI, soft daylight, ${STYLE}`,
   },
   {
     slug: "business-automation-cost-breakdown",
-    prompt: `Cinematic editorial photograph of a modern calculator beside a small neat stack of coins on a dark matte desk, warm pool of light from above, premium still-life photography, minimal composition, muted warm tones, ${NO_TEXT}`,
+    prompt: `A tablet on a desk showing a cost breakdown dashboard titled "Project Estimate" with line items "Discovery", "Build", "Support" and a total at the bottom, a calculator resting beside it, warm pooled light, ${STYLE}`,
   },
   {
     slug: "signs-business-ready-for-automation",
-    prompt: `Cinematic close-up photograph of a glowing green traffic light against a dark blurred city background at dusk, premium conceptual editorial photography, shallow depth of field, muted tones, no people, ${NO_TEXT}`,
+    prompt: `A tablet on a desk showing a readiness assessment checklist titled "Are You Ready?" with several items checked in green and one unchecked in gray, warm desk lamp light, clean minimal UI, ${STYLE}`,
   },
   {
     slug: "crm-automation-small-business",
-    prompt: `Cinematic overhead photograph of a tidy desk with a laptop showing a soft glowing abstract pipeline interface with no legible text, a small potted plant beside it, warm ambient light, premium editorial aesthetic, muted earth palette, ${NO_TEXT}`,
+    prompt: `A tablet on a tidy desk showing a CRM pipeline dashboard titled "Deals" with columns "New", "Contacted", "Won" and small contact cards with avatar circles, a small potted plant beside it, warm ambient light, ${STYLE}`,
   },
   {
     slug: "how-to-choose-automation-agency",
-    prompt: `Cinematic editorial photograph of two modern doors side by side in a minimalist hallway, one slightly open with warm light spilling through, one closed, premium architectural conceptual photography, no people, ${NO_TEXT}`,
+    prompt: `A tablet on a desk showing an agency comparison checklist titled "Evaluating Partners" with two columns of green checkmarks and red X marks side by side, warm office light, clean minimal UI, ${STYLE}`,
   },
   {
     slug: "healthcare-staffing-automation-roi",
-    prompt: `Cinematic close-up photograph of a small neat stack of coins arranged in an ascending staircase pattern on a dark desk, warm ambient light, clean premium editorial still-life photography, muted warm tones, ${NO_TEXT}`,
+    prompt: `A tablet on a desk showing an ROI dashboard titled "Savings This Quarter" with a green upward trend line chart and a dollar total, a stethoscope softly out of focus in the background, warm light, ${STYLE}`,
   },
   {
     slug: "best-business-automation-tools-2026",
-    prompt: `Cinematic flat-lay photograph of four modern devices — laptop, tablet, phone, small speaker — arranged neatly on a dark matte desk, all screens off, clean product photography aesthetic, soft overhead warm light, premium minimal composition, ${NO_TEXT}`,
+    prompt: `A tablet on a desk showing a software comparison grid titled "Top Tools 2026" with four small app icons and star ratings beneath each, clean minimal UI, soft overhead light, ${STYLE}`,
   },
 ];
 
@@ -138,7 +139,7 @@ if (toGenerate.length === 0) {
   process.exit(1);
 }
 
-const OUTPUT_FILE = join(OUTPUT_DIR, "blog-images-v2.json");
+const OUTPUT_FILE = join(OUTPUT_DIR, "blog-images-v3.json");
 let results = {};
 try {
   results = JSON.parse(readFileSync(OUTPUT_FILE, "utf8"));
@@ -149,7 +150,7 @@ try {
 async function generateImage(slug, prompt) {
   console.log(`\n🎨  Generating: ${slug}`);
 
-  const res = await fetch("https://fal.run/fal-ai/flux-pro/v1.1-ultra", {
+  const res = await fetch("https://fal.run/fal-ai/gpt-image-1/text-to-image", {
     method: "POST",
     headers: {
       Authorization: `Key ${FAL_KEY}`,
@@ -157,9 +158,8 @@ async function generateImage(slug, prompt) {
     },
     body: JSON.stringify({
       prompt,
-      aspect_ratio: "16:9",
-      num_images: 1,
-      enable_safety_checker: true,
+      image_size: "1536x1024",
+      quality: "high",
     }),
   });
 
@@ -175,7 +175,7 @@ async function generateImage(slug, prompt) {
 }
 
 async function main() {
-  console.log(`\n🖼️   Generating ${toGenerate.length} blog image(s) via Fal.ai flux-pro/v1.1-ultra\n`);
+  console.log(`\n🖼️   Generating ${toGenerate.length} blog image(s) via Fal.ai gpt-image-1\n`);
 
   let generated = 0, skipped = 0, failed = 0;
 
