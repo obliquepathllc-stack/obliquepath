@@ -26,7 +26,7 @@ export const blogPosts: BlogPost[] = [
     category: "Real Estate",
     readTime: "9 min read",
     excerpt: "Lease generation, rent reminders, N4 eviction notices, and tenant calls at 3am — property management automation turns the most paperwork-heavy job in real estate into a system that runs itself.",
-    image: "https://v3b.fal.media/files/b/0a9eb9ab/A9PwMmnLH5yUXaJDifTDZ.jpg",
+    image: "https://v3b.fal.media/files/b/0a9ebc16/P85q4XESnMkn9Zb6rkfo6_a9d1a92f854247ffb9f213d39105a177.jpg",
     imageCredit: "Generated via Fal.ai",
     content: [
       {
@@ -93,7 +93,7 @@ export const blogPosts: BlogPost[] = [
     category: "HR & Recruiting",
     readTime: "7 min read",
     excerpt: "Manual outreach, status logging, and Friday-afternoon client reports eat three of five working days at most recruiting agencies. Here is what automated candidate outreach and reporting actually looks like.",
-    image: "https://v3b.fal.media/files/b/0a9eb9a5/TfUNVmanhfoMMcHWwbof8.jpg",
+    image: "https://v3b.fal.media/files/b/0a9ebc1f/wtbLp-D0EOgJPaIjhL7Y1_52b2e99266394c5b9f03d658f10de20d.jpg",
     imageCredit: "Generated via Fal.ai",
     content: [
       {
@@ -151,7 +151,7 @@ export const blogPosts: BlogPost[] = [
     category: "Trades & Field Service",
     readTime: "7 min read",
     excerpt: "Manual dispatch, slow quotes, and forgotten seasonal maintenance reminders cap how many jobs an HVAC team can run per day. Here is what automated dispatch, quoting, and seasonal scheduling looks like in practice.",
-    image: "https://v3b.fal.media/files/b/0a9eb9a7/1RQQLz-JhxDdC0nYG9AC8.jpg",
+    image: "https://v3b.fal.media/files/b/0a9ebc20/_K8U9H_z74W7A_rtNURB-_09815ba309a64a769bd237fc69465cea.jpg",
     imageCredit: "Generated via Fal.ai",
     content: [
       {
@@ -208,7 +208,7 @@ export const blogPosts: BlogPost[] = [
     category: "Legal Services",
     readTime: "8 min read",
     excerpt: "Manual intake routing, hand-drafted retainers, and after-the-fact time tracking slow down every new client relationship a law firm starts. Here is what automated legal intake actually looks like.",
-    image: "https://v3b.fal.media/files/b/0a9eb9ae/s4oNgm5iDCTmxfVIfg4Gj.jpg",
+    image: "https://v3b.fal.media/files/b/0a9ebc21/x0kr4cKyp-plKSnxbYV6G_45615676cb5f47ab8fbd5ce4b6274a46.jpg",
     imageCredit: "Generated via Fal.ai",
     content: [
       {
@@ -270,7 +270,7 @@ export const blogPosts: BlogPost[] = [
     category: "Real Estate",
     readTime: "7 min read",
     excerpt: "In real estate, the agent who responds first usually wins the client. Here is how automated lead response, qualification, and nurture sequences keep a brokerage from losing deals to slow follow-up.",
-    image: "https://v3b.fal.media/files/b/0a9eb9a8/oANAzFQRpJ2ld7Rdm7Oab.jpg",
+    image: "https://v3b.fal.media/files/b/0a9ebc22/wjUgyVWvtzfCiunEvlUFy_a1efa5d081534af79c2073cea5d0c456.jpg",
     imageCredit: "Generated via Fal.ai",
     content: [
       {
@@ -327,7 +327,7 @@ export const blogPosts: BlogPost[] = [
     category: "AI Automation",
     readTime: "6 min read",
     excerpt: "Most website visitors leave without a trace, and the best leads often arrive after hours when nobody is watching. Here is what an AI chatbot for your website — or what some call an AI customer service agent — actually does when it is built to qualify and convert, not just answer FAQs.",
-    image: "https://v3b.fal.media/files/b/0a9eb9a9/jDrm_Y1dXnRRCjSeMpkwp.jpg",
+    image: "https://v3b.fal.media/files/b/0a9ebc3c/PEC4X1wNuSSBYih5vjh1__d112306bf5e241b6a276b5ba1cd4f052.jpg",
     imageCredit: "Generated via Fal.ai",
     content: [
       {
@@ -381,7 +381,7 @@ export const blogPosts: BlogPost[] = [
     category: "Insurance & Finance",
     readTime: "6 min read",
     excerpt: "Quotes, renewals, and callbacks all competing for an agent's attention at once is how insurance brokerages lose conversions they should have won. Here is what automated lead nurture changes.",
-    image: "https://v3b.fal.media/files/b/0a9eb9a9/QIs0sfOHQHbhO3Li3c7Nf.jpg",
+    image: "https://v3b.fal.media/files/b/0a9ebc25/pM9_ARQJQy95oE7-YISGl_253f3b4d7df34bdca50653adba4d5b7c.jpg",
     imageCredit: "Generated via Fal.ai",
     content: [
       {
@@ -433,7 +433,7 @@ export const blogPosts: BlogPost[] = [
     category: "AI Automation",
     readTime: "8 min read",
     excerpt: "Healthcare staffing agencies run on paper, phone calls, and spreadsheets that nobody has time to maintain. Here is what the admin load actually costs you and what a fully automated operation looks like.",
-    image: "https://v3b.fal.media/files/b/0a9e363e/iWlnys6hV8KFWwtB98JVC.jpg",
+    image: "https://v3b.fal.media/files/b/0a9ebc26/iUcKTDjOfeq1ue2C9yCKV_458cc1e37dc344798c97534fdd24939b.jpg",
     imageCredit: "Generated via Fal.ai",
     content: [
       {
@@ -505,7 +505,7 @@ export const blogPosts: BlogPost[] = [
     category: "AI Automation",
     readTime: "7 min read",
     excerpt: "The path from completed shift to collected payment runs through too many manual steps in most healthcare staffing agencies. Here is what automated timesheet-to-invoice processing looks like and the errors it eliminates for good.",
-    image: "https://v3b.fal.media/files/b/0a9e3639/cTJ1veuD969GvkBoZYXUP.jpg",
+    image: "https://v3b.fal.media/files/b/0a9ebc27/_iTDCWEq41Y4yRgsh2_TR_da9e97e3fe9a43c1a279d6bcd02dbe37.jpg",
     imageCredit: "Generated via Fal.ai",
     content: [
       {
@@ -572,7 +572,7 @@ export const blogPosts: BlogPost[] = [
     category: "AI Automation",
     readTime: "7 min read",
     excerpt: "Artificial intelligence in healthcare staffing is not a futuristic concept. It is already handling shift notifications, credential checks, onboarding steps, and client reporting at agencies that figured out where to plug it in first.",
-    image: "https://v3b.fal.media/files/b/0a9e3639/qj1O-cNpM9cNeUgwo355h.jpg",
+    image: "https://v3b.fal.media/files/b/0a9ebc27/iycOgvPuheb4ZAALsnn53_6c339b9f5fc441c187eb85a15d76207b.jpg",
     imageCredit: "Generated via Fal.ai",
     content: [
       {
@@ -626,7 +626,7 @@ export const blogPosts: BlogPost[] = [
     category: "Automation Strategy",
     readTime: "6 min read",
     excerpt: "Chasing invoices is time-consuming, awkward, and completely avoidable. Here is how service businesses build an automated follow-up system that collects faster without anyone having to remember to follow up.",
-    image: "https://v3b.fal.media/files/b/0a9e3640/T0IWCFJUjG9F8jUdD0aYd.jpg",
+    image: "https://v3b.fal.media/files/b/0a9ebc29/_lYIxfHfvhnqjUAgXk9uc_0579041b89c04f8b8dba659424b56372.jpg",
     imageCredit: "Generated via Fal.ai",
     content: [
       {
@@ -683,7 +683,7 @@ export const blogPosts: BlogPost[] = [
     category: "AI Automation",
     readTime: "7 min read",
     excerpt: "AI voice agents, AI answering services, and virtual receptionists are different names for the same shift happening at small businesses right now. Here is what they actually do, what they cannot do, and what they cost with no sales spin.",
-    image: "https://v3b.fal.media/files/b/0a9e363a/5k5UDNqdB_PYK_mVIPsq6.jpg",
+    image: "https://v3b.fal.media/files/b/0a9ebc2a/Gomk-Dg0GNRGp9GPkUuk6_e79b6a62f7ca4937ab0846a741a8ed57.jpg",
     imageCredit: "Generated via Fal.ai",
     content: [
       {
@@ -750,7 +750,7 @@ export const blogPosts: BlogPost[] = [
     category: "Automation Strategy",
     readTime: "6 min read",
     excerpt: "You know manual scheduling takes time. You probably do not know how much, in dollars, it costs your business every month. The number is almost always higher than people expect and the return on fixing it is almost always faster.",
-    image: "https://v3b.fal.media/files/b/0a9e363b/L8P_Ux1UtRRFE9E3zktOq.jpg",
+    image: "https://v3b.fal.media/files/b/0a9ebc2b/pP1IlI_210h36uTpSvgsI_60f57d90e9f94c849f9c997c38ce3ddd.jpg",
     imageCredit: "Generated via Fal.ai",
     content: [
       {
@@ -803,7 +803,7 @@ export const blogPosts: BlogPost[] = [
     category: "AI Automation",
     readTime: "7 min read",
     excerpt: "Large competitors have enterprise software, dedicated ops teams, and budgets for things that just work. Small businesses in Windsor and Ontario are closing that gap with targeted AI automation and some of them are outoperating much bigger players.",
-    image: "https://v3b.fal.media/files/b/0a9e363b/jGwdqUQ-e3tQsp2uGf-Mq.jpg",
+    image: "https://v3b.fal.media/files/b/0a9ebc2c/DG-wNTigsRPmo0CT8IJ12_9ff2584182294b1280f4125818c096f8.jpg",
     imageCredit: "Generated via Fal.ai",
     content: [
       {
@@ -859,7 +859,7 @@ export const blogPosts: BlogPost[] = [
     category: "Guide",
     readTime: "8 min read",
     excerpt: "SaaS tools are fast to start. Custom software is expensive to build but sometimes the only answer. Here is a practical framework for making the right call before you commit to either.",
-    image: "https://v3b.fal.media/files/b/0a9e363c/HYSZRPeBpvca5DcVFbRm7.jpg",
+    image: "https://v3b.fal.media/files/b/0a9ebc2d/_GIMlreq5IZ6y_zO1y8Iv_0605fc8bc4d74f3e861c708ca26ad293.jpg",
     imageCredit: "Generated via Fal.ai",
     content: [
       {
@@ -929,7 +929,7 @@ export const blogPosts: BlogPost[] = [
     category: "Guide",
     readTime: "7 min read",
     excerpt: "Business automation is not a technology trend. It is the practice of removing humans from tasks that do not need humans. Here is a plain-English explanation of what it is, how it works, and where to start.",
-    image: "https://v3b.fal.media/files/b/0a9e363d/bKrHhrUiYXZrYYCNyOAbs.jpg",
+    image: "https://v3b.fal.media/files/b/0a9ebc2e/ft4geVw-zCf6rtUA0Apbd_50857a9e4e874709974c5c9413c729f3.jpg",
     imageCredit: "Generated via Fal.ai",
     content: [
       {
@@ -991,7 +991,7 @@ export const blogPosts: BlogPost[] = [
     category: "Guide",
     readTime: "7 min read",
     excerpt: "Automation pricing is one of the most opaque corners of the tech industry. Here is an honest breakdown of what simple, mid-complexity, and full operational automation actually costs and how to evaluate whether the return is there.",
-    image: "https://v3b.fal.media/files/b/0a9e363d/wH8aGFySVXNINk6fYg4FD.jpg",
+    image: "https://v3b.fal.media/files/b/0a9ebc2f/jrLJhHx0sdTyTlhPHRVUn_7475bdda8a754bc487e5782e7b6c8373.jpg",
     imageCredit: "Generated via Fal.ai",
     content: [
       {
@@ -1056,7 +1056,7 @@ export const blogPosts: BlogPost[] = [
     category: "Guide",
     readTime: "6 min read",
     excerpt: "Not every business should automate right now. Here are seven signs that the conditions are right and three signs that automation would be money well wasted until something changes.",
-    image: "https://v3b.fal.media/files/b/0a9e363e/ayUAg0aOnt9a29xselpRd.jpg",
+    image: "https://v3b.fal.media/files/b/0a9ebc3d/YD_7fptjliq8lihMcbes2_d95141aa951f4311800d552ffdd080eb.jpg",
     imageCredit: "Generated via Fal.ai",
     content: [
       {
@@ -1111,7 +1111,7 @@ export const blogPosts: BlogPost[] = [
     category: "Automation Strategy",
     readTime: "7 min read",
     excerpt: "A CRM is only as useful as the data inside it. Manual entry guarantees the data will be incomplete, inconsistent, and out of date. Here are the five CRM tasks small businesses automate first and why each one matters.",
-    image: "https://v3b.fal.media/files/b/0a9e363e/SY1XOgd2YgR2mjFQgYVf3.jpg",
+    image: "https://v3b.fal.media/files/b/0a9ebc31/d8u65YRbKUcGQL4ummj7p_94002da8e8904cd8910e9a6780080666.jpg",
     imageCredit: "Generated via Fal.ai",
     content: [
       {
@@ -1165,7 +1165,7 @@ export const blogPosts: BlogPost[] = [
     category: "Guide",
     readTime: "7 min read",
     excerpt: "The AI automation space has a lot of agencies and a lot of vague promises. Here is how to tell the real ones from the ones who will sell you a flowchart and disappear, with specific questions to ask before you sign anything.",
-    image: "https://v3b.fal.media/files/b/0a9e363f/WPAJ_fObxqq0npt0RnLOq.jpg",
+    image: "https://v3b.fal.media/files/b/0a9ebc32/Lct-I5SwKtKQgsp4pfDZY_c2ad2de615c547e9b703f73424f06209.jpg",
     imageCredit: "Generated via Fal.ai",
     content: [
       {
@@ -1231,7 +1231,7 @@ export const blogPosts: BlogPost[] = [
     category: "AI Automation",
     readTime: "7 min read",
     excerpt: "The return question on healthcare staffing automation is completely valid. Here are the actual numbers: where the cost lives in a manual operation, where automation creates return, and what year-one results typically look like.",
-    image: "https://v3b.fal.media/files/b/0a9e363f/kHybfPWiOqteRwf8uMAo8.jpg",
+    image: "https://v3b.fal.media/files/b/0a9ebc33/Ywlrb-EnBsYktvo6H0LT8_85f7b1061ebc408f9e00200666d54fc6.jpg",
     imageCredit: "Generated via Fal.ai",
     content: [
       {
@@ -1293,7 +1293,7 @@ export const blogPosts: BlogPost[] = [
     category: "Guide",
     readTime: "8 min read",
     excerpt: "We use these tools across our clients' businesses every day. Here is an honest review of what works, what has limitations, and when the right answer is to stop buying tools and start building something that fits.",
-    image: "https://v3b.fal.media/files/b/0a9e3640/__dX6EIQeRhbnxBodzsJ0.jpg",
+    image: "https://v3b.fal.media/files/b/0a9ebc34/q2ign_U-Q0wSxy_mvcnJE_3cc3dcb425be4dc79f5eb1b27926a913.jpg",
     imageCredit: "Generated via Fal.ai",
     content: [
       {

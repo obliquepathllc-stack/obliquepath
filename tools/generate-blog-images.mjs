@@ -1,10 +1,13 @@
 #!/usr/bin/env node
 /**
- * Generate Fal.ai blog images for all 15 blog posts.
+ * Generate Fal.ai blog images using flux-pro/v1.1-ultra.
+ * Switched from flux/dev after garbled-text-on-paper artifacts were found
+ * in production (open books/documents render fake illegible text).
+ * All prompts below avoid open books, documents, or any readable surface.
  *
  * Usage:
  *   node tools/generate-blog-images.mjs
- *   node tools/generate-blog-images.mjs --slug healthcare-staffing-automation-guide
+ *   node tools/generate-blog-images.mjs --slug property-management-automation-guide
  *
  * Output: .tmp/blog-images.json with { slug: url } map
  * After running: update image fields in lib/blog-posts.ts
@@ -19,7 +22,6 @@ const ROOT = join(__dirname, "..");
 const OUTPUT_DIR = join(ROOT, ".tmp");
 mkdirSync(OUTPUT_DIR, { recursive: true });
 
-// Load env
 const envPath = join(ROOT, ".env.local");
 const envRaw = readFileSync(envPath, "utf8");
 const env = {};
@@ -34,45 +36,99 @@ if (!FAL_KEY) {
   process.exit(1);
 }
 
+const NO_TEXT = "no text, no books, no papers, no documents, no readable writing of any kind";
+
 const posts = [
   {
     slug: "property-management-automation-guide",
-    prompt:
-      "Cinematic overhead flat-lay of a property manager's dark wood desk at night: a printed lease agreement, a set of keys, a small house keychain, warm amber desk lamp glow, premium editorial real-estate aesthetic, muted tones, no people, no text visible",
+    prompt: `Cinematic editorial photograph of a modern house key resting on a dark wood desk next to a small architectural model of a townhouse, soft golden hour light from a window, shallow depth of field, premium real estate brand photography, ${NO_TEXT}, clean minimal composition`,
   },
   {
     slug: "recruiting-agency-automation",
-    prompt:
-      "Cinematic close-up of a clean desk with a stack of resumes neatly fanned out and a laptop showing a soft glowing pipeline interface, warm ambient light, premium editorial business aesthetic, muted earth tones, no people, no readable text",
+    prompt: `Cinematic editorial photograph of two empty modern office chairs facing each other across a small round table, warm ambient light, soft shadows, premium business photography, no people, ${NO_TEXT}`,
   },
   {
     slug: "hvac-dispatch-software",
-    prompt:
-      "Cinematic close-up of a service van dashboard at dusk with a phone mounted showing a soft glowing map pin, warm amber light through the windshield, premium editorial trades aesthetic, muted tones, no people visible",
+    prompt: `Cinematic close-up photograph of a service van dashboard at dusk, a phone mounted on the windshield showing a soft glowing abstract map interface with no legible labels, warm amber light, premium editorial trades photography, no people, ${NO_TEXT}`,
   },
   {
     slug: "law-firm-intake-automation",
-    prompt:
-      "Cinematic flat-lay of a leather-bound legal document and a fountain pen on a dark mahogany desk, soft warm lamp light, a small brass scale of justice figurine softly out of focus in the background, premium editorial legal aesthetic, muted tones, no people",
+    prompt: `Cinematic editorial photograph of a closed leather portfolio and a fountain pen resting on a dark mahogany desk, a small brass scale of justice figurine softly out of focus in the background, warm lamp light, premium legal brand photography, ${NO_TEXT}`,
   },
   {
     slug: "real-estate-lead-automation",
-    prompt:
-      "Cinematic shot of a modern house key resting on a printed property listing sheet on a dark desk, warm golden hour light through a window, premium real estate editorial aesthetic, muted warm tones, no people, no readable text",
+    prompt: `Cinematic editorial photograph of a modern house key resting on a dark wood desk next to a small architectural model of a townhouse, soft golden hour light from a window, shallow depth of field, premium real estate brand photography, ${NO_TEXT}, clean minimal composition`,
   },
   {
     slug: "ai-chatbot-small-business",
-    prompt:
-      "Cinematic close-up of a laptop screen glowing softly in a dark room with a subtle chat bubble interface light, warm ambient ember tones reflecting off the desk, premium minimal tech editorial aesthetic, no people, no readable text",
+    prompt: `Cinematic close-up photograph of a laptop screen glowing softly in a dark room, the screen showing an abstract soft-focus chat bubble interface with no legible text, warm ember-toned reflections on the desk, premium minimal tech photography, no people, ${NO_TEXT}`,
   },
   {
     slug: "insurance-broker-automation",
-    prompt:
-      "Cinematic flat-lay of an insurance policy folder and a calculator on a dark desk, a small umbrella figurine softly out of focus nearby, warm desk lamp glow, premium editorial finance aesthetic, muted tones, no people, no readable text",
+    prompt: `Cinematic editorial photograph of a closed leather folder and a calculator on a dark desk, a small umbrella figurine softly out of focus nearby, warm desk lamp glow, premium finance brand photography, ${NO_TEXT}`,
+  },
+  {
+    slug: "healthcare-staffing-automation-guide",
+    prompt: `Cinematic editorial photograph of a stethoscope coiled neatly beside a closed badge holder on a dark desk at night, warm amber desk lamp glow, premium healthcare brand photography, shallow depth of field, no people, ${NO_TEXT}`,
+  },
+  {
+    slug: "healthcare-timesheet-invoice-automation",
+    prompt: `Cinematic close-up photograph of a sealed envelope and a pen resting on a dark desk, soft warm ambient light, clean minimal composition, shallow depth of field, premium editorial still-life photography, ${NO_TEXT}`,
+  },
+  {
+    slug: "ai-for-healthcare-staffing-workflows",
+    prompt: `Cinematic wide photograph down a clean modern hospital corridor, empty, soft natural light from windows on one side, warm neutral tones, premium architectural photography, calm and trustworthy, no people, ${NO_TEXT}`,
+  },
+  {
+    slug: "automate-invoice-follow-up",
+    prompt: `Cinematic editorial photograph of a sealed envelope standing upright against a closed laptop on a dark wood desk, warm desk lamp glow, premium business still-life photography, shallow depth of field, ${NO_TEXT}`,
+  },
+  {
+    slug: "ai-voice-agent-small-business",
+    prompt: `Cinematic close-up photograph of a modern smartphone face-up on a dark surface, screen showing a soft glowing abstract waveform with no legible text, warm screen glow against a dark ambient background, premium product photography, ${NO_TEXT}`,
+  },
+  {
+    slug: "cost-of-manual-scheduling",
+    prompt: `Cinematic close-up photograph of a vintage analog desk clock next to a coffee cup going cold, warm desk lamp light, premium editorial still-life photography, muted neutral tones, shallow depth of field, ${NO_TEXT}`,
+  },
+  {
+    slug: "business-automation-windsor-ontario",
+    prompt: `Cinematic wide photograph of a Canadian city skyline at dusk, warm amber office building lights reflected on wet pavement below, muted blue-gray sky, premium editorial photography, atmospheric depth, no people visible, ${NO_TEXT}`,
+  },
+  {
+    slug: "custom-software-vs-saas",
+    prompt: `Cinematic editorial photograph of two diverging paths in a minimalist architectural walkway, one path leading toward soft warm light and one toward cool blue light, premium conceptual photography, clean composition, no people, ${NO_TEXT}`,
+  },
+  {
+    slug: "what-is-business-automation",
+    prompt: `Cinematic close-up photograph of clean brass mechanical gears in soft focus on the left transitioning into a modern laptop keyboard in sharp focus on the right, the contrast of old and new, warm ambient light, dark background, premium editorial photography, ${NO_TEXT}`,
+  },
+  {
+    slug: "business-automation-cost-breakdown",
+    prompt: `Cinematic editorial photograph of a modern calculator beside a small neat stack of coins on a dark matte desk, warm pool of light from above, premium still-life photography, minimal composition, muted warm tones, ${NO_TEXT}`,
+  },
+  {
+    slug: "signs-business-ready-for-automation",
+    prompt: `Cinematic close-up photograph of a glowing green traffic light against a dark blurred city background at dusk, premium conceptual editorial photography, shallow depth of field, muted tones, no people, ${NO_TEXT}`,
+  },
+  {
+    slug: "crm-automation-small-business",
+    prompt: `Cinematic overhead photograph of a tidy desk with a laptop showing a soft glowing abstract pipeline interface with no legible text, a small potted plant beside it, warm ambient light, premium editorial aesthetic, muted earth palette, ${NO_TEXT}`,
+  },
+  {
+    slug: "how-to-choose-automation-agency",
+    prompt: `Cinematic editorial photograph of two modern doors side by side in a minimalist hallway, one slightly open with warm light spilling through, one closed, premium architectural conceptual photography, no people, ${NO_TEXT}`,
+  },
+  {
+    slug: "healthcare-staffing-automation-roi",
+    prompt: `Cinematic close-up photograph of a small neat stack of coins arranged in an ascending staircase pattern on a dark desk, warm ambient light, clean premium editorial still-life photography, muted warm tones, ${NO_TEXT}`,
+  },
+  {
+    slug: "best-business-automation-tools-2026",
+    prompt: `Cinematic flat-lay photograph of four modern devices — laptop, tablet, phone, small speaker — arranged neatly on a dark matte desk, all screens off, clean product photography aesthetic, soft overhead warm light, premium minimal composition, ${NO_TEXT}`,
   },
 ];
 
-// Filter by slug if --slug arg provided
 const args = process.argv.slice(2);
 const slugFilter = args.includes("--slug") ? args[args.indexOf("--slug") + 1] : null;
 const toGenerate = slugFilter ? posts.filter((p) => p.slug === slugFilter) : posts;
@@ -82,7 +138,7 @@ if (toGenerate.length === 0) {
   process.exit(1);
 }
 
-const OUTPUT_FILE = join(OUTPUT_DIR, "blog-images.json");
+const OUTPUT_FILE = join(OUTPUT_DIR, "blog-images-v2.json");
 let results = {};
 try {
   results = JSON.parse(readFileSync(OUTPUT_FILE, "utf8"));
@@ -92,9 +148,8 @@ try {
 
 async function generateImage(slug, prompt) {
   console.log(`\n🎨  Generating: ${slug}`);
-  console.log(`    Prompt: ${prompt.slice(0, 80)}...`);
 
-  const res = await fetch("https://fal.run/fal-ai/flux/dev", {
+  const res = await fetch("https://fal.run/fal-ai/flux-pro/v1.1-ultra", {
     method: "POST",
     headers: {
       Authorization: `Key ${FAL_KEY}`,
@@ -102,9 +157,7 @@ async function generateImage(slug, prompt) {
     },
     body: JSON.stringify({
       prompt,
-      image_size: "landscape_16_9",
-      num_inference_steps: 28,
-      guidance_scale: 3.5,
+      aspect_ratio: "16:9",
       num_images: 1,
       enable_safety_checker: true,
     }),
@@ -122,11 +175,9 @@ async function generateImage(slug, prompt) {
 }
 
 async function main() {
-  console.log(`\n🖼️   Generating ${toGenerate.length} blog image(s) via Fal.ai flux/dev\n`);
+  console.log(`\n🖼️   Generating ${toGenerate.length} blog image(s) via Fal.ai flux-pro/v1.1-ultra\n`);
 
-  let generated = 0;
-  let skipped = 0;
-  let failed = 0;
+  let generated = 0, skipped = 0, failed = 0;
 
   for (const post of toGenerate) {
     if (results[post.slug] && !slugFilter) {
@@ -157,24 +208,13 @@ async function main() {
       failed++;
     }
 
-    // Rate limit: 1 per 3 seconds
     if (toGenerate.indexOf(post) < toGenerate.length - 1) {
-      await new Promise((r) => setTimeout(r, 3000));
+      await new Promise((r) => setTimeout(r, 2000));
     }
   }
 
-  console.log(`\n📊  Results:`);
-  console.log(`    Generated: ${generated}`);
-  console.log(`    Skipped:   ${skipped}`);
-  console.log(`    Failed:    ${failed}`);
-  console.log(`\n📄  Image URLs saved to: ${OUTPUT_FILE}`);
-
-  console.log("\n📋  Copy these into lib/blog-posts.ts:\n");
-  for (const [slug, url] of Object.entries(results)) {
-    console.log(`  slug: "${slug}"`);
-    console.log(`  image: "${url}"`);
-    console.log();
-  }
+  console.log(`\n📊  Results: Generated: ${generated} | Skipped: ${skipped} | Failed: ${failed}`);
+  console.log(`📄  Saved to: ${OUTPUT_FILE}`);
 }
 
 main().catch((err) => {
