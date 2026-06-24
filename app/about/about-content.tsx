@@ -90,7 +90,7 @@ export function AboutContent() {
               <p className="text-sm font-semibold text-foreground mb-1">Johnpaul Sani</p>
               <p className="text-muted-foreground/70 text-sm mb-6">Founder, Oblique Path</p>
               <p className="text-foreground/80 leading-relaxed mb-7">
-                We started Oblique Path because too many businesses/companies get stuck choosing between slow agencies and software that was never built for them. I&apos;m an engineer by background and an entrepreneur by nature, right now I&apos;m hands-on with everything we build, no handoffs, no middlemen. If something&apos;s eating up your time, that&apos;s exactly the kind of problem we like solving.
+                We started Oblique Path because too many businesses/companies get stuck choosing between slow agencies and software that was never built for them. I&apos;m an engineer by background and an entrepreneur by nature, right now I&apos;m hands-on with everything we build, no handoffs. If something&apos;s eating up your time, that&apos;s exactly the kind of problem we like solving.
               </p>
               <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
                 <a href="mailto:johnpaul@obliquepath.dev" className="text-primary hover:underline">
@@ -131,6 +131,39 @@ export function AboutContent() {
                 </a>
                 <a
                   href="https://www.linkedin.com/in/igbevwunureogheneekagha"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
+                  LinkedIn ↗
+                </a>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Victoria */}
+          <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-16 items-start">
+            <motion.div {...reveal()} className="relative w-full max-w-[280px] aspect-[2/3] rounded-2xl overflow-hidden border border-border">
+              <Image
+                src="/team/victoria-ikpeze.jpg"
+                alt="Victoria Ikpeze, Business Strategy and Operations at Oblique Path"
+                fill
+                className="object-cover"
+                sizes="280px"
+              />
+            </motion.div>
+            <motion.div {...reveal(0.1)}>
+              <p className="text-sm font-semibold text-foreground mb-1">Victoria Ikpeze</p>
+              <p className="text-muted-foreground/70 text-sm mb-6">Business Strategy &amp; Operations</p>
+              <p className="text-foreground/80 leading-relaxed mb-7">
+                Victoria runs the business side of Oblique Path — strategy and operations — so projects stay organized and clients get a consistent experience from first call to launch.
+              </p>
+              <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
+                <a href="mailto:victoria@obliquepath.dev" className="text-primary hover:underline">
+                  victoria@obliquepath.dev
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/victoria-ikpeze"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-primary hover:underline"
