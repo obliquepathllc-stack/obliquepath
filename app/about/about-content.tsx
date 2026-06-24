@@ -2,6 +2,7 @@
 
 import { PageLayout } from "@/components/page-layout";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "@phosphor-icons/react";
 
@@ -60,6 +61,86 @@ export function AboutContent() {
               ))}
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Founder */}
+      <section className="px-4 lg:px-16 py-16 md:py-24 border-y border-border bg-secondary/30">
+        <div className="container max-w-6xl mx-auto flex flex-col gap-20">
+
+          <motion.div {...reveal()}>
+            <p className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground font-medium">The Team</p>
+          </motion.div>
+
+          {/* Johnpaul */}
+          <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-16 items-start">
+            <motion.div {...reveal()} className="relative w-full max-w-[280px] aspect-[2/3] rounded-2xl overflow-hidden border border-border">
+              <Image
+                src="/team/johnpaul-sani.jpg"
+                alt="Johnpaul Sani, Founder of Oblique Path"
+                fill
+                className="object-cover"
+                sizes="280px"
+              />
+            </motion.div>
+            <motion.div {...reveal(0.1)}>
+              <h2 className="text-2xl md:text-3xl font-bold tracking-[-0.02em] leading-snug mb-5">
+                Hi, I&apos;m Johnpaul.
+              </h2>
+              <p className="text-sm font-semibold text-foreground mb-1">Johnpaul Sani</p>
+              <p className="text-muted-foreground/70 text-sm mb-6">Founder, Oblique Path</p>
+              <p className="text-foreground/80 leading-relaxed mb-7">
+                We started Oblique Path because too many businesses/companies get stuck choosing between slow agencies and software that was never built for them. I&apos;m an engineer by background and an entrepreneur by nature, right now I&apos;m hands-on with everything we build, no handoffs, no middlemen. If something&apos;s eating up your time, that&apos;s exactly the kind of problem we like solving.
+              </p>
+              <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
+                <a href="mailto:johnpaul@obliquepath.dev" className="text-primary hover:underline">
+                  johnpaul@obliquepath.dev
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/jpsani"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
+                  LinkedIn ↗
+                </a>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Clinton */}
+          <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-16 items-start">
+            <motion.div {...reveal()} className="relative w-full max-w-[280px] aspect-[2/3] rounded-2xl overflow-hidden border border-border">
+              <Image
+                src="/team/clinton-ekagha.jpg"
+                alt="Clinton Ekagha, AI Engineer and Full-Stack Developer at Oblique Path"
+                fill
+                className="object-cover"
+                sizes="280px"
+              />
+            </motion.div>
+            <motion.div {...reveal(0.1)}>
+              <p className="text-sm font-semibold text-foreground mb-1">Clinton Ekagha</p>
+              <p className="text-muted-foreground/70 text-sm mb-6">AI Engineer &amp; Full-Stack Developer</p>
+              <p className="text-foreground/80 leading-relaxed mb-7">
+                Clinton builds and ships the AI systems and platforms behind Oblique Path&apos;s client work — from automation pipelines to the full-stack applications they run on.
+              </p>
+              <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
+                <a href="mailto:clinton.e@obliquepath.dev" className="text-primary hover:underline">
+                  clinton.e@obliquepath.dev
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/igbevwunureogheneekagha"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
+                  LinkedIn ↗
+                </a>
+              </div>
+            </motion.div>
+          </div>
+
         </div>
       </section>
 

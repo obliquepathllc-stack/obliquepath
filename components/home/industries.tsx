@@ -57,16 +57,18 @@ export function Industries() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.2 }}
-          className="flex flex-wrap gap-3 mb-8"
+          className="flex flex-wrap items-center gap-x-5 gap-y-3 mb-8"
         >
-          {industries.map((industry) => (
-            <motion.span
-              key={industry}
-              variants={pill}
-              className="border border-border/50 rounded-full px-4 py-2 text-base text-foreground/85 bg-card/50 font-medium hover:border-primary/30 hover:bg-primary/[0.05] transition-colors duration-300 cursor-default"
-            >
-              {industry}
-            </motion.span>
+          {industries.map((industry, i) => (
+            <div key={industry} className="flex items-center gap-5">
+              {i > 0 && <span className="hidden sm:block w-1 h-1 rounded-full bg-muted-foreground/30" />}
+              <motion.span
+                variants={pill}
+                className="text-base md:text-lg text-foreground/85 font-medium"
+              >
+                {industry}
+              </motion.span>
+            </div>
           ))}
         </motion.div>
 

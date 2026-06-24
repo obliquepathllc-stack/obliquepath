@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "@phosphor-icons/react";
-import { FloatingPaths } from "@/components/ui/background-paths";
 
 const clientLogos = [
   { name: "First Point Cleaners", src: "/clients-logo/first-point-cleaners.jpg" },
@@ -27,17 +26,10 @@ const HERO_VIDEO = process.env.NEXT_PUBLIC_HERO_VIDEO_URL;
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[100dvh] flex flex-col overflow-hidden">
+    <section className="relative min-h-[100dvh] flex flex-col overflow-hidden bg-background">
 
-      {/* Animated path lines — blue brand texture behind everything */}
-      <div className="absolute inset-0 z-[1] opacity-55 pointer-events-none">
-        <FloatingPaths position={1} />
-        <FloatingPaths position={-1} />
-      </div>
-
-      {/* Headline anchor glow */}
-      <div className="absolute top-[10%] -left-[8%] w-[700px] h-[700px] rounded-full bg-primary/[0.10] blur-[160px] pointer-events-none z-[2]" />
-      <div className="absolute top-[0%] right-[-5%] w-[450px] h-[450px] rounded-full bg-primary/[0.07] blur-[140px] pointer-events-none z-[2]" />
+      {/* Single quiet anchor glow — static, no motion, sits behind the headline */}
+      <div className="absolute top-[8%] left-[2%] w-[640px] h-[640px] rounded-full bg-primary/[0.08] blur-[170px] pointer-events-none z-[1]" />
 
       {/* Background video — only renders when URL is set */}
       {HERO_VIDEO && (
@@ -63,35 +55,35 @@ export function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-[11px] tracking-[0.3em] uppercase text-muted-foreground font-medium mb-10"
+            className="text-[11px] tracking-[0.3em] uppercase text-muted-foreground font-medium mb-5"
           >
             AI Automation & Custom Software
           </motion.p>
 
-          {/* Headline — line-by-line reveal */}
-          <h1 className="text-[clamp(38px,7.5vw,104px)] font-black tracking-[-0.03em] leading-[0.92] mb-14">
+          {/* Headline — line-by-line reveal, gradient pulled back to the closing phrase only */}
+          <h1 className="text-[clamp(32px,4.8vw,68px)] font-bold tracking-[-0.02em] leading-[1.05] mb-7">
             <motion.span className="block" {...lineEntry(0.2)}>
               Stop Running Manually.
             </motion.span>
-            <motion.span className="gradient-text block" {...lineEntry(0.42)}>
-              Build Systems That Work Without You.
+            <motion.span className="block" {...lineEntry(0.42)}>
+              Build Systems That <span className="gradient-text">Work Without You.</span>
             </motion.span>
           </h1>
 
-          {/* Capability chips */}
+          {/* Capabilities — quiet inline list, not badge pills */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.62, ease: [0.22, 1, 0.36, 1] }}
-            className="flex flex-wrap gap-2 mb-10"
+            className="flex flex-wrap items-center gap-3 mb-7"
           >
-            {["AI Automation", "Custom Software", "Mobile Apps", "Voice Agents"].map((cap) => (
-              <span
-                key={cap}
-                className="text-[11px] font-medium tracking-wide text-muted-foreground border border-border rounded-full px-3.5 py-1.5 bg-card/60"
-              >
-                {cap}
-              </span>
+            {["AI Automation", "Custom Software", "Mobile Apps", "Voice Agents"].map((cap, i) => (
+              <div key={cap} className="flex items-center gap-3">
+                {i > 0 && <span className="w-[3px] h-[3px] rounded-full bg-muted-foreground/40" />}
+                <span className="text-[12px] font-medium tracking-wide text-muted-foreground/80">
+                  {cap}
+                </span>
+              </div>
             ))}
           </motion.div>
 

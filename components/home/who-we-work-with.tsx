@@ -80,15 +80,15 @@ export function WhoWeWorkWith() {
                   <h3 className="text-xl font-bold text-foreground mb-3 tracking-tight">{segment.title}</h3>
                   <p className="text-foreground/75 leading-relaxed mb-4">{segment.description}</p>
 
-                  {/* Outcome chip */}
-                  <span className="inline-flex items-center text-[11px] font-semibold text-primary border border-primary/25 bg-primary/[0.07] rounded-full px-3 py-1.5">
+                  {/* Outcome — quiet emphasis, no badge shape */}
+                  <p className="text-[13px] font-semibold text-primary tracking-wide">
                     {segment.outcome}
-                  </span>
+                  </p>
                 </div>
 
-                <div className="flex flex-wrap lg:flex-col gap-2 lg:items-end">
+                <div className="flex flex-wrap lg:flex-col gap-x-4 gap-y-1.5 lg:items-end">
                   {segment.tags.map((tag) => (
-                    <span key={tag} className="text-[11px] font-medium text-muted-foreground border border-border rounded-full px-3 py-1 bg-card">
+                    <span key={tag} className="text-[11px] font-medium tracking-wide text-muted-foreground/70">
                       {tag}
                     </span>
                   ))}

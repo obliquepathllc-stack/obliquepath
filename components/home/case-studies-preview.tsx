@@ -116,8 +116,8 @@ function PreviewCard({ preview, index }: { preview: typeof previews[0]; index: n
         />
 
         <div className="relative z-10 flex flex-col h-full gap-5">
-          {/* Tag */}
-          <span className="text-[11px] tracking-wide font-medium text-muted-foreground border border-border rounded-full px-3 py-1 self-start">
+          {/* Tag — quiet kicker label, not a badge */}
+          <span className="text-[11px] tracking-[0.12em] uppercase font-semibold text-primary/80 self-start">
             {preview.tag}
           </span>
 
