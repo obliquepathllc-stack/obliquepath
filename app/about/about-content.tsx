@@ -13,6 +13,33 @@ const reveal = (delay = 0) => ({
   transition: { duration: 0.65, delay, ease: [0.32, 0.72, 0, 1] as [number, number, number, number] },
 });
 
+const team = [
+  {
+    name: "Johnpaul Sani",
+    title: "Engineer & Entrepreneur",
+    photo: "/team/johnpaul-sani.jpg",
+    alt: "Johnpaul Sani, Founder of Oblique Path",
+    email: "johnpaul@obliquepath.dev",
+    linkedin: "https://www.linkedin.com/in/jpsani",
+  },
+  {
+    name: "Clinton Ekagha",
+    title: "AI Engineer & Full-Stack Developer",
+    photo: "/team/clinton-ekagha.jpg",
+    alt: "Clinton Ekagha, AI Engineer and Full-Stack Developer at Oblique Path",
+    email: "clinton.e@obliquepath.dev",
+    linkedin: "https://www.linkedin.com/in/igbevwunureogheneekagha",
+  },
+  {
+    name: "Victoria Ikpeze",
+    title: "Business Strategy & Operations",
+    photo: "/team/victoria-ikpeze.jpg",
+    alt: "Victoria Ikpeze, Business Strategy and Operations at Oblique Path",
+    email: "victoria@obliquepath.dev",
+    linkedin: "https://www.linkedin.com/in/victoria-ikpeze",
+  },
+];
+
 const impactStats = [
   { value: "85%", label: "Avg. time saved on admin tasks" },
   { value: "3×", label: "Customer response rate improvement" },
@@ -64,114 +91,52 @@ export function AboutContent() {
         </div>
       </section>
 
-      {/* Founder */}
+      {/* Team */}
       <section className="px-4 lg:px-16 py-16 md:py-24 border-y border-border bg-secondary/30">
-        <div className="container max-w-6xl mx-auto flex flex-col gap-20">
+        <div className="container max-w-6xl mx-auto">
 
-          <motion.div {...reveal()}>
-            <p className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground font-medium">The Team</p>
+          <motion.div {...reveal()} className="max-w-2xl mb-14">
+            <p className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground font-medium mb-5">The Team</p>
+            <p className="text-foreground/80 leading-relaxed text-lg">
+              We started Oblique Path because too many businesses/companies get stuck choosing between slow agencies and software that was never built for them. It&apos;s a small, hands-on team — we scope it, build it, and stick around after it ships.
+            </p>
           </motion.div>
 
-          {/* Johnpaul */}
-          <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-16 items-start">
-            <motion.div {...reveal()} className="relative w-full max-w-[280px] aspect-[2/3] rounded-2xl overflow-hidden border border-border">
-              <Image
-                src="/team/johnpaul-sani.jpg"
-                alt="Johnpaul Sani, Founder of Oblique Path"
-                fill
-                className="object-cover"
-                sizes="280px"
-              />
-            </motion.div>
-            <motion.div {...reveal(0.1)}>
-              <h2 className="text-2xl md:text-3xl font-bold tracking-[-0.02em] leading-snug mb-5">
-                Hi, I&apos;m Johnpaul.
-              </h2>
-              <p className="text-sm font-semibold text-foreground mb-1">Johnpaul Sani</p>
-              <p className="text-muted-foreground/70 text-sm mb-6">Founder, Oblique Path</p>
-              <p className="text-foreground/80 leading-relaxed mb-7">
-                We started Oblique Path because too many businesses/companies get stuck choosing between slow agencies and software that was never built for them. I&apos;m an engineer by background and an entrepreneur by nature, right now I&apos;m hands-on with everything we build, no handoffs. If something&apos;s eating up your time, that&apos;s exactly the kind of problem we like solving.
-              </p>
-              <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
-                <a href="mailto:johnpaul@obliquepath.dev" className="text-primary hover:underline">
-                  johnpaul@obliquepath.dev
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/jpsani"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary hover:underline"
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-10">
+            {team.map((person, i) => (
+              <motion.div key={person.name} {...reveal(i * 0.1)} className="flex flex-col items-start">
+                <motion.div
+                  initial={{ opacity: 0, scale: 1.06, filter: "grayscale(1)" }}
+                  whileInView={{ opacity: 1, scale: 1, filter: "grayscale(0)" }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.9, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                  className="group relative w-full max-w-[180px] aspect-[2/3] rounded-2xl overflow-hidden border border-border mb-5"
                 >
-                  LinkedIn ↗
-                </a>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Clinton */}
-          <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-16 items-start">
-            <motion.div {...reveal()} className="relative w-full max-w-[280px] aspect-[2/3] rounded-2xl overflow-hidden border border-border">
-              <Image
-                src="/team/clinton-ekagha.jpg"
-                alt="Clinton Ekagha, AI Engineer and Full-Stack Developer at Oblique Path"
-                fill
-                className="object-cover"
-                sizes="280px"
-              />
-            </motion.div>
-            <motion.div {...reveal(0.1)}>
-              <p className="text-sm font-semibold text-foreground mb-1">Clinton Ekagha</p>
-              <p className="text-muted-foreground/70 text-sm mb-6">AI Engineer &amp; Full-Stack Developer</p>
-              <p className="text-foreground/80 leading-relaxed mb-7">
-                Clinton builds and ships the AI systems and platforms behind Oblique Path&apos;s client work — from automation pipelines to the full-stack applications they run on.
-              </p>
-              <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
-                <a href="mailto:clinton.e@obliquepath.dev" className="text-primary hover:underline">
-                  clinton.e@obliquepath.dev
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/igbevwunureogheneekagha"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary hover:underline"
-                >
-                  LinkedIn ↗
-                </a>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Victoria */}
-          <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-16 items-start">
-            <motion.div {...reveal()} className="relative w-full max-w-[280px] aspect-[2/3] rounded-2xl overflow-hidden border border-border">
-              <Image
-                src="/team/victoria-ikpeze.jpg"
-                alt="Victoria Ikpeze, Business Strategy and Operations at Oblique Path"
-                fill
-                className="object-cover"
-                sizes="280px"
-              />
-            </motion.div>
-            <motion.div {...reveal(0.1)}>
-              <p className="text-sm font-semibold text-foreground mb-1">Victoria Ikpeze</p>
-              <p className="text-muted-foreground/70 text-sm mb-6">Business Strategy &amp; Operations</p>
-              <p className="text-foreground/80 leading-relaxed mb-7">
-                Victoria runs the business side of Oblique Path — strategy and operations — so projects stay organized and clients get a consistent experience from first call to launch.
-              </p>
-              <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
-                <a href="mailto:victoria@obliquepath.dev" className="text-primary hover:underline">
-                  victoria@obliquepath.dev
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/victoria-ikpeze"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary hover:underline"
-                >
-                  LinkedIn ↗
-                </a>
-              </div>
-            </motion.div>
+                  <Image
+                    src={person.photo}
+                    alt={person.alt}
+                    fill
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                    sizes="180px"
+                  />
+                </motion.div>
+                <p className="text-sm font-semibold text-foreground mb-1">{person.name}</p>
+                <p className="text-muted-foreground/70 text-sm mb-4">{person.title}</p>
+                <div className="flex flex-col gap-1.5 text-sm">
+                  <a href={`mailto:${person.email}`} className="text-primary hover:underline">
+                    {person.email}
+                  </a>
+                  <a
+                    href={person.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary hover:underline"
+                  >
+                    LinkedIn ↗
+                  </a>
+                </div>
+              </motion.div>
+            ))}
           </div>
 
         </div>
