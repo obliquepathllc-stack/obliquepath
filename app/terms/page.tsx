@@ -1,9 +1,12 @@
 import { PageLayout } from "@/components/page-layout";
 
-export const metadata = {
+import { buildMetadata } from "@/lib/metadata";
+
+export const metadata = buildMetadata({
   title: "Terms of Service | Oblique Path",
   description: "The terms governing use of obliquepath.dev and engagement with Oblique Path's automation and software services.",
-};
+  path: "/terms",
+});
 
 const sections = [
   {

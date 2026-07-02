@@ -1,9 +1,11 @@
+import { buildMetadata } from "@/lib/metadata";
 import { PageLayout } from "@/components/page-layout";
 
-export const metadata = {
+export const metadata = buildMetadata({
   title: "Privacy Policy | Oblique Path",
   description: "How Oblique Path collects, uses, and protects your information.",
-};
+  path: "/privacy",
+});
 
 const sections = [
   {

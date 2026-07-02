@@ -1,0 +1,37 @@
+# Oblique Path
+
+> AI automation systems and custom software for businesses done running manually.
+
+Oblique Path LLC builds AI automation systems, custom web and mobile platforms, and AI voice agents for small and mid-sized businesses ready to stop operating manually. Based in Windsor, Ontario — serving clients across Canada and the US. We scope, build, and support everything we ship. Typical time to first deployment: 4–6 weeks for automation, 4–5 months for full platforms.
+
+## Services
+
+- AI & Workflow Automation: intake automation, CRM integration, lead follow-up, document processing, AI agents
+- Custom Web Platforms & Applications: dashboards, client portals, staffing platforms, SaaS products
+- AI Voice Agents: inbound call handling, lead qualification, appointment booking, multi-channel AI
+- Mobile App Development: iOS & Android, React Native, app-backend integration
+
+## Case Studies
+
+- [AI Voice Agent](/case-studies/ai-voice-agent): 60 seconds from form fill to AI outbound call. Live demo available.
+- [Aerrand](/case-studies/aerrand): 70% faster onboarding through end-to-end automation.
+- [Junk Cycle](/case-studies/junk-cycle): 60% less time on scheduling — booking, confirmations, and dispatch automated.
+- [Harbor One Capital](/case-studies/harbor-one-capital): Automated client intake and document processing for a financial firm.
+- [Healthcare Staffing](/case-studies/healthcare-staffing): Shift scheduling, credential verification, and placement automation.
+
+## Blog
+
+Business automation insights, real case studies, and implementation guides: https://obliquepath.dev/blog
+
+Topics covered: AI automation for small business, workflow automation, voice agents, recruiting automation, property management automation, HVAC dispatch, franchise operations, healthcare staffing, legal intake.
+
+## Contact
+
+- Book a strategy call (free, 30 min): https://obliquepath.dev/book-demo
+- Email: info@obliquepath.dev
+- Location: Windsor, Ontario, Canada
+- Founder: Johnpaul Sani — johnpaul@obliquepath.dev
+
+## About
+
+Oblique Path is a small, hands-on team. We scope it, build it, and stick around after it ships. No outsourcing, no handoffs to junior developers.

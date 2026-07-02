@@ -5,9 +5,9 @@ import { ArrowRight } from "lucide-react";
 import { blogPosts } from "@/lib/blog-posts";
 
 export const metadata = buildMetadata({
-  title: "Notes from the Workshop | Oblique Path Blog",
+  title: "AI Automation Blog | Workflows, Software & Real Results | Oblique Path",
   description:
-    "Automation insights, real case studies, and honest takes on building systems that actually work. For growing businesses in Windsor, Toronto, Michigan, Chicago, and San Francisco.",
+    "Automation insights, real case studies, and honest takes on building systems that work. For growing businesses across Ontario, Michigan, and beyond.",
   path: "/blog",
 });
 

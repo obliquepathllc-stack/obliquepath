@@ -1,92 +1,41 @@
 import { MetadataRoute } from "next";
+import { blogPosts } from "@/lib/blog-posts";
+import { caseStudies } from "@/lib/case-studies";
 
-const BASE_URL = "https://obliquepath.dev";
-
-const caseStudySlugs = [
-  "healthcare-staffing",
-  "harbor-one-capital",
-  "junk-cycle",
-  "first-point-cleaners",
-  "aerrand",
-  "growtt",
-  "aquaprox-ai",
-  "anitrous",
-  "maher-aouli-realty",
-  "ai-voice-agent",
-  "ai-chatbot",
-  "law-firm-intake",
-  "hvac-dispatch-automation",
-  "recruiting-automation",
-  "property-management-automation",
-];
-
-const blogSlugs = [
-  "property-management-automation-guide",
-  "recruiting-agency-automation",
-  "hvac-dispatch-software",
-  "law-firm-intake-automation",
-  "real-estate-lead-automation",
-  "ai-chatbot-small-business",
-  "insurance-broker-automation",
-  "healthcare-staffing-automation-guide",
-  "healthcare-timesheet-invoice-automation",
-  "ai-for-healthcare-staffing-workflows",
-  "automate-invoice-follow-up",
-  "ai-voice-agent-small-business",
-  "cost-of-manual-scheduling",
-  "business-automation-windsor-ontario",
-  "custom-software-vs-saas",
-  "what-is-business-automation",
-  "business-automation-cost-breakdown",
-  "signs-business-ready-for-automation",
-  "crm-automation-small-business",
-  "how-to-choose-automation-agency",
-  "healthcare-staffing-automation-roi",
-  "best-business-automation-tools-2026",
-  "ai-automation-windsor-toronto",
-  "manual-followup-cost-michigan-chicago",
-  "scheduling-automation-waste-removal",
-  "ai-automation-small-business-guide",
-];
+const BASE = "https://obliquepath.dev";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticPages = [
-    { url: BASE_URL, priority: 1.0, changeFrequency: "weekly" as const },
-    { url: `${BASE_URL}/services`, priority: 0.9, changeFrequency: "monthly" as const },
-    { url: `${BASE_URL}/case-studies`, priority: 0.9, changeFrequency: "weekly" as const },
-    { url: `${BASE_URL}/blog`, priority: 0.85, changeFrequency: "weekly" as const },
-    { url: `${BASE_URL}/pricing`, priority: 0.8, changeFrequency: "monthly" as const },
-    { url: `${BASE_URL}/about`, priority: 0.8, changeFrequency: "monthly" as const },
-    { url: `${BASE_URL}/contact`, priority: 0.75, changeFrequency: "monthly" as const },
-    { url: `${BASE_URL}/book-demo`, priority: 0.75, changeFrequency: "monthly" as const },
-    { url: `${BASE_URL}/healthcare`, priority: 0.8, changeFrequency: "monthly" as const },
-    { url: `${BASE_URL}/ai-automation`, priority: 0.8, changeFrequency: "monthly" as const },
-    { url: `${BASE_URL}/custom-web-solutions`, priority: 0.75, changeFrequency: "monthly" as const },
-    { url: `${BASE_URL}/process-optimization`, priority: 0.75, changeFrequency: "monthly" as const },
-    { url: `${BASE_URL}/tech-support`, priority: 0.7, changeFrequency: "monthly" as const },
-    { url: `${BASE_URL}/careers`, priority: 0.6, changeFrequency: "monthly" as const },
-    { url: `${BASE_URL}/privacy`, priority: 0.3, changeFrequency: "yearly" as const },
-    { url: `${BASE_URL}/terms`, priority: 0.3, changeFrequency: "yearly" as const },
+  const staticPages: MetadataRoute.Sitemap = [
+    { url: BASE, priority: 1.0, changeFrequency: "weekly", lastModified: new Date() },
+    { url: `${BASE}/services`, priority: 0.9, changeFrequency: "monthly" },
+    { url: `${BASE}/case-studies`, priority: 0.9, changeFrequency: "weekly" },
+    { url: `${BASE}/blog`, priority: 0.85, changeFrequency: "weekly" },
+    { url: `${BASE}/pricing`, priority: 0.8, changeFrequency: "monthly" },
+    { url: `${BASE}/about`, priority: 0.8, changeFrequency: "monthly" },
+    { url: `${BASE}/contact`, priority: 0.75, changeFrequency: "monthly" },
+    { url: `${BASE}/book-demo`, priority: 0.75, changeFrequency: "monthly" },
+    { url: `${BASE}/healthcare`, priority: 0.8, changeFrequency: "monthly" },
+    { url: `${BASE}/ai-automation`, priority: 0.8, changeFrequency: "monthly" },
+    { url: `${BASE}/custom-web-solutions`, priority: 0.75, changeFrequency: "monthly" },
+    { url: `${BASE}/process-optimization`, priority: 0.75, changeFrequency: "monthly" },
+    { url: `${BASE}/tech-support`, priority: 0.7, changeFrequency: "monthly" },
+    { url: `${BASE}/careers`, priority: 0.6, changeFrequency: "monthly" },
+    { url: `${BASE}/privacy`, priority: 0.3, changeFrequency: "yearly" },
+    { url: `${BASE}/terms`, priority: 0.3, changeFrequency: "yearly" },
   ];
 
-  const caseStudyPages = caseStudySlugs.map((slug) => ({
-    url: `${BASE_URL}/case-studies/${slug}`,
-    priority: 0.8,
-    changeFrequency: "monthly" as const,
+  const caseStudyPages: MetadataRoute.Sitemap = caseStudies.map((study) => ({
+    url: `${BASE}/case-studies/${study.id}`,
+    priority: 0.85,
+    changeFrequency: "monthly",
   }));
 
-  const blogPages = blogSlugs.map((slug) => ({
-    url: `${BASE_URL}/blog/${slug}`,
+  const blogPages: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+    url: `${BASE}/blog/${post.slug}`,
+    lastModified: new Date(post.date),
     priority: 0.75,
-    changeFrequency: "monthly" as const,
+    changeFrequency: "monthly",
   }));
 
-  return [
-    ...staticPages,
-    ...caseStudyPages,
-    ...blogPages,
-  ].map((page) => ({
-    ...page,
-    lastModified: new Date(),
-  }));
+  return [...staticPages, ...caseStudyPages, ...blogPages];
 }
